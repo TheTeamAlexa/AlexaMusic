@@ -1,0 +1,24 @@
+version: "3.10"
+services:
+  worker:
+    build: .
+    environment:
+      AUTO_LEAVING_ASSISTANT: $AUTO_LEAVING_ASSISTANT # true
+      BOT_TOKEN: $BOT_TOKEN # true
+      MONGO_DB_URI: $MONGO_DB_URI # true
+      API_ID: $API_ID  # true
+      API_HASH: $API_HASH  # true
+      MUSIC_BOT_NAME: $MUSIC_BOT_NAME  # true
+      OWNER_ID: $OWNER_ID  # true
+      HEROKU_API_KEY: $HEROKU_API_KEY #default to none
+      HEROKU_APP_NAME: $HEROKU_APP_NAME  # defaults to None
+      LOG_GROUP_ID: $LOG_GROUP_ID  # true
+      SUPPORT_GROUP: $SUPPORT_GROUP  # false
+      SUPPORT_CHANNEL: $SUPPORT_CHANNEL  # false
+      START_IMG_URL: $START_IMG_URL  # true
+      UPSTREAM_REPO: $UPSTREAM_REPO  # true
+      UPSTREAM_BRANCH: $UPSTREAM_BRANCH  # true
+      STRING_SESSION: $STRING_SESSION # true
+      STRING_SESSION2: $STRING_SESSION2 # true
+      SUDO_USERS: $SUDO_USERS #false
+      BOT_ID: $BOT_ID # true
