@@ -22,7 +22,7 @@ TEMP_MONGODB = ""
 
 if config.MONGO_DB_URI is None:
     LOGGER(__name__).warning(
-        "No MONGO DB URL found.. Your Bot will work on Fallen Database"
+        "No MONGO DB URL found. 😁"
     )
     temp_client = Client(
         "Fallen",
