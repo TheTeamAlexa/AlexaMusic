@@ -164,7 +164,7 @@ async def del_back_playlist(client, CallbackQuery, _):
         await CallbackQuery.answer()
         random.shuffle(check)
         check.insert(0, popped)
-        await CallbackQuery.message.reply_text(_["admin_23"].format(mention))
+        await CallbackQuery.message.reply_text(_["admin_23"].format(mention), disable_web_page_preview=True)
     elif command == "Skip":
         check = db.get(chat_id)
         txt = f"» ᴛʀᴀᴄᴋ sᴋɪᴩᴩᴇᴅ ʙʏ {mention} !"
@@ -176,7 +176,7 @@ async def del_back_playlist(client, CallbackQuery, _):
                     await auto_clean(popped)
             if not check:
                 await CallbackQuery.edit_message_text(f"» ᴛʀᴀᴄᴋ sᴋɪᴩᴩᴇᴅ ʙʏ {mention} !")
-                await CallbackQuery.message.reply_text(_["admin_10"].format(mention))
+                await CallbackQuery.message.reply_text(_["admin_10"].format(mention), disable_web_page_preview=True)
                 try:
                     return await Alexa.stop_stream(chat_id)
                 except:
