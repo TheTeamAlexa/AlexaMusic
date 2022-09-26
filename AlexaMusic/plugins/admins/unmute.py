@@ -31,7 +31,7 @@ async def unmute_admin(Client, message: Message, _, chat_id):
     if not len(message.command) == 1 or message.reply_to_message:
         return await message.reply_text(_["general_2"])
     if not await is_muted(chat_id):
-        return await message.reply_text(_["admin_7"])
+        return await message.reply_text(_["admin_7"], disable_web_page_preview=True)
     await mute_off(chat_id)
     await Alexa.unmute_stream(chat_id)
-    await message.reply_text(_["admin_8"].format(message.from_user.mention))
+    await message.reply_text(_["admin_8"].format(message.from_user.mention), disable_web_page_preview=True)
