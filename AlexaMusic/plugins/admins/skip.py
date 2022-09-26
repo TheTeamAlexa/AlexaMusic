@@ -58,7 +58,11 @@ async def skip(cli, message: Message, _, chat_id):
                             if not check:
                                 try:
                                     await message.reply_text(
-                                        _["admin_10"].format(message.from_user.first_name), disable_web_page_preview=True)
+                                        _["admin_10"].format(
+                                            message.from_user.first_name
+                                        ),
+                                        disable_web_page_preview=True,
+                                    )
                                     await Alexa.stop_stream(chat_id)
                                 except:
                                     return
@@ -81,7 +85,9 @@ async def skip(cli, message: Message, _, chat_id):
                     await auto_clean(popped)
             if not check:
                 await message.reply_text(
-                    _["admin_10"].format(message.from_user.first_name), disable_web_page_preview=True)
+                    _["admin_10"].format(message.from_user.first_name),
+                    disable_web_page_preview=True,
+                )
                 try:
                     return await Alexa.stop_stream(chat_id)
                 except:
@@ -89,7 +95,9 @@ async def skip(cli, message: Message, _, chat_id):
         except:
             try:
                 await message.reply_text(
-                    _["admin_10"].format(message.from_user.first_name), disable_web_page_preview=True)
+                    _["admin_10"].format(message.from_user.first_name),
+                    disable_web_page_preview=True,
+                )
                 return await Alexa.stop_stream(chat_id)
             except:
                 return
