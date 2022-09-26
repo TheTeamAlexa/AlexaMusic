@@ -34,4 +34,6 @@ async def mute_admin(cli, message: Message, _, chat_id):
         return await message.reply_text(_["admin_5"], disable_web_page_preview=True)
     await mute_on(chat_id)
     await Alexa.mute_stream(chat_id)
-    await message.reply_text(_["admin_6"].format(message.from_user.mention), disable_web_page_preview=True)
+    await message.reply_text(
+        _["admin_6"].format(message.from_user.mention), disable_web_page_preview=True
+    )
