@@ -2,7 +2,7 @@
 
 <h4 align="center">Alexa A Powerful, Smart And Simple Bot To Play Audio And Video Song In Telegram<br> ... Written With Python and Telethon...</h4>
 
-<p align="center"><a href="https://t.me/Jankari_Ki_Duniya"><img src="https://telegra.ph/file/a770c994ec7e9d5603af0.jpg" width="400"></a></p>
+<p align="center"><a href="https://t.me/Jankari_Ki_Duniya"><img src="https://telegra.ph/file/f6064bc90cc76e59015b2.jpg" width="400"></a></p>
 
 <p align="center">
     <a href="https://app.codacy.com/manual/TheTeamAlexa/AlexaMusic/dashboard"> <img src="https://img.shields.io/codacy/grade/4d58f2a402b54aed8a7d95f7add45a81?color=brightgreen&logo=codacy&logoColor=green&style=for-the-badge" alt="Codacy" /></a>
