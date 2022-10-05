@@ -34,21 +34,19 @@ from AlexaMusic import app, userbot
 
 from AlexaMusic.misc import SUDOERS
 
-from AlexaMusic.utils.database import (get_active_chats,
-
-                                       get_authuser_names, get_client,
-
-                                       get_particular_top,
-
-                                       get_served_chats,
-
-                                       get_served_users, get_user_top,
-
-                                       is_cleanmode_on, set_queries,
-
-                                       update_particular_top,
-
-                                       update_user_top)
+from AlexaMusic.utils.database import (
+    get_active_chats,
+    get_authuser_names,
+    get_client,
+    get_particular_top,
+    get_served_chats,
+    get_served_users,
+    get_user_top,
+    is_cleanmode_on,
+    set_queries,
+    update_particular_top,
+    update_user_top,
+)
 
 from AlexaMusic.utils.decorators.language import language
 
@@ -64,8 +62,8 @@ IS_BROADCASTING = False
 
 cleanmode_group = 15
 
-@app.on_raw_update(group=cleanmode_group)
 
+@app.on_raw_update(group=cleanmode_group)
 async def clean_mode(client, update, users, chats):
 
     global IS_BROADCASTING
@@ -107,21 +105,17 @@ async def clean_mode(client, update, users, chats):
     time_now = datetime.now()
 
     put = {
-
         "msg_id": message_id,
-
         "timer_after": time_now + timedelta(minutes=AUTO_DELETE),
-
     }
 
     clean[chat_id].append(put)
 
     await set_queries(1)
 
+
 @app.on_message(filters.command(BROADCAST_COMMAND) & SUDOERS)
-
 @language
-
 async def braodcast_message(client, message, _):
 
     global IS_BROADCASTING
@@ -191,13 +185,9 @@ async def braodcast_message(client, message, _):
             try:
 
                 m = (
-
                     await app.forward_messages(i, y, x)
-
                     if message.reply_to_message
-
                     else await app.send_message(i, text=query)
-
                 )
 
                 if "-pin" in message.text:
@@ -267,13 +257,9 @@ async def braodcast_message(client, message, _):
             try:
 
                 m = (
-
                     await app.forward_messages(i, y, x)
-
                     if message.reply_to_message
-
                     else await app.send_message(i, text=query)
-
                 )
 
                 susr += 1
@@ -325,13 +311,9 @@ async def braodcast_message(client, message, _):
                 try:
 
                     await client.forward_messages(
-
                         dialog.chat.id, y, x
-
                     ) if message.reply_to_message else await client.send_message(
-
                         dialog.chat.id, text=query
-
                     )
 
                     sent += 1
@@ -364,6 +346,7 @@ async def braodcast_message(client, message, _):
 
     IS_BROADCASTING = False
 
+
 async def auto_clean():
 
     while not await asyncio.sleep(AUTO_SLEEP):
@@ -390,11 +373,7 @@ async def auto_clean():
 
                         new_spot = {"spot": next_spot, "title": title}
 
-                        await update_particular_top(
-
-                            chat_id, vidid, new_spot
-
-                        )
+                        await update_particular_top(chat_id, vidid, new_spot)
 
                     else:
 
@@ -402,11 +381,7 @@ async def auto_clean():
 
                         new_spot = {"spot": next_spot, "title": title}
 
-                        await update_particular_top(
-
-                            chat_id, vidid, new_spot
-
-                        )
+                        await update_particular_top(chat_id, vidid, new_spot)
 
             for user_id in userstats:
 
@@ -428,11 +403,7 @@ async def auto_clean():
 
                         new_spot = {"spot": next_spot, "title": title}
 
-                        await update_user_top(
-
-                            user_id, vidid, new_spot
-
-                        )
+                        await update_user_top(user_id, vidid, new_spot)
 
                     else:
 
@@ -440,11 +411,7 @@ async def auto_clean():
 
                         new_spot = {"spot": next_spot, "title": title}
 
-                        await update_user_top(
-
-                            user_id, vidid, new_spot
-
-                        )
+                        await update_user_top(user_id, vidid, new_spot)
 
         except:
 
@@ -464,11 +431,7 @@ async def auto_clean():
 
                         try:
 
-                            await app.delete_messages(
-
-                                chat_id, x["msg_id"]
-
-                            )
+                            await app.delete_messages(chat_id, x["msg_id"])
 
                         except FloodWait as e:
 
@@ -497,9 +460,7 @@ async def auto_clean():
                     adminlist[chat_id] = []
 
                     admins = await app.get_chat_members(
-
                         chat_id, filter="administrators"
-
                     )
 
                     for user in admins:
@@ -520,5 +481,5 @@ async def auto_clean():
 
             continue
 
-asyncio.create_task(auto_clean())
 
+asyncio.create_task(auto_clean())
