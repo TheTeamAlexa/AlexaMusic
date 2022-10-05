@@ -9,9 +9,6 @@
 # All rights reserved. © Alisha © Alexa © Yukki
 
 
-
-
-
 import asyncio
 import platform
 from sys import version as pyver
@@ -30,18 +27,25 @@ from AlexaMusic import YouTube, app
 from AlexaMusic.core.userbot import assistants
 from AlexaMusic.misc import SUDOERS, pymongodb
 from AlexaMusic.plugins import ALL_MODULES
-from AlexaMusic.utils.database import (get_global_tops,
-                                       get_particulars, get_queries,
-                                       get_served_chats,
-                                       get_served_users, get_sudoers,
-                                       get_top_chats, get_topp_users)
+from AlexaMusic.utils.database import (
+    get_global_tops,
+    get_particulars,
+    get_queries,
+    get_served_chats,
+    get_served_users,
+    get_sudoers,
+    get_top_chats,
+    get_topp_users,
+)
 from AlexaMusic.utils.decorators.language import language, languageCB
-from AlexaMusic.utils.inline.stats import (back_stats_buttons,
-                                           back_stats_markup,
-                                           get_stats_markup,
-                                           overallback_stats_markup,
-                                           stats_buttons,
-                                           top_ten_stats_markup)
+from AlexaMusic.utils.inline.stats import (
+    back_stats_buttons,
+    back_stats_markup,
+    get_stats_markup,
+    overallback_stats_markup,
+    stats_buttons,
+    top_ten_stats_markup,
+)
 
 loop = asyncio.get_running_loop()
 
@@ -51,16 +55,11 @@ STATS_COMMAND = get_command("STATS_COMMAND")
 
 
 @app.on_message(
-    filters.command(STATS_COMMAND)
-    & filters.group
-    & ~filters.edited
-    & ~BANNED_USERS
+    filters.command(STATS_COMMAND) & filters.group & ~filters.edited & ~BANNED_USERS
 )
 @language
 async def stats_global(client, message: Message, _):
-    upl = stats_buttons(
-        _, True if message.from_user.id in SUDOERS else False
-    )
+    upl = stats_buttons(_, True if message.from_user.id in SUDOERS else False)
     await message.reply_photo(
         photo=config.STATS_IMG_URL,
         caption=_["gstats_11"].format(config.MUSIC_BOT_NAME),
@@ -69,10 +68,7 @@ async def stats_global(client, message: Message, _):
 
 
 @app.on_message(
-    filters.command(GSTATS_COMMAND)
-    & filters.group
-    & ~filters.edited
-    & ~BANNED_USERS
+    filters.command(GSTATS_COMMAND) & filters.group & ~filters.edited & ~BANNED_USERS
 )
 @language
 async def gstats_global(client, message: Message, _):
@@ -121,9 +117,7 @@ async def gstats_global(client, message: Message, _):
     ) = await YouTube.details(videoid, True)
     title = title.title()
     final = f"Top Most Played Track on {MUSIC_BOT_NAME}\n\n**Title:** {title}\n\nPlayed** {co} **times"
-    upl = get_stats_markup(
-        _, True if message.from_user.id in SUDOERS else False
-    )
+    upl = get_stats_markup(_, True if message.from_user.id in SUDOERS else False)
     await app.send_photo(
         message.chat.id,
         photo=thumbnail,
@@ -146,9 +140,7 @@ async def top_users_ten(client, CallbackQuery: CallbackQuery, _):
         pass
     mystic = await CallbackQuery.edit_message_text(
         _["gstats_3"].format(
-            f"of {CallbackQuery.message.chat.title}"
-            if what == "Here"
-            else what
+            f"of {CallbackQuery.message.chat.title}" if what == "Here" else what
         )
     )
     if what == "Tracks":
@@ -167,11 +159,7 @@ async def top_users_ten(client, CallbackQuery: CallbackQuery, _):
     def get_stats():
         results = {}
         for i in stats:
-            top_list = (
-                stats[i]
-                if what in ["Chats", "Users"]
-                else stats[i]["spot"]
-            )
+            top_list = stats[i] if what in ["Chats", "Users"] else stats[i]["spot"]
             results[str(i)] = top_list
             list_arranged = dict(
                 sorted(
@@ -207,17 +195,13 @@ async def top_users_ten(client, CallbackQuery: CallbackQuery, _):
                     limit,
                 )
                 if what == "Tracks"
-                else _["gstats_7"].format(
-                    len(stats), total_count, limit
-                )
+                else _["gstats_7"].format(len(stats), total_count, limit)
             )
             msg = temp + msg
         return msg, list_arranged
 
     try:
-        msg, list_arranged = await loop.run_in_executor(
-            None, get_stats
-        )
+        msg, list_arranged = await loop.run_in_executor(None, get_stats)
     except Exception as e:
         print(e)
         return
@@ -247,9 +231,7 @@ async def top_users_ten(client, CallbackQuery: CallbackQuery, _):
         msg = temp + msg
     med = InputMediaPhoto(media=config.GLOBAL_IMG_URL, caption=msg)
     try:
-        await CallbackQuery.edit_message_media(
-            media=med, reply_markup=upl
-        )
+        await CallbackQuery.edit_message_media(media=med, reply_markup=upl)
     except MessageIdInvalid:
         await CallbackQuery.message.reply_photo(
             photo=config.GLOBAL_IMG_URL, caption=msg, reply_markup=upl
@@ -305,9 +287,7 @@ async def overall_stats(client, CallbackQuery, _):
 🌹 **ᴩʟᴀʏʟɪsᴛ ᴩʟᴀʏ ʟɪᴍɪᴛ:** {fetch_playlist}"""
     med = InputMediaPhoto(media=config.STATS_IMG_URL, caption=text)
     try:
-        await CallbackQuery.edit_message_media(
-            media=med, reply_markup=upl
-        )
+        await CallbackQuery.edit_message_media(media=med, reply_markup=upl)
     except MessageIdInvalid:
         await CallbackQuery.message.reply_photo(
             photo=config.STATS_IMG_URL, caption=text, reply_markup=upl
@@ -318,9 +298,7 @@ async def overall_stats(client, CallbackQuery, _):
 @languageCB
 async def overall_stats(client, CallbackQuery, _):
     if CallbackQuery.from_user.id not in SUDOERS:
-        return await CallbackQuery.answer(
-            "ᴏɴʟʏ ғᴏʀ sᴜᴅᴏ ᴜsᴇʀs.", show_alert=True
-        )
+        return await CallbackQuery.answer("ᴏɴʟʏ ғᴏʀ sᴜᴅᴏ ᴜsᴇʀs.", show_alert=True)
     callback_data = CallbackQuery.data.strip()
     what = callback_data.split(None, 1)[1]
     if what != "s":
@@ -335,10 +313,7 @@ async def overall_stats(client, CallbackQuery, _):
     sc = platform.system()
     p_core = psutil.cpu_count(logical=False)
     t_core = psutil.cpu_count(logical=True)
-    ram = (
-        str(round(psutil.virtual_memory().total / (1024.0**3)))
-        + " GB"
-    )
+    ram = str(round(psutil.virtual_memory().total / (1024.0**3))) + " GB"
     try:
         cpu_freq = psutil.cpu_freq().current
         if cpu_freq >= 1000:
@@ -408,9 +383,7 @@ async def overall_stats(client, CallbackQuery, _):
     """
     med = InputMediaPhoto(media=config.STATS_IMG_URL, caption=text)
     try:
-        await CallbackQuery.edit_message_media(
-            media=med, reply_markup=upl
-        )
+        await CallbackQuery.edit_message_media(media=med, reply_markup=upl)
     except MessageIdInvalid:
         await CallbackQuery.message.reply_photo(
             photo=config.STATS_IMG_URL, caption=text, reply_markup=upl
@@ -418,8 +391,7 @@ async def overall_stats(client, CallbackQuery, _):
 
 
 @app.on_callback_query(
-    filters.regex(pattern=r"^(TOPMARKUPGET|GETSTATS|GlobalStats)$")
-    & ~BANNED_USERS
+    filters.regex(pattern=r"^(TOPMARKUPGET|GETSTATS|GlobalStats)$") & ~BANNED_USERS
 )
 @languageCB
 async def back_buttons(client, CallbackQuery, _):
@@ -435,9 +407,7 @@ async def back_buttons(client, CallbackQuery, _):
             caption=_["gstats_9"],
         )
         try:
-            await CallbackQuery.edit_message_media(
-                media=med, reply_markup=upl
-            )
+            await CallbackQuery.edit_message_media(media=med, reply_markup=upl)
         except MessageIdInvalid:
             await CallbackQuery.message.reply_photo(
                 photo=config.GLOBAL_IMG_URL,
@@ -454,9 +424,7 @@ async def back_buttons(client, CallbackQuery, _):
             caption=_["gstats_10"].format(config.MUSIC_BOT_NAME),
         )
         try:
-            await CallbackQuery.edit_message_media(
-                media=med, reply_markup=upl
-            )
+            await CallbackQuery.edit_message_media(media=med, reply_markup=upl)
         except MessageIdInvalid:
             await CallbackQuery.message.reply_photo(
                 photo=config.GLOBAL_IMG_URL,
@@ -473,9 +441,7 @@ async def back_buttons(client, CallbackQuery, _):
             caption=_["gstats_11"].format(config.MUSIC_BOT_NAME),
         )
         try:
-            await CallbackQuery.edit_message_media(
-                media=med, reply_markup=upl
-            )
+            await CallbackQuery.edit_message_media(media=med, reply_markup=upl)
         except MessageIdInvalid:
             await CallbackQuery.message.reply_photo(
                 photo=config.STATS_IMG_URL,
