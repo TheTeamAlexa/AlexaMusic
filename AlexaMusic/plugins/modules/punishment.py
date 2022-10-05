@@ -66,7 +66,7 @@ async def gbanuser(client, message: Message, _):
     time_expected = len(served_chats)
     time_expected = get_readable_time(time_expected)
     mystic = await message.reply_text(
-        _["gban_5"].format(mention, time_expected)
+        _["gban_5"].format(mention, time_expected, from_user_mention, user.id)
     )
     number_of_chats = 0
     for chat_id in served_chats:
@@ -79,7 +79,7 @@ async def gbanuser(client, message: Message, _):
             pass
     await add_banned_user(user_id)
     await message.reply_text(
-        _["gban_6"].format(mention, number_of_chats)
+        _["gban_6"].format(mention, number_of_chats, from_user_mention, user.id)
     )
     await mystic.delete()
 
@@ -92,6 +92,7 @@ async def gungabn(client, message: Message, _):
             return await message.reply_text(_["general_1"])
         user = message.text.split(None, 1)[1]
         user = await app.get_users(user)
+        from_user_mention = message.from_user.mention        
         user_id = user.id
         mention = user.mention
     else:
@@ -122,7 +123,7 @@ async def gungabn(client, message: Message, _):
             pass
     await remove_banned_user(user_id)
     await message.reply_text(
-        _["gban_9"].format(mention, number_of_chats)
+        _["gban_9"].format(mention, number_of_chats, from_user_mention, user.id)
     )
     await mystic.delete()
 
