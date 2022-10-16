@@ -94,9 +94,9 @@ async def gen_thumb(videoid):
         draw.text(
             (600, 150),
             f"By Alexa",
-            fill="yellow",
+            fill="white",
             stroke_width=2,
-            stroke_fill="green",
+            stroke_fill="yellow",
             font=font2,
         )
         for line in para:
