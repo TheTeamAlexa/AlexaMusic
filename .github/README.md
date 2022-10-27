@@ -135,7 +135,7 @@
 - [ʟᴏɢɪ ʟᴀʙ](https://github.com/LOGI-LAB)
 - [ʜᴀʀsʜɪᴛ](https://t.me/HarshitSharma361)
 - [Abhimanyu](https://t.me/Itz_Venom_xD)
-- [ᴍᴀssᴋᴍ](https://t.me/Kattai_massom)
+- [ᴍᴀssoᴍ](https://t.me/Kattai_massom)
 - [ʏᴜᴋᴋɪ](https://github.com/NotReallyShikhar)
 
 </details>
