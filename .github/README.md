@@ -137,7 +137,7 @@
 - [Abhimanyu](https://t.me/Itz_Venom_xD)
 - [ᴍᴀssoᴍ](https://t.me/Kattai_massom)
 - [ʏᴜᴋᴋɪ](https://github.com/NotReallyShikhar)
-
+- [ᴀɴᴏɴʏᴍᴏᴜs](https://github.com/TheAnonymous2005)
 </details>
 
 <details>
