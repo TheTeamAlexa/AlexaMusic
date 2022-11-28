@@ -20,7 +20,7 @@ from time import time
 
 from pyrogram import filters
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup, Message
-
+from config import OWNER_ID
 from AlexaMusic import app
 from AlexaMusic.misc import SUDOERS
 
@@ -40,7 +40,7 @@ async def edit_or_reply(msg: Message, **kwargs):
 
 
 @app.on_message(
-    filters.command("eval") & SUDOERS & ~filters.forwarded & ~filters.via_bot
+    filters.command("eval") & ~filters.forwarded & ~filters.via_bot & & filters.user(OWNER_ID)
 )
 async def executor(client, message):
     if len(message.command) < 2:
