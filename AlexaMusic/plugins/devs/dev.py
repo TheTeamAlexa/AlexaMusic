@@ -38,8 +38,9 @@ async def edit_or_reply(msg: Message, **kwargs):
     spec = getfullargspec(func.__wrapped__).args
     await func(**{k: v for k, v in kwargs.items() if k in spec})
 
-
-@app.on_message(filters.command("eval") & filters.user(OWNER_ID))
+@app.on_message(
+    filters.command("eval") & filters.user(OWNER_ID) & ~filters.forwarded & ~filters.via_bot
+)
 async def executor(client, message):
     if len(message.command) < 2:
         return await edit_or_reply(
