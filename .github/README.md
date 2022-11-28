@@ -19,7 +19,11 @@
 
 <a href="https://www.youtube.com/JankariKiDuniya"><img src="https://img.shields.io/badge/Join-Subscribe%20Support-blue.svg?style=for-the-badge&logo=YouTube"></a>
 
-## Features ❤️”®
+## Features Of Alexa And Commands ❤️
+
+<details>
+<summary><b>ғᴇᴀᴛᴜʀᴇs</b></summary>
+<br>
 
 - Thumbnail Support
 - Audio And Video
@@ -36,8 +40,12 @@
 - Broadcast Bot
 - Statistic Collector
 - Block / Unblock (restrict user for using your bot)
+</details>
 
-## Commands ❤️
+#### Overall Basic Commands 😂
+<details>
+<summary><b>ʙᴀsɪᴄ ᴄᴍᴅs</b></summary>
+<br>
 
 - `/play <song name>` - play song you requested
 - `/playlist` - Show now playing list
@@ -46,37 +54,46 @@
 - `/vsong <song name>` - download videos you want quickly
 - `/lyric <song name>` - lyrics scrapper
 - `/vk <song name>` - generate song without download
+</details>
 
-#### Admins Only 😜
+### Only Admin Can Exicute 🙄
+
+<details>
+<summary><b>ᴀᴅᴍɪɴ ᴄᴍᴅs</b></summary>
+<br>
+
 - `/player` - open music player settings panel
 - `/pause` - pause song play
 - `/resume` - resume song play
 - `/skip` - play next song
 - `/end` - stop music play
-- `/musicplayer on` - to disable music player in your group
-- `/musicplayer off` - to enable music player in your group
-- `/join` - invite assistant to your chat
-- `/leave` - remove assistant from your chat
-- `/reload` - Refresh admin list
-- `/uptime` - check the bot uptime status
 - `/ping` - check the bot ping status
 - `/auth` - authorized people to access the admin commands
 - `/deauth` - deauthorized people to access the admin commands
-- `/control` - open the music player control panel
+</details>
 
-### Sudo User ❣️
-- `/stats` - see the bot statistic
-- `/pmpermit on | off` turn on/off the assistant pmpermit
-- `/leaveall` - order the assistant to leave all groups
+### Sudo Commands 🤭
+<details>
+<summary><b>sᴜᴅᴏ ᴄᴍᴅs ᴏɴʟʏ</b></summary>
+<br>
+
+- `/broadcast` - order the assistant to leave all groups
 - `/gban` - gban user
+</details>
+    
+### Only Owner 🙈
+<details>
+<summary><b>ᴏɴʟʏ ᴏᴡɴᴇʀ</b></summary>
+<br>
 
-
-### Owner Only 🕺
 - `/broadcast` - send a broadcast message from the bot
 - `/block` - block people for using your bot
 - `/unblock` - unblock people you blocked for using your bot
 - `/blocklist` - show the list of all people who's blocked for using your bot
+</details>
 
+
+</details>
 
 # ᴅᴇᴘʟᴏʏᴍᴇɴᴛ
 
@@ -118,13 +135,9 @@
     
 <h4> ᴄʟɪᴄᴋ ᴛʜᴇ ʙᴜᴛᴛᴏɴ ʙᴇʟᴏᴡ ᴛᴏ ᴅᴇᴘʟᴏʏ ʏᴜᴋᴋɪ ᴏɴ ʜᴇʀᴏᴋᴜ</h4>    
 <p><a href="https://dashboard.heroku.com/new?template=https%3A%2F%2Fgithub.com%2FTheTeamAlexa%2FAlexaMusic"><img src="https://img.shields.io/badge/Deploy%20To%20Heroku-red?style=for-the-badge&logo=heroku" width="200"/></a></p>
-    
 </details>
 
-
-# Owner And Credit
-
-
+# Owner And Credit)
 <details>
 <summary><b>ᴄʀᴇᴅɪᴛ</b></summary>
 <br>
@@ -153,7 +166,7 @@
 <summary><b>sᴜᴘᴘᴏʀᴛ</b></summary>
 <br>
 
-# ❤️ Support
+# ❤️ Support<
 <a href="https://t.me/AsadSupport"><img src="https://img.shields.io/badge/Join-Telegram%20Channel-red.svg?logo=Telegram"></a>
 <a href="https://t.me/Shayri_Music_Lovers"><img src="https://img.shields.io/badge/Join-Telegram%20Group-blue.svg?logo=telegram"></a>
 <a href="https://t.me/Give_Me_Heart"><img src="https://img.shields.io/badge/Give-Me%20Heart-blue.svg?logo=telegram"></a>
@@ -164,15 +177,12 @@
 
 ## ᴀᴄᴋɴᴏᴡʟᴇᴅɢᴇᴍᴇɴᴛs
 
+<details>
+<summary><b>ʟɪʙʀᴀʀɪᴇs</b></summary>
+<br>
+
 ᴛʜᴀɴᴋs ᴛᴏ ᴀʟʟ ᴏғ ʏᴏᴜ ғᴏʀ ᴜsɪɴɢ ᴀɴᴅ ᴍᴀᴋɪɴɢ ᴀʟᴇxᴀ:
 
 - [Pyrogram](https://github.com/pyrogram/pyrogram)
 - [Py-Tgcalls](https://github.com/pytgcalls/pytgcalls)
-
-
-
-
-
-
-
-[![Deploy+To+Railway](https://railway.app/button.svg)](https://railway.app/new/template?template=https://github.com/TheTeamAlexa/AlexaMusic&envs=STRING_SESSION,BOT_TOKEN,MUSIC_BOT_NAME,API_ID,API_HASH,OWNER_ID,DURATION_LIMIT,AUTO_LEAVING_ASSISTANT,MONGO_DB_URI,START_IMG_URL,PING_IMG_URL,OWNER_ID,UPSTREAM_BRANCH,UPSTREAM_REPO,LOG_GROUP_ID,SUPPORT_CHANNEL,SUPPORT_GROUP,GIT_TOKEN)
+</details>
