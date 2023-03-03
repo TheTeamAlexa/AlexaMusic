@@ -37,6 +37,7 @@ from AlexaMusic.utils.inline.play import (
 from AlexaMusic.utils.inline.playlist import botplaylist_markup
 from AlexaMusic.utils.logger import play_logs
 from AlexaMusic.utils.stream.stream import stream
+from AlexaMusic.utils.database import is_served_user
 
 # Command
 PLAY_COMMAND = get_command("PLAY_COMMAND")
@@ -57,6 +58,11 @@ async def play_commnd(
     url,
     fplay,
 ):
+    if not await is_served_user(message.from_user.id):
+        await message.reply_text(
+            text="😢 ᴅᴇᴀʀ ʏᴏᴜ'ʀᴇ ɴᴏᴛ ᴀ ᴠᴇʀɪғɪᴇᴅ ᴀᴛ ᴀʟᴇxᴀ ᴅᴀᴛᴀʙᴀsᴇ.\n☔ ᴘʟᴇᴀsᴇ ᴄᴏᴘʏ `/verify` ᴛʜɪs ᴄᴏᴍᴍᴀɴᴅ ᴀɴᴅ ʀᴜɴ ɪᴛ ɪɴ ʙᴏᴛ ᴅᴍ ᴏʀ ɪɴ ɢʀᴏᴜᴘ ᴛᴏ ᴠᴇʀɪғʏ ʏᴏᴜʀsᴇʟғ.",
+        )
+        return
     mystic = await message.reply_text(
         _["play_2"].format(channel) if channel else _["play_1"]
     )
