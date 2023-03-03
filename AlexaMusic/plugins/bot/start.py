@@ -1,3 +1,4 @@
+
 # Copyright (C) 2021-2022 by Alexa_Help @ Github, < https://github.com/TheTeamAlexa >.
 # A Powerful Music Bot Property Of Rocks Indian Largest Chatting Group
 # All rights reserved. © Alisha © Alexa © Yukki
@@ -20,6 +21,7 @@ from AlexaMusic.plugins.play.playlist import del_plist_msg
 from AlexaMusic.plugins.sudo.sudoers import sudoers_list
 from AlexaMusic.utils.database import (
     add_served_chat,
+    is_served_user,
     add_served_user,
     blacklisted_chats,
     get_assistant,
@@ -285,13 +287,17 @@ async def start(client: Client, message: Message):
         ),
     )
 
-
 @app.on_message(commandpro(["/verify", "alexaverification"]) & ~filters.edited)
 async def start(client: Client, message: Message):
+    if await is_served_user(message.from_user.id):
+        await message.reply_text(
+            text="😂 ᴅᴇᴀʀ ʏᴏᴜ ᴀʀᴇ ᴀʟʀᴇᴀᴅʏ ᴠᴇʀɪғɪᴇᴅ",
+        )
+        return
     await add_served_user(message.from_user.id)
     await message.reply_photo(
         photo=f"https://telegra.ph/file/7f08acd78577f99f60ff5.png",
-        caption=f"""━━━━━━━━━━━━━━━━━━━━━━━━\n\n✪ *ᴄᴏɴɢʀᴀᴛᴜʟᴀᴛɪᴏɴ* 🎉s \n✪ ɴᴏᴡ ʏᴏᴜ ᴀʀᴇ ᴀʟᴇxᴀ ᴠᴇʀɪғɪᴇᴅ ᴍᴇᴍʙᴇʀ ɢᴏ ʙᴀᴄᴋ ᴀɴᴅ ᴇɴᴊᴏʏ ᴏᴜʀ sᴇʀᴠɪsᴇ ᴀɴᴅ ᴘʟᴀʏ ᴍᴜsɪᴄ 🌼 ..\n\n━━━━━━━━━━━━━━━━━━━━━━━━""",
+        caption=f"""━━━━━━━━━━━━━━━━━━━━━━━━\n\n✪ **ᴄᴏɴɢʀᴀᴛᴜʟᴀᴛɪᴏɴ** 🎉\n✪ ɴᴏᴡ ʏᴏᴜ ᴀʀᴇ ᴀʟᴇxᴀ ᴠᴇʀɪғɪᴇᴅ ᴍᴇᴍʙᴇʀ ɢᴏ ʙᴀᴄᴋ ᴀɴᴅ ᴇɴᴊᴏʏ ᴏᴜʀ sᴇʀᴠɪsᴇ ᴀɴᴅ ᴘʟᴀʏ ᴍᴜsɪᴄ 🌼 ..\n\n━━━━━━━━━━━━━━━━━━━━━━━━""",
         reply_markup=InlineKeyboardMarkup(
             [[InlineKeyboardButton("🌼 ᴀʟᴇxᴀ ᴄʜᴀᴛ 💮", url=f"https://t.me/Alexa_Help")]]
         ),
