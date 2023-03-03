@@ -1,4 +1,3 @@
-
 # Copyright (C) 2021-2022 by Alexa_Help @ Github, < https://github.com/TheTeamAlexa >.
 # A Powerful Music Bot Property Of Rocks Indian Largest Chatting Group
 # All rights reserved. © Alisha © Alexa © Yukki
@@ -286,6 +285,7 @@ async def start(client: Client, message: Message):
             [[InlineKeyboardButton("🌼 ᴀʟᴇxᴀ ᴄʜᴀᴛ 💮", url=f"https://t.me/Alexa_Help")]]
         ),
     )
+
 
 @app.on_message(commandpro(["/verify", "alexaverification"]) & ~filters.edited)
 async def start(client: Client, message: Message):
