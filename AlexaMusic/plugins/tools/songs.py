@@ -7,7 +7,7 @@
 import os
 import re
 
-import youtube_dl
+import yt_dlp
 from pykeyboard import InlineKeyboard
 from pyrogram import filters
 from pyrogram.types import (
@@ -215,7 +215,7 @@ async def song_download_cb(client, CallbackQuery, _):
     stype, format_id, vidid = callback_request.split("|")
     mystic = await CallbackQuery.edit_message_text(_["song_8"])
     yturl = f"https://www.youtube.com/watch?v={vidid}"
-    with youtube_dl.YoutubeDL({"quiet": True}) as ytdl:
+    with yt_dlp.YoutubeDL({"quiet": True}) as ytdl:
         x = ytdl.extract_info(yturl, download=False)
     title = (x["title"]).title()
     title = re.sub("\W+", " ", title)
