@@ -7,7 +7,7 @@
 import re
 from os import path
 
-from youtube-dl import YoutubeDL
+from youtube_dl import YoutubeDL
 
 from AlexaMusic.utils.formatters import seconds_to_min
 
