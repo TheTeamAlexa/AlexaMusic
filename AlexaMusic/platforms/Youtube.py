@@ -10,7 +10,7 @@ import re
 from typing import Union
 
 import aiohttp
-import youtube_dl
+import yt_dlp
 from pyrogram.types import Message
 from youtubesearchpython.__future__ import VideosSearch
 
@@ -257,7 +257,7 @@ class YouTubeAPI:
                 "quiet": True,
                 "no_warnings": True,
             }
-            x = youtube_dl.YoutubeDL(ydl_optssx)
+            x = yt_dlp.YoutubeDL(ydl_optssx)
             info = x.extract_info(link, False)
             xyz = os.path.join("downloads", f"{info['id']}.{info['ext']}")
             if os.path.exists(xyz):
@@ -274,7 +274,7 @@ class YouTubeAPI:
                 "quiet": True,
                 "no_warnings": True,
             }
-            x = youtube_dl.YoutubeDL(ydl_optssx)
+            x = yt_dlp.YoutubeDL(ydl_optssx)
             info = x.extract_info(link, False)
             xyz = os.path.join("downloads", f"{info['id']}.{info['ext']}")
             if os.path.exists(xyz):
@@ -295,7 +295,7 @@ class YouTubeAPI:
                 "prefer_ffmpeg": True,
                 "merge_output_format": "mp4",
             }
-            x = youtube_dl.YoutubeDL(ydl_optssx)
+            x = yt_dlp.YoutubeDL(ydl_optssx)
             x.download([link])
 
         def song_audio_dl():
@@ -316,7 +316,7 @@ class YouTubeAPI:
                     }
                 ],
             }
-            x = youtube_dl.YoutubeDL(ydl_optssx)
+            x = yt_dlp.YoutubeDL(ydl_optssx)
             x.download([link])
 
         if songvideo:
