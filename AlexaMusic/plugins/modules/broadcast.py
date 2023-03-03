@@ -1,11 +1,6 @@
 #
-# Copyright (C) 2021-2022 by Alexa_Help@Github, < https://github.com/Jankarikiduniya >.
+# Copyright (C) 2021-2022 by Alexa_Help @ Github, < https://github.com/TheTeamAlexa >.
 # A Powerful Music Bot Property Of Rocks Indian Largest Chatting Group
-
-# Modified By © @Dr_Asad_Ali
-# Rocks © @Shayri_Music_Lovers
-# Owner Asad Ali
-# Harshit Sharma
 # All rights reserved. © Alisha © Alexa © Yukki
 
 
@@ -36,6 +31,7 @@ from AlexaMusic.utils.database import (
 )
 from AlexaMusic.utils.decorators.language import language
 from AlexaMusic.utils.formatters import alpha_to_int
+from config import OWNER_ID
 
 BROADCAST_COMMAND = get_command("BROADCAST_COMMAND")
 AUTO_DELETE = config.CLEANMODE_DELETE_MINS
@@ -73,9 +69,13 @@ async def clean_mode(client, update, users, chats):
     await set_queries(1)
 
 
-@app.on_message(filters.command(BROADCAST_COMMAND) & SUDOERS)
+@app.on_message(filters.command(BROADCAST_COMMAND))
 @language
 async def braodcast_message(client, message, _):
+    if message.from_user.id not in OWNER_ID:
+        return await message.reply_text(
+            "» **😁 ʜᴇʜᴇʜᴇ ᴏɴʟʏ ᴍʏ ᴏᴡɴᴇʀ ᴄᴀɴ ʙʀᴏᴀᴅᴄᴀsᴛ**\n» 🤫  ᴊᴏɪɴ @Alexa_Help ғᴏʀ ᴘʀᴏᴍᴏᴛɪᴏɴ"
+        )
     global IS_BROADCASTING
     if message.reply_to_message:
         x = message.reply_to_message.message_id
