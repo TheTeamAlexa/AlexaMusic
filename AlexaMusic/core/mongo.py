@@ -1,12 +1,6 @@
 #
-# Copyright (C) 2021-2022 by Alexa_Help@Github, < https://github.com/Jankarikiduniya >.
+# Copyright (C) 2021-2022 by Alexa_Help@ Github, < https://github.com/TheTeamAlexa >.
 # A Powerful Music Bot Property Of Rocks Indian Largest Chatting Group
-
-# Kanged By © @Dr_Asad_Ali
-# Rocks © @Shayri_Music_Lovers
-# Owner Asad Ali
-# Harshit Sharma
-# All rights reserved. © Alisha © Alexa © Yukki
 # Subscribe On YT Jankari Ki Duniya
 
 from motor.motor_asyncio import AsyncIOMotorClient as _mongo_client_
@@ -21,9 +15,9 @@ TEMP_MONGODB = ""
 
 
 if config.MONGO_DB_URI is None:
-    LOGGER(__name__).warning("No MONGO DB URL found. 😁")
+    LOGGER(__name__).warning("No MONGO DB URL found.")
     temp_client = Client(
-        "Fallen",
+        "Alexa",
         bot_token=config.BOT_TOKEN,
         api_id=config.API_ID,
         api_hash=config.API_HASH,
@@ -39,5 +33,5 @@ if config.MONGO_DB_URI is None:
 else:
     _mongo_async_ = _mongo_client_(config.MONGO_DB_URI)
     _mongo_sync_ = MongoClient(config.MONGO_DB_URI)
-    mongodb = _mongo_async_.Yukki
-    pymongodb = _mongo_sync_.Yukki
+    mongodb = _mongo_async_.Alexa
+    pymongodb = _mongo_sync_.Alexa
