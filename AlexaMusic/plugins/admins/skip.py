@@ -4,6 +4,7 @@
 # All rights reserved. © Alisha © Alexa © Yukki
 
 
+
 from pyrogram import filters
 from pyrogram.types import InlineKeyboardMarkup, Message
 
@@ -113,7 +114,7 @@ async def skip(cli, message: Message, _, chat_id):
             return await message.reply_text(_["call_9"])
         button = telegram_markup(_, chat_id)
         theme = await check_theme(chat_id)
-        img = await gen_thumb(videoid, theme)
+        img = await gen_thumb(videoid, theme, user_id)
         run = await message.reply_photo(
             photo=img,
             caption=_["stream_1"].format(
@@ -141,7 +142,7 @@ async def skip(cli, message: Message, _, chat_id):
             return await mystic.edit_text(_["call_9"])
         button = stream_markup(_, videoid, chat_id)
         theme = await check_theme(chat_id)
-        img = await gen_thumb(videoid, theme)
+        img = await gen_thumb(videoid, theme, user_id)
         run = await message.reply_photo(
             photo=img,
             caption=_["stream_1"].format(
@@ -196,7 +197,7 @@ async def skip(cli, message: Message, _, chat_id):
         else:
             button = stream_markup(_, videoid, chat_id)
             theme = await check_theme(chat_id)
-            img = await gen_thumb(videoid, theme)
+            img = await gen_thumb(videoid, theme, user_id)
             run = await message.reply_photo(
                 photo=img,
                 caption=_["stream_1"].format(
