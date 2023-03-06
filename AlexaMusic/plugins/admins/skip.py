@@ -4,7 +4,6 @@
 # All rights reserved. © Alisha © Alexa © Yukki
 
 
-
 from pyrogram import filters
 from pyrogram.types import InlineKeyboardMarkup, Message
 
@@ -16,20 +15,16 @@ from AlexaMusic.core.call import Alexa
 from AlexaMusic.misc import db
 from AlexaMusic.utils.database import get_loop
 from AlexaMusic.utils.decorators import AdminRightsCheck
-from AlexaMusic.utils.inline.play import (stream_markup,
-                                          telegram_markup,
-                                          close_keyboard)
+from AlexaMusic.utils.inline.play import stream_markup, telegram_markup, close_keyboard
 from AlexaMusic.utils.stream.autoclear import auto_clean
 from AlexaMusic.utils.thumbnails import gen_thumb
 
 # Commands
 SKIP_COMMAND = get_command("SKIP_COMMAND")
 
+
 @app.on_message(
-    filters.command(SKIP_COMMAND)
-    & filters.group
-    & ~filters.edited
-    & ~BANNED_USERS
+    filters.command(SKIP_COMMAND) & filters.group & ~filters.edited & ~BANNED_USERS
 )
 @AdminRightsCheck
 async def skip(cli, message: Message, _, chat_id):
@@ -51,32 +46,25 @@ async def skip(cli, message: Message, _, chat_id):
                             try:
                                 popped = check.pop(0)
                             except:
-                                return await message.reply_text(
-                                    _["admin_16"]
-                                )
+                                return await message.reply_text(_["admin_16"])
                             if popped:
-                                if (
-                                    config.AUTO_DOWNLOADS_CLEAR
-                                    == str(True)
-                                ):
+                                if config.AUTO_DOWNLOADS_CLEAR == str(True):
                                     await auto_clean(popped)
                             if not check:
                                 try:
                                     await message.reply_text(
                                         _["admin_10"].format(
                                             message.from_user.first_name,
-                                            message.chat.title
+                                            message.chat.title,
                                         ),
-                                        reply_markup=close_keyboard
+                                        reply_markup=close_keyboard,
                                     )
                                     await Alexa.stop_stream(chat_id)
                                 except:
                                     return
                                 break
                     else:
-                        return await message.reply_text(
-                            _["admin_15"].format(count)
-                        )
+                        return await message.reply_text(_["admin_15"].format(count))
                 else:
                     return await message.reply_text(_["admin_14"])
             else:
@@ -93,8 +81,10 @@ async def skip(cli, message: Message, _, chat_id):
                     await auto_clean(popped)
             if not check:
                 await message.reply_text(
-                    _["admin_10"].format(message.from_user.first_name, message.chat.title),
-                    reply_markup=close_keyboard
+                    _["admin_10"].format(
+                        message.from_user.first_name, message.chat.title
+                    ),
+                    reply_markup=close_keyboard,
                 )
                 try:
                     return await Alexa.stop_stream(chat_id)
@@ -103,8 +93,10 @@ async def skip(cli, message: Message, _, chat_id):
         except:
             try:
                 await message.reply_text(
-                    _["admin_10"].format(message.from_user.first_name, message.chat.title),
-                    reply_markup=close_keyboard
+                    _["admin_10"].format(
+                        message.from_user.first_name, message.chat.title
+                    ),
+                    reply_markup=close_keyboard,
                 )
                 return await Alexa.stop_stream(chat_id)
             except:
@@ -120,9 +112,7 @@ async def skip(cli, message: Message, _, chat_id):
     if "live_" in queued:
         n, link = await YouTube.video(videoid, True)
         if n == 0:
-            return await message.reply_text(
-                _["admin_11"].format(title)
-            )
+            return await message.reply_text(_["admin_11"].format(title))
         try:
             image = await YouTube.thumbnail(videoid, True)
         except:
@@ -145,9 +135,7 @@ async def skip(cli, message: Message, _, chat_id):
         db[chat_id][0]["mystic"] = run
         db[chat_id][0]["markup"] = "tg"
     elif "vid_" in queued:
-        mystic = await message.reply_text(
-            _["call_10"], disable_web_page_preview=True
-        )
+        mystic = await message.reply_text(_["call_10"], disable_web_page_preview=True)
         try:
             file_path, direct = await YouTube.download(
                 videoid,
@@ -170,11 +158,11 @@ async def skip(cli, message: Message, _, chat_id):
         run = await message.reply_photo(
             photo=img,
             caption=_["stream_1"].format(
-                    title[:27],
-                    f"https://t.me/{app.username}?start=info_{videoid}",
-                    duration_min,
-                    user,
-                ),
+                title[:27],
+                f"https://t.me/{app.username}?start=info_{videoid}",
+                duration_min,
+                user,
+            ),
             reply_markup=InlineKeyboardMarkup(button),
         )
         db[chat_id][0]["mystic"] = run
@@ -213,9 +201,7 @@ async def skip(cli, message: Message, _, chat_id):
                 photo=config.TELEGRAM_AUDIO_URL
                 if str(streamtype) == "audio"
                 else config.TELEGRAM_VIDEO_URL,
-                caption=_["stream_3"].format(
-                    title, check[0]["dur"], user
-                ),
+                caption=_["stream_3"].format(title, check[0]["dur"], user),
                 reply_markup=InlineKeyboardMarkup(button),
             )
             db[chat_id][0]["mystic"] = run
@@ -226,9 +212,7 @@ async def skip(cli, message: Message, _, chat_id):
                 photo=config.SOUNCLOUD_IMG_URL
                 if str(streamtype) == "audio"
                 else config.TELEGRAM_VIDEO_URL,
-                caption=_["stream_3"].format(
-                    title, check[0]["dur"], user
-                ),
+                caption=_["stream_3"].format(title, check[0]["dur"], user),
                 reply_markup=InlineKeyboardMarkup(button),
             )
             db[chat_id][0]["mystic"] = run
