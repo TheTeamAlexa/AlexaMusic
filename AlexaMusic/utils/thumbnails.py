@@ -37,7 +37,7 @@ def add_corners(im):
     im.putalpha(mask)
 
 
-async def gen_thumb(videoid, theme, user_id):
+async def gen_thumb(videoid, user_id, theme):
     if os.path.isfile(f"cache/{videoid}_{user_id}.png"):
         return f"cache/{videoid}_{user_id}.png"
     url = f"https://www.youtube.com/watch?v={videoid}"
@@ -142,15 +142,13 @@ async def gen_thumb(videoid, theme, user_id):
                 stroke_fill="black",
                 font=font,
             )
-            text_w, text_h = draw.textsize(
-                f"Alexa Music One Of The Most Advanced Telegram Music Bot", font=arial
-            )
+            text_w, text_h = draw.textsize(f"Alexa Music One Of The Most Advanced Telegram Music Bot", font=arial)
             draw.text(
                 ((1280 - text_w) / 2, 80),
                 f"Alexa Music One Of The Most Advanced Telegram Music Bot",
                 fill="white",
                 font=arial,
-            )
+            )            
             if para[0]:
                 text_w, text_h = draw.textsize(f"{para[0]}", font=font)
                 draw.text(
@@ -198,7 +196,7 @@ async def gen_thumb(videoid, theme, user_id):
         return YOUTUBE_IMG_URL
 
 
-async def gen_qthumb(videoid, theme, user_id):
+async def gen_qthumb(videoid, user_id, theme):
     if os.path.isfile(f"cache/que{videoid}_{user_id}.png"):
         return f"cache/que{videoid}_{user_id}.png"
     url = f"https://www.youtube.com/watch?v={videoid}"
@@ -303,9 +301,7 @@ async def gen_qthumb(videoid, theme, user_id):
                 stroke_fill="black",
                 font=font,
             )
-            text_w, text_h = draw.textsize(
-                f"Alexa Music One Of The Most Advanced Telegram Music Bot", font=arial
-            )
+            text_w, text_h = draw.textsize(f"Alexa Music One Of The Most Advanced Telegram Music Bot", font=arial)
             draw.text(
                 ((1280 - text_w) / 2, 80),
                 f"Alexa Music One Of The Most Advanced Telegram Music Bot",
