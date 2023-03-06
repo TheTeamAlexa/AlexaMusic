@@ -142,7 +142,11 @@ class Call(PyTgCalls):
             pass
 
     async def skip_stream(
-        self, chat_id: int, link: str, video: Union[bool, str] = None, image: Union[bool, str] = None
+        self,
+        chat_id: int,
+        link: str,
+        video: Union[bool, str] = None,
+        image: Union[bool, str] = None,
     ):
         assistant = await group_assistant(self, chat_id)
         audio_stream_quality = await get_audio_bitrate(chat_id)
@@ -168,10 +172,7 @@ class Call(PyTgCalls):
             stream,
         )
 
-
-    async def seek_stream(
-        self, chat_id, file_path, to_seek, duration, mode
-    ):
+    async def seek_stream(self, chat_id, file_path, to_seek, duration, mode):
         assistant = await group_assistant(self, chat_id)
         audio_stream_quality = await get_audio_bitrate(chat_id)
         video_stream_quality = await get_video_bitrate(chat_id)
@@ -205,7 +206,12 @@ class Call(PyTgCalls):
                     await app.unban_chat_member(chat_id, userbot.id)
                 except:
                     raise AssistantErr(
-                        _["call_2"].format(config.BOT_NAME, userbot.id, userbot.mention, userbot.username),
+                        _["call_2"].format(
+                            config.BOT_NAME,
+                            userbot.id,
+                            userbot.mention,
+                            userbot.username,
+                        ),
                     )
         except UserNotParticipant:
             chat = await app.get_chat(chat_id)
@@ -222,17 +228,9 @@ class Call(PyTgCalls):
                         try:
                             invitelink = chat.invite_link
                             if invitelink is None:
-                                invitelink = (
-                                    await app.export_chat_invite_link(
-                                        chat_id
-                                    )
-                                )
+                                invitelink = await app.export_chat_invite_link(chat_id)
                         except:
-                            invitelink = (
-                                await app.export_chat_invite_link(
-                                    chat_id
-                                )
-                            )
+                            invitelink = await app.export_chat_invite_link(chat_id)
                     except ChatAdminRequired:
                         raise AssistantErr(_["call_4"])
                     except Exception as e:
@@ -325,9 +323,7 @@ class Call(PyTgCalls):
             counter[chat_id] = {}
             users = len(await assistant.get_participants(chat_id))
             if users == 1:
-                autoend[chat_id] = datetime.now() + timedelta(
-                    minutes=AUTO_END_TIME
-                )
+                autoend[chat_id] = datetime.now() + timedelta(minutes=AUTO_END_TIME)
 
     async def change_stream(self, client, chat_id):
         check = db.get(chat_id)
@@ -419,17 +415,13 @@ class Call(PyTgCalls):
                 db[chat_id][0]["mystic"] = run
                 db[chat_id][0]["markup"] = "tg"
             elif "vid_" in queued:
-                mystic = await app.send_message(
-                    original_chat_id, _["call_10"]
-                )
+                mystic = await app.send_message(original_chat_id, _["call_10"])
                 try:
                     file_path, direct = await YouTube.download(
                         videoid,
                         mystic,
                         videoid=True,
-                        video=True
-                        if str(streamtype) == "video"
-                        else False,
+                        video=True if str(streamtype) == "video" else False,
                     )
                 except:
                     return await mystic.edit_text(
@@ -489,9 +481,7 @@ class Call(PyTgCalls):
                         video_parameters=video_stream_quality,
                     )
                     if str(streamtype) == "video"
-                    else AudioPiped(
-                        videoid, audio_parameters=audio_stream_quality
-                    )
+                    else AudioPiped(videoid, audio_parameters=audio_stream_quality)
                 )
                 try:
                     await client.change_stream(chat_id, stream)
@@ -552,9 +542,7 @@ class Call(PyTgCalls):
                         photo=config.TELEGRAM_AUDIO_URL
                         if str(streamtype) == "audio"
                         else config.TELEGRAM_VIDEO_URL,
-                        caption=_["stream_3"].format(
-                            title, check[0]["dur"], user
-                        ),
+                        caption=_["stream_3"].format(title, check[0]["dur"], user),
                         reply_markup=InlineKeyboardMarkup(button),
                     )
                     db[chat_id][0]["mystic"] = run
@@ -564,9 +552,7 @@ class Call(PyTgCalls):
                     run = await app.send_photo(
                         original_chat_id,
                         photo=config.SOUNCLOUD_IMG_URL,
-                        caption=_["stream_3"].format(
-                            title, check[0]["dur"], user
-                        ),
+                        caption=_["stream_3"].format(title, check[0]["dur"], user),
                         reply_markup=InlineKeyboardMarkup(button),
                     )
                     db[chat_id][0]["mystic"] = run
@@ -650,9 +636,9 @@ class Call(PyTgCalls):
         @self.four.on_participants_change()
         @self.five.on_participants_change()
         async def participants_change_handler(client, update: Update):
-            if not isinstance(
-                update, JoinedGroupCallParticipant
-            ) and not isinstance(update, LeftGroupCallParticipant):
+            if not isinstance(update, JoinedGroupCallParticipant) and not isinstance(
+                update, LeftGroupCallParticipant
+            ):
                 return
             chat_id = update.chat_id
             users = counter.get(chat_id)
@@ -663,9 +649,7 @@ class Call(PyTgCalls):
                     return
                 counter[chat_id] = got
                 if got == 1:
-                    autoend[chat_id] = datetime.now() + timedelta(
-                        minutes=AUTO_END_TIME
-                    )
+                    autoend[chat_id] = datetime.now() + timedelta(minutes=AUTO_END_TIME)
                     return
                 autoend[chat_id] = {}
             else:
@@ -676,9 +660,7 @@ class Call(PyTgCalls):
                 )
                 counter[chat_id] = final
                 if final == 1:
-                    autoend[chat_id] = datetime.now() + timedelta(
-                        minutes=AUTO_END_TIME
-                    )
+                    autoend[chat_id] = datetime.now() + timedelta(minutes=AUTO_END_TIME)
                     return
                 autoend[chat_id] = {}
 
