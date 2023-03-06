@@ -4,6 +4,7 @@
 # All rights reserved. © Alisha © Alexa © Yukki
 
 
+
 from pyrogram import filters
 from pyrogram.types import InlineKeyboardMarkup, Message
 
@@ -18,6 +19,7 @@ from AlexaMusic.utils.decorators import AdminRightsCheck
 from AlexaMusic.utils.inline.play import stream_markup, telegram_markup
 from AlexaMusic.utils.stream.autoclear import auto_clean
 from AlexaMusic.utils.thumbnails import gen_thumb
+from AlexaMusic.utils.theme import check_theme
 
 # Commands
 SKIP_COMMAND = get_command("SKIP_COMMAND")
@@ -99,6 +101,7 @@ async def skip(cli, message: Message, _, chat_id):
     queued = check[0]["file"]
     title = (check[0]["title"]).title()
     user = check[0]["by"]
+    theme = await check_theme(chat_id)
     streamtype = check[0]["streamtype"]
     videoid = check[0]["vidid"]
     user_id = check[0]["user_id"]

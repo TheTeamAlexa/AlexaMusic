@@ -37,6 +37,7 @@ from AlexaMusic.utils.formatters import seconds_to_min
 from AlexaMusic.utils.inline.play import panel_markup_1, stream_markup, telegram_markup
 from AlexaMusic.utils.stream.autoclear import auto_clean
 from AlexaMusic.utils.thumbnails import gen_thumb
+from AlexaMusic.utils.theme import check_theme
 
 wrong = {}
 
@@ -189,6 +190,7 @@ async def del_back_playlist(client, CallbackQuery, _):
                 return
         await CallbackQuery.answer()
         queued = check[0]["file"]
+        theme = await check_theme(chat_id)
         title = (check[0]["title"]).title()
         user = check[0]["by"]
         streamtype = check[0]["streamtype"]
