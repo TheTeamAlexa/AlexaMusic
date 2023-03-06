@@ -124,15 +124,9 @@ def telegram_markup(_, chat_id):
 
 
 ## By Anon
-close_keyboard = InlineKeyboardMarkup( 
-            [
-                [
-                    InlineKeyboardButton(
-                        text="〆 ᴄʟᴏsᴇ 〆", callback_data="close"
-                    )
-                ]    
-            ]
-        )
+close_keyboard = InlineKeyboardMarkup(
+    [[InlineKeyboardButton(text="〆 ᴄʟᴏsᴇ 〆", callback_data="close")]]
+)
 
 ## Search Query Inline
 
