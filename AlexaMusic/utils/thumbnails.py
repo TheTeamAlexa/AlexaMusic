@@ -45,7 +45,7 @@ async def gen_thumb(videoid, user_id, theme):
         results = VideosSearch(url, limit=1)
         for result in (await results.next())["result"]:
             try:
-                title = result["title"][:20]
+                title = result["title"][:30]
                 title = re.sub("\W+", " ", title)
                 title = title.title()
             except:
@@ -73,18 +73,14 @@ async def gen_thumb(videoid, user_id, theme):
 
         try:
             wxyz = await app.get_profile_photos(user_id)
-            wxy = await app.download_media(
-                wxyz[0]["file_id"], file_name=f"{user_id}.jpg"
-            )
+            wxy = await app.download_media(wxyz[0]['file_id'], file_name=f'{user_id}.jpg')
         except:
             hehe = await app.get_profile_photos(app.id)
-            wxy = await app.download_media(
-                hehe[0]["file_id"], file_name=f"{app.id}.jpg"
-            )
+            wxy = await app.download_media(hehe[0]['file_id'], file_name=f'{app.id}.jpg')
         xy = Image.open(wxy)
-        a = Image.new("L", [640, 640], 0)
+        a = Image.new('L', [640, 640], 0)
         b = ImageDraw.Draw(a)
-        b.pieslice([(0, 0), (640, 640)], 0, 360, fill=255, outline="white")
+        b.pieslice([(0, 0), (640,640)], 0, 360, fill = 255, outline = "white")
         c = np.array(xy)
         d = np.array(a)
         e = np.dstack((c, d))
@@ -131,7 +127,7 @@ async def gen_thumb(videoid, user_id, theme):
         ImageFont.truetype("assets/font2.ttf", 60)
         arial = ImageFont.truetype("assets/font2.ttf", 25)
         ImageFont.truetype("assets/font.ttf", 25)
-        para = textwrap.wrap(title, width=30)
+        para = textwrap.wrap(title, width=32)
         try:
             draw.text(
                 (450, 25),
@@ -144,21 +140,21 @@ async def gen_thumb(videoid, user_id, theme):
             if para[0]:
                 text_w, text_h = draw.textsize(f"{para[0]}", font=font)
                 draw.text(
-                    ((1280 - text_w) / 2, 530),
+                    ((1280 - text_w) / 2, 550),
                     f"{para[0]}",
                     fill="white",
                     stroke_width=1,
-                    stroke_fill="yellow",
+                    stroke_fill="black",
                     font=font,
                 )
             if para[1]:
                 text_w, text_h = draw.textsize(f"{para[1]}", font=font)
                 draw.text(
-                    ((1280 - text_w) / 2, 580),
+                    ((1280 - text_w) / 2, 600),
                     f"{para[1]}",
                     fill="white",
                     stroke_width=1,
-                    stroke_fill="yellow",
+                    stroke_fill="black",
                     font=font,
                 )
         except:
@@ -189,7 +185,7 @@ async def gen_qthumb(videoid, user_id, theme):
         results = VideosSearch(url, limit=1)
         for result in (await results.next())["result"]:
             try:
-                title = result["title"][:20]
+                title = result["title"][:30]
                 title = re.sub("\W+", " ", title)
                 title = title.title()
             except:
@@ -217,18 +213,14 @@ async def gen_qthumb(videoid, user_id, theme):
 
         try:
             wxyz = await app.get_profile_photos(user_id)
-            wxy = await app.download_media(
-                wxyz[0]["file_id"], file_name=f"{user_id}.jpg"
-            )
+            wxy = await app.download_media(wxyz[0]['file_id'], file_name=f'{user_id}.jpg')
         except:
             hehe = await app.get_profile_photos(app.id)
-            wxy = await app.download_media(
-                hehe[0]["file_id"], file_name=f"{app.id}.jpg"
-            )
+            wxy = await app.download_media(hehe[0]['file_id'], file_name=f'{app.id}.jpg')
         xy = Image.open(wxy)
-        a = Image.new("L", [640, 640], 0)
+        a = Image.new('L', [640, 640], 0)
         b = ImageDraw.Draw(a)
-        b.pieslice([(0, 0), (640, 640)], 0, 360, fill=255, outline="white")
+        b.pieslice([(0, 0), (640,640)], 0, 360, fill = 255, outline = "white")
         c = np.array(xy)
         d = np.array(a)
         e = np.dstack((c, d))
@@ -275,7 +267,7 @@ async def gen_qthumb(videoid, user_id, theme):
         ImageFont.truetype("assets/font2.ttf", 60)
         arial = ImageFont.truetype("assets/font2.ttf", 25)
         ImageFont.truetype("assets/font.ttf", 25)
-        para = textwrap.wrap(title, width=30)
+        para = textwrap.wrap(title, width=32)
         try:
             draw.text(
                 (455, 25),
@@ -288,21 +280,21 @@ async def gen_qthumb(videoid, user_id, theme):
             if para[0]:
                 text_w, text_h = draw.textsize(f"{para[0]}", font=font)
                 draw.text(
-                    ((1280 - text_w) / 2, 530),
+                    ((1280 - text_w) / 2, 550),
                     f"{para[0]}",
                     fill="white",
                     stroke_width=1,
-                    stroke_fill="yellow",
+                    stroke_fill="black",
                     font=font,
                 )
             if para[1]:
                 text_w, text_h = draw.textsize(f"{para[1]}", font=font)
                 draw.text(
-                    ((1280 - text_w) / 2, 580),
+                    ((1280 - text_w) / 2, 600),
                     f"{para[1]}",
                     fill="white",
                     stroke_width=1,
-                    stroke_fill="yellow",
+                    stroke_fill="black",
                     font=font,
                 )
         except:
