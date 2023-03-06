@@ -73,18 +73,14 @@ async def gen_thumb(videoid, user_id, theme):
 
         try:
             wxyz = await app.get_profile_photos(user_id)
-            wxy = await app.download_media(
-                wxyz[0]["file_id"], file_name=f"{user_id}.jpg"
-            )
+            wxy = await app.download_media(wxyz[0]['file_id'], file_name=f'{user_id}.jpg')
         except:
             hehe = await app.get_profile_photos(app.id)
-            wxy = await app.download_media(
-                hehe[0]["file_id"], file_name=f"{app.id}.jpg"
-            )
+            wxy = await app.download_media(hehe[0]['file_id'], file_name=f'{app.id}.jpg')
         xy = Image.open(wxy)
-        a = Image.new("L", [640, 640], 0)
+        a = Image.new('L', [640, 640], 0)
         b = ImageDraw.Draw(a)
-        b.pieslice([(0, 0), (640, 640)], 0, 360, fill=255, outline="white")
+        b.pieslice([(0, 0), (640,640)], 0, 360, fill = 255, outline = "white")
         c = np.array(xy)
         d = np.array(a)
         e = np.dstack((c, d))
@@ -133,8 +129,9 @@ async def gen_thumb(videoid, user_id, theme):
         ImageFont.truetype("assets/font.ttf", 25)
         para = textwrap.wrap(title, width=32)
         try:
+            text_w, text_h = draw.textsize(f"ALEXA MUSIC", font=arial)
             draw.text(
-                (450, 25),
+                ((1280 - text_w) / 2, 450),
                 f"ALEXA MUSIC",
                 fill="white",
                 stroke_width=3,
@@ -163,6 +160,13 @@ async def gen_thumb(videoid, user_id, theme):
                 )
         except:
             pass
+        text_w, text_h = draw.textsize(f"YouTube: Jankari Ki Duniya", font=arial)
+        draw.text(
+            ((1280 - text_w) / 2, 660),
+            f"YouTube: Jankari Ki Duniya",
+            fill="white",
+            font=arial,
+        )
         text_w, text_h = draw.textsize(f"Duration: {duration} Mins", font=arial)
         draw.text(
             ((1280 - text_w) / 2, 660),
@@ -217,18 +221,14 @@ async def gen_qthumb(videoid, user_id, theme):
 
         try:
             wxyz = await app.get_profile_photos(user_id)
-            wxy = await app.download_media(
-                wxyz[0]["file_id"], file_name=f"{user_id}.jpg"
-            )
+            wxy = await app.download_media(wxyz[0]['file_id'], file_name=f'{user_id}.jpg')
         except:
             hehe = await app.get_profile_photos(app.id)
-            wxy = await app.download_media(
-                hehe[0]["file_id"], file_name=f"{app.id}.jpg"
-            )
+            wxy = await app.download_media(hehe[0]['file_id'], file_name=f'{app.id}.jpg')
         xy = Image.open(wxy)
-        a = Image.new("L", [640, 640], 0)
+        a = Image.new('L', [640, 640], 0)
         b = ImageDraw.Draw(a)
-        b.pieslice([(0, 0), (640, 640)], 0, 360, fill=255, outline="white")
+        b.pieslice([(0, 0), (640,640)], 0, 360, fill = 255, outline = "white")
         c = np.array(xy)
         d = np.array(a)
         e = np.dstack((c, d))
@@ -307,6 +307,13 @@ async def gen_qthumb(videoid, user_id, theme):
                 )
         except:
             pass
+        text_w, text_h = draw.textsize(f"YouTube: Jankari Ki Duniya", font=arial)
+        draw.text(
+            ((1280 - text_w) / 2, 660),
+            f"YouTube: Jankari Ki Duniya",
+            fill="white",
+            font=arial,
+        )
         text_w, text_h = draw.textsize(f"Duration: {duration} Mins", font=arial)
         draw.text(
             ((1280 - text_w) / 2, 660),
