@@ -22,11 +22,13 @@ from AlexaMusic.utils.database import (
     music_on,
 )
 from AlexaMusic.utils.exceptions import AssistantErr
-from AlexaMusic.utils.inline.play import stream_markup, queue_markup, telegram_markup
+from AlexaMusic.utils.inline.play import (stream_markup, queue_markup,
+                                          telegram_markup)
 from AlexaMusic.utils.inline.playlist import close_markup
 from AlexaMusic.utils.pastebin import Alexabin
 from AlexaMusic.utils.stream.queue import put_queue, put_queue_index
 from AlexaMusic.utils.thumbnails import gen_thumb, gen_qthumb
+from AlexaMusic.utils.theme import check_theme
 
 
 async def stream(
@@ -110,6 +112,7 @@ async def stream(
                     "video" if video else "audio",
                     forceplay=forceplay,
                 )
+                theme = await check_theme(chat_id)
                 img = await gen_thumb(vidid, user_id, theme)
                 button = stream_markup(_, vidid, chat_id)
                 run = await app.send_photo(
@@ -164,8 +167,9 @@ async def stream(
                 user_id,
                 "video" if video else "audio",
             )
+            theme = await check_theme(chat_id)
             position = len(db.get(chat_id)) - 1
-            qimg = await gen_thumb(vidid, user_id, theme)
+            qimg = await gen_qthumb(vidid, user_id, theme)
             button = queue_markup(_, vidid, chat_id)
             run = await app.send_photo(
                 original_chat_id,
@@ -191,6 +195,7 @@ async def stream(
                 "video" if video else "audio",
                 forceplay=forceplay,
             )
+            theme = await check_theme(chat_id)
             img = await gen_thumb(vidid, user_id, theme)
             button = stream_markup(_, vidid, chat_id)
             run = await app.send_photo(
@@ -342,6 +347,7 @@ async def stream(
                 "video" if video else "audio",
                 forceplay=forceplay,
             )
+            theme = await check_theme(chat_id)
             img = await gen_thumb(vidid, user_id, theme)
             button = telegram_markup(_, chat_id)
             run = await app.send_photo(
