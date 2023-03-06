@@ -22,8 +22,7 @@ from AlexaMusic.utils.database import (
     music_on,
 )
 from AlexaMusic.utils.exceptions import AssistantErr
-from AlexaMusic.utils.inline.play import (stream_markup, queue_markup,
-                                          telegram_markup)
+from AlexaMusic.utils.inline.play import stream_markup, queue_markup, telegram_markup
 from AlexaMusic.utils.inline.playlist import close_markup
 from AlexaMusic.utils.pastebin import Alexabin
 from AlexaMusic.utils.stream.queue import put_queue, put_queue_index
