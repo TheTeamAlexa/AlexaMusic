@@ -1,11 +1,6 @@
 #
 # Copyright (C) 2021-2022 by Alexa_Help@Github, < https://github.com/Jankarikiduniya >.
 # A Powerful Music Bot Property Of Rocks Indian Largest Chatting Group
-
-# Kanged By © @Dr_Asad_Ali
-# Rocks © @Shayri_Music_Lovers
-# Owner Asad Ali
-# Harshit Sharma
 # All rights reserved. © Alisha © Alexa © Yukki
 
 
@@ -27,11 +22,12 @@ from AlexaMusic.utils.database import (
     music_on,
 )
 from AlexaMusic.utils.exceptions import AssistantErr
-from AlexaMusic.utils.inline.play import stream_markup, telegram_markup
+from AlexaMusic.utils.inline.play import (stream_markup, queue_markup,
+                                          telegram_markup)
 from AlexaMusic.utils.inline.playlist import close_markup
 from AlexaMusic.utils.pastebin import Alexabin
 from AlexaMusic.utils.stream.queue import put_queue, put_queue_index
-from AlexaMusic.utils.thumbnails import gen_thumb
+from AlexaMusic.utils.thumbnails import gen_thumb, gen_qthumb
 
 
 async def stream(
@@ -115,7 +111,7 @@ async def stream(
                     "video" if video else "audio",
                     forceplay=forceplay,
                 )
-                img = await gen_thumb(vidid)
+                img = await gen_thumb(vidid, user_id, theme)
                 button = stream_markup(_, vidid, chat_id)
                 run = await app.send_photo(
                     original_chat_id,
@@ -170,9 +166,15 @@ async def stream(
                 "video" if video else "audio",
             )
             position = len(db.get(chat_id)) - 1
-            await app.send_message(
+            qimg = await gen_thumb(vidid, user_id, theme)
+            button = queue_markup(_, vidid, chat_id)
+            run = await app.send_photo(
                 original_chat_id,
-                _["queue_4"].format(position, title[:30], duration_min, user_name),
+                photo=qimg,
+                caption=_["queue_4"].format(
+                    position, title[:27], duration_min, user_name
+                ),
+                reply_markup=InlineKeyboardMarkup(button),
             )
         else:
             if not forceplay:
@@ -190,7 +192,7 @@ async def stream(
                 "video" if video else "audio",
                 forceplay=forceplay,
             )
-            img = await gen_thumb(vidid)
+            img = await gen_thumb(vidid, user_id, theme)
             button = stream_markup(_, vidid, chat_id)
             run = await app.send_photo(
                 original_chat_id,
@@ -341,7 +343,7 @@ async def stream(
                 "video" if video else "audio",
                 forceplay=forceplay,
             )
-            img = await gen_thumb(vidid)
+            img = await gen_thumb(vidid, user_id, theme)
             button = telegram_markup(_, chat_id)
             run = await app.send_photo(
                 original_chat_id,
