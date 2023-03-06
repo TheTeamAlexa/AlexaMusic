@@ -16,7 +16,7 @@ from PIL import Image, ImageChops, ImageDraw, ImageEnhance, ImageFilter, ImageFo
 from youtubesearchpython.__future__ import VideosSearch
 
 from config import YOUTUBE_IMG_URL
-from FallenX import app
+from AlexaMusic import app
 
 
 def changeImageSize(maxWidth, maxHeight, image):
