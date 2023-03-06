@@ -22,8 +22,7 @@ from AlexaMusic.utils.database import (
     music_on,
 )
 from AlexaMusic.utils.exceptions import AssistantErr
-from AlexaMusic.utils.inline.play import (stream_markup, queue_markup,
-                                          telegram_markup)
+from AlexaMusic.utils.inline.play import stream_markup, queue_markup, telegram_markup
 from AlexaMusic.utils.inline.playlist import close_markup
 from AlexaMusic.utils.pastebin import Alexabin
 from AlexaMusic.utils.stream.queue import put_queue, put_queue_index
@@ -112,7 +111,7 @@ async def stream(
                     "video" if video else "audio",
                     forceplay=forceplay,
                 )
-                theme = await check_theme(chat_id)               
+                theme = await check_theme(chat_id)
                 img = await gen_thumb(vidid, user_id, theme)
                 button = stream_markup(_, vidid, chat_id)
                 run = await app.send_photo(
