@@ -135,7 +135,7 @@ async def gen_thumb(videoid, user_id, theme):
         try:
             text_w, text_h = draw.textsize(f"ALEXA MUSIC", font=arial)
             draw.text(
-                ((1280 - text_w) / 2, 450),
+                ((1280 - text_w) / 2, 100),
                 f"ALEXA MUSIC",
                 fill="white",
                 stroke_width=3,
@@ -166,7 +166,7 @@ async def gen_thumb(videoid, user_id, theme):
             pass
         text_w, text_h = draw.textsize(f"YouTube: Jankari Ki Duniya", font=arial)
         draw.text(
-            ((1280 - text_w) / 2, 660),
+            ((1280 - text_w) / 2, 630),
             f"YouTube: Jankari Ki Duniya",
             fill="white",
             font=arial,
@@ -317,7 +317,7 @@ async def gen_qthumb(videoid, user_id, theme):
             pass
         text_w, text_h = draw.textsize(f"YouTube: Jankari Ki Duniya", font=arial)
         draw.text(
-            ((1280 - text_w) / 2, 660),
+            ((1280 - text_w) / 2, 630),
             f"YouTube: Jankari Ki Duniya",
             fill="white",
             font=arial,
