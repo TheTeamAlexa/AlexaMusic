@@ -29,7 +29,7 @@ QUEUE_COMMAND = get_command("QUEUE_COMMAND")
 basic = {}
 
 
-def gen_thumb(videoid, user_id, theme)
+def gen_thumb(videoid, user_id, theme):
     if os.path.isfile(f"cache/{videoid}.png"):
         return f"cache/{videoid}.png"
     else:
