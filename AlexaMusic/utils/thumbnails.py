@@ -72,14 +72,18 @@ async def gen_thumb(videoid, user_id, theme):
 
         try:
             wxyz = await app.get_profile_photos(user_id)
-            wxy = await app.download_media(wxyz[0]['file_id'], file_name=f'{user_id}.jpg')
+            wxy = await app.download_media(
+                wxyz[0]["file_id"], file_name=f"{user_id}.jpg"
+            )
         except:
             hehe = await app.get_profile_photos(app.id)
-            wxy = await app.download_media(hehe[0]['file_id'], file_name=f'{app.id}.jpg')
+            wxy = await app.download_media(
+                hehe[0]["file_id"], file_name=f"{app.id}.jpg"
+            )
         xy = Image.open(wxy)
-        a = Image.new('L', [640, 640], 0)
+        a = Image.new("L", [640, 640], 0)
         b = ImageDraw.Draw(a)
-        b.pieslice([(0, 0), (640,640)], 0, 360, fill = 255, outline = "white")
+        b.pieslice([(0, 0), (640, 640)], 0, 360, fill=255, outline="white")
         c = np.array(xy)
         d = np.array(a)
         e = np.dstack((c, d))
@@ -212,14 +216,18 @@ async def gen_qthumb(videoid, user_id, theme):
 
         try:
             wxyz = await app.get_profile_photos(user_id)
-            wxy = await app.download_media(wxyz[0]['file_id'], file_name=f'{user_id}.jpg')
+            wxy = await app.download_media(
+                wxyz[0]["file_id"], file_name=f"{user_id}.jpg"
+            )
         except:
             hehe = await app.get_profile_photos(app.id)
-            wxy = await app.download_media(hehe[0]['file_id'], file_name=f'{app.id}.jpg')
+            wxy = await app.download_media(
+                hehe[0]["file_id"], file_name=f"{app.id}.jpg"
+            )
         xy = Image.open(wxy)
-        a = Image.new('L', [640, 640], 0)
+        a = Image.new("L", [640, 640], 0)
         b = ImageDraw.Draw(a)
-        b.pieslice([(0, 0), (640,640)], 0, 360, fill = 255, outline = "white")
+        b.pieslice([(0, 0), (640, 640)], 0, 360, fill=255, outline="white")
         c = np.array(xy)
         d = np.array(a)
         e = np.dstack((c, d))
