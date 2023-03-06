@@ -4,6 +4,7 @@
 # All rights reserved. © Alisha © Alexa © Yukki
 
 
+
 from pyrogram import filters
 from pyrogram.types import InlineKeyboardMarkup, Message
 
@@ -102,7 +103,6 @@ async def skip(cli, message: Message, _, chat_id):
     user = check[0]["by"]
     streamtype = check[0]["streamtype"]
     videoid = check[0]["vidid"]
-    user_id = check[0]["user_id"]
     status = True if str(streamtype) == "video" else None
     if "live_" in queued:
         n, link = await YouTube.video(videoid, True)
