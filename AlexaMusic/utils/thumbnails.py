@@ -133,24 +133,22 @@ async def gen_thumb(videoid, user_id, theme):
         ImageFont.truetype("assets/font.ttf", 25)
         para = textwrap.wrap(title, width=32)
         try:
-            text_w, text_h = draw.textsize(f"ALEXA MUSIC", font=arial)
+            text_w, text_h = draw.textsize(f"ALEXA MUSIC IS PLAYING OP", font=arial)
             draw.text(
                 ((1280 - text_w) / 2, 40),
-                f"ALEXA MUSIC",
+                f"ALEXA MUSIC IS PLAYING OP",
                 fill="white",
                 stroke_width=3,
                 stroke_fill="black",
                 font=font,
             )
-            text_w, text_h = draw.textsize(
-                f"Alexa Music One Of The Most Advanced Telegram Music Bot", font=arial
-            )
+            text_w, text_h = draw.textsize(f"Alexa Music One Of The Most Advanced Telegram Music Bot", font=arial)
             draw.text(
                 ((1280 - text_w) / 2, 80),
                 f"Alexa Music One Of The Most Advanced Telegram Music Bot",
                 fill="white",
                 font=arial,
-            )
+            )            
             if para[0]:
                 text_w, text_h = draw.textsize(f"{para[0]}", font=font)
                 draw.text(
@@ -294,18 +292,16 @@ async def gen_qthumb(videoid, user_id, theme):
         ImageFont.truetype("assets/font.ttf", 25)
         para = textwrap.wrap(title, width=32)
         try:
-            text_w, text_h = draw.textsize(f"ADDED TO QUEUE", font=arial)
+            text_w, text_h = draw.textsize(f"ALEXA ADDED THIS SONG TO QUEUE", font=arial)
             draw.text(
                 ((1280 - text_w) / 2, 40),
-                f"ADDED TO QUEUE",
+                f"ALEXA ADDED THIS SONG TO QUEUE",
                 fill="white",
                 stroke_width=3,
                 stroke_fill="black",
                 font=font,
             )
-            text_w, text_h = draw.textsize(
-                f"Alexa Music One Of The Most Advanced Telegram Music Bot", font=arial
-            )
+            text_w, text_h = draw.textsize(f"Alexa Music One Of The Most Advanced Telegram Music Bot", font=arial)
             draw.text(
                 ((1280 - text_w) / 2, 80),
                 f"Alexa Music One Of The Most Advanced Telegram Music Bot",
