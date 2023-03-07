@@ -190,14 +190,13 @@ async def del_back_playlist(client, CallbackQuery, _):
                 return
         await CallbackQuery.answer()
         queued = check[0]["file"]
-        theme = await check_theme(chat_id)
         title = (check[0]["title"]).title()
         user = check[0]["by"]
         streamtype = check[0]["streamtype"]
         videoid = check[0]["vidid"]
         user_id = check[0]["user_id"]
-        duration_min = check[0]["dur"]
         status = True if str(streamtype) == "video" else None
+        db[chat_id][0]["played"] = 0
         if "live_" in queued:
             n, link = await YouTube.video(videoid, True)
             if n == 0:
@@ -209,6 +208,7 @@ async def del_back_playlist(client, CallbackQuery, _):
             except Exception:
                 return await CallbackQuery.message.reply_text(_["call_9"])
             button = telegram_markup(_, chat_id)
+            theme = await check_theme(chat_id)
             img = await gen_thumb(videoid, user_id, theme)
             run = await CallbackQuery.message.reply_photo(
                 photo=img,
@@ -239,6 +239,7 @@ async def del_back_playlist(client, CallbackQuery, _):
             except Exception:
                 return await mystic.edit_text(_["call_9"])
             button = stream_markup(_, videoid, chat_id)
+            theme = await check_theme(chat_id)
             img = await gen_thumb(videoid, user_id, theme)
             run = await CallbackQuery.message.reply_photo(
                 photo=img,
@@ -295,6 +296,7 @@ async def del_back_playlist(client, CallbackQuery, _):
                 db[chat_id][0]["markup"] = "tg"
             else:
                 button = stream_markup(_, videoid, chat_id)
+                theme = await check_theme(chat_id)
                 img = await gen_thumb(videoid, user_id, theme)
                 run = await CallbackQuery.message.reply_photo(
                     photo=img,
