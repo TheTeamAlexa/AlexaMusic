@@ -208,7 +208,7 @@ async def del_back_playlist(client, CallbackQuery, _):
                 await Alexa.skip_stream(chat_id, link, video=status)
             except Exception:
                 return await CallbackQuery.message.reply_text(_["call_9"])
-            theme = await check_theme(chat_id)    
+            theme = await check_theme(chat_id)
             button = telegram_markup(_, chat_id)
             img = await gen_thumb(videoid, user_id, theme)
             run = await CallbackQuery.message.reply_photo(
@@ -239,7 +239,7 @@ async def del_back_playlist(client, CallbackQuery, _):
                 await Alexa.skip_stream(chat_id, file_path, video=status)
             except Exception:
                 return await mystic.edit_text(_["call_9"])
-            theme = await check_theme(chat_id)    
+            theme = await check_theme(chat_id)
             button = stream_markup(_, videoid, chat_id)
             img = await gen_thumb(videoid, user_id, theme)
             run = await CallbackQuery.message.reply_photo(
