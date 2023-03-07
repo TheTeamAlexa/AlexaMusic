@@ -4,6 +4,7 @@
 # All rights reserved. © Alisha © Alexa © Yukki
 
 
+
 from pyrogram import filters
 from pyrogram.types import InlineKeyboardMarkup, Message
 
@@ -100,7 +101,8 @@ async def skip(cli, message: Message, _, chat_id):
     queued = check[0]["file"]
     title = (check[0]["title"]).title()
     user = check[0]["by"]
-    user_id = check[0]["user_id"]
+    theme = await check_theme(chat_id)
+    user_id = message.from_user.id
     streamtype = check[0]["streamtype"]
     videoid = check[0]["vidid"]
     status = True if str(streamtype) == "video" else None
@@ -112,8 +114,8 @@ async def skip(cli, message: Message, _, chat_id):
             await Alexa.skip_stream(chat_id, link, video=status)
         except Exception:
             return await message.reply_text(_["call_9"])
-        button = telegram_markup(_, chat_id)
         theme = await check_theme(chat_id)
+        button = telegram_markup(_, chat_id)
         img = await gen_thumb(videoid, user_id, theme)
         run = await message.reply_photo(
             photo=img,
@@ -140,8 +142,8 @@ async def skip(cli, message: Message, _, chat_id):
             await Alexa.skip_stream(chat_id, file_path, video=status)
         except Exception:
             return await mystic.edit_text(_["call_9"])
-        button = stream_markup(_, videoid, chat_id)
         theme = await check_theme(chat_id)
+        button = stream_markup(_, videoid, chat_id)
         img = await gen_thumb(videoid, user_id, theme)
         run = await message.reply_photo(
             photo=img,
@@ -195,8 +197,8 @@ async def skip(cli, message: Message, _, chat_id):
             db[chat_id][0]["mystic"] = run
             db[chat_id][0]["markup"] = "tg"
         else:
-            button = stream_markup(_, videoid, chat_id)
             theme = await check_theme(chat_id)
+            button = stream_markup(_, videoid, chat_id)
             img = await gen_thumb(videoid, user_id, theme)
             run = await message.reply_photo(
                 photo=img,
