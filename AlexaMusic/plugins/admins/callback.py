@@ -195,6 +195,7 @@ async def del_back_playlist(client, CallbackQuery, _):
         streamtype = check[0]["streamtype"]
         videoid = check[0]["vidid"]
         user_id = check[0]["user_id"]
+        theme = await check_theme(chat_id)
         status = True if str(streamtype) == "video" else None
         db[chat_id][0]["played"] = 0
         if "live_" in queued:
