@@ -337,7 +337,7 @@ class Call(PyTgCalls):
             streamtype = check[0]["streamtype"]
             audio_stream_quality = await get_audio_bitrate(chat_id)
             video_stream_quality = await get_video_bitrate(chat_id)
-            videoid = check[0]["vidid"]            
+            videoid = check[0]["vidid"]
             user_id = check[0]["user_id"]
             check[0]["played"] = 0
             if "live_" in queued:
@@ -363,7 +363,7 @@ class Call(PyTgCalls):
                         original_chat_id,
                         text=_["call_9"],
                     )
-                theme = await check_theme(chat_id)     
+                theme = await check_theme(chat_id)
                 img = await gen_thumb(videoid, user_id, theme)
                 button = telegram_markup(_, chat_id)
                 run = await app.send_photo(
@@ -409,7 +409,7 @@ class Call(PyTgCalls):
                         original_chat_id,
                         text=_["call_9"],
                     )
-                theme = await check_theme(chat_id)    
+                theme = await check_theme(chat_id)
                 img = await gen_thumb(videoid, user_id, theme)
                 button = stream_markup(_, videoid, chat_id)
                 await mystic.delete()
