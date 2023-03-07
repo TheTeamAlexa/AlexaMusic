@@ -4,6 +4,7 @@
 # All rights reserved. © Alisha © Alexa © Yukki
 
 
+
 from pyrogram import filters
 from pyrogram.types import InlineKeyboardMarkup, Message
 
@@ -100,7 +101,7 @@ async def skip(cli, message: Message, _, chat_id):
     queued = check[0]["file"]
     title = (check[0]["title"]).title()
     user = check[0]["by"]
-    user_id = db[afk]["user_id"]
+    user_id = check[0]["user_id"]
     streamtype = check[0]["streamtype"]
     videoid = check[0]["vidid"]
     status = True if str(streamtype) == "video" else None
@@ -141,7 +142,6 @@ async def skip(cli, message: Message, _, chat_id):
         except Exception:
             return await mystic.edit_text(_["call_9"])
         button = stream_markup(_, videoid, chat_id)
-        user_id = db[afk]["user_id"]
         theme = await check_theme(chat_id)
         img = await gen_thumb(videoid, user_id, theme)
         run = await message.reply_photo(
@@ -198,7 +198,6 @@ async def skip(cli, message: Message, _, chat_id):
         else:
             button = stream_markup(_, videoid, chat_id)
             theme = await check_theme(chat_id)
-            user_id = db[afk]["user_id"]
             img = await gen_thumb(videoid, user_id, theme)
             run = await message.reply_photo(
                 photo=img,
