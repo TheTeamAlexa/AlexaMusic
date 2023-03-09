@@ -137,7 +137,7 @@ async def gen_thumb(videoid, user_id, theme):
             draw.text(
                 ((1280 - text_w) / 2, 30),
                 f"ALEXA MUSIC IS PLAYING OP",
-                fill="white",
+                fill="red",
                 stroke_width=3,
                 stroke_fill="black",
                 font=font,
@@ -146,9 +146,9 @@ async def gen_thumb(videoid, user_id, theme):
                 f"Alexa Music One Of The Most Advanced Telegram Music Bot", font=arial
             )
             draw.text(
-                ((1280 - text_w) / 2, 75),
+                ((1280 - text_w) / 2, 80),
                 f"Alexa Music One Of The Most Advanced Telegram Music Bot",
-                fill="white",
+                fill="green",
                 font=arial,
             )
             if para[0]:
@@ -156,7 +156,7 @@ async def gen_thumb(videoid, user_id, theme):
                 draw.text(
                     ((1280 - text_w) / 2, 550),
                     f"{para[0]}",
-                    fill="white",
+                    fill="yellow",
                     stroke_width=1,
                     stroke_fill="black",
                     font=font,
@@ -184,7 +184,7 @@ async def gen_thumb(videoid, user_id, theme):
         draw.text(
             ((1280 - text_w) / 2, 660),
             f"Duration: {duration} Mins",
-            fill="white",
+            fill="black",
             font=arial,
         )
         try:
@@ -298,7 +298,7 @@ async def gen_qthumb(videoid, user_id, theme):
             draw.text(
                 ((1280 - text_w) / 2, 30),
                 f"ALEXA ADDED THIS SONG TO QUEUE",
-                fill="white",
+                fill="red",
                 stroke_width=3,
                 stroke_fill="black",
                 font=font,
@@ -307,9 +307,9 @@ async def gen_qthumb(videoid, user_id, theme):
                 f"Alexa Music One Of The Most Advanced Telegram Music Bot", font=arial
             )
             draw.text(
-                ((1280 - text_w) / 2, 75),
+                ((1280 - text_w) / 2, 80),
                 f"Alexa Music One Of The Most Advanced Telegram Music Bot",
-                fill="white",
+                fill="green",
                 font=arial,
             )
             if para[0]:
@@ -317,7 +317,7 @@ async def gen_qthumb(videoid, user_id, theme):
                 draw.text(
                     ((1280 - text_w) / 2, 550),
                     f"{para[0]}",
-                    fill="white",
+                    fill="yellow",
                     stroke_width=1,
                     stroke_fill="black",
                     font=font,
@@ -345,7 +345,7 @@ async def gen_qthumb(videoid, user_id, theme):
         draw.text(
             ((1280 - text_w) / 2, 660),
             f"Duration: {duration} Mins",
-            fill="white",
+            fill="black",
             font=arial,
         )
 
