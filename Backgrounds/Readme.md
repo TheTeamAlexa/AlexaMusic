@@ -1,4 +1,4 @@
-Finally on 7th March @TheTeamAlexa made random thumbnails picking for YouTube images for playing song on your Telegram Voice chat this code is originally belong to (C) Team Yukki and optimized by Anonymous make sure to star all projects when you are trying to modify you can join our grou given below thanks for using Alexa Music
+Finally, on March 7th, [@TheTeamAlexa](https://github.com/TheTeamAlexa) made random thumbnail picks for YouTube images to play songs on your Telegram Voice chat. This code originally belongs to (C) Team Yukki and was optimized by Anonymous. Make sure to star all projects when you try to modify them. You can join our group below. Thank you for using Alexa Music.
 <details>
 <summary><b>sᴜᴘᴘᴏʀᴛ</b></summary>
 <br>
