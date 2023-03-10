@@ -21,19 +21,13 @@ from AlexaMusic.utils import Alexabin, get_channeplayCB, seconds_to_min
 from AlexaMusic.utils.database import get_cmode, is_active_chat, is_music_playing
 from AlexaMusic.utils.decorators.language import language, languageCB
 from AlexaMusic.utils.inline import queue_back_markup, queue_markup
+from AlexaMusic.utils.thumbnails import gen_thumb
 from AlexaMusic.utils.theme import check_theme
 
 ###Commands
 QUEUE_COMMAND = get_command("QUEUE_COMMAND")
 
 basic = {}
-
-
-def gen_thumb(videoid, user_id, theme):
-    if os.path.isfile(f"cache/{videoid}.png"):
-        return f"cache/{videoid}.png"
-    else:
-        return config.YOUTUBE_IMG_URL
 
 
 def get_duration(playing):
