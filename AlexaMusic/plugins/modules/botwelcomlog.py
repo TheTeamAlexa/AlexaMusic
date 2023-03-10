@@ -1,5 +1,5 @@
 # This code is written by (C) TheTeamAlexa bot will send message to log group when someone add
-# this bot to new group make sure to star all projects 
+# this bot to new group make sure to star all projects
 # Copyright (C) 2021-2022 by Alexa_Help@ Github, < TheTeamAlexa >.
 # A Powerful Music Bot Property Of Rocks Indian Largest Chatting Group
 # All rights reserved. © Alisha © Alexa © Yukki
@@ -13,6 +13,7 @@ from config import LOG_GROUP_ID
 
 async def lul_message(chat_id: int, message: str):
     await app.send_message(chat_id=chat_id, text=message)
+
 
 @app.on_message(filters.new_chat_members)
 async def on_new_chat_members(client: Client, message: Message):
