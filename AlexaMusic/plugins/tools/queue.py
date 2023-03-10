@@ -21,13 +21,18 @@ from AlexaMusic.utils import Alexabin, get_channeplayCB, seconds_to_min
 from AlexaMusic.utils.database import get_cmode, is_active_chat, is_music_playing
 from AlexaMusic.utils.decorators.language import language, languageCB
 from AlexaMusic.utils.inline import queue_back_markup, queue_markup
-from AlexaMusic.utils.thumbnails import gen_thumb
-from AlexaMusic.utils.theme import check_theme
 
 ###Commands
 QUEUE_COMMAND = get_command("QUEUE_COMMAND")
 
 basic = {}
+
+
+def get_image(videoid):
+    if os.path.isfile(f"cache/{videoid}.png"):
+        return f"cache/{videoid}.png"
+    else:
+        return config.YOUTUBE_IMG_URL
 
 
 def get_duration(playing):
@@ -62,17 +67,15 @@ async def ping_com(client, message: Message, _):
     if not got:
         return await message.reply_text(_["queue_2"])
     file = got[0]["file"]
-    theme = await check_theme(chat_id)
     videoid = got[0]["vidid"]
     user = got[0]["by"]
-    user_id = got[0].get("user_id")
     title = (got[0]["title"]).title()
     typo = (got[0]["streamtype"]).title()
     DUR = get_duration(got)
     if "live_" in file:
-        IMAGE = gen_thumb(videoid, user_id, theme)
+        IMAGE = get_image(videoid)
     elif "vid_" in file:
-        IMAGE = gen_thumb(videoid, user_id, theme)
+        IMAGE = get_image(videoid)
     elif "index_" in file:
         IMAGE = config.STREAM_IMG_URL
     else:
@@ -85,7 +88,7 @@ async def ping_com(client, message: Message, _):
         elif videoid == "soundcloud":
             IMAGE = config.SOUNCLOUD_IMG_URL
         else:
-            IMAGE = gen_thumb(videoid, user_id, theme)
+            IMAGE = get_image(videoid)
     send = (
         "**⌛️ᴅᴜʀᴀᴛɪᴏɴ:** ᴜɴᴋɴᴏᴡɴ ᴅᴜʀᴀᴛɪᴏɴ sᴛʀᴇᴀᴍ\n\nᴄʟɪᴄᴋ ᴏɴ ʙᴇʟᴏᴡ ʙᴜᴛᴛᴏɴ ᴛᴏ ᴡʜᴏʟᴇ ǫᴜᴇᴜᴇᴅ ʟɪsᴛ."
         if DUR == "Unknown"
@@ -93,10 +96,10 @@ async def ping_com(client, message: Message, _):
     )
     cap = f"""**{config.MUSIC_BOT_NAME} ᴩʟᴀʏᴇʀ**
 
-📌**ᴛɪᴛʟᴇ:** {title}
+📌 **ᴛɪᴛʟᴇ:** {title}
 
-🍒**ᴛʏᴩᴇ:** {typo}
-💖**ʀᴇǫᴜᴇsᴛᴇᴅ ʙʏ:** {user}
+🍒 **ᴛʏᴩᴇ:** {typo}
+💖 **ʀᴇǫᴜᴇsᴛᴇᴅ ʙʏ:** {user}
 {send}"""
     upl = (
         queue_markup(_, DUR, "c" if cplay else "g", videoid)
@@ -214,17 +217,15 @@ async def queue_back(client, CallbackQuery: CallbackQuery, _):
         return await CallbackQuery.answer(_["queue_2"], show_alert=True)
     await CallbackQuery.answer(_["set_cb_8"], show_alert=True)
     file = got[0]["file"]
-    theme = await check_theme(chat_id)
     videoid = got[0]["vidid"]
     user = got[0]["by"]
-    user_id = got[0].get("user_id")
     title = (got[0]["title"]).title()
     typo = (got[0]["streamtype"]).title()
     DUR = get_duration(got)
     if "live_" in file:
-        IMAGE = gen_thumb(videoid, user_id, theme)
+        IMAGE = get_image(videoid)
     elif "vid_" in file:
-        IMAGE = gen_thumb(videoid, user_id, theme)
+        IMAGE = get_image(videoid)
     elif "index_" in file:
         IMAGE = config.STREAM_IMG_URL
     else:
@@ -237,7 +238,7 @@ async def queue_back(client, CallbackQuery: CallbackQuery, _):
         elif videoid == "soundcloud":
             IMAGE = config.SOUNCLOUD_IMG_URL
         else:
-            IMAGE = gen_thumb(videoid, user_id, theme)
+            IMAGE = get_image(videoid)
     send = (
         "**⌛️ᴅᴜʀᴀᴛɪᴏɴ:** ᴜɴᴋɴᴏᴡɴ ᴅᴜʀᴀᴛɪᴏɴ sᴛʀᴇᴀᴍ\n\nᴄʟɪᴄᴋ ᴏɴ ʙᴜᴛᴛᴏɴ ʙᴇʟᴏᴡ ᴛᴏ ɢᴇᴛ ᴡʜᴏʟᴇ ǫᴜᴇᴜᴇᴅ ʟɪsᴛ."
         if DUR == "Unknown"
