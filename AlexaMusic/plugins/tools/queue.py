@@ -246,10 +246,10 @@ async def queue_back(client, CallbackQuery: CallbackQuery, _):
     )
     cap = f"""**{config.MUSIC_BOT_NAME} ᴩʟᴀʏᴇʀ**
 
-📌**ᴛɪᴛʟᴇ:** {title}
+📌 **ᴛɪᴛʟᴇ:** {title}
 
-🍒**ᴛʏᴩᴇ:** {typo}
-💖**ʀᴇǫᴜᴇsᴛᴇᴅ ʙʏ:** {user}
+🍒 **ᴛʏᴩᴇ:** {typo}
+💖 **ʀᴇǫᴜᴇsᴛᴇᴅ ʙʏ:** {user}
 {send}"""
     upl = (
         queue_markup(_, DUR, cplay, videoid)
