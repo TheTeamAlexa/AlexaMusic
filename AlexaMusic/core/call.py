@@ -207,7 +207,7 @@ class Call(PyTgCalls):
                 except:
                     raise AssistantErr(
                         _["call_2"].format(
-                            config.BOT_NAME,
+                            config.MUSIC_BOT_NAME,
                             userbot.id,
                             userbot.mention,
                             userbot.username,
@@ -244,7 +244,7 @@ class Call(PyTgCalls):
                         )
                     await asyncio.sleep(1)
                     await userbot.join_chat(invitelink)
-                    await m.edit_text(_["call_6"].format(config.BOT_NAME))
+                    await m.edit_text(_["call_6"].format(config.MUSIC_BOT_NAME))
                 except UserAlreadyParticipant:
                     pass
                 except Exception as e:
