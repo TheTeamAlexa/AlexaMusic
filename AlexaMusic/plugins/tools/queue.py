@@ -71,7 +71,7 @@ async def ping_com(client, message: Message, _):
     theme = await check_theme(chat_id)
     videoid = got[0]["vidid"]
     user = got[0]["by"]
-    user_id = got[0]["user_id"]
+    user_id = got[0].get("user_id")
     title = (got[0]["title"]).title()
     typo = (got[0]["streamtype"]).title()
     DUR = get_duration(got)
@@ -223,7 +223,7 @@ async def queue_back(client, CallbackQuery: CallbackQuery, _):
     theme = await check_theme(chat_id)
     videoid = got[0]["vidid"]
     user = got[0]["by"]
-    user_id = got[0]["user_id"]
+    user_id = got[0].get("user_id")
     title = (got[0]["title"]).title()
     typo = (got[0]["streamtype"]).title()
     DUR = get_duration(got)
