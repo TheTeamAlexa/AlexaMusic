@@ -19,7 +19,7 @@
 
 <a href="https://www.youtube.com/JankariKiDuniya"><img src="https://img.shields.io/badge/Join-Subscribe%20Support-blue.svg?style=for-the-badge&logo=YouTube"></a>
 
-<h1 align="center"><b>Features Of Alexa And Commands ❤️</b></h1>
+<b><align="center">Features Of Alexa And Commands ❤️</b>
 
 <details>
 <summary><b>ғᴇᴀᴛᴜʀᴇs</b></summary>
