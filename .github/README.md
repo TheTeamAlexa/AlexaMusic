@@ -15,7 +15,7 @@
 
 > ⭐️ Thanks to everyone for using Alexa,  🤭 That is the greatest pleasure we have !
 
-<h1 align="center"><b>Asad– History</b></h1>
+<b align="center">Asad– History</b>
 
 <a href="https://www.youtube.com/JankariKiDuniya"><img src="https://img.shields.io/badge/Join-Subscribe%20Support-blue.svg?style=for-the-badge&logo=YouTube"></a>
 
