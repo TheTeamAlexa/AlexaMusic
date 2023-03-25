@@ -15,11 +15,11 @@
 
 > ⭐️ Thanks to everyone for using Alexa,  🤭 That is the greatest pleasure we have !
 
-### Asad– History
+<h1 align="center"><b>Asad– History</b></h1>
 
 <a href="https://www.youtube.com/JankariKiDuniya"><img src="https://img.shields.io/badge/Join-Subscribe%20Support-blue.svg?style=for-the-badge&logo=YouTube"></a>
 
-## Features Of Alexa And Commands ❤️
+<h1 align="center"><b>Features Of Alexa And Commands ❤️</b></h1>
 
 <details>
 <summary><b>ғᴇᴀᴛᴜʀᴇs</b></summary>
@@ -42,7 +42,7 @@
 - Block / Unblock (restrict user for using your bot)
 </details>
 
-#### Overall Basic Commands 😂
+<h1 align="center"><b>Overall Basic Commands 😂</b></h1>
 <details>
 <summary><b>ʙᴀsɪᴄ ᴄᴍᴅs</b></summary>
 <br>
@@ -56,7 +56,7 @@
 - `/vk <song name>` - generate song without download
 </details>
 
-### Only Admin Can Exicute 🙄
+<h1 align="center"><b>Only Admin Can Exicute 🙄</b></h1>
 
 <details>
 <summary><b>ᴀᴅᴍɪɴ ᴄᴍᴅs</b></summary>
@@ -72,7 +72,7 @@
 - `/deauth` - deauthorized people to access the admin commands
 </details>
 
-### Sudo Commands 🤭
+<h1 align="center"><b>Sudo Commands 🤭</b></h1>
 <details>
 <summary><b>sᴜᴅᴏ ᴄᴍᴅs ᴏɴʟʏ</b></summary>
 <br>
@@ -81,7 +81,7 @@
 - `/gban` - gban user
 </details>
     
-### Only Owner 🙈
+<h1 align="center"><b> Only Owner 🙈</b></h1>
 <details>
 <summary><b>ᴏɴʟʏ ᴏᴡɴᴇʀ</b></summary>
 <br>
@@ -95,7 +95,7 @@
 
 </details>
 
-# ᴅᴇᴘʟᴏʏᴍᴇɴᴛ
+<h1 align="center"><b>ᴅᴇᴘʟᴏʏᴍᴇɴᴛ</b></h1>
 
 
 <details>
@@ -146,7 +146,7 @@
 <p><a href="https://dashboard.heroku.com/new?template=https%3A%2F%2Fgithub.com%2FTheTeamAlexa%2FAlexaMusic"><img src="https://img.shields.io/badge/Deploy%20To%20Heroku-red?style=for-the-badge&logo=heroku" width="200"/></a></p>
 </details>
 
-# Owner And Credit)
+<h1 align="center"><b>Owner And Credit)</b></h1>
 <details>
 <summary><b>ᴄʀᴇᴅɪᴛ</b></summary>
 <br>
@@ -184,7 +184,7 @@
 </details>
 
 
-## ᴀᴄᴋɴᴏᴡʟᴇᴅɢᴇᴍᴇɴᴛs
+<h1 align="center"><b>ᴀᴄᴋɴᴏᴡʟᴇᴅɢᴇᴍᴇɴᴛs</b></h1>
 
 <details>
 <summary><b>ʟɪʙʀᴀʀɪᴇs</b></summary>
