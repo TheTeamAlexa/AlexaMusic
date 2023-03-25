@@ -19,30 +19,19 @@
 
 <a href="https://www.youtube.com/JankariKiDuniya"><img src="https://img.shields.io/badge/Join-Subscribe%20Support-blue.svg?style=for-the-badge&logo=YouTube"></a>
 
-### Features Of Alexa And Commands ❤️
-
-<details>
-<summary><b>ғᴇᴀᴛᴜʀᴇs</b></summary>
+<h1 align="center"><b>😂 ᴠɪᴇᴡ ᴀʟʟ ᴄᴏᴍᴍᴀɴᴅs 😂</b></h1>
 <br>
 
-- Thumbnail Support
-- Audio And Video
-- Gban User
-- Showing track names when skipping
-- Youtube, Local playback support
-- Settings panel
-- Control with buttons
-- Userbot auto join
-- Channel Music Play
-- Keyboard selection support for youtube play
-- Lyrics Scrapper
-- Unlimited Queue
-- Broadcast Bot
-- Statistic Collector
+- Thumbnail Support | Audio And Video
+- Gban User | Showing track names when skipping
+- Youtube, Local playback support | Settings panel
+- Control with buttons | Userbot auto join
+- Channel Music Play | Keyboard selection support for youtube play
+- Lyrics Scrapper | Unlimited Queue
+- Broadcast Bot | Statistic Collector
 - Block / Unblock (restrict user for using your bot)
-</details>
 
-### verall Basic Commands 😂
+### ᴠɪᴇᴡ ᴀʟʟ ʙᴀsɪᴄ ᴄᴏᴍᴍᴀɴᴅs 😂
 <details>
 <summary><b>ʙᴀsɪᴄ ᴄᴍᴅs</b></summary>
 <br>
@@ -56,8 +45,7 @@
 - `/vk <song name>` - generate song without download
 </details>
 
-### nly Admin Can Exicute 🙄
-
+###  ᴏɴʟʏ ᴀᴅᴍɪɴ ᴄᴀɴ ᴇxɪᴄᴜᴛᴇ 🙄
 <details>
 <summary><b>ᴀᴅᴍɪɴ ᴄᴍᴅs</b></summary>
 <br>
@@ -72,7 +60,7 @@
 - `/deauth` - deauthorized people to access the admin commands
 </details>
 
-### Suo Commands 🤭
+### sᴜᴅᴏ ᴄᴏᴍᴍᴀɴᴅs 🤭
     
 <details>
 <summary><b>sᴜᴅᴏ ᴄᴍᴅs ᴏɴʟʏ</b></summary>
@@ -82,7 +70,7 @@
 - `/gban` - gban user
 </details>
     
-### Only Owner
+### ᴏɴʟʏ ᴏᴡɴᴇʀ
     
 <details>
 <summary><b>ᴏɴʟʏ ᴏᴡɴᴇʀ</b></summary>
@@ -96,11 +84,12 @@
 
 
 </details>
+<h1 align="center"><b>❤️ ᴅᴇᴘʟᴏʏᴍᴇɴᴛ ❤️</b></h1>
+Welcome to the AlexaMusic repository, a platform developed by TheTeamAlexa to enhance your music experience through Alexa. With AlexaMusic, you can easily command your Alexa to play your favorite songs, artists, and playlists without lifting a finger.
 
-### ᴅᴇᴘʟᴏʏᴍᴇɴᴛ
+Our development team has worked tirelessly to create a seamless user experience, from integrating various music services to providing custom voice commands for Alexa. We believe that music has the power to bring people together, and our goal is to make it as accessible and enjoyable as possible.
 
-
-<details>
+Through this repository, we hope to share our passion for music and innovation with the world. Whether you're a developer looking to contribute to our open-source project or a music lover excited to try out AlexaMusic, we welcome you to join our community and help us shape the future of music with Alexa.
 <summary><b>ʀᴇǫᴜɪʀᴇᴍᴇɴᴛs</b></summary>
 <br>
     
@@ -110,18 +99,12 @@
 - [ᴍᴏɴɢᴏᴅʙ URI](https://telegra.ph/How-To-get-Mongodb-URI-04-06)
 - [sᴛʀɪɴɢ sᴇssɪᴏɴ](https://t.me/StringGeneratorRobot)
     
-</details>
-
-<details>
 <summary><b>sᴄᴀʟɪɴɢᴏ</b></summary>
 <br>
 ɴᴏᴡ ʏᴏᴜ ᴄᴀɴ ᴅᴇᴘʟᴏʏ ᴀʟᴇxᴀ ᴍᴜsɪᴄ ᴏɴ sᴄᴀʟɪɴɢᴏ ɪɴᴛʀᴏᴅᴜᴄᴇᴅ ʙʏ @ITZ-ZAID
         
-<p align="center"><a href="https://my.scalingo.com/deploy?template=https://github.com/TheTeamAlexa/AlexaMusic"> <img src="https://cdn.scalingo.com/deploy/button.svg" width="220" height="38.45"/></a></p>
-    
-</details>
+<p><a href="https://my.scalingo.com/deploy?template=https://github.com/TheTeamAlexa/AlexaMusic"> <img src="https://cdn.scalingo.com/deploy/button.svg" width="220" height="38.45"/></a></p>
 
-<details>
 <summary><b>sᴛʀɪɴɢ sᴇssɪᴏɴ</b></summary>
 <br>
     
@@ -133,10 +116,7 @@
 
 <h4> ɢᴇɴᴇʀᴀᴛᴇ sᴇssɪᴏɴ ᴠɪᴀ ᴛᴇʟᴇɢʀᴀᴍ sᴛʀɪɴɢ-ɢᴇɴ ʙᴏᴛ: </h4>    
 <p><a href="https://t.me/Session_Generator_Robot"><img src="https://img.shields.io/badge/TG%20String%20Gen%20Bot-blueviolet?style=for-the-badge&logo=appveyor" width="200""/></a></p>
-    
-</details>
 
-<details>
 <summary><b>ᴅᴇᴘʟᴏʏ ᴛᴏ ʜᴇʀᴏᴋᴜ</b></summary>
 <br>
 
@@ -146,9 +126,11 @@
     
 <h4> ᴄʟɪᴄᴋ ᴛʜᴇ ʙᴜᴛᴛᴏɴ ʙᴇʟᴏᴡ ᴛᴏ ᴅᴇᴘʟᴏʏ ʏᴜᴋᴋɪ ᴏɴ ʜᴇʀᴏᴋᴜ</h4>    
 <p><a href="https://dashboard.heroku.com/new?template=https%3A%2F%2Fgithub.com%2FTheTeamAlexa%2FAlexaMusic"><img src="https://img.shields.io/badge/Deploy%20To%20Heroku-red?style=for-the-badge&logo=heroku" width="200"/></a></p>
-</details>
 
-### Owner And Credit
+<h4>ᴄʟɪᴄᴋ ᴛʜᴇ ʙᴜᴛᴛᴏɴ ʙᴇʟᴏᴡ ɪꜰ ʏᴏᴜ ᴀʀᴇ ꜰᴀᴄɪɴɢ ᴀɴʏ ᴘʀᴏʙʟᴇᴍ ᴏʀ  ᴀᴄᴄᴏᴜɴᴛ sᴜsᴘᴇɴsɪᴏɴ ɪssᴜᴇ ᴛᴏ ʙʏᴘᴀss ᴀɴʏ ʀᴇsᴛʀɪᴄᴛɪᴏɴ ᴏɴ ʜᴇʀᴏᴋᴜ ᴏʀ ʀᴀɪʟᴡᴇʏ</h4>    
+<a href="https://github.com/TheTeamAlexa/AlexaMusic-Bypass"><img src="https://img.shields.io/badge/Alexa-Music%20Bypass-blue.svg?style=for-the-badge&logo=GitHub"></a>
+
+<h1 align="center"><b>❤️ ᴏᴡɴᴇʀ ᴀɴᴅ ᴄʀᴇᴅɪᴛ ❤️</b></h1>
 <details>
 <summary><b>ᴄʀᴇᴅɪᴛ</b></summary>
 <br>
@@ -186,7 +168,7 @@
 </details>
 
 
-<h1 align="center"><b>ᴀᴄᴋɴᴏᴡʟᴇᴅɢᴇᴍᴇɴᴛs</b></h1>
+<h1 align="center"><b>❤️ ᴀᴄᴋɴᴏᴡʟᴇᴅɢᴇᴍᴇɴᴛs ❤️</b></h1>
 
 <details>
 <summary><b>ʟɪʙʀᴀʀɪᴇs</b></summary>
