@@ -53,8 +53,8 @@ async def markup_panel(client, CallbackQuery: CallbackQuery, _):
     buttons = panel_markup_1(_, videoid, chat_id)
     try:
         await CallbackQuery.edit_message_reply_markup(
-            reply_markup=InlineKeyboardMarkup(buttons)
-        )
+            reply_markup=InlineKeyboardMarkup(buttons), disable_web_page_preview=True
+    )
     except:
         return
     if chat_id not in wrong:
