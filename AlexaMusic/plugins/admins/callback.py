@@ -206,6 +206,7 @@ async def del_back_playlist(client, CallbackQuery, _):
         user = check[0]["by"]
         streamtype = check[0]["streamtype"]
         videoid = check[0]["vidid"]
+        duration_min = check[0]["dur"]
         user_id = CallbackQuery.message.from_user.id
         theme = await check_theme(chat_id)
         status = True if str(streamtype) == "video" else None
@@ -257,8 +258,10 @@ async def del_back_playlist(client, CallbackQuery, _):
             run = await CallbackQuery.message.reply_photo(
                 photo=img,
                 caption=_["stream_1"].format(
-                    user,
+                    title[:27],
                     f"https://t.me/{app.username}?start=info_{videoid}",
+                    duration_min,
+                    user,
                 ),
                 reply_markup=InlineKeyboardMarkup(button),
             )
@@ -314,9 +317,11 @@ async def del_back_playlist(client, CallbackQuery, _):
                 run = await CallbackQuery.message.reply_photo(
                     photo=img,
                     caption=_["stream_1"].format(
-                        user,
-                        f"https://t.me/{app.username}?start=info_{videoid}",
-                    ),
+                    title[:27],
+                    f"https://t.me/{app.username}?start=info_{videoid}",
+                    duration_min,
+                    user,
+                ),
                     reply_markup=InlineKeyboardMarkup(button),
                 )
                 db[chat_id][0]["mystic"] = run
