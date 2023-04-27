@@ -110,37 +110,55 @@ async def del_back_playlist(client, CallbackQuery, _):
                     return await CallbackQuery.answer(_["admin_19"], show_alert=True)
     if command == "Pause":
         if not await is_music_playing(chat_id):
-            return await CallbackQuery.answer(_["admin_1"], show_alert=True, disable_web_page_preview=True)
+            return await CallbackQuery.answer(
+                _["admin_1"], show_alert=True, disable_web_page_preview=True
+            )
         await CallbackQuery.answer()
         await music_off(chat_id)
         await Alexa.pause_stream(chat_id)
-        await CallbackQuery.message.reply_text(_["admin_2"].format(mention), disable_web_page_preview=True)
+        await CallbackQuery.message.reply_text(
+            _["admin_2"].format(mention), disable_web_page_preview=True
+        )
     elif command == "Resume":
         if await is_music_playing(chat_id):
-            return await CallbackQuery.answer(_["admin_3"], show_alert=True, disable_web_page_preview=True)
+            return await CallbackQuery.answer(
+                _["admin_3"], show_alert=True, disable_web_page_preview=True
+            )
         await CallbackQuery.answer()
         await music_on(chat_id)
         await Alexa.resume_stream(chat_id)
-        await CallbackQuery.message.reply_text(_["admin_4"].format(mention), disable_web_page_preview=True)
+        await CallbackQuery.message.reply_text(
+            _["admin_4"].format(mention), disable_web_page_preview=True
+        )
     elif command == "Stop" or command == "End":
         await CallbackQuery.answer()
         await Alexa.stop_stream(chat_id)
         await set_loop(chat_id, 0)
-        await CallbackQuery.message.reply_text(_["admin_9"].format(mention), disable_web_page_preview=True)
+        await CallbackQuery.message.reply_text(
+            _["admin_9"].format(mention), disable_web_page_preview=True
+        )
     elif command == "Mute":
         if await is_muted(chat_id):
-            return await CallbackQuery.answer(_["admin_5"], show_alert=True, disable_web_page_preview=True)
+            return await CallbackQuery.answer(
+                _["admin_5"], show_alert=True, disable_web_page_preview=True
+            )
         await CallbackQuery.answer()
         await mute_on(chat_id)
         await Alexa.mute_stream(chat_id)
-        await CallbackQuery.message.reply_text(_["admin_6"].format(mention), disable_web_page_preview=True)
+        await CallbackQuery.message.reply_text(
+            _["admin_6"].format(mention), disable_web_page_preview=True
+        )
     elif command == "Unmute":
         if not await is_muted(chat_id):
-            return await CallbackQuery.answer(_["admin_7"], show_alert=True, disable_web_page_preview=True)
+            return await CallbackQuery.answer(
+                _["admin_7"], show_alert=True, disable_web_page_preview=True
+            )
         await CallbackQuery.answer()
         await mute_off(chat_id)
         await Alexa.unmute_stream(chat_id)
-        await CallbackQuery.message.reply_text(_["admin_8"].format(mention), disable_web_page_preview=True)
+        await CallbackQuery.message.reply_text(
+            _["admin_8"].format(mention), disable_web_page_preview=True
+        )
     elif command == "Loop":
         await CallbackQuery.answer()
         await set_loop(chat_id, 3)
@@ -184,7 +202,9 @@ async def del_back_playlist(client, CallbackQuery, _):
         except:
             try:
                 await CallbackQuery.edit_message_text(f"» ᴛʀᴀᴄᴋ sᴋɪᴩᴩᴇᴅ ʙʏ {mention} !")
-                await CallbackQuery.message.reply_text(_["admin_10"].format(mention), disable_web_page_preview=True)
+                await CallbackQuery.message.reply_text(
+                    _["admin_10"].format(mention), disable_web_page_preview=True
+                )
                 return await Alexa.stop_stream(chat_id)
             except:
                 return
