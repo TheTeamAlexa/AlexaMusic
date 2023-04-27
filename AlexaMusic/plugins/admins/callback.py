@@ -110,9 +110,7 @@ async def del_back_playlist(client, CallbackQuery, _):
                     return await CallbackQuery.answer(_["admin_19"], show_alert=True)
     if command == "Pause":
         if not await is_music_playing(chat_id):
-            return await CallbackQuery.answer(
-                _["admin_1"], show_alert=True, disable_web_page_preview=True
-            )
+            return await CallbackQuery.answer(_["admin_1"], show_alert=True)
         await CallbackQuery.answer()
         await music_off(chat_id)
         await Alexa.pause_stream(chat_id)
@@ -121,9 +119,7 @@ async def del_back_playlist(client, CallbackQuery, _):
         )
     elif command == "Resume":
         if await is_music_playing(chat_id):
-            return await CallbackQuery.answer(
-                _["admin_3"], show_alert=True, disable_web_page_preview=True
-            )
+            return await CallbackQuery.answer(_["admin_3"], show_alert=True)
         await CallbackQuery.answer()
         await music_on(chat_id)
         await Alexa.resume_stream(chat_id)
@@ -139,9 +135,7 @@ async def del_back_playlist(client, CallbackQuery, _):
         )
     elif command == "Mute":
         if await is_muted(chat_id):
-            return await CallbackQuery.answer(
-                _["admin_5"], show_alert=True, disable_web_page_preview=True
-            )
+            return await CallbackQuery.answer(_["admin_5"], show_alert=True)
         await CallbackQuery.answer()
         await mute_on(chat_id)
         await Alexa.mute_stream(chat_id)
@@ -150,9 +144,7 @@ async def del_back_playlist(client, CallbackQuery, _):
         )
     elif command == "Unmute":
         if not await is_muted(chat_id):
-            return await CallbackQuery.answer(
-                _["admin_7"], show_alert=True, disable_web_page_preview=True
-            )
+            return await CallbackQuery.answer(_["admin_7"], show_alert=True)
         await CallbackQuery.answer()
         await mute_off(chat_id)
         await Alexa.unmute_stream(chat_id)
