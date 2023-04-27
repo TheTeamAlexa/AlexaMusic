@@ -179,8 +179,8 @@ async def stream(
                 caption=_["queue_4"].format(
                     position, title[:27], duration_min, user_name
                 ),
-                reply_markup=InlineKeyboardMarkup(button),
-            )
+                reply_markup=InlineKeyboardMarkup(button), disable_web_page_preview=True
+    )
         else:
             if not forceplay:
                 db[chat_id] = []
