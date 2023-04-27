@@ -104,6 +104,7 @@ async def skip(cli, message: Message, _, chat_id):
     user_id = message.from_user.id
     streamtype = check[0]["streamtype"]
     videoid = check[0]["vidid"]
+    duration_min = check[0]["dur"]
     status = True if str(streamtype) == "video" else None
     if "live_" in queued:
         n, link = await YouTube.video(videoid, True)
@@ -147,9 +148,11 @@ async def skip(cli, message: Message, _, chat_id):
         run = await message.reply_photo(
             photo=img,
             caption=_["stream_1"].format(
-                user,
-                f"https://t.me/{app.username}?start=info_{videoid}",
-            ),
+                    title[:27],
+                    f"https://t.me/{app.username}?start=info_{videoid}",
+                    duration_min,
+                    user,
+                ),
             reply_markup=InlineKeyboardMarkup(button),
         )
         db[chat_id][0]["mystic"] = run
@@ -202,8 +205,10 @@ async def skip(cli, message: Message, _, chat_id):
             run = await message.reply_photo(
                 photo=img,
                 caption=_["stream_1"].format(
-                    user,
+                    title[:27],
                     f"https://t.me/{app.username}?start=info_{videoid}",
+                    duration_min,
+                    user,
                 ),
                 reply_markup=InlineKeyboardMarkup(button),
             )
