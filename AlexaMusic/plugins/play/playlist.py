@@ -1,11 +1,6 @@
 #
 # Copyright (C) 2021-2022 by Alexa_Help@Github, < https://github.com/Jankarikiduniya >.
 # A Powerful Music Bot Property Of Rocks Indian Largest Chatting Group
-
-# Kanged By © @Dr_Asad_Ali
-# Rocks © @Shayri_Music_Lovers
-# Owner Asad Ali
-# Harshit Sharma
 # All rights reserved. © Alisha © Alexa © Yukki
 
 
@@ -57,7 +52,7 @@ async def check_playlist(client, message: Message, _):
         count += 1
         msg += f"\n\n{count}- {title[:70]}\n"
         msg += _["playlist_5"].format(duration)
-    link = await Asadbin(msg)
+    link = await Alexabin(msg)
     lines = msg.count("\n")
     if lines >= 17:
         car = os.linesep.join(msg.split(os.linesep)[:17])
