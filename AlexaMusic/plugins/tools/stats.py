@@ -1,14 +1,3 @@
-#
-# Copyright (C) 2021-2022 by Alexa_Help@Github, < https://github.com/Jankarikiduniya >.
-# A Powerful Music Bot Property Of Rocks Indian Largest Chatting Group
-
-# Modified By © @Dr_Asad_Ali
-# Rocks © @Shayri_Music_Lovers
-# Owner Asad Ali
-# Harshit Sharma
-# All rights reserved. © Alisha © Alexa © Yukki
-
-
 import asyncio
 import platform
 from sys import version as pyver
@@ -53,9 +42,11 @@ loop = asyncio.get_running_loop()
 GSTATS_COMMAND = get_command("GSTATS_COMMAND")
 STATS_COMMAND = get_command("STATS_COMMAND")
 
-
 @app.on_message(
-    filters.command(STATS_COMMAND) & filters.group & ~filters.edited & ~BANNED_USERS
+    filters.command(STATS_COMMAND)
+    & filters.group
+    & ~filters.edited
+    & ~BANNED_USERS
 )
 @language
 async def stats_global(client, message: Message, _):
@@ -66,9 +57,11 @@ async def stats_global(client, message: Message, _):
         reply_markup=upl,
     )
 
-
 @app.on_message(
-    filters.command(GSTATS_COMMAND) & filters.group & ~filters.edited & ~BANNED_USERS
+    filters.command(GSTATS_COMMAND)
+    & filters.group
+    & ~filters.edited
+    & ~BANNED_USERS
 )
 @language
 async def gstats_global(client, message: Message, _):
@@ -126,7 +119,7 @@ async def gstats_global(client, message: Message, _):
     )
     await mystic.delete()
 
-
+# Callback query for getting top users for a particular type
 @app.on_callback_query(filters.regex("GetStatsNow") & ~BANNED_USERS)
 @languageCB
 async def top_users_ten(client, CallbackQuery: CallbackQuery, _):
@@ -182,9 +175,9 @@ async def top_users_ten(client, CallbackQuery: CallbackQuery, _):
                 details = stats.get(items)
                 title = (details["title"][:35]).title()
                 if items == "telegram":
-                    msg += f"🌹 [ᴛᴇʟᴇɢʀᴀᴍ ᴍᴇᴅɪᴀ](https://t.me/Shayri_Music_Lovers) ** ᴩʟᴀʏᴇᴅ {count} ᴛɪᴍᴇs**\n\n"
+                    msg += f"🔗 [ᴛᴇʟᴇɢʀᴀᴍ ғɪʟᴇs ᴀɴᴅ ᴀᴜᴅɪᴏs](https://t.me/Shayri_Music_Lovers) ** ᴘʟᴀʏᴇᴅ {count} ᴛɪᴍᴇs**\n\n"
                 else:
-                    msg += f"🌹 [{title}](https://www.youtube.com/watch?v={items}) ** ᴩʟᴀʏᴇᴅ {count} ᴛɪᴍᴇs**\n\n"
+                    msg += f"🔗 [{title}](https://www.youtube.com/watch?v={items}) ** ᴘʟᴀʏᴇᴅ {count} ᴛɪᴍᴇs**\n\n"
 
             temp = (
                 _["gstats_4"].format(
@@ -222,7 +215,7 @@ async def top_users_ten(client, CallbackQuery: CallbackQuery, _):
             except:
                 continue
             limit += 1
-            msg += f"💖 `{extract}` ᴩʟᴀʏᴇᴅ {count} ᴛɪᴍᴇs ᴏɴ ʙᴏᴛ.\n\n"
+            msg += f"🔗`{extract}` ᴘʟᴀʏᴇᴅ {count} ᴛɪᴍᴇs ᴏɴ ʙᴏᴛ.\n\n"
         temp = (
             _["gstats_5"].format(limit, MUSIC_BOT_NAME)
             if what == "Chats"
@@ -233,10 +226,7 @@ async def top_users_ten(client, CallbackQuery: CallbackQuery, _):
     try:
         await CallbackQuery.edit_message_media(media=med, reply_markup=upl)
     except MessageIdInvalid:
-        await CallbackQuery.message.reply_photo(
-            photo=config.GLOBAL_IMG_URL, caption=msg, reply_markup=upl
-        )
-
+        await CallbackQuery.message.reply_photo(photo=config.GLOBAL_IMG_URL, caption=msg, reply_markup=upl)
 
 @app.on_callback_query(filters.regex("TopOverall") & ~BANNED_USERS)
 @languageCB
@@ -268,37 +258,35 @@ async def overall_stats(client, CallbackQuery, _):
     else:
         ass = "No"
     cm = config.CLEANMODE_DELETE_MINS
-    text = f"""🌹 **ʙᴏᴛ's sᴛᴀᴛs ᴀɴᴅ ɪɴғᴏ:**
+    text = f"""**ʙᴏᴛ's sᴛᴀᴛs ᴀɴᴅ ɪɴғᴏʀᴍᴀᴛɪᴏɴ:**
 
-🌹 **ᴍᴏᴅᴜʟᴇs:** {mod}
-🌹 **ᴄʜᴀᴛs:** {served_chats} 
-🌹 **ᴜsᴇʀs:** {served_users} 
-🌹 **ʙʟᴏᴄᴋᴇᴅ:** {blocked} 
-🌹 **sᴜᴅᴏᴇʀs:** {sudoers} 
+**ɪᴍᴘᴏʀᴛᴇᴅ ᴍᴏᴅᴜʟᴇs:** {mod}
+**sᴇʀᴠᴇᴅ ᴄʜᴀᴛs:** {served_chats} 
+**sᴇʀᴠᴇᴅ ᴜsᴇʀs:** {served_users} 
+**ʙʟᴏᴄᴋᴇᴅ ᴜsᴇʀs:** {blocked} 
+**sᴜᴅᴏ ᴜsᴇʀs:** {sudoers} 
     
-🌹 **ǫᴜᴇʀɪᴇs:** {total_queries} 
-🌹 **ᴀssɪsᴛᴀɴᴛs:** {assistant}
-🌹 **ᴀss ᴀᴜᴛᴏ ʟᴇᴀᴠᴇ:** {ass}
-🌹 **ᴄʟᴇᴀɴᴍᴏᴅᴇ:** {cm} ᴍɪɴᴜᴛᴇs
+**ᴛᴏᴛᴀʟ ǫᴜᴇʀɪᴇs:** {total_queries} 
+**ᴛᴏᴛᴀʟ ᴀssɪsᴛᴀɴᴛs:** {assistant}
+**ᴀᴜᴛᴏ ʟᴇᴀᴠɪɴɢ ᴀssɪsᴛᴀɴᴛ:** {ass}
+**ᴄʟᴇᴀɴᴍᴏᴅᴇ ᴅᴜʀᴀᴛɪᴏɴ:** {cm} Mins
 
-🌹 **ᴅᴜʀᴀᴛɪᴏɴ ʟɪᴍɪᴛ:** {play_duration} ᴍɪɴᴜᴛᴇs
-🌹 **ᴅᴏᴡɴʟᴏᴀᴅ ʟɪᴍɪᴛ:** {song} ᴍɪɴᴜᴛᴇs
-🌹 **ᴩʟᴀʏʟɪsᴛ ʟɪᴍɪᴛ:** {playlist_limit}
-🌹 **ᴩʟᴀʏʟɪsᴛ ᴩʟᴀʏ ʟɪᴍɪᴛ:** {fetch_playlist}"""
+**ᴘʟᴀʏ ᴅᴜʀᴀᴛɪᴏɴ ʟɪᴍɪᴛ:** {play_duration} Mins
+**sᴏɴɢ ᴅᴏᴡɴʟᴏᴀᴅ ʟɪᴍɪᴛ:** {song} Mins
+**ʙᴏᴛ's sᴇʀᴠᴇʀ ᴘʟᴀʏʟɪsᴛ Limit:** {playlist_limit}
+**ᴘʟᴀʏʟɪsᴛ ᴘʟᴀʏ ʟɪᴍɪᴛ:** {fetch_playlist}"""
     med = InputMediaPhoto(media=config.STATS_IMG_URL, caption=text)
     try:
         await CallbackQuery.edit_message_media(media=med, reply_markup=upl)
     except MessageIdInvalid:
-        await CallbackQuery.message.reply_photo(
-            photo=config.STATS_IMG_URL, caption=text, reply_markup=upl
-        )
+        await CallbackQuery.message.reply_photo(photo=config.STATS_IMG_URL, caption=text, reply_markup=upl)
 
-
+# Callback query for getting sudo user stats
 @app.on_callback_query(filters.regex("bot_stats_sudo"))
 @languageCB
 async def overall_stats(client, CallbackQuery, _):
     if CallbackQuery.from_user.id not in SUDOERS:
-        return await CallbackQuery.answer("ᴏɴʟʏ ғᴏʀ sᴜᴅᴏ ᴜsᴇʀs.", show_alert=True)
+        return await CallbackQuery.answer("ᴏɴʟʏ ғᴏʀ sᴜᴅᴏ ᴜsᴇʀs", show_alert=True)
     callback_data = CallbackQuery.data.strip()
     what = callback_data.split(None, 1)[1]
     if what != "s":
@@ -337,55 +325,54 @@ async def overall_stats(client, CallbackQuery, _):
     storage = call["storageSize"] / 1024
     objects = call["objects"]
     collections = call["collections"]
+    status = db.command("serverStatus")
+    query = status["opcounters"]["query"]
+    mongouptime = status["uptime"] / 86400
+    mongouptime = str(mongouptime)
     served_chats = len(await get_served_chats())
     served_users = len(await get_served_users())
     total_queries = await get_queries()
     blocked = len(BANNED_USERS)
     sudoers = len(await get_sudoers())
-    text = f"""🌹 **ʙᴏᴛ's sᴛᴀᴛs ᴀɴᴅ ɪɴғᴏ:**
+    text = f""" **ʙᴏᴛ's sᴛᴀᴛs ᴀɴᴅ ɪɴғᴏʀᴍᴀᴛɪᴏɴ:**
 
-       <b><u>🌹 ʜᴀʀᴅᴡᴀʀᴇ</b><u/>
-🌹 **ᴍᴏᴅᴜʟᴇs:** {mod}
-🌹 **ᴩʟᴀᴛғᴏʀᴍ:** {sc}
-🌹 **ʀᴀᴍ:** {ram}
-🌹 **ᴩʜʏsɪᴄᴀʟ ᴄᴏʀᴇs:** {p_core}
-🌹 **ᴛᴏᴛᴀʟ ᴄᴏʀᴇs:** {t_core}
-🌹 **ᴄᴩᴜ ғʀᴇǫᴜᴇɴᴄʏ:** {cpu_freq}
+**ɪᴍᴘᴏʀᴛᴇᴅ ᴍᴏᴅᴜʟᴇs:** {mod}
+**ᴘʟᴀᴛғᴏʀᴍ:** {sc}
+**ʀᴀᴍ:** {ram}
+**ᴘʜʏsɪᴄᴀʟ ᴄᴏʀᴇs:** {p_core}
+**ᴛᴏᴛᴀʟ ᴄᴏʀᴇs:** {t_core}
+**ᴄᴘᴜ ғʀᴇǫᴜᴇɴᴄʏ:** {cpu_freq}
 
-       <b><u>🌹 sᴏғᴛᴡᴀʀᴇ</b><u/>
-🌹 **ᴩʏᴛʜᴏɴ :** {pyver.split()[0]}
-🌹 **ᴩʏʀᴏɢʀᴀᴍ :** {pyrover}
-🌹 **ᴩʏ-ᴛɢᴄᴀʟʟs :** {pytgver}
+**ᴘʏᴛʜᴏɴ ᴠᴇʀsɪᴏɴ :** {pyver.split()[0]}
+**ᴘʏʀᴏɢʀᴀᴍ ᴠᴇʀsɪᴏɴ :** {pyrover}
+**ᴘʏ-ᴛɢᴄᴀʟʟs ᴠᴇʀsɪᴏɴ :** {pytgver}
 
-        <b><u>🌹 sᴛᴏʀᴀɢᴇ</b><u/>
-🌹 **ᴀᴠᴀɪʟᴀʙʟᴇ:** {total[:4]} GiB
-🌹 **ᴜsᴇᴅ:** {used[:4]} GiB
-🌹 **ғʀᴇᴇ:** {free[:4]} GiB
+**sᴛᴏʀᴀɢᴇ ᴀᴠᴀɪʟ:** {total[:4]} GiB
+**sᴛᴏʀᴀɢᴇ ᴜsᴇᴅ:** {used[:4]} GiB
+**sᴛᴏʀᴀɢᴇ ʟᴇғᴛ:** {free[:4]} GiB
 
-      <b><u>🌹 ᴄᴜʀʀᴇɴᴛ sᴛᴀᴛs</b><u/>
-🌹 **ᴄʜᴀᴛs:** {served_chats} 
-🌹 **ᴜsᴇʀs:** {served_users} 
-🌹 **ʙʟᴏᴄᴋᴇᴅ:** {blocked} 
-🌹 **sᴜᴅᴏᴇʀs:** {sudoers} 
+**sᴇʀᴠᴇᴅ ᴄʜᴀᴛs:** {served_chats} 
+**sᴇʀᴠᴇᴅ ᴜsᴇʀs:** {served_users} 
+**ʙʟᴏᴄᴋᴇᴅ ᴜsᴇʀs:** {blocked} 
+**sᴜᴅᴏ ᴜsᴇʀs:** {sudoers} 
 
-      <b><u>🌹 ᴍᴏɴɢᴏ ᴅᴀᴛᴀʙᴀsᴇ</b><u/>
-🌹 **sɪᴢᴇ:** {datasize[:6]} ᴍʙ
-🌹 **sᴛᴏʀᴀɢᴇ:** {storage} ᴍʙ
-🌹 **ᴄᴏʟʟᴇᴄᴛɪᴏɴs:** {collections}
-🌹 **ᴋᴇʏs:** {objects}
-🌹 **ʙᴏᴛ ǫᴜᴇʀɪᴇs:** `{total_queries}`
+**ᴍᴏɴɢᴏ ᴜᴘᴛɪᴍᴇ:** {mongouptime[:4]} Days
+**ᴛᴏᴛᴀʟ ᴅʙ sɪᴢᴇ:** {datasize[:6]} Mb
+**ᴛᴏᴛᴀʟ ᴅʙ sᴛᴏʀᴀɢᴇ:** {storage} Mb
+**ᴛᴏᴛᴀʟ ᴅʙ ᴄᴏʟʟᴇᴄᴛɪᴏɴs:** {collections}
+**ᴛᴏᴛᴀʟ ᴅʙ ᴋᴇʏs:** {objects}
+**ᴛᴏᴛᴀʟ ᴅʙ ǫᴜᴇʀɪᴇs:** `{query}`
+**ᴛᴏᴛᴀʟ ʙᴏᴛ ǫᴜᴇʀɪᴇs:** `{total_queries} `
     """
     med = InputMediaPhoto(media=config.STATS_IMG_URL, caption=text)
     try:
         await CallbackQuery.edit_message_media(media=med, reply_markup=upl)
     except MessageIdInvalid:
-        await CallbackQuery.message.reply_photo(
-            photo=config.STATS_IMG_URL, caption=text, reply_markup=upl
-        )
-
+        await CallbackQuery.message.reply_photo(photo=config.STATS_IMG_URL, caption=text, reply_markup=upl)
 
 @app.on_callback_query(
-    filters.regex(pattern=r"^(TOPMARKUPGET|GETSTATS|GlobalStats)$") & ~BANNED_USERS
+    filters.regex(pattern=r"^(TOPMARKUPGET|GETSTATS|GlobalStats)$")
+    & ~BANNED_USERS
 )
 @languageCB
 async def back_buttons(client, CallbackQuery, _):
@@ -403,11 +390,7 @@ async def back_buttons(client, CallbackQuery, _):
         try:
             await CallbackQuery.edit_message_media(media=med, reply_markup=upl)
         except MessageIdInvalid:
-            await CallbackQuery.message.reply_photo(
-                photo=config.GLOBAL_IMG_URL,
-                caption=_["gstats_9"],
-                reply_markup=upl,
-            )
+            await CallbackQuery.message.reply_photo(photo=config.GLOBAL_IMG_URL, caption=_["gstats_9"], reply_markup=upl)
     if command == "GlobalStats":
         upl = get_stats_markup(
             _,
@@ -420,11 +403,7 @@ async def back_buttons(client, CallbackQuery, _):
         try:
             await CallbackQuery.edit_message_media(media=med, reply_markup=upl)
         except MessageIdInvalid:
-            await CallbackQuery.message.reply_photo(
-                photo=config.GLOBAL_IMG_URL,
-                caption=_["gstats_10"].format(config.MUSIC_BOT_NAME),
-                reply_markup=upl,
-            )
+            await CallbackQuery.message.reply_photo(photo=config.GLOBAL_IMG_URL, caption=_["gstats_10"].format(config.MUSIC_BOT_NAME), reply_markup=upl)
     if command == "GETSTATS":
         upl = stats_buttons(
             _,
@@ -437,8 +416,4 @@ async def back_buttons(client, CallbackQuery, _):
         try:
             await CallbackQuery.edit_message_media(media=med, reply_markup=upl)
         except MessageIdInvalid:
-            await CallbackQuery.message.reply_photo(
-                photo=config.STATS_IMG_URL,
-                caption=_["gstats_11"].format(config.MUSIC_BOT_NAME),
-                reply_markup=upl,
-            )
+            await CallbackQuery.message.reply_photo(photo=config.STATS_IMG_URL, caption=_["gstats_11"].format(config.MUSIC_BOT_NAME), reply_markup=upl)

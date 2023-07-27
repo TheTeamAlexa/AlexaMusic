@@ -1,14 +1,3 @@
-#
-# Copyright (C) 2021-2022 by Alexa_Help@Github, < https://github.com/Jankarikiduniya >.
-# A Powerful Music Bot Property Of Rocks Indian Largest Chatting Group
-
-# Kanged By © @Dr_Asad_Ali
-# Rocks © @Shayri_Music_Lovers
-# Owner Asad Ali
-# Harshit Sharma
-# All rights reserved. © Alisha © Alexa © Yukki
-
-
 import os
 import re
 import subprocess
@@ -20,16 +9,13 @@ from time import time
 
 from pyrogram import filters
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup, Message
-from config import OWNER_ID
+
 from AlexaMusic import app
-from AlexaMusic.misc import SUDOERS
+from config import OWNER_ID
 
 
 async def aexec(code, client, message):
-    exec(
-        "async def __aexec(client, message): "
-        + "".join(f"\n {a}" for a in code.split("\n"))
-    )
+    exec("async def __aexec(client, message): " + "".join(f"\n {a}" for a in code.split("\n")))
     return await locals()["__aexec"](client, message)
 
 
@@ -42,9 +28,7 @@ async def edit_or_reply(msg: Message, **kwargs):
 @app.on_message(filters.command("eval") & filters.user(OWNER_ID))
 async def executor(client, message):
     if len(message.command) < 2:
-        return await edit_or_reply(
-            message, text="__Nigga Give me some command to execute.__"
-        )
+        return await edit_or_reply(message, text="**ᴡʜᴀᴛ ʏᴏᴜ ᴡᴀɴɴᴀ ᴇxᴇᴄᴜᴛᴇ ʙᴀʙʏ ?**")
     try:
         cmd = message.text.split(" ", maxsplit=1)[1]
     except IndexError:
@@ -79,14 +63,7 @@ async def executor(client, message):
             out_file.write(str(evaluation.strip()))
         t2 = time()
         keyboard = InlineKeyboardMarkup(
-            [
-                [
-                    InlineKeyboardButton(
-                        text="⏳",
-                        callback_data=f"runtime {t2-t1} Seconds",
-                    )
-                ]
-            ]
+            [InlineKeyboardButton(text="⏳", callback_data=f"runtime {t2-t1} Seconds")]
         )
         await message.reply_document(
             document=filename,
@@ -100,16 +77,14 @@ async def executor(client, message):
         t2 = time()
         keyboard = InlineKeyboardMarkup(
             [
-                [
-                    InlineKeyboardButton(
-                        text="⏳",
-                        callback_data=f"runtime {round(t2-t1, 3)} Seconds",
-                    ),
-                    InlineKeyboardButton(
-                        text="🗑",
-                        callback_data=f"forceclose abc|{message.from_user.id}",
-                    ),
-                ]
+                InlineKeyboardButton(
+                    text="⏳",
+                    callback_data=f"runtime {round(t2-t1, 3)} Seconds",
+                ),
+                InlineKeyboardButton(
+                    text="🗑",
+                    callback_data=f"forceclose abc|{message.from_user.id}",
+                ),
             ]
         )
         await edit_or_reply(message, text=final_output, reply_markup=keyboard)
@@ -129,7 +104,7 @@ async def forceclose_command(_, CallbackQuery):
     if CallbackQuery.from_user.id != int(user_id):
         try:
             return await CallbackQuery.answer(
-                "You're not allowed to close this.", show_alert=True
+                "» ɪᴛ'ʟʟ ʙᴇ ʙᴇᴛᴛᴇʀ ɪғ ʏᴏᴜ sᴛᴀʏ ɪɴ ʏᴏᴜʀ ʟɪᴍɪᴛs ʙᴀʙʏ.", show_alert=True
             )
         except:
             return
@@ -140,10 +115,10 @@ async def forceclose_command(_, CallbackQuery):
         return
 
 
-@app.on_message(filters.command("sh") & SUDOERS & ~filters.forwarded & ~filters.via_bot)
+@app.on_message(filters.command("sh") & filters.user(OWNER_ID))
 async def shellrunner(client, message):
     if len(message.command) < 2:
-        return await edit_or_reply(message, text="**Usage:**\n/sh git pull")
+        return await edit_or_reply(message, text="**ᴇxᴀᴍᴩʟᴇ :**\n/sh git pull")
     text = message.text.split(None, 1)[1]
     if "\n" in text:
         code = text.split("\n")
@@ -175,14 +150,8 @@ async def shellrunner(client, message):
         except Exception as err:
             print(err)
             exc_type, exc_obj, exc_tb = sys.exc_info()
-            errors = traceback.format_exception(
-                etype=exc_type,
-                value=exc_obj,
-                tb=exc_tb,
-            )
-            return await edit_or_reply(
-                message, text=f"**ERROR:**\n```{''.join(errors)}```"
-            )
+            errors = traceback.format_exception(etype=exc_type, value=exc_obj, tb=exc_tb)
+            return await edit_or_reply(message, text=f"**ERROR:**\n```{''.join(errors)}```")
         output = process.stdout.read()[:-1].decode("utf-8")
     if str(output) == "\n":
         output = None
@@ -200,3 +169,4 @@ async def shellrunner(client, message):
         await edit_or_reply(message, text=f"**OUTPUT:**\n```{output}```")
     else:
         await edit_or_reply(message, text="**OUTPUT: **\n`No output`")
+        
