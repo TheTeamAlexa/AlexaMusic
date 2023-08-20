@@ -13,8 +13,8 @@ services:
       HEROKU_API_KEY: $HEROKU_API_KEY #default to none
       HEROKU_APP_NAME: $HEROKU_APP_NAME  # defaults to None
       LOG_GROUP_ID: $LOG_GROUP_ID  # true
-      SUPPORT_GROUP: $SUPPORT_GROUP  # false
-      SUPPORT_CHANNEL: $SUPPORT_CHANNEL  # false
+      SUPPORT_GROUP: $SUPPORT_GROUP  # true
+      SUPPORT_CHANNEL: $SUPPORT_CHANNEL  # true
       START_IMG_URL: $START_IMG_URL  # true
       UPSTREAM_REPO: $UPSTREAM_REPO  # true
       UPSTREAM_BRANCH: $UPSTREAM_BRANCH  # true
