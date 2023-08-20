@@ -6,9 +6,9 @@
     "python3",
     "telegram",
     "bot",
-    "Alexa",
-    "alexamusic",
-    "alexamusicbot",
+    "kenta",
+    "justmusic",
+    "justmusicbot",
     "pyrogram"
     ],
     "stack": "container",
