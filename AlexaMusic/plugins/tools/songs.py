@@ -1,6 +1,6 @@
 """"
-Alexa is a Telegram Audio and video streaming bot 
-Copyright (c) 2022 -present Team=Alexa <https://github.com/TheTeamAlexa>
+NIRVANA is a Telegram Audio and video streaming bot 
+Copyright (c) 2022 
 
 This program is free software: you can redistribute it and can modify
 as you want.
