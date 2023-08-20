@@ -1,7 +1,7 @@
 #
-# Copyright (C) 2021-2022 by Alexa_Help@Github, < https://github.com/Jankarikiduniya >.
-# A Powerful Music Bot Property Of Rocks Indian Largest Chatting Group
-# All rights reserved. © Alisha © Alexa
+# Copyright (C) 2021-2022 by NIRVANA
+# A Powerful Music Bot Property Of Rocks NIRVANA
+# All rights reserved. © alexsacei © NIRVANA
 
 
 import asyncio
