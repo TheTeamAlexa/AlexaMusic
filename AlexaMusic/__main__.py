@@ -2,11 +2,11 @@
 # Copyright (C) 2021-2022 by Alexsacei @Github, < https://github.com/kenta9900 >.
 # A Powerful Music Bot Property Of Rocks Indian NIRVANA
 
-# Kanged By © @Dr_Asad_Ali
-# Rocks © @Shayri_Music_Lovers
-# Owner Asad Ali
-# Harshit Sharma
-# All rights reserved. © Alisha © Alexa © Alexa
+# Kanged By © @exsaezz
+# Rocks © @groupjawanusantara
+# Owner Alexsacei
+# Alexsacei
+# All rights reserved. © Alisha © Alexa © Alexsacei
 
 
 import asyncio
@@ -46,24 +46,24 @@ async def init():
         pass
     await app.start()
     for all_module in ALL_MODULES:
-        importlib.import_module("AlexaMusic.plugins" + all_module)
-    LOGGER("AlexaMusic.plugins").info("Necessary Modules Imported Successfully.")
+        importlib.import_module("AlexsaMusic.plugins" + all_module)
+    LOGGER("AlexsaceiMusic.plugins").info("Necessary Modules Imported Successfully.")
     await userbot.start()
-    await Alexa.start()
+    await Alexsa.start()
     try:
-        await Alexa.stream_call("https://telegra.ph/file/b60b80ccb06f7a48f68b5.mp4")
+        await Alexsa.stream_call("https://telegra.ph/file/b60b80ccb06f7a48f68b5.mp4")
     except NoActiveGroupCall:
-        LOGGER("AlexaMusic").error(
+        LOGGER("AlexsaMusic").error(
             "[ERROR] - \n\nTurn on group voice chat and don't put it off otherwise I'll stop working thanks."
         )
         sys.exit()
     except:
         pass
     await Alexa.decorators()
-    LOGGER("AlexaMusic").info("Music Bot Started Successfully")
+    LOGGER("AlexsaMusic").info("Music Bot Started Successfully")
     await idle()
 
 
 if __name__ == "__main__":
     loop.run_until_complete(init())
-    LOGGER("AlexaMusic").info("Stopping Music Bot")
+    LOGGER("AlexsaMusic").info("Stopping Music Bot")
