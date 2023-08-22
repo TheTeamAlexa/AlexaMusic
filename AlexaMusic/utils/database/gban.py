@@ -1,13 +1,13 @@
-# A Powerful Music Bot Property Of Rocks Indian Largest Chatting Group
+# A Powerful Music Bot Property Of Rocks NIRVANA
 # Without Credit (Mother Fucker)
-# Rocks © @Dr_Asad_Ali © Rocks
-# Owner Asad Ali
-# Harshit Sharma
+# Rocks © @exsaezz © Rocks
+# Owner Alexsacei
+# Alexsa cei
 
 
 from typing import Dict, List, Union
 
-from AlexaMusic.core.mongo import mongodb
+from AlexsaceiMusic.core.mongo import mongodb
 
 gbansdb = db.gban
 
