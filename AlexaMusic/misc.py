@@ -1,12 +1,12 @@
 #
-# Copyright (C) 2021-2022 by Alexa_Help@Github, < https://github.com/Jankarikiduniya >.
+# Copyright (C) 2021-2022 by Alexsacei@Github, < https://github.com/kenta9900 >.
 # A Powerful Music Bot Property Of Rocks Indian Largest Chatting Group
 
-# Kanged By © @Dr_Asad_Ali
-# Rocks © @Shayri_Music_Lovers
-# Owner Asad Ali
-# Harshit Sharma
-# All rights reserved. © Alisha © Alexa © Yukki 2022
+# Kanged By © @exsaezz
+# Rocks © @groupjawanusantara
+# Owner alexsacei
+# 
+# All rights reserved. © Alisha © Alexa © Yukki 2022 © Alexsa
 
 
 import socket
@@ -16,7 +16,7 @@ import heroku3
 from pyrogram import filters
 
 import config
-from AlexaMusic.core.mongo import pymongodb
+from AlexasaceiMusic.core.mongo import pymongodb
 
 from .logging import LOGGER
 
