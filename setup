@@ -1,5 +1,5 @@
 #!/bin/bash
-### Alexa Music Bot Installer
+### Alexsacei Music Bot Installer
 
 pprint (){
 	cred='\033[0;31m'
@@ -75,7 +75,7 @@ node(){
 
 repo(){
 	# Get git repo if the installer is runned standalone
-	[[ ! "AlexaMusic" == $(basename -s .git `git config --get remote.origin.url`) ]] &&
+	[[ ! "AlexsaMusic" == $(basename -s .git `git config --get remote.origin.url`) ]] &&
 	git clone https://github.com/Jankarikiduniya/AlexaMusic &&  cd AlexaMusic
 }
 
