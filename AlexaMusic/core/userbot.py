@@ -1,12 +1,12 @@
 #
-# Copyright (C) 2021-2022 by Alexa_Help@Github, < https://github.com/Jankarikiduniya >.
-# A Powerful Music Bot Property Of Rocks Indian Largest Chatting Group
+# Copyright (C) 2021-2022 by Alexa_Help@Github, < https://github.com/kenta9900 >.
+# A Powerful Music Bot Property Of Rocks NIRVANA
 
-# Kanged By © @Dr_Asad_Ali
-# Rocks © @Shayri_Music_Lovers
-# Owner Asad Ali
-# Harshit Sharma
-# All rights reserved. © Alisha © Alexa © Yukki
+# Kanged By © @exsaezz
+# Rocks © @groupjawanusantara
+# Owner Alexsacei
+# Alexsacei
+# All rights reserved. © Alisha © Alexa © Yukki © Alexsacei
 
 
 import sys
@@ -59,7 +59,7 @@ class Userbot(Client):
         if config.STRING1:
             await self.one.start()
             try:
-                await self.one.join_chat("Alexsacei_Help")
+                await self.one.join_chat("groupjawanusantara")
             except:
                 pass
             assistants.append(1)
@@ -85,7 +85,7 @@ class Userbot(Client):
         if config.STRING2:
             await self.two.start()
             try:
-                await self.two.join_chat("alexsacei_help")
+                await self.two.join_chat("groupjawanusantara")
             except:
                 pass
             assistants.append(2)
@@ -111,7 +111,7 @@ class Userbot(Client):
         if config.STRING3:
             await self.three.start()
             try:
-                await self.three.join_chat("Alexsacei_Help")
+                await self.three.join_chat("groupjawanusantara")
             except:
                 pass
             assistants.append(3)
@@ -137,7 +137,7 @@ class Userbot(Client):
         if config.STRING4:
             await self.four.start()
             try:
-                await self.four.join_chat("Alexa_Help")
+                await self.four.join_chat("groupjawanusantara")
             except:
                 pass
             assistants.append(4)
@@ -163,7 +163,7 @@ class Userbot(Client):
         if config.STRING5:
             await self.five.start()
             try:
-                await self.five.join_chat("Alexsacei_Help")
+                await self.five.join_chat("groupjawanusantara")
             except:
                 pass
             assistants.append(5)
