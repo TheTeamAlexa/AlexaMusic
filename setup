@@ -76,7 +76,7 @@ node(){
 repo(){
 	# Get git repo if the installer is runned standalone
 	[[ ! "AlexsaMusic" == $(basename -s .git `git config --get remote.origin.url`) ]] &&
-	git clone https://github.com/Jankarikiduniya/AlexaMusic &&  cd AlexaMusic
+	git clone https://github.com/kenta9900/AlexsaMusic &&  cd AlexsaMusic
 }
 
 
