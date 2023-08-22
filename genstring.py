@@ -1,11 +1,11 @@
 #
-# Copyright (C) 2021-2022 by Alexa_Help@Github, < https://github.com/Jankarikiduniya >.
-# A Powerful Music Bot Property Of Rocks Indian Largest Chatting Group
+# Copyright (C) 2021-2022 by Alexsacei@Github, < https://github.com/kenta9900 >.
+# A Powerful Music Bot Property Of Rocks NIRVANA
 
 # Kanged By © @exsaezz
-# Rocks @quenforU
-# Owner justenoughtz
-# exsaezz
+# Rocks @groupjawanusantara
+# Owner alexsacei
+# alexsacei
 # All rights reserved.
 
 
