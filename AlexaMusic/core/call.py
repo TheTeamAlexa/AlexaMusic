@@ -27,7 +27,7 @@ from pytgcalls.types.stream import StreamAudioEnded
 
 import config
 from strings import get_string
-from alexsaceiMusic import LOGGER, YouTube, app
+from AlexsaceiMusic import LOGGER, YouTube, app
 from AlexsaceiMusic.misc import db
 from AlexsaceiMusic.utils.database import (
     add_active_chat,
