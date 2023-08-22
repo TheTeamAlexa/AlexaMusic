@@ -1,19 +1,19 @@
 #
-# Copyright (C) 2021-2022 by Alexa_Help@Github, < https://github.com/Jankarikiduniya >.
-# A Powerful Music Bot Property Of Rocks Indian Largest Chatting Group
+# Copyright (C) 2021-2022 by Alexsacei@Github, < https://github.com/kenta9900 >.
+# A Powerful Music Bot Property Of Rocks NIRVANA
 
-# Kanged By © @Dr_Asad_Ali
-# Rocks © @Shayri_Music_Lovers
-# Owner Asad Ali
-# Harshit Sharma
-# All rights reserved. © Alexa © Yukki
+# Kanged By © @exsaezz
+# Rocks © @groupjawanusantara
+# Owner Alexsacei
+# Alexsacei
+# All rights reserved. © Alexa © Yukki © Alexsacei
 
 
-from AlexaMusic.core.bot import AlexaBot
-from AlexaMusic.core.dir import dirr
-from AlexaMusic.core.git import git
-from AlexaMusic.core.userbot import Userbot
-from AlexaMusic.misc import dbb, heroku, sudo
+from AlexsaceiMusic.core.bot import AlexsaBot
+from AlexsaceiMusic.core.dir import dirr
+from AlexsaceiMusic.core.git import git
+from AlexsaceiMusic.core.userbot import Userbot
+from AlexsaceiMusic.misc import dbb, heroku, sudo
 
 from .logging import LOGGER
 
@@ -33,7 +33,7 @@ heroku()
 sudo()
 
 # Bot Client
-app = AlexaBot()
+app = AlexsaBot()
 
 # Assistant Client
 userbot = Userbot()
