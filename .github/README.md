@@ -1,4 +1,4 @@
-<h1 align="center"><b>❤️ ALEXsacei MUSIC 2.0 ❤️</b></h1>
+<h1 align="center"><b>❤️ ℕ𝕀ℝ𝕍𝔸ℕ𝔸 MUSIC 2.0 ❤️</b></h1>
 
 <h4 align="center"> ℕ𝕀ℝ𝕍𝔸ℕ𝔸 A Powerful, Smart And Simple Bot To Play Audio And Video Song In Telegram<br> ... Written With Python and Telethon...</h4>
 
