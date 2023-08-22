@@ -1,11 +1,11 @@
 #
-# Copyright (C) 2021-2022 by Alexa_Help @ Github, < https://github.com/TheTeamAlexa >.
-# A Powerful Music Bot Property Of Rocks Indian Largest Chatting Group
-# All rights reserved. © Alisha © Alexa © Yukki
+# Copyright (C) 2021-2022 by Alexsacei @ Github, < https://github.com/kenta9900 >.
+# A Powerful Music Bot Property Of Rocks NIRVANA
+# All rights reserved. © Alisha © Alexa © Yukki © ALEXSACEI
 
 
 from typing import Dict, List, Union
-from AlexaMusic.core.mongo import mongodb
+from AlexsaceiMusic.core.mongo import mongodb
 
 themedb = mongodb.notes
 
