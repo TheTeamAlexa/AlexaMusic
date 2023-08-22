@@ -9,8 +9,8 @@
 # All rights reserved. © Alisha © Alexa © Yukki
 
 
-from AlexaMusic import app
-from AlexaMusic.utils.database import get_cmode
+from AlexsaceiMusic import app
+from AlexsaceiMusic.utils.database import get_cmode
 
 
 async def get_channeplayCB(_, command, CallbackQuery):
