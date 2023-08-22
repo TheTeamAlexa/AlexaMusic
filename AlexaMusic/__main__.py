@@ -1,6 +1,6 @@
 #
-# Copyright (C) 2021-2022 by Alexa_Help @Github, < https://github.com/TheTeamAlexa >.
-# A Powerful Music Bot Property Of Rocks Indian Largest Chatting Group
+# Copyright (C) 2021-2022 by Alexsacei @Github, < https://github.com/kenta9900 >.
+# A Powerful Music Bot Property Of Rocks Indian NIRVANA
 
 # Kanged By © @Dr_Asad_Ali
 # Rocks © @Shayri_Music_Lovers
@@ -18,10 +18,10 @@ from pytgcalls.exceptions import NoActiveGroupCall
 
 import config
 from config import BANNED_USERS
-from AlexaMusic import LOGGER, app, userbot
-from AlexaMusic.core.call import Alexa
-from AlexaMusic.plugins import ALL_MODULES
-from AlexaMusic.utils.database import get_banned_users, get_gbanned
+from AlexsaceiMusic import LOGGER, app, userbot
+from AlexsaceiMusic.core.call import Alexsa
+from AlexsaceiMusic.plugins import ALL_MODULES
+from AlexsaceiMusic.utils.database import get_banned_users, get_gbanned
 
 loop = asyncio.get_event_loop()
 
