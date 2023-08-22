@@ -1,17 +1,17 @@
 #
-# Copyright (C) 2021-2022 by Alexa_Help@Github, < https://github.com/Jankarikiduniya >.
-# A Powerful Music Bot Property Of Rocks Indian Largest Chatting Group
+# Copyright (C) 2021-2022 by Alexsacei@Github, < https://github.com/kenta9900 >.
+# A Powerful Music Bot Property Of Rocks NIRVANA
 
-# Kanged By © @Dr_Asad_Ali
-# Rocks © @Shayri_Music_Lovers
-# Owner Asad Ali
-# Harshit Sharma
-# All rights reserved. © Alisha © Alexa © Yukki
+# Kanged By © @exsaezz
+# Rocks © @groupjawanusantara
+# Owner Alexsacei
+# Alexsa cei
+# All rights reserved. © Alisha © Alexa © Yukki © Alexsacei
 
 
 from typing import Dict, List, Union
 
-from AlexaMusic.core.mongo import mongodb
+from AlexsaceiMusic.core.mongo import mongodb
 
 queriesdb = mongodb.queries
 userdb = mongodb.userstats
