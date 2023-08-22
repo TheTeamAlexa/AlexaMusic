@@ -1,6 +1,6 @@
 #
-# Copyright (C) 2021-2022 by Alexa_Help@Github, < https://github.com/Jankarikiduniya >.
-# A Powerful Music Bot Property Of Rocks Indian Largest Chatting Group
+# Copyright (C) 2021-2022 by Alexsacei@Github, < https://github.com/kenta9900 >.
+# A Powerful Music Bot Property Of Rocks NIRVANA
 # All rights reserved. © Alisha © Alexa © Yukki
 
 
@@ -21,8 +21,8 @@ def song_markup(_, vidid):
         ],
         [
             InlineKeyboardButton(
-                text="🌻 sᴜᴩᴩᴏʀᴛ 🌻",
-                url="https://t.me/Alexa_Help",
+                text="💌 sᴜᴩᴩᴏʀᴛ 💌",
+                url="https://t.me/jawanusantara",
             ),
             InlineKeyboardButton(text=_["CLOSE_BUTTON"], callback_data="close"),
         ],
