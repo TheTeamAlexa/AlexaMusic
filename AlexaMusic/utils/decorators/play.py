@@ -1,11 +1,11 @@
 #
-# Copyright (C) 2021-2022 by Alexa_Help@Github, < https://github.com/Jankarikiduniya >.
-# A Powerful Music Bot Property Of Rocks Indian Largest Chatting Group
+# Copyright (C) 2021-2022 by Alexsacei@Github, < https://github.com/kenta9900 >.
+# A Powerful Music Bot Property Of Rocks NIRVANA
 
-# Kanged By © @Dr_Asad_Ali
-# Rocks © @Shayri_Music_Lovers
-# Owner Asad Ali
-# Harshit Sharma
+# Kanged By © @exsaezz
+# Rocks © @groupjawanusantara
+# Owner Alexsa cei
+# Alexsa cei
 # All rights reserved. © Alisha © Alexa © Yukki
 
 
@@ -13,9 +13,9 @@ from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup
 
 from config import PLAYLIST_IMG_URL, PRIVATE_BOT_MODE, adminlist
 from strings import get_string
-from AlexaMusic import YouTube, app
-from AlexaMusic.misc import SUDOERS
-from AlexaMusic.utils.database import (
+from AlexsaceiMusic import YouTube, app
+from AlexsaceiMusic.misc import SUDOERS
+from AlexsaceiMusic.utils.database import (
     get_cmode,
     get_lang,
     get_playmode,
@@ -24,8 +24,8 @@ from AlexaMusic.utils.database import (
     is_commanddelete_on,
     is_served_private_chat,
 )
-from AlexaMusic.utils.database.memorydatabase import is_maintenance
-from AlexaMusic.utils.inline.playlist import botplaylist_markup
+from AlexsaceiMusic.utils.database.memorydatabase import is_maintenance
+from AlexsaceiMusic.utils.inline.playlist import botplaylist_markup
 
 
 def PlayWrapper(command):
