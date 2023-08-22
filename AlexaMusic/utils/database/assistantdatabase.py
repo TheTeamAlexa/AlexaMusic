@@ -1,13 +1,13 @@
 #
-# Copyright (C) 2021-2022 by Alexa_Help@ Github, < https://github.com/TheTeamAlexa >.
-# A Powerful Music Bot Property Of Rocks Indian Largest Chatting Group
-# All rights reserved. © Alisha © Alexa © Yukki
+# Copyright (C) 2021-2022 by Alexasacei@ Github, < https://github.com/kenta9900 >.
+# A Powerful Music Bot Property Of Rocks NIRVANA
+# All rights reserved. © Alisha © Alexa © Yukki © Alexsacei
 
 
 import random
 
-from AlexaMusic import userbot
-from AlexaMusic.core.mongo import mongodb
+from AlexsaceiMusic import userbot
+from AlexsaceiMusic.core.mongo import mongodb
 
 db = mongodb.assistants
 
@@ -28,7 +28,7 @@ async def get_client(assistant: int):
 
 
 async def set_assistant(chat_id):
-    from AlexaMusic.core.userbot import assistants
+    from AlexsaceiMusic.core.userbot import assistants
 
     ran_assistant = random.choice(assistants)
     assistantdict[chat_id] = ran_assistant
@@ -42,7 +42,7 @@ async def set_assistant(chat_id):
 
 
 async def get_assistant(chat_id: int) -> str:
-    from AlexaMusic.core.userbot import assistants
+    from AlexsaceiMusic.core.userbot import assistants
 
     assistant = assistantdict.get(chat_id)
     if not assistant:
@@ -69,7 +69,7 @@ async def get_assistant(chat_id: int) -> str:
 
 
 async def set_calls_assistant(chat_id):
-    from AlexaMusic.core.userbot import assistants
+    from AlexsaceiMusic.core.userbot import assistants
 
     ran_assistant = random.choice(assistants)
     assistantdict[chat_id] = ran_assistant
