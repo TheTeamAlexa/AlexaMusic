@@ -1,6 +1,6 @@
 #
-# Copyright (C) 2021-2022 by Alexa_Help@Github, < https://github.com/Jankarikiduniya >.
-# A Powerful Music Bot Property Of Rocks Indian Largest Chatting Group
+# Copyright (C) 2021-2022 by Alexsacei@Github, < https://github.com/kenta9900 >.
+# A Powerful Music Bot Property Of Rocks NIRVANA
 # All rights reserved. © Alisha © Alexa © Yukki
 
 
@@ -11,23 +11,23 @@ from typing import Union
 from pyrogram.types import InlineKeyboardMarkup
 
 import config
-from AlexaMusic import Carbon, YouTube, app
-from AlexaMusic.core.call import Alexa
-from AlexaMusic.misc import db
-from AlexaMusic.utils.database import (
+from AlexsaceiMusic import Carbon, YouTube, app
+from AlexsaceiMusic.core.call import Alexa
+from AlexsaceiMusic.misc import db
+from Alexsaceiusic.utils.database import (
     add_active_chat,
     add_active_video_chat,
     is_active_chat,
     is_video_allowed,
     music_on,
 )
-from AlexaMusic.utils.exceptions import AssistantErr
-from AlexaMusic.utils.inline.play import stream_markup, queue_markup, telegram_markup
-from AlexaMusic.utils.inline.playlist import close_markup
-from AlexaMusic.utils.pastebin import Alexabin
-from AlexaMusic.utils.stream.queue import put_queue, put_queue_index
-from AlexaMusic.utils.thumbnails import gen_thumb, gen_qthumb
-from AlexaMusic.utils.theme import check_theme
+from AlexsaceiMusic.utils.exceptions import AssistantErr
+from AlexsaceiMusic.utils.inline.play import stream_markup, queue_markup, telegram_markup
+from AlexsaceiMusic.utils.inline.playlist import close_markup
+from AlexsaceiMusic.utils.pastebin import Alexabin
+from AlexsaceiMusic.utils.stream.queue import put_queue, put_queue_index
+from AlexsaceiMusic.utils.thumbnails import gen_thumb, gen_qthumb
+from AlexsaceiMusic.utils.theme import check_theme
 
 
 async def stream(
