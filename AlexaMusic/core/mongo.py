@@ -1,7 +1,7 @@
 #
-# Copyright (C) 2021-2022 by Alexa_Help @ Github, < https://github.com/TheTeamAlexa >.
-# A Powerful Music Bot Property Of Rocks Indian Largest Chatting Group
-# Subscribe On YT Jankari Ki Duniya
+# Copyright (C) 2021-2022 by Alexa_Help @ Github, < https://github.com/kenta9900 >.
+# A Powerful Music Bot Property Of Rocks NIRVANA
+# 
 
 from motor.motor_asyncio import AsyncIOMotorClient as _mongo_client_
 from pymongo import MongoClient
