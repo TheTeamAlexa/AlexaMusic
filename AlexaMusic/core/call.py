@@ -1,7 +1,7 @@
 #
-# Copyright (C) 2021-2022 by Alexa_Help Github, < https://github.com/Jankarikiduniya >.
-# A Powerful Music Bot Property Of Rocks Indian Largest Chatting Group
-# All rights reserved. © Alisha © Alexa © Yukki
+# Copyright (C) 2021-2022 by alexsacei Github, < https://github.com/kenta9900 >.
+# A Powerful Music Bot Property Of Rocks NIRVANA
+# All rights reserved. © Alisha © Alexa © Yukki © alexsacei
 
 
 import asyncio
@@ -27,9 +27,9 @@ from pytgcalls.types.stream import StreamAudioEnded
 
 import config
 from strings import get_string
-from AlexaMusic import LOGGER, YouTube, app
-from AlexaMusic.misc import db
-from AlexaMusic.utils.database import (
+from alexsaceiMusic import LOGGER, YouTube, app
+from AlexsaceiMusic.misc import db
+from AlexsaceiMusic.utils.database import (
     add_active_chat,
     add_active_video_chat,
     get_assistant,
@@ -45,11 +45,11 @@ from AlexaMusic.utils.database import (
     remove_active_video_chat,
     set_loop,
 )
-from AlexaMusic.utils.exceptions import AssistantErr
-from AlexaMusic.utils.inline.play import stream_markup, telegram_markup
-from AlexaMusic.utils.stream.autoclear import auto_clean
-from AlexaMusic.utils.thumbnails import gen_thumb
-from AlexaMusic.utils.theme import check_theme
+from AlexsaceiMusic.utils.exceptions import AssistantErr
+from AlexsaceiMusic.utils.inline.play import stream_markup, telegram_markup
+from AlexsaceiMusic.utils.stream.autoclear import auto_clean
+from AlexsaceiMusic.utils.thumbnails import gen_thumb
+from AlexsaceiMusic.utils.theme import check_theme
 
 
 autoend = {}
@@ -666,4 +666,4 @@ class Call(PyTgCalls):
                 autoend[chat_id] = {}
 
 
-Alexa = Call()
+alexsacei = Call()
