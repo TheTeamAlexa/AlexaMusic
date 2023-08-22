@@ -1,17 +1,17 @@
 #
-# Copyright (C) 2021-2022 by Alexa_Help@Github, < https://github.com/Jankarikiduniya >.
-# A Powerful Music Bot Property Of Rocks Indian Largest Chatting Group
+# Copyright (C) 2021-2022 by Alexsacei@Github, < https://github.com/kenta9900 >.
+# A Powerful Music Bot Property Of Rocks NIRVANA
 
-# Kanged By © @Dr_Asad_Ali
-# Rocks © @Shayri_Music_Lovers
-# Owner Asad Ali
-# Harshit Sharma
+# Kanged By © @exsaezz
+# Rocks © @groupjawanusantara
+# Owner Alexsa cei
+# Alexsa cei
 # All rights reserved. © Alisha © Alexa © Yukki
 
 
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup
 
-from AlexaMusic import app
+from AlexsaceiMusic import app
 
 
 def back_stats_markup(_):
