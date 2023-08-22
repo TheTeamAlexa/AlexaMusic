@@ -1,12 +1,12 @@
 #
-# Copyright (C) 2021-2022 by Nirvana < https://github.com/Jankarikiduniya >.
+# Copyright (C) 2021-2022 by Nirvana < https://github.com/kenta9900 >.
 # A Powerful Music Bot Property Of Rocks Nirvana
 
 # Kanged By © @exsaezz
-# Rocks © @justenoughtz
-# Owner exsaa
+# Rocks © @groupjawanusantara
+# Owner Alexsacei
 # 
-# All rights reserved. © nirvana axessa 
+# All rights reserved. © Nirvana © Alexsacei
 
 
 import re
