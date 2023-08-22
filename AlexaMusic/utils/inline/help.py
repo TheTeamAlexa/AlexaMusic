@@ -1,6 +1,6 @@
 #
-# Copyright (C) 2021-2022 by Alexa_Help@Github, < https://github.com/Jankarikiduniya >.
-# A Powerful Music Bot Property Of Rocks Indian Largest Chatting Group
+# Copyright (C) 2021-2022 by Alexasacei@Github, < https://github.com/kenta9900 >.
+# A Powerful Music Bot Property Of Rocks NIRVANA
 # All rights reserved. © Alisha © Alexa © Yukki
 
 
@@ -8,7 +8,7 @@ from typing import Union
 
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup
 
-from AlexaMusic import app
+from AlexsaceiMusic import app
 
 
 def help_pannel(_, START: Union[bool, int] = None):
