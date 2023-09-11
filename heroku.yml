@@ -1,5 +1,5 @@
 build:
   docker:
-    worker: Dockerfile
+    eco: Dockerfile
 run:
-  worker: bash start
+  eco: bash start
