@@ -35,3 +35,8 @@ else:
     _mongo_sync_ = MongoClient(config.MONGO_DB_URI)
     mongodb = _mongo_async_.Alexa
     pymongodb = _mongo_sync_.Alexa
+
+## Database For Broadcast Subscription By Team Alexa 
+
+MONGODB_CLI = MongoClient(config.MONGO_DB_URI)
+db = MONGODB_CLI['subscriptions']
