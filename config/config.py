@@ -1,7 +1,13 @@
-#
-# Copyright (C) 2021-2022 by Alexa_Help@Github, < https://github.com/Jankarikiduniya >.
-# A Powerful Music Bot Property Of Rocks Indian Largest Chatting Group
-# All rights reserved. © Alisha © Alexa © Yukki
+# Copyright (C) 2021-2022 by Alexa_Help @ Github, < https://github.com/TheTeamAlexa >
+# Subscribe On YT < Jankari Ki Duniya >. All rights reserved. © Alexa © Yukki.
+
+""""
+Alexa is a Telegram Audio and video streaming bot 
+Copyright (c) 2023 -present Team=Alexa <https://github.com/TheTeamAlexa>
+
+This program is free software: you can redistribute it and can modify
+as you want.
+"""
 
 
 import re
