@@ -13,10 +13,9 @@ as you want or you can collabe if you have new ideas.
 import sys
 
 from pyrogram import Client
-
 import config
-
 from ..logging import LOGGER
+from pyrogram.enums import ChatMemberStatus
 
 
 class AlexaBot(Client):
@@ -44,7 +43,7 @@ class AlexaBot(Client):
             )
             sys.exit()
         a = await self.get_chat_member(config.LOG_GROUP_ID, self.id)
-        if a.status != "administrator":
+        if a.status != ChatMemberStatus.ADMINISTRATOR:
             LOGGER(__name__).error("Please promote Bot as Admin in Logger Group")
             sys.exit()
         if get_me.last_name:
