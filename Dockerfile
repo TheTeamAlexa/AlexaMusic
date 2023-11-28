@@ -1,4 +1,5 @@
-FROM nikolaik/python-nodejs:python3.9-nodejs18
+FROM debian:11
+FROM python:3.10.5-slim-buster
 RUN apt-get update -y && apt-get upgrade -y \
     && apt-get install -y --no-install-recommends ffmpeg \
     && apt-get clean \
