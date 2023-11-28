@@ -29,6 +29,12 @@ def dirr():
     for file in os.listdir():
         if file.endswith(".jpeg"):
             os.remove(file)
+    for file in os.listdir():
+        if file.endswith(".session"):
+            os.remove(file)
+    for file in os.listdir():
+        if file.endswith(".session-journal"):
+            os.remove(file)
     if "downloads" not in listdir():
         mkdir("downloads")
     if "cache" not in listdir():
