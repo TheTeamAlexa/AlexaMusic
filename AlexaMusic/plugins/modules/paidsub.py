@@ -21,4 +21,3 @@ from AlexaMusic.utils.database import get_served_users, get_served_chats
 
 
 OWNER_ID = 6174058850
-
