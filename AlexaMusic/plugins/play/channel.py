@@ -9,15 +9,15 @@ This program is free software: you can redistribute it and can modify
 as you want or you can collabe if you have new ideas.
 """
 
-
+from AlexaMusic import app
 from pyrogram import filters
-from pyrogram.types import Message
-
 from config import BANNED_USERS
 from strings import get_command
-from AlexaMusic import app
+from pyrogram.types import Message
 from AlexaMusic.utils.database import set_cmode
 from AlexaMusic.utils.decorators.admins import AdminActual
+from pyrogram.enums import ChatMembersFilter, ChatMemberStatus, ChatType
+
 
 ### Multi-Lang Commands
 CHANNELPLAY_COMMAND = get_command("CHANNELPLAY_COMMAND")
@@ -52,21 +52,26 @@ async def playmode_(client, message: Message, _):
     else:
         try:
             chat = await app.get_chat(query)
-        except:
+         except Exception as e:
+            print(f"Error: {e}")
             return await message.reply_text(_["cplay_4"])
-        if chat.type != "channel":
+        if chat.type != ChatType.CHANNEL:
             return await message.reply_text(_["cplay_5"])
         try:
-            admins = await app.get_chat_members(chat.id, filter="administrators")
-        except:
+            async for user in app.get_chat_members(
+                chat.id, filter=ChatMembersFilter.ADMINISTRATORS
+            ):
+                if user.status == ChatMemberStatus.OWNER:
+                    creatorusername = user.user.username
+                    creatorid = user.user.id
+        except Exception as e:
+            print(f"Error: {e}")
             return await message.reply_text(_["cplay_4"])
-        for users in admins:
-            if users.status == "creator":
-                creatorusername = users.user.username
-                creatorid = users.user.id
         if creatorid != message.from_user.id:
             return await message.reply_text(
                 _["cplay_6"].format(chat.title, creatorusername)
             )
         await set_cmode(message.chat.id, chat.id)
-        return await message.reply_text(_["cplay_3"].format(chat.title, chat.id))
+        return await message.reply_text(
+            _["cplay_3"].format(chat.title, chat.id)
+        )
