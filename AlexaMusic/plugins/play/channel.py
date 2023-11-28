@@ -21,6 +21,7 @@ from pyrogram.enums import ChatMembersFilter, ChatMemberStatus, ChatType
 ### Multi-Lang Commands
 CHANNELPLAY_COMMAND = get_command("CHANNELPLAY_COMMAND")
 
+
 @app.on_message(
     filters.command(CHANNELPLAY_COMMAND)
     & filters.group
@@ -70,6 +71,4 @@ async def playmode_(client, message: Message, _):
                 _["cplay_6"].format(chat.title, creatorusername)
             )
         await set_cmode(message.chat.id, chat.id)
-        return await message.reply_text(
-            _["cplay_3"].format(chat.title, chat.id)
-        )
+        return await message.reply_text(_["cplay_3"].format(chat.title, chat.id))
