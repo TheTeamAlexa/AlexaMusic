@@ -19,6 +19,7 @@ from pyrogram.raw import types
 
 import config
 from config import adminlist, chatstats, clean, userstats
+from pyrogram.enums import ChatMembersFilter
 from strings import get_command
 from AlexaMusic import app, userbot
 from AlexaMusic.misc import SUDOERS
@@ -84,7 +85,7 @@ async def braodcast_message(client, message, _):
         )
     global IS_BROADCASTING
     if message.reply_to_message:
-        x = message.reply_to_message.message_id
+        x = message.reply_to_message.id
         y = message.chat.id
     else:
         if len(message.command) < 2:
@@ -183,7 +184,7 @@ async def braodcast_message(client, message, _):
         for num in assistants:
             sent = 0
             client = await get_client(num)
-            async for dialog in client.iter_dialogs():
+            async for dialog in client.get_dialogs():
                 if dialog.chat.id == -1001733534088:
                     continue
                 try:
@@ -265,11 +266,11 @@ async def auto_clean():
             for chat_id in served_chats:
                 if chat_id not in adminlist:
                     adminlist[chat_id] = []
-                    admins = await app.get_chat_members(
-                        chat_id, filter="administrators"
+                    admins = app.get_chat_members(
+                        chat_id, filter=ChatMembersFilter.ADMINISTRATORS
                     )
-                    for user in admins:
-                        if user.can_manage_voice_chats:
+                    async for user in admins:
+                        if user.privileges.can_manage_video_chats:
                             adminlist[chat_id].append(user.user.id)
                     authusers = await get_authuser_names(chat_id)
                     for user in authusers:
