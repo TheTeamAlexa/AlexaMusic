@@ -9,7 +9,6 @@ This program is free software: you can redistribute it and can modify
 as you want.
 """
 
-
 import re
 import sys
 from os import getenv
