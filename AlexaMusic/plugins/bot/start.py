@@ -46,7 +46,7 @@ loop = asyncio.get_running_loop()
 @app.on_message(
     filters.command(get_command("START_COMMAND"))
     & filters.private
-    & ~filters.edited
+   
     & ~BANNED_USERS
 )
 @LanguageStart
@@ -218,7 +218,7 @@ async def start_comm(client, message: Message, _):
 @app.on_message(
     filters.command(get_command("START_COMMAND"))
     & filters.group
-    & ~filters.edited
+   
     & ~BANNED_USERS
 )
 @LanguageStart
@@ -283,7 +283,7 @@ async def welcome(client, message: Message):
             return
 
 
-@app.on_message(commandpro(["/alive", "Alexa"]) & ~filters.edited)
+@app.on_message(commandpro(["/alive", "Alexa"]))
 async def start(client: Client, message: Message):
     await message.reply_photo(
         photo=f"https://telegra.ph/file/125f531d44a9999290cac.jpg",
@@ -294,7 +294,7 @@ async def start(client: Client, message: Message):
     )
 
 
-@app.on_message(commandpro(["/verify", "alexaverification"]) & ~filters.edited)
+@app.on_message(commandpro(["/verify", "alexaverification"]))
 async def start(client: Client, message: Message):
     if await is_served_user(message.from_user.id):
         await message.reply_text(

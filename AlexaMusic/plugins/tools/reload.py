@@ -31,7 +31,7 @@ RESTART_COMMAND = get_command("RESTART_COMMAND")
 
 
 @app.on_message(
-    filters.command(RELOAD_COMMAND) & filters.group & ~filters.edited & ~BANNED_USERS
+    filters.command(RELOAD_COMMAND) & filters.group & ~BANNED_USERS
 )
 @language
 async def reload_admin_cache(client, message: Message, _):
@@ -58,7 +58,7 @@ async def reload_admin_cache(client, message: Message, _):
 
 
 @app.on_message(
-    filters.command(RESTART_COMMAND) & filters.group & ~filters.edited & ~BANNED_USERS
+    filters.command(RESTART_COMMAND) & filters.group & ~BANNED_USERS
 )
 @AdminActual
 async def restartbot(client, message: Message, _):
