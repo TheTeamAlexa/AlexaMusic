@@ -12,6 +12,8 @@ as you want or you can collabe if you have new ideas.
 import asyncio
 from datetime import datetime
 
+from pyrogram.enums import ChatType
+
 import config
 from AlexaMusic import app
 from AlexaMusic.core.call import Alexa, autoend
@@ -26,12 +28,12 @@ async def auto_leave():
             for num in assistants:
                 client = await get_client(num)
                 try:
-                    async for i in client.iter_dialogs():
+                    async for i in client.get_dialogs():
                         chat_type = i.chat.type
                         if chat_type in [
-                            "supergroup",
-                            "group",
-                            "channel",
+                            ChatType.SUPERGROUP,
+                            ChatType.GROUP,
+                            ChatType.CHANNEL,
                         ]:
                             chat_id = i.chat.id
                             if (
