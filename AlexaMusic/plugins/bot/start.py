@@ -172,7 +172,7 @@ async def start_comm(client, message: Message, _):
                 message.chat.id,
                 photo=thumbnail,
                 caption=searched_text,
-                parse_mode="markdown",
+                parse_mode=enums.ParseMode.MARKDOWN,
                 reply_markup=key,
             )
             if await is_on_off(config.LOG):
