@@ -15,12 +15,12 @@ import re
 import string
 
 import lyricsgenius as lg
-from config import BANNED_USERS, lyrical
 from pyrogram import filters
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup, Message
 
 from AlexaMusic import app
 from AlexaMusic.utils.decorators.language import language
+from config import BANNED_USERS, lyrical
 from strings import get_command
 
 ###Commands

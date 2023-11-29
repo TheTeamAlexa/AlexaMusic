@@ -12,7 +12,6 @@ as you want or you can collabe if you have new ideas.
 
 import asyncio
 
-from config import BANNED_USERS, MUSIC_BOT_NAME, adminlist, lyrical
 from pyrogram import filters
 from pyrogram.enums import ChatMembersFilter
 from pyrogram.types import CallbackQuery, Message
@@ -23,6 +22,7 @@ from AlexaMusic.misc import db
 from AlexaMusic.utils.database import get_authuser_names, get_cmode
 from AlexaMusic.utils.decorators import ActualAdminCB, AdminActual, language
 from AlexaMusic.utils.formatters import alpha_to_int
+from config import BANNED_USERS, MUSIC_BOT_NAME, adminlist, lyrical
 from strings import get_command
 
 ### Multi-Lang Commands

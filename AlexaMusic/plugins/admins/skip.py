@@ -10,11 +10,10 @@ as you want or you can collabe if you have new ideas.
 """
 
 
-import config
-from config import BANNED_USERS
 from pyrogram import filters
 from pyrogram.types import InlineKeyboardMarkup, Message
 
+import config
 from AlexaMusic import YouTube, app
 from AlexaMusic.core.call import Alexa
 from AlexaMusic.misc import db
@@ -24,6 +23,7 @@ from AlexaMusic.utils.inline.play import stream_markup, telegram_markup
 from AlexaMusic.utils.stream.autoclear import auto_clean
 from AlexaMusic.utils.theme import check_theme
 from AlexaMusic.utils.thumbnails import gen_thumb
+from config import BANNED_USERS
 from strings import get_command
 
 # Commands

@@ -14,9 +14,9 @@ import os
 from random import randint
 from typing import Union
 
-import config
 from pyrogram.types import InlineKeyboardMarkup
 
+import config
 from AlexaMusic import Carbon, YouTube, app
 from AlexaMusic.core.call import Alexa
 from AlexaMusic.misc import db

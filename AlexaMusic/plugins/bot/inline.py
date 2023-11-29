@@ -10,7 +10,6 @@ as you want or you can collabe if you have new ideas.
 """
 
 
-from config import BANNED_USERS, MUSIC_BOT_NAME
 from pyrogram.types import (
     InlineKeyboardButton,
     InlineKeyboardMarkup,
@@ -20,6 +19,7 @@ from youtubesearchpython.__future__ import VideosSearch
 
 from AlexaMusic import app
 from AlexaMusic.utils.inlinequery import answer
+from config import BANNED_USERS, MUSIC_BOT_NAME
 
 
 @app.on_inline_query(~BANNED_USERS)

@@ -10,10 +10,9 @@ as you want or you can collabe if you have new ideas.
 """
 
 
-from config import LOG, LOG_GROUP_ID, MUSIC_BOT_NAME
-
 from AlexaMusic import app
 from AlexaMusic.utils.database import is_on_off
+from config import LOG, LOG_GROUP_ID, MUSIC_BOT_NAME
 
 
 async def play_logs(message, streamtype):

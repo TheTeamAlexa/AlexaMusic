@@ -12,7 +12,6 @@ as you want or you can collabe if you have new ideas.
 
 from typing import Union
 
-from config import BANNED_USERS
 from pyrogram import filters, types
 from pyrogram.types import InlineKeyboardMarkup, Message
 
@@ -22,6 +21,7 @@ from AlexaMusic.utils import help_pannel
 from AlexaMusic.utils.database import get_lang, is_commanddelete_on
 from AlexaMusic.utils.decorators.language import LanguageStart, languageCB
 from AlexaMusic.utils.inline.help import help_back_markup, private_help_panel
+from config import BANNED_USERS
 from strings import get_command, get_string, helpers
 
 ### Command

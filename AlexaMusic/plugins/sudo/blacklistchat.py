@@ -10,7 +10,6 @@ as you want or you can collabe if you have new ideas.
 """
 
 
-from config import BANNED_USERS
 from pyrogram import filters
 from pyrogram.types import Message
 
@@ -18,6 +17,7 @@ from AlexaMusic import app
 from AlexaMusic.misc import SUDOERS
 from AlexaMusic.utils.database import blacklist_chat, blacklisted_chats, whitelist_chat
 from AlexaMusic.utils.decorators.language import language
+from config import BANNED_USERS
 from strings import get_command
 
 # Commands

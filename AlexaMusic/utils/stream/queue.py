@@ -11,9 +11,8 @@ as you want or you can collabe if you have new ideas.
 
 from typing import Union
 
-from config import autoclean, chatstats, time_to_seconds, userstats
-
 from AlexaMusic.misc import db
+from config import autoclean, chatstats, time_to_seconds, userstats
 
 
 async def put_queue(

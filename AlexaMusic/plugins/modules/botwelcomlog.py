@@ -4,12 +4,12 @@
 # A Powerful Music Bot Property Of Rocks Indian Largest Chatting Group
 # All rights reserved. © Alisha © Alexa © Yukki
 
-from config import LOG_GROUP_ID
 from pyrogram import Client, filters
 from pyrogram.types import Message
 
 from AlexaMusic import app
 from AlexaMusic.utils.database import get_served_chats
+from config import LOG_GROUP_ID
 
 
 async def lul_message(chat_id: int, message: str):

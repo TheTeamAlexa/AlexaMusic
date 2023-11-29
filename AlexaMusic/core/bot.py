@@ -12,9 +12,10 @@ as you want or you can collabe if you have new ideas.
 
 import sys
 
-import config
 from pyrogram import Client
 from pyrogram.enums import ChatMemberStatus
+
+import config
 
 from ..logging import LOGGER
 

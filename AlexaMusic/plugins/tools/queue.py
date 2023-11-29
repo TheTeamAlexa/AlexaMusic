@@ -13,18 +13,18 @@ as you want or you can collabe if you have new ideas.
 import asyncio
 import os
 
-import config
-from config import BANNED_USERS
 from pyrogram import filters
 from pyrogram.errors import FloodWait
 from pyrogram.types import CallbackQuery, InputMediaPhoto, Message
 
+import config
 from AlexaMusic import app
 from AlexaMusic.misc import db
 from AlexaMusic.utils import Alexabin, get_channeplayCB, seconds_to_min
 from AlexaMusic.utils.database import get_cmode, is_active_chat, is_music_playing
 from AlexaMusic.utils.decorators.language import language, languageCB
 from AlexaMusic.utils.inline import queue_back_markup, queue_markup
+from config import BANNED_USERS
 from strings import get_command
 
 ###Commands

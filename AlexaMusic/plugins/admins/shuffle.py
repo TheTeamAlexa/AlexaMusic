@@ -12,13 +12,13 @@ as you want or you can collabe if you have new ideas.
 
 import random
 
-from config import BANNED_USERS
 from pyrogram import filters
 from pyrogram.types import Message
 
 from AlexaMusic import app
 from AlexaMusic.misc import db
 from AlexaMusic.utils.decorators import AdminRightsCheck
+from config import BANNED_USERS
 from strings import get_command
 
 # Commands

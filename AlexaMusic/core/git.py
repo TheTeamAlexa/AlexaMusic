@@ -14,9 +14,10 @@ import asyncio
 import shlex
 from typing import Tuple
 
-import config
 from git import Repo
 from git.exc import GitCommandError, InvalidGitRepositoryError
+
+import config
 
 from ..logging import LOGGER
 

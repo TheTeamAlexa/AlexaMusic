@@ -15,11 +15,11 @@ import time
 from datetime import datetime, timedelta
 from typing import Union
 
-import config
-from config import MUSIC_BOT_NAME, lyrical
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup, Voice
 
+import config
 from AlexaMusic import app
+from config import MUSIC_BOT_NAME, lyrical
 
 from ..utils.formatters import convert_bytes, get_readable_time, seconds_to_min
 
