@@ -22,6 +22,7 @@ from pyrogram.types import (
 from config import BANNED_USERS, CLEANMODE_DELETE_MINS, MUSIC_BOT_NAME, OWNER_ID
 from strings import get_command
 from AlexaMusic import app
+from pyrogram.enums import ChatType
 from AlexaMusic.utils.database import (
     add_nonadmin_chat,
     cleanmode_off,
@@ -98,7 +99,7 @@ async def settings_back_markup(client, CallbackQuery: CallbackQuery, _):
         await CallbackQuery.answer()
     except:
         pass
-    if CallbackQuery.message.chat.type == "private":
+    if CallbackQuery.message.chat.type == ChatType.PRIVATE:
         try:
             await app.resolve_peer(OWNER_ID[0])
             OWNER = OWNER_ID[0]
