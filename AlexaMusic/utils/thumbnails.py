@@ -131,10 +131,10 @@ async def gen_thumb(videoid, user_id, theme):
         background.paste(image3, (0, 0), mask=image3)
 
         draw = ImageDraw.Draw(background)
-        font = ImageFont.truetype("assets/font2.ttf", 40)
-        ImageFont.truetype("assets/font2.ttf", 60)
-        arial = ImageFont.truetype("assets/font2.ttf", 25)
-        ImageFont.truetype("assets/font.ttf", 25)
+        font = ImageFont.truetype("AlexaMusic/assets/font2.ttf", 40)
+        ImageFont.truetype("AlexaMusic/assets/font2.ttf", 60)
+        arial = ImageFont.truetype("AlexaMusic/assets/font2.ttf", 25)
+        ImageFont.truetype("AlexaMusic/assets/font.ttf", 25)
         para = textwrap.wrap(title, width=32)
         try:
             text_w, text_h = draw.textsize(f"ALEXA MUSIC IS PLAYING OP", font=font)
@@ -290,10 +290,10 @@ async def gen_qthumb(videoid, user_id, theme):
         background.paste(image3, (0, 0), mask=image3)
 
         draw = ImageDraw.Draw(background)
-        font = ImageFont.truetype("assets/font2.ttf", 40)
-        ImageFont.truetype("assets/font2.ttf", 60)
-        arial = ImageFont.truetype("assets/font2.ttf", 25)
-        ImageFont.truetype("assets/font.ttf", 25)
+        font = ImageFont.truetype("AlexaMusic/assets/font2.ttf", 40)
+        ImageFont.truetype("AlexaMusic/assets/font2.ttf", 60)
+        arial = ImageFont.truetype("AlexaMusic/assets/font2.ttf", 25)
+        ImageFont.truetype("AlexaMusic/assets/font.ttf", 25)
         para = textwrap.wrap(title, width=32)
         try:
             text_w, text_h = draw.textsize(f"ALEXA ADDED THIS SONG TO QUEUE", font=font)
