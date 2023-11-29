@@ -18,7 +18,7 @@ from ..logging import LOGGER
 
 
 def dirr():
-    if "assets" not in listdir():
+    if "assets" not in listdir("AlexaMusic"):
         LOGGER(__name__).warning(
             f"Assets Folder not Found. Please clone repository again."
         )
@@ -28,12 +28,6 @@ def dirr():
             os.remove(file)
     for file in os.listdir():
         if file.endswith(".jpeg"):
-            os.remove(file)
-    for file in os.listdir():
-        if file.endswith(".session"):
-            os.remove(file)
-    for file in os.listdir():
-        if file.endswith(".session-journal"):
             os.remove(file)
     if "downloads" not in listdir():
         mkdir("downloads")
