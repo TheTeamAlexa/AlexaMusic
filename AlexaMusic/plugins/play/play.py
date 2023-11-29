@@ -22,7 +22,7 @@ from AlexaMusic import Apple, Resso, SoundCloud, Spotify, Telegram, YouTube, app
 from AlexaMusic.core.call import Alexa
 from AlexaMusic.utils import seconds_to_min, time_to_seconds
 from AlexaMusic.utils.channelplay import get_channeplayCB
-from AlexaMusic.utils.database import is_served_user, is_video_allowed
+from AlexaMusic.utils.database import is_video_allowed
 from AlexaMusic.utils.decorators.language import languageCB
 from AlexaMusic.utils.decorators.play import PlayWrapper
 from AlexaMusic.utils.formatters import formats
