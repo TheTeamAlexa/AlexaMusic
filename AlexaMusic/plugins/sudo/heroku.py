@@ -17,6 +17,7 @@ import shutil
 import socket
 from datetime import datetime
 
+import config
 import dotenv
 import heroku3
 import requests
@@ -25,7 +26,6 @@ from git import Repo
 from git.exc import GitCommandError, InvalidGitRepositoryError
 from pyrogram import filters
 
-import config
 from AlexaMusic import app
 from AlexaMusic.misc import HAPP, SUDOERS, XCB
 from AlexaMusic.utils.database import (

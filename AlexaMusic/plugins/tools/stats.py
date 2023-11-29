@@ -13,14 +13,15 @@ import asyncio
 import platform
 from sys import version as pyver
 
+import config
 import psutil
+from config import BANNED_USERS, MUSIC_BOT_NAME
 from pyrogram import __version__ as pyrover
 from pyrogram import filters
 from pyrogram.errors import MessageIdInvalid
 from pyrogram.types import CallbackQuery, InputMediaPhoto, Message
 from pytgcalls.__version__ import __version__ as pytgver
 
-import config
 from AlexaMusic import YouTube, app
 from AlexaMusic.core.userbot import assistants
 from AlexaMusic.misc import SUDOERS, pymongodb
@@ -44,7 +45,6 @@ from AlexaMusic.utils.inline.stats import (
     stats_buttons,
     top_ten_stats_markup,
 )
-from config import BANNED_USERS, MUSIC_BOT_NAME
 from strings import get_command
 
 loop = asyncio.get_running_loop()

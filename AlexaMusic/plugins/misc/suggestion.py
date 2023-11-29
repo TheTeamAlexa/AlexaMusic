@@ -15,6 +15,8 @@ import random
 from datetime import datetime, timedelta
 
 import config
+from config import clean
+
 from AlexaMusic import app
 from AlexaMusic.utils.database import (
     get_lang,
@@ -22,7 +24,6 @@ from AlexaMusic.utils.database import (
     get_served_chats,
     is_suggestion,
 )
-from config import clean
 from strings import get_string
 
 LEAVE_TIME = config.AUTO_SUGGESTION_TIME

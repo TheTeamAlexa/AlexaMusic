@@ -10,6 +10,7 @@ as you want or you can collabe if you have new ideas.
 """
 
 
+from config import BANNED_USERS, adminlist
 from pyrogram import filters
 from pyrogram.types import Message
 
@@ -22,7 +23,6 @@ from AlexaMusic.utils.database import (
 )
 from AlexaMusic.utils.decorators import AdminActual, language
 from AlexaMusic.utils.formatters import int_to_alpha
-from config import BANNED_USERS, adminlist
 from strings import get_command
 
 # Command

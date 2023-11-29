@@ -14,6 +14,7 @@ import asyncio
 from datetime import datetime, timedelta
 from typing import Union
 
+import config
 from pyrogram import Client
 from pyrogram.errors import (
     ChatAdminRequired,
@@ -31,7 +32,6 @@ from pytgcalls.types import JoinedGroupCallParticipant, LeftGroupCallParticipant
 from pytgcalls.types.input_stream import AudioImagePiped, AudioPiped, AudioVideoPiped
 from pytgcalls.types.stream import StreamAudioEnded
 
-import config
 from AlexaMusic import LOGGER, YouTube, app
 from AlexaMusic.misc import db
 from AlexaMusic.utils.database import (

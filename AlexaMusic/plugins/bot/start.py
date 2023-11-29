@@ -12,11 +12,12 @@ as you want or you can collabe if you have new ideas.
 
 import asyncio
 
+import config
+from config import BANNED_USERS, OWNER_ID
 from pyrogram import enums, filters
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup, Message
 from youtubesearchpython.__future__ import VideosSearch
 
-import config
 from AlexaMusic import Telegram, YouTube, app
 from AlexaMusic.misc import SUDOERS
 from AlexaMusic.plugins.play.playlist import del_plist_msg
@@ -35,8 +36,6 @@ from AlexaMusic.utils.database import (
 )
 from AlexaMusic.utils.decorators.language import LanguageStart
 from AlexaMusic.utils.inline import help_pannel, private_panel, start_pannel
-from config import BANNED_USERS
-from config import OWNER_ID
 from strings import get_command, get_string
 
 loop = asyncio.get_running_loop()

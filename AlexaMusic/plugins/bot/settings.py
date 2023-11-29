@@ -10,6 +10,7 @@ as you want or you can collabe if you have new ideas.
 """
 
 
+from config import BANNED_USERS, CLEANMODE_DELETE_MINS, MUSIC_BOT_NAME, OWNER_ID
 from pyrogram import filters
 from pyrogram.enums import ChatType
 from pyrogram.errors import MessageNotModified
@@ -56,7 +57,6 @@ from AlexaMusic.utils.inline.settings import (
     video_quality_markup,
 )
 from AlexaMusic.utils.inline.start import private_panel
-from config import BANNED_USERS, CLEANMODE_DELETE_MINS, MUSIC_BOT_NAME, OWNER_ID
 from strings import get_command
 
 ### Command

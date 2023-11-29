@@ -10,13 +10,13 @@ as you want or you can collabe if you have new ideas.
 """
 
 
+from config import BANNED_USERS
 from pyrogram import filters
 
 from AlexaMusic import YouTube, app
 from AlexaMusic.utils.channelplay import get_channeplayCB
 from AlexaMusic.utils.decorators.language import languageCB
 from AlexaMusic.utils.stream.stream import stream
-from config import BANNED_USERS
 
 
 @app.on_callback_query(filters.regex("LiveStream") & ~BANNED_USERS)

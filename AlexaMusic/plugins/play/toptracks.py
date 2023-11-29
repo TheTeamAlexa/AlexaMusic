@@ -12,6 +12,7 @@ as you want or you can collabe if you have new ideas.
 
 import asyncio
 
+from config import BANNED_USERS
 from pyrogram import filters
 from pyrogram.types import InlineKeyboardMarkup
 
@@ -24,7 +25,6 @@ from AlexaMusic.utils.inline.playlist import (
     top_play_markup,
 )
 from AlexaMusic.utils.stream.stream import stream
-from config import BANNED_USERS
 
 loop = asyncio.get_running_loop()
 

@@ -11,8 +11,9 @@ as you want or you can collabe if you have new ideas.
 
 
 import config
-from AlexaMusic.core.mongo import mongodb
 from config import PRIVATE_BOT_MODE
+
+from AlexaMusic.core.mongo import mongodb
 
 channeldb = mongodb.cplaymode
 commanddb = mongodb.commands

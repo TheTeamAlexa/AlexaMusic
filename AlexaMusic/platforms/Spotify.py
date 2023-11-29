@@ -12,11 +12,10 @@ as you want or you can collabe if you have new ideas.
 
 import re
 
+import config
 import spotipy
 from spotipy.oauth2 import SpotifyClientCredentials
 from youtubesearchpython.__future__ import VideosSearch
-
-import config
 
 
 class SpotifyAPI:

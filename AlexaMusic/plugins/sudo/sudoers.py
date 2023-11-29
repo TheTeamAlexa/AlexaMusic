@@ -10,6 +10,7 @@ as you want or you can collabe if you have new ideas.
 """
 
 
+from config import BANNED_USERS, MONGO_DB_URI, OWNER_ID
 from pyrogram import filters
 from pyrogram.types import Message
 
@@ -17,7 +18,6 @@ from AlexaMusic import app
 from AlexaMusic.misc import SUDOERS
 from AlexaMusic.utils.database import add_sudo, remove_sudo
 from AlexaMusic.utils.decorators.language import language
-from config import BANNED_USERS, MONGO_DB_URI, OWNER_ID
 from strings import get_command
 
 # Command

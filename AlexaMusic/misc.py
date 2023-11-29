@@ -13,10 +13,10 @@ as you want or you can collabe if you have new ideas.
 import socket
 import time
 
+import config
 import heroku3
 from pyrogram import filters
 
-import config
 from AlexaMusic.core.mongo import pymongodb
 
 from .logging import LOGGER

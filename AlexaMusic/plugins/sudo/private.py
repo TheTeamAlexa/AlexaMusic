@@ -10,10 +10,10 @@ as you want or you can collabe if you have new ideas.
 """
 
 
+import config
 from pyrogram import filters
 from pyrogram.types import Message
 
-import config
 from AlexaMusic import app
 from AlexaMusic.misc import SUDOERS
 from AlexaMusic.utils.database import (

@@ -12,9 +12,9 @@ as you want or you can collabe if you have new ideas.
 
 import asyncio
 
+import config
 from pyrogram import filters
 
-import config
 from AlexaMusic import app
 from AlexaMusic.misc import SUDOERS
 from AlexaMusic.utils.database.memorydatabase import get_video_limit

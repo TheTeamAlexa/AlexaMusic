@@ -12,10 +12,10 @@ as you want or you can collabe if you have new ideas.
 
 from typing import Union
 
+from config import GITHUB_REPO, SUPPORT_CHANNEL, SUPPORT_GROUP
 from pyrogram.types import InlineKeyboardButton
 
 from AlexaMusic import app
-from config import GITHUB_REPO, SUPPORT_CHANNEL, SUPPORT_GROUP
 
 
 def start_pannel(_):

@@ -11,6 +11,7 @@ as you want or you can collabe if you have new ideas.
 
 import asyncio
 
+from config import BANNED_USERS
 from pyrogram import filters
 from pyrogram.errors import FloodWait
 from pyrogram.types import Message
@@ -27,7 +28,6 @@ from AlexaMusic.utils.database import (
     remove_banned_user,
 )
 from AlexaMusic.utils.decorators.language import language
-from config import BANNED_USERS
 from strings import get_command
 
 # Command

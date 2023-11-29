@@ -13,6 +13,7 @@ as you want or you can collabe if you have new ideas.
 import os
 from random import randint
 
+from config import BANNED_USERS, SERVER_PLAYLIST_LIMIT
 from pykeyboard import InlineKeyboard
 from pyrogram import filters
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup, Message
@@ -32,7 +33,6 @@ from AlexaMusic.utils.inline.playlist import (
 )
 from AlexaMusic.utils.pastebin import Alexabin
 from AlexaMusic.utils.stream.stream import stream
-from config import BANNED_USERS, SERVER_PLAYLIST_LIMIT
 from strings import get_command
 
 # Command

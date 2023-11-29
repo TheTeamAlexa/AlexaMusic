@@ -12,6 +12,7 @@ as you want or you can collabe if you have new ideas.
 
 from datetime import datetime
 
+from config import BANNED_USERS, MUSIC_BOT_NAME, PING_IMG_URL
 from pyrogram import filters
 from pyrogram.types import Message
 
@@ -19,7 +20,6 @@ from AlexaMusic import app
 from AlexaMusic.core.call import Alexa
 from AlexaMusic.utils import bot_sys_stats
 from AlexaMusic.utils.decorators.language import language
-from config import BANNED_USERS, MUSIC_BOT_NAME, PING_IMG_URL
 from strings import get_command
 
 ### Commands
