@@ -12,7 +12,7 @@ as you want or you can collabe if you have new ideas.
 
 import asyncio
 
-from pyrogram import enums, filters, Client
+from pyrogram import enums, filters
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup, Message
 from youtubesearchpython.__future__ import VideosSearch
 
@@ -21,7 +21,6 @@ from AlexaMusic import Telegram, YouTube, app
 from AlexaMusic.misc import SUDOERS
 from AlexaMusic.plugins.play.playlist import del_plist_msg
 from AlexaMusic.plugins.sudo.sudoers import sudoers_list
-from AlexaMusic.utils.command import commandpro
 from AlexaMusic.utils.database import (
     add_served_chat,
     add_served_user,
@@ -31,7 +30,6 @@ from AlexaMusic.utils.database import (
     get_userss,
     is_on_off,
     is_served_private_chat,
-    is_served_user,
 )
 from AlexaMusic.utils.decorators.language import LanguageStart
 from AlexaMusic.utils.inline import help_pannel, private_panel, start_pannel
