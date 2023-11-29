@@ -13,7 +13,7 @@ from typing import Union
 
 from AlexaMusic.misc import db
 from config import autoclean, chatstats, userstats
-from config.config import time_to_seconds
+from config import time_to_seconds
 
 
 async def put_queue(

@@ -36,7 +36,7 @@ from AlexaMusic.utils.database import (
 from AlexaMusic.utils.decorators.language import LanguageStart
 from AlexaMusic.utils.inline import help_pannel, private_panel, start_pannel
 from config import BANNED_USERS
-from config.config import OWNER_ID
+from config import OWNER_ID
 from strings import get_command, get_string
 
 loop = asyncio.get_running_loop()
