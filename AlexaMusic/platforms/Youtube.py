@@ -16,6 +16,7 @@ from typing import Union
 
 import aiohttp
 import yt_dlp
+from pyrogram.enums import MessageEntityType
 from pyrogram.types import Message
 from youtubesearchpython.__future__ import VideosSearch
 
@@ -67,13 +68,13 @@ class YouTubeAPI:
                 break
             if message.entities:
                 for entity in message.entities:
-                    if entity.type == "url":
+                    if entity.type == MessageEntityType.URL:
                         text = message.text or message.caption
                         offset, length = entity.offset, entity.length
                         break
             elif message.caption_entities:
                 for entity in message.caption_entities:
-                    if entity.type == "text_link":
+                    if entity.type == MessageEntityType.TEXT_LINK:
                         return entity.url
         if offset in (None,):
             return None
@@ -190,7 +191,7 @@ class YouTubeAPI:
         if "&" in link:
             link = link.split("&")[0]
         ytdl_opts = {"quiet": True}
-        ydl = youtube_dl.YoutubeDL(ytdl_opts)
+        ydl = yt_dlp.YoutubeDL(ytdl_opts)
         with ydl:
             formats_available = []
             r = ydl.extract_info(link, download=False)
