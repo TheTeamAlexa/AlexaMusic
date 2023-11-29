@@ -16,16 +16,8 @@ import os
 import random
 import string
 import time
-import traceback
 
 import aiofiles
-from pyrogram.errors import (
-    FloodWait,
-    InputUserDeactivated,
-    PeerIdInvalid,
-    UserIsBlocked,
-)
-from protector.brdb import db, dcmdb
 
 # BR Tools
 

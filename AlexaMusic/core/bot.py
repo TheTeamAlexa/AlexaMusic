@@ -13,9 +13,11 @@ as you want or you can collabe if you have new ideas.
 import sys
 
 from pyrogram import Client
-import config
-from ..logging import LOGGER
 from pyrogram.enums import ChatMemberStatus
+
+import config
+
+from ..logging import LOGGER
 
 
 class AlexaBot(Client):

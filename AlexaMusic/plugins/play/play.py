@@ -12,20 +12,17 @@ as you want or you can collabe if you have new ideas.
 
 import random
 import string
-from ast import ExceptHandler
 
 from pyrogram import filters
 from pyrogram.types import InlineKeyboardMarkup, InputMediaPhoto, Message
 from pytgcalls.exceptions import NoActiveGroupCall
 
 import config
-from config import BANNED_USERS, lyrical
-from strings import get_command
 from AlexaMusic import Apple, Resso, SoundCloud, Spotify, Telegram, YouTube, app
 from AlexaMusic.core.call import Alexa
 from AlexaMusic.utils import seconds_to_min, time_to_seconds
 from AlexaMusic.utils.channelplay import get_channeplayCB
-from AlexaMusic.utils.database import is_video_allowed
+from AlexaMusic.utils.database import is_served_user, is_video_allowed
 from AlexaMusic.utils.decorators.language import languageCB
 from AlexaMusic.utils.decorators.play import PlayWrapper
 from AlexaMusic.utils.formatters import formats
@@ -38,15 +35,14 @@ from AlexaMusic.utils.inline.play import (
 from AlexaMusic.utils.inline.playlist import botplaylist_markup
 from AlexaMusic.utils.logger import play_logs
 from AlexaMusic.utils.stream.stream import stream
-from AlexaMusic.utils.database import is_served_user
+from config import BANNED_USERS, lyrical
+from strings import get_command
 
 # Command
 PLAY_COMMAND = get_command("PLAY_COMMAND")
 
 
-@app.on_message(
-    filters.command(PLAY_COMMAND) & filters.group & ~BANNED_USERS
-)
+@app.on_message(filters.command(PLAY_COMMAND) & filters.group & ~BANNED_USERS)
 @PlayWrapper
 async def play_commnd(
     client,

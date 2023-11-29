@@ -13,20 +13,18 @@ as you want or you can collabe if you have new ideas.
 from pyrogram import filters
 from pyrogram.types import Message
 
-from config import BANNED_USERS
-from strings import get_command
 from AlexaMusic import YouTube, app
 from AlexaMusic.core.call import Alexa
 from AlexaMusic.misc import db
 from AlexaMusic.utils import AdminRightsCheck, seconds_to_min
+from config import BANNED_USERS
+from strings import get_command
 
 # Commands
 SEEK_COMMAND = get_command("SEEK_COMMAND")
 
 
-@app.on_message(
-    filters.command(SEEK_COMMAND) & filters.group & ~BANNED_USERS
-)
+@app.on_message(filters.command(SEEK_COMMAND) & filters.group & ~BANNED_USERS)
 @AdminRightsCheck
 async def seek_comm(cli, message: Message, _, chat_id):
     if len(message.command) == 1:

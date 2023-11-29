@@ -14,11 +14,11 @@ from pykeyboard import InlineKeyboard
 from pyrogram import filters
 from pyrogram.types import InlineKeyboardButton, Message
 
-from config import BANNED_USERS
-from strings import get_command, get_string
 from AlexaMusic import app
 from AlexaMusic.utils.database import get_lang, set_lang
 from AlexaMusic.utils.decorators import ActualAdminCB, language, languageCB
+from config import BANNED_USERS
+from strings import get_command, get_string
 
 # Languages Available
 
@@ -74,9 +74,7 @@ def lanuages_keyboard(_):
 LANGUAGE_COMMAND = get_command("LANGUAGE_COMMAND")
 
 
-@app.on_message(
-    filters.command(LANGUAGE_COMMAND) & filters.group & ~BANNED_USERS
-)
+@app.on_message(filters.command(LANGUAGE_COMMAND) & filters.group & ~BANNED_USERS)
 @language
 async def langs_command(client, message: Message, _):
     keyboard = lanuages_keyboard(_)

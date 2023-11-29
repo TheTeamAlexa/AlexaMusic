@@ -14,11 +14,11 @@ import asyncio
 
 from pyrogram.types import InlineKeyboardMarkup
 
-from strings import get_string
 from AlexaMusic.misc import db
 from AlexaMusic.utils.database import get_active_chats, get_lang, is_music_playing
 from AlexaMusic.utils.formatters import seconds_to_min
 from AlexaMusic.utils.inline import stream_markup_timer, telegram_markup_timer
+from strings import get_string
 
 from ..admins.callback import wrong
 

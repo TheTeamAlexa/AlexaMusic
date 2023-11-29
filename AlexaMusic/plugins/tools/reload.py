@@ -16,23 +16,21 @@ from pyrogram import filters
 from pyrogram.enums import ChatMembersFilter
 from pyrogram.types import CallbackQuery, Message
 
-from config import BANNED_USERS, MUSIC_BOT_NAME, adminlist, lyrical
-from strings import get_command
 from AlexaMusic import app
 from AlexaMusic.core.call import Alexa
 from AlexaMusic.misc import db
 from AlexaMusic.utils.database import get_authuser_names, get_cmode
 from AlexaMusic.utils.decorators import ActualAdminCB, AdminActual, language
 from AlexaMusic.utils.formatters import alpha_to_int
+from config import BANNED_USERS, MUSIC_BOT_NAME, adminlist, lyrical
+from strings import get_command
 
 ### Multi-Lang Commands
 RELOAD_COMMAND = get_command("RELOAD_COMMAND")
 RESTART_COMMAND = get_command("RESTART_COMMAND")
 
 
-@app.on_message(
-    filters.command(RELOAD_COMMAND) & filters.group & ~BANNED_USERS
-)
+@app.on_message(filters.command(RELOAD_COMMAND) & filters.group & ~BANNED_USERS)
 @language
 async def reload_admin_cache(client, message: Message, _):
     try:
@@ -57,9 +55,7 @@ async def reload_admin_cache(client, message: Message, _):
         )
 
 
-@app.on_message(
-    filters.command(RESTART_COMMAND) & filters.group & ~BANNED_USERS
-)
+@app.on_message(filters.command(RESTART_COMMAND) & filters.group & ~BANNED_USERS)
 @AdminActual
 async def restartbot(client, message: Message, _):
     mystic = await message.reply_text(

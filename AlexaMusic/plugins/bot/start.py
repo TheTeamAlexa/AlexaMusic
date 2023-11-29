@@ -12,23 +12,18 @@ as you want or you can collabe if you have new ideas.
 
 import asyncio
 
-from pyrogram import filters
-
 from pyrogram import enums, filters
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup, Message
 from youtubesearchpython.__future__ import VideosSearch
 
 import config
-from config import BANNED_USERS
-from config.config import OWNER_ID
-from strings import get_command, get_string
 from AlexaMusic import Telegram, YouTube, app
 from AlexaMusic.misc import SUDOERS
 from AlexaMusic.plugins.play.playlist import del_plist_msg
 from AlexaMusic.plugins.sudo.sudoers import sudoers_list
+from AlexaMusic.utils.command import commandpro
 from AlexaMusic.utils.database import (
     add_served_chat,
-    is_served_user,
     add_served_user,
     blacklisted_chats,
     get_assistant,
@@ -36,19 +31,19 @@ from AlexaMusic.utils.database import (
     get_userss,
     is_on_off,
     is_served_private_chat,
+    is_served_user,
 )
 from AlexaMusic.utils.decorators.language import LanguageStart
 from AlexaMusic.utils.inline import help_pannel, private_panel, start_pannel
-from AlexaMusic.utils.command import commandpro
+from config import BANNED_USERS
+from config.config import OWNER_ID
+from strings import get_command, get_string
 
 loop = asyncio.get_running_loop()
 
 
 @app.on_message(
-    filters.command(get_command("START_COMMAND"))
-    & filters.private
-   
-    & ~BANNED_USERS
+    filters.command(get_command("START_COMMAND")) & filters.private & ~BANNED_USERS
 )
 @LanguageStart
 async def start_comm(client, message: Message, _):
@@ -217,10 +212,7 @@ async def start_comm(client, message: Message, _):
 
 
 @app.on_message(
-    filters.command(get_command("START_COMMAND"))
-    & filters.group
-   
-    & ~BANNED_USERS
+    filters.command(get_command("START_COMMAND")) & filters.group & ~BANNED_USERS
 )
 @LanguageStart
 async def testbot(client, message: Message, _):

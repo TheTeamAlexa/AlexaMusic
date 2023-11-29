@@ -19,10 +19,7 @@ from pyrogram.errors import FloodWait
 from pyrogram.raw import types
 
 import config
-from config import adminlist, chatstats, clean, userstats
-from strings import get_command
-from AlexaMusic import app, userbot
-from AlexaMusic.misc import SUDOERS
+from AlexaMusic import app
 from AlexaMusic.utils.database import (
     get_active_chats,
     get_authuser_names,
@@ -38,7 +35,8 @@ from AlexaMusic.utils.database import (
 )
 from AlexaMusic.utils.decorators.language import language
 from AlexaMusic.utils.formatters import alpha_to_int
-from config import OWNER_ID
+from config import OWNER_ID, adminlist, chatstats, clean, userstats
+from strings import get_command
 
 BROADCAST_COMMAND = get_command("BROADCAST_COMMAND")
 AUTO_DELETE = config.CLEANMODE_DELETE_MINS

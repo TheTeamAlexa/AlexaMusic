@@ -9,7 +9,6 @@ This program is free software: you can redistribute it and can modify
 as you want or you can collabe if you have new ideas.
 """
 
-import re
 from os import path
 
 from yt_dlp import YoutubeDL

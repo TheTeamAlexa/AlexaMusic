@@ -15,7 +15,6 @@ import asyncio
 from pyrogram import filters
 from pyrogram.types import InlineKeyboardMarkup
 
-from config import BANNED_USERS
 from AlexaMusic import app
 from AlexaMusic.utils.database import get_global_tops, get_particulars, get_userss
 from AlexaMusic.utils.decorators.language import languageCB
@@ -25,6 +24,7 @@ from AlexaMusic.utils.inline.playlist import (
     top_play_markup,
 )
 from AlexaMusic.utils.stream.stream import stream
+from config import BANNED_USERS
 
 loop = asyncio.get_running_loop()
 

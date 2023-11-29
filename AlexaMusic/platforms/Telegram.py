@@ -18,8 +18,8 @@ from typing import Union
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup, Voice
 
 import config
-from config import MUSIC_BOT_NAME, lyrical
 from AlexaMusic import app
+from config import MUSIC_BOT_NAME, lyrical
 
 from ..utils.formatters import convert_bytes, get_readable_time, seconds_to_min
 

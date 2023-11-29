@@ -10,10 +10,7 @@ as you want or you can collabe if you have new ideas.
 """
 
 
-from typing import Dict, List, Union
-
 from AlexaMusic.core.mongo import mongodb
-
 
 onoffdb = mongodb.onoffper
 

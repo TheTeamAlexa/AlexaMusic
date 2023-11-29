@@ -21,8 +21,6 @@ from pyrogram.types import CallbackQuery, InputMediaPhoto, Message
 from pytgcalls.__version__ import __version__ as pytgver
 
 import config
-from config import BANNED_USERS, MUSIC_BOT_NAME
-from strings import get_command
 from AlexaMusic import YouTube, app
 from AlexaMusic.core.userbot import assistants
 from AlexaMusic.misc import SUDOERS, pymongodb
@@ -46,6 +44,8 @@ from AlexaMusic.utils.inline.stats import (
     stats_buttons,
     top_ten_stats_markup,
 )
+from config import BANNED_USERS, MUSIC_BOT_NAME
+from strings import get_command
 
 loop = asyncio.get_running_loop()
 
@@ -54,9 +54,7 @@ GSTATS_COMMAND = get_command("GSTATS_COMMAND")
 STATS_COMMAND = get_command("STATS_COMMAND")
 
 
-@app.on_message(
-    filters.command(STATS_COMMAND) & filters.group & ~BANNED_USERS
-)
+@app.on_message(filters.command(STATS_COMMAND) & filters.group & ~BANNED_USERS)
 @language
 async def stats_global(client, message: Message, _):
     upl = stats_buttons(_, True if message.from_user.id in SUDOERS else False)
@@ -67,9 +65,7 @@ async def stats_global(client, message: Message, _):
     )
 
 
-@app.on_message(
-    filters.command(GSTATS_COMMAND) & filters.group & ~BANNED_USERS
-)
+@app.on_message(filters.command(GSTATS_COMMAND) & filters.group & ~BANNED_USERS)
 @language
 async def gstats_global(client, message: Message, _):
     mystic = await message.reply_text(_["gstats_1"])

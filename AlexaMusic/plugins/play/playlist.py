@@ -17,8 +17,6 @@ from pykeyboard import InlineKeyboard
 from pyrogram import filters
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup, Message
 
-from config import BANNED_USERS, SERVER_PLAYLIST_LIMIT
-from strings import get_command
 from AlexaMusic import Carbon, YouTube, app
 from AlexaMusic.utils.database import (
     delete_playlist,
@@ -34,6 +32,8 @@ from AlexaMusic.utils.inline.playlist import (
 )
 from AlexaMusic.utils.pastebin import Alexabin
 from AlexaMusic.utils.stream.stream import stream
+from config import BANNED_USERS, SERVER_PLAYLIST_LIMIT
+from strings import get_command
 
 # Command
 PLAYLIST_COMMAND = get_command("PLAYLIST_COMMAND")
@@ -69,12 +69,7 @@ async def check_playlist(client, message: Message, _):
     await message.reply_photo(carbon, caption=_["playlist_15"].format(link))
 
 
-@app.on_message(
-    filters.command(DELETEPLAYLIST_COMMAND)
-    & filters.group
-   
-    & ~BANNED_USERS
-)
+@app.on_message(filters.command(DELETEPLAYLIST_COMMAND) & filters.group & ~BANNED_USERS)
 @language
 async def del_group_message(client, message: Message, _):
     upl = InlineKeyboardMarkup(
@@ -115,10 +110,7 @@ async def get_keyboard(_, user_id):
 
 
 @app.on_message(
-    filters.command(DELETEPLAYLIST_COMMAND)
-    & filters.private
-   
-    & ~BANNED_USERS
+    filters.command(DELETEPLAYLIST_COMMAND) & filters.private & ~BANNED_USERS
 )
 @language
 async def del_plist_msg(client, message: Message, _):
