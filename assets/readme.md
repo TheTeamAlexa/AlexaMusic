@@ -1,4 +1,4 @@
-## Alexa Assets Folder
+## Alexa Music Assets Folder
 
 # Contains all the fonts and thumb related files.
 
