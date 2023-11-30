@@ -13,7 +13,6 @@ import asyncio
 from pyrogram.enums import ChatType
 import config
 from AlexaMusic import app
-from AlexaMusic.utils.database import is_muted
 from AlexaMusic.core.call import Alexa, autoend
 from datetime import datetime, timedelta
 from AlexaMusic.utils.database import get_client, is_active_chat, is_autoend
