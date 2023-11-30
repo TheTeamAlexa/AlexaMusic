@@ -22,11 +22,7 @@ from pyrogram.enums import ChatMembersFilter, ChatMemberStatus, ChatType
 CHANNELPLAY_COMMAND = get_command("CHANNELPLAY_COMMAND")
 
 
-@app.on_message(
-    filters.command(CHANNELPLAY_COMMAND)
-    & filters.group
-    & ~BANNED_USERS
-)
+@app.on_message(filters.command(CHANNELPLAY_COMMAND) & filters.group & ~BANNED_USERS)
 @AdminActual
 async def playmode_(client, message: Message, _):
     if len(message.command) < 2:

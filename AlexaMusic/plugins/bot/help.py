@@ -28,9 +28,7 @@ from AlexaMusic.utils.inline.help import help_back_markup, private_help_panel
 HELP_COMMAND = get_command("HELP_COMMAND")
 
 
-@app.on_message(
-    filters.command(HELP_COMMAND) & filters.private & ~BANNED_USERS
-)
+@app.on_message(filters.command(HELP_COMMAND) & filters.private & ~BANNED_USERS)
 @app.on_callback_query(filters.regex("settings_back_helper") & ~BANNED_USERS)
 async def helper_private(
     client: app, update: Union[types.Message, types.CallbackQuery]
@@ -63,9 +61,7 @@ async def helper_private(
         await update.reply_text(_["help_1"], reply_markup=keyboard)
 
 
-@app.on_message(
-    filters.command(HELP_COMMAND) & filters.group & ~BANNED_USERS
-)
+@app.on_message(filters.command(HELP_COMMAND) & filters.group & ~BANNED_USERS)
 @LanguageStart
 async def help_com_group(client, message: Message, _):
     keyboard = private_help_panel(_)
