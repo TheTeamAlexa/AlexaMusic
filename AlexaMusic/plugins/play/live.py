@@ -9,14 +9,13 @@ This program is free software: you can redistribute it and can modify
 as you want or you can collabe if you have new ideas.
 """
 
-
 from pyrogram import filters
 
-from config import BANNED_USERS
 from AlexaMusic import YouTube, app
 from AlexaMusic.utils.channelplay import get_channeplayCB
 from AlexaMusic.utils.decorators.language import languageCB
 from AlexaMusic.utils.stream.stream import stream
+from config import BANNED_USERS
 
 
 @app.on_callback_query(filters.regex("LiveStream") & ~BANNED_USERS)
