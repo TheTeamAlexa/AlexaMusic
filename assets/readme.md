@@ -1,4 +1,4 @@
-## Yukki Assets Folder
+## Alexa Assets Folder
 
 # Contains all the fonts and thumb related files.
 
