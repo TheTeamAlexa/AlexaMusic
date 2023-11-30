@@ -27,7 +27,7 @@ PING_COMMAND = get_command("PING_COMMAND")
 
 
 @app.on_message(
-    filters.command(PING_COMMAND) & filters.group & ~filters.edited & ~BANNED_USERS
+    filters.command(PING_COMMAND) & filters.group & ~BANNED_USERS
 )
 @language
 async def ping_com(client, message: Message, _):
