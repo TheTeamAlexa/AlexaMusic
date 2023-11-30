@@ -79,21 +79,3 @@ async def auto_end():
 
 asyncio.create_task(auto_end())
 
-# Code and idea by @EVERYONExKSKOP auto leave if bot is on mute
-
-async def alexa_leave():
-    try:
-        if await is_muted(chat_id):
-            muted_time = await is_muted(chat_id)
-            current_time = datetime.now()
-            if current_time - muted_time > timedelta(minutes=1):
-                await client.leave_chat(chat_id)
-                await Alexa.stop_stream(chat_id)
-                await app.send_message(
-                    chat_id,
-                    "ᴀʟᴇxᴀ ɪs ᴍᴜᴛᴇᴅ ꜰʀᴏᴍ ᴛʜᴇ ʟᴀsᴛ ᴏɴᴇ ᴍɪɴᴜᴛᴇ, sᴏ ɪᴛ's ʟᴇᴀᴠɪɴɢ ᴠᴏɪᴄᴇ ᴄʜᴀᴛ."
-                )
-    except Exception as e:
-        await app.send_message(chat_id, f"ᴇʀʀᴏʀ ɪɴ ʟᴇᴀᴠɪɴɢ ᴄʜᴀᴛ: {str(e)}")
-        
-asyncio.create_task(alexa_leave())
