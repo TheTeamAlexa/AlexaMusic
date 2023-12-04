@@ -176,14 +176,14 @@ class TeleAPI:
             return False
 
         task = asyncio.create_task(down_load())
-        lyrical[mystic.message_id] = task
+        lyrical[mystic.id] = task
         await task
         downloaded = downloader.get(message.id)
         if downloaded:
             downloader.pop(message.id)
             return False
-        verify = lyrical.get(mystic.message_id)
+        verify = lyrical.get(mystic.id)
         if not verify:
             return False
-        lyrical.pop(mystic.message_id)
+        lyrical.pop(mystic.id)
         return True
