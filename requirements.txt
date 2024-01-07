@@ -1,5 +1,5 @@
 aiofiles
-aiohttp==3.8.4
+aiohttp==3.8.5
 asyncio
 dnspython
 ffmpeg-python
@@ -10,7 +10,7 @@ lyricsgenius
 motor==3.0.0
 pillow==9.5.0
 psutil
-py-tgcalls==1.0.6
+py-tgcalls==1.1.2
 pykeyboard
 git+https://github.com/PyrogramMod/PyrogramMod@main
 python-dotenv
