@@ -93,7 +93,7 @@ Through this repository, we hope to share our passion for music and innovation w
 <summary><b>ʀᴇǫᴜɪʀᴇᴍᴇɴᴛs</b></summary>
 <br>
     
-- [ᴘʏᴛʜᴏɴ𝟹.11](https://www.python.org/downloads/release)
+- [ᴘʏᴛʜᴏɴ𝟹.11](https://www.python.org/downloads/release/python-311/)
 - [ᴛᴇʟᴇɢʀᴀᴍ ᴀᴘɪ ᴋᴇʏ](https://docs.pyrogram.org/intro/setup#api-keys)
 - [ᴛᴇʟᴇɢʀᴀᴍ ʙᴏᴛ ᴛᴏᴋᴇɴ](https://t.me/botfather)
 - [ᴍᴏɴɢᴏᴅʙ URI](https://telegra.ph/How-To-get-Mongodb-URI-04-06)
