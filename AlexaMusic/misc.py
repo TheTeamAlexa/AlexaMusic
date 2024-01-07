@@ -23,8 +23,10 @@ from .logging import LOGGER
 
 SUDOERS = filters.user()
 
+
 def is_heroku():
     return "heroku" in socket.getfqdn()
+
 
 def dbb():
     global db
@@ -70,10 +72,12 @@ def heroku():
                 LOGGER(__name__).warning(
                     f"Please make sure your Heroku API Key and Your App name are configured correctly in the heroku."
                 )
-                
+
+
 def initialize():
     dbb()
     sudo()
     heroku()
+
 
 initialize()
