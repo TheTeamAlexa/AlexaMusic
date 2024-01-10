@@ -4,13 +4,12 @@
 """"
 TheTeamAlexa is a project of Telegram bots with variety of purposes.
 Copyright (c) 2024 -present Team=Alexa <https://github.com/TheTeamAlexa>
-
 This program is free software: you can redistribute it and can modify
 as you want or you can collabe if you have new ideas.
 """
 
-
 import socket
+import time
 
 import heroku3
 from pyrogram import filters
@@ -22,9 +21,29 @@ from .logging import LOGGER
 
 SUDOERS = filters.user()
 
+HAPP = None
+_boot_ = time.time()
+
 
 def is_heroku():
     return "heroku" in socket.getfqdn()
+
+
+XCB = [
+    "/",
+    "@",
+    ".",
+    "com",
+    ":",
+    "git",
+    "heroku",
+    "push",
+    str(config.HEROKU_API_KEY),
+    "https",
+    str(config.HEROKU_APP_NAME),
+    "HEAD",
+    "main",
+]
 
 
 def dbb():
@@ -71,12 +90,3 @@ def heroku():
                 LOGGER(__name__).warning(
                     f"Please make sure your Heroku API Key and Your App name are configured correctly in the heroku."
                 )
-
-
-def initialize():
-    dbb()
-    sudo()
-    heroku()
-
-
-initialize()
