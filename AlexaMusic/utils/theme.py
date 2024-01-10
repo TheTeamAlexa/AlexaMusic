@@ -11,6 +11,7 @@ as you want or you can collabe if you have new ideas.
 
 
 import random
+
 from AlexaMusic.utils.database import get_theme
 
 themes = [

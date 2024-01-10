@@ -10,14 +10,11 @@ as you want or you can collabe if you have new ideas.
 """
 
 import asyncio
-import time
 
 from pyrogram import filters
 from pyrogram.errors import FloodWait
 from pyrogram.types import Message
 
-from config import BANNED_USERS
-from strings import get_command
 from AlexaMusic import app
 from AlexaMusic.misc import SUDOERS
 from AlexaMusic.utils import get_readable_time
@@ -30,6 +27,8 @@ from AlexaMusic.utils.database import (
     remove_banned_user,
 )
 from AlexaMusic.utils.decorators.language import language
+from config import BANNED_USERS
+from strings import get_command
 
 # Command
 GBAN_COMMAND = get_command("GBAN_COMMAND")

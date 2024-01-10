@@ -15,15 +15,6 @@ import random
 from pyrogram import filters
 from pyrogram.types import CallbackQuery, InlineKeyboardMarkup
 
-from config import (
-    AUTO_DOWNLOADS_CLEAR,
-    BANNED_USERS,
-    SOUNCLOUD_IMG_URL,
-    STREAM_IMG_URL,
-    TELEGRAM_AUDIO_URL,
-    TELEGRAM_VIDEO_URL,
-    adminlist,
-)
 from AlexaMusic import YouTube, app
 from AlexaMusic.core.call import Alexa
 from AlexaMusic.misc import SUDOERS, db
@@ -42,8 +33,17 @@ from AlexaMusic.utils.decorators.language import languageCB
 from AlexaMusic.utils.formatters import seconds_to_min
 from AlexaMusic.utils.inline.play import panel_markup_1, stream_markup, telegram_markup
 from AlexaMusic.utils.stream.autoclear import auto_clean
-from AlexaMusic.utils.thumbnails import gen_thumb
 from AlexaMusic.utils.theme import check_theme
+from AlexaMusic.utils.thumbnails import gen_thumb
+from config import (
+    AUTO_DOWNLOADS_CLEAR,
+    BANNED_USERS,
+    SOUNCLOUD_IMG_URL,
+    STREAM_IMG_URL,
+    TELEGRAM_AUDIO_URL,
+    TELEGRAM_VIDEO_URL,
+    adminlist,
+)
 
 wrong = {}
 

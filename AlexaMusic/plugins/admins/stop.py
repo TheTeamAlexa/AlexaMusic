@@ -11,12 +11,13 @@ as you want or you can collabe if you have new ideas.
 
 from pyrogram import filters
 from pyrogram.types import Message
-from config import BANNED_USERS
-from strings import get_command
+
 from AlexaMusic import app
 from AlexaMusic.core.call import Alexa
 from AlexaMusic.utils.database import set_loop
 from AlexaMusic.utils.decorators import AdminRightsCheck
+from config import BANNED_USERS
+from strings import get_command
 
 # Commands
 STOP_COMMAND = get_command("STOP_COMMAND")

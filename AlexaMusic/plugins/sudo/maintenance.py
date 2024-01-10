@@ -13,7 +13,6 @@ as you want or you can collabe if you have new ideas.
 from pyrogram import filters
 from pyrogram.types import Message
 
-from strings import get_command, get_string
 from AlexaMusic import app
 from AlexaMusic.misc import SUDOERS
 from AlexaMusic.utils.database import (
@@ -22,7 +21,7 @@ from AlexaMusic.utils.database import (
     maintenance_off,
     maintenance_on,
 )
-from AlexaMusic.utils.decorators.language import language
+from strings import get_command, get_string
 
 # Commands
 MAINTENANCE_COMMAND = get_command("MAINTENANCE_COMMAND")

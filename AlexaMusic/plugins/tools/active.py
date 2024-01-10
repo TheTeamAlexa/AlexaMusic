@@ -13,13 +13,13 @@ as you want or you can collabe if you have new ideas.
 from pyrogram import filters
 from pyrogram.types import Message
 
-from strings import get_command
 from AlexaMusic import app
 from AlexaMusic.misc import SUDOERS
 from AlexaMusic.utils.database.memorydatabase import (
     get_active_chats,
     get_active_video_chats,
 )
+from strings import get_command
 
 # Commands
 ACTIVEVC_COMMAND = get_command("ACTIVEVC_COMMAND")

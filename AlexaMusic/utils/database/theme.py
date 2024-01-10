@@ -10,7 +10,8 @@ as you want or you can collabe if you have new ideas.
 """
 
 
-from typing import Dict, List, Union
+from typing import Dict, Union
+
 from AlexaMusic.core.mongo import mongodb
 
 themedb = mongodb.notes

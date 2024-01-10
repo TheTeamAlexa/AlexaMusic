@@ -12,8 +12,6 @@ as you want or you can collabe if you have new ideas.
 
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup
 
-from config import PLAYLIST_IMG_URL, PRIVATE_BOT_MODE, adminlist
-from strings import get_string
 from AlexaMusic import YouTube, app
 from AlexaMusic.misc import SUDOERS
 from AlexaMusic.utils.database import (
@@ -27,6 +25,8 @@ from AlexaMusic.utils.database import (
 )
 from AlexaMusic.utils.database.memorydatabase import is_maintenance
 from AlexaMusic.utils.inline.playlist import botplaylist_markup
+from config import PLAYLIST_IMG_URL, PRIVATE_BOT_MODE, adminlist
+from strings import get_string
 
 
 def PlayWrapper(command):

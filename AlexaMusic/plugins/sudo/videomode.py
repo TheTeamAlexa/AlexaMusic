@@ -13,11 +13,11 @@ from pyrogram import filters
 from pyrogram.types import Message
 
 import config
-from strings import get_command
 from AlexaMusic import app
 from AlexaMusic.misc import SUDOERS
 from AlexaMusic.utils.database import add_off, add_on
 from AlexaMusic.utils.decorators.language import language
+from strings import get_command
 
 # Commands
 VIDEOMODE_COMMAND = get_command("VIDEOMODE_COMMAND")

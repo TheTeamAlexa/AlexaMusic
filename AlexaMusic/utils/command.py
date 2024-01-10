@@ -9,7 +9,8 @@ This program is free software: you can redistribute it and can modify
 as you want or you can collabe if you have new ideas.
 """
 
-from typing import Union, List
+from typing import List, Union
+
 from pyrogram import filters
 
 other_filters = filters.group & ~filters.via_bot & ~filters.forwarded

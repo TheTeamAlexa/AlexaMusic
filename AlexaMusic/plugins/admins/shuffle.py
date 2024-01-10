@@ -15,11 +15,11 @@ import random
 from pyrogram import filters
 from pyrogram.types import Message
 
-from config import BANNED_USERS
-from strings import get_command
 from AlexaMusic import app
 from AlexaMusic.misc import db
 from AlexaMusic.utils.decorators import AdminRightsCheck
+from config import BANNED_USERS
+from strings import get_command
 
 # Commands
 SHUFFLE_COMMAND = get_command("SHUFFLE_COMMAND")

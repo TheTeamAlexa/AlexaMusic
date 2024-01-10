@@ -26,7 +26,6 @@ from git.exc import GitCommandError, InvalidGitRepositoryError
 from pyrogram import filters
 
 import config
-from strings import get_command
 from AlexaMusic import app
 from AlexaMusic.misc import HAPP, SUDOERS, XCB
 from AlexaMusic.utils.database import (
@@ -36,6 +35,7 @@ from AlexaMusic.utils.database import (
 )
 from AlexaMusic.utils.decorators.language import language
 from AlexaMusic.utils.pastebin import Alexabin
+from strings import get_command
 
 # Commands
 GETLOG_COMMAND = get_command("GETLOG_COMMAND")

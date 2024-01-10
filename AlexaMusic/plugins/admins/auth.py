@@ -13,8 +13,6 @@ as you want or you can collabe if you have new ideas.
 from pyrogram import filters
 from pyrogram.types import Message
 
-from config import BANNED_USERS, adminlist
-from strings import get_command
 from AlexaMusic import app
 from AlexaMusic.utils.database import (
     delete_authuser,
@@ -24,6 +22,8 @@ from AlexaMusic.utils.database import (
 )
 from AlexaMusic.utils.decorators import AdminActual, language
 from AlexaMusic.utils.formatters import int_to_alpha
+from config import BANNED_USERS, adminlist
+from strings import get_command
 
 # Command
 AUTH_COMMAND = get_command("AUTH_COMMAND")

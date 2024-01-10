@@ -14,7 +14,6 @@ from pyrogram import filters
 from pyrogram.types import Message
 
 import config
-from strings import get_command
 from AlexaMusic import app
 from AlexaMusic.misc import SUDOERS
 from AlexaMusic.utils.database import (
@@ -24,6 +23,7 @@ from AlexaMusic.utils.database import (
     remove_private_chat,
 )
 from AlexaMusic.utils.decorators.language import language
+from strings import get_command
 
 AUTHORIZE_COMMAND = get_command("AUTHORIZE_COMMAND")
 UNAUTHORIZE_COMMAND = get_command("UNAUTHORIZE_COMMAND")

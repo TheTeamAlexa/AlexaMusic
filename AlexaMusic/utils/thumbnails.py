@@ -16,12 +16,11 @@ import textwrap
 import aiofiles
 import aiohttp
 import numpy as np
-
 from PIL import Image, ImageChops, ImageDraw, ImageEnhance, ImageFilter, ImageFont
 from youtubesearchpython.__future__ import VideosSearch
 
-from config import YOUTUBE_IMG_URL
 from AlexaMusic import app
+from config import YOUTUBE_IMG_URL
 
 
 def changeImageSize(maxWidth, maxHeight, image):

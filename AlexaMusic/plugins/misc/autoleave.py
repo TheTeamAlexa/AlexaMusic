@@ -10,11 +10,13 @@ as you want or you can collabe if you have new ideas.
 """
 
 import asyncio
+from datetime import datetime
+
 from pyrogram.enums import ChatType
+
 import config
 from AlexaMusic import app
 from AlexaMusic.core.call import Alexa, autoend
-from datetime import datetime, timedelta
 from AlexaMusic.utils.database import get_client, is_active_chat, is_autoend
 
 
