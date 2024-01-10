@@ -302,7 +302,6 @@ class Call(PyTgCalls):
             await assistant.join_group_call(
                 chat_id,
                 stream,
-                stream_type=StreamType().pulse_stream,
             )
         except NoActiveGroupCall:
             try:
@@ -313,7 +312,6 @@ class Call(PyTgCalls):
                 await assistant.join_group_call(
                     chat_id,
                     stream,
-                    stream_type=StreamType().pulse_stream,
                 )
             except Exception as e:
                 raise AssistantErr(
