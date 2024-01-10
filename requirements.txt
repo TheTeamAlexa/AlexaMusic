@@ -10,9 +10,9 @@ lyricsgenius
 motor==3.0.0
 pillow==9.5.0
 psutil
-py-tgcalls==1.1.2
+py-tgcalls==0.9.7
 pykeyboard
-git+https://github.com/PyrogramMod/PyrogramMod@main
+pyrogram
 python-dotenv
 PyYAML
 requests
