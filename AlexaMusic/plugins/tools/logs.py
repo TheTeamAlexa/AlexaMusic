@@ -12,8 +12,8 @@ as you want or you can collabe if you have new ideas.
 from pyrogram import filters
 from pyrogram.types import Message
 
-from config import LOG_GROUP_ID
 from AlexaMusic import app
+from config import LOG_GROUP_ID
 
 
 @app.on_message(filters.new_chat_members)
