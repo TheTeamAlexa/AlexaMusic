@@ -33,7 +33,6 @@ from AlexaMusic.utils.decorators.language import languageCB
 from AlexaMusic.utils.formatters import seconds_to_min
 from AlexaMusic.utils.inline.play import panel_markup_1, stream_markup, telegram_markup
 from AlexaMusic.utils.stream.autoclear import auto_clean
-from AlexaMusic.utils.theme import check_theme
 from AlexaMusic.utils.thumbnails import gen_thumb
 from config import (
     AUTO_DOWNLOADS_CLEAR,
@@ -214,7 +213,7 @@ async def del_back_playlist(client, CallbackQuery, _):
         videoid = check[0]["vidid"]
         duration_min = check[0]["dur"]
         user_id = CallbackQuery.message.from_user.id
-        
+
         status = True if str(streamtype) == "video" else None
         db[chat_id][0]["played"] = 0
         if "live_" in queued:
@@ -227,7 +226,7 @@ async def del_back_playlist(client, CallbackQuery, _):
                 await Alexa.skip_stream(chat_id, link, video=status)
             except Exception:
                 return await CallbackQuery.message.reply_text(_["call_9"])
-            
+
             button = telegram_markup(_, chat_id)
             img = await gen_thumb(videoid, user_id)
             run = await CallbackQuery.message.reply_photo(
@@ -258,7 +257,7 @@ async def del_back_playlist(client, CallbackQuery, _):
                 await Alexa.skip_stream(chat_id, file_path, video=status)
             except Exception:
                 return await mystic.edit_text(_["call_9"])
-            
+
             button = stream_markup(_, videoid, chat_id)
             img = await gen_thumb(videoid, user_id)
             run = await CallbackQuery.message.reply_photo(

@@ -30,7 +30,6 @@ from AlexaMusic.utils.inline.play import queue_markup, stream_markup, telegram_m
 from AlexaMusic.utils.inline.playlist import close_markup
 from AlexaMusic.utils.pastebin import Alexabin
 from AlexaMusic.utils.stream.queue import put_queue, put_queue_index
-from AlexaMusic.utils.theme import check_theme
 from AlexaMusic.utils.thumbnails import gen_qthumb, gen_thumb
 
 
@@ -172,7 +171,7 @@ async def stream(
                 user_id,
                 "video" if video else "audio",
             )
-            
+
             position = len(db.get(chat_id)) - 1
             qimg = await gen_qthumb(vidid, user_id)
             button = queue_markup(_, vidid, chat_id)
@@ -202,7 +201,7 @@ async def stream(
                 "video" if video else "audio",
                 forceplay=forceplay,
             )
-            
+
             img = await gen_thumb(vidid, user_id)
             button = stream_markup(_, vidid, chat_id)
             try:
@@ -366,7 +365,7 @@ async def stream(
                 "video" if video else "audio",
                 forceplay=forceplay,
             )
-            
+
             img = await gen_thumb(vidid, user_id)
             button = telegram_markup(_, chat_id)
             run = await app.send_photo(

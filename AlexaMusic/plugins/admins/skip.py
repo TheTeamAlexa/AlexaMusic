@@ -21,7 +21,6 @@ from AlexaMusic.utils.database import get_loop
 from AlexaMusic.utils.decorators import AdminRightsCheck
 from AlexaMusic.utils.inline.play import stream_markup, telegram_markup
 from AlexaMusic.utils.stream.autoclear import auto_clean
-from AlexaMusic.utils.theme import check_theme
 from AlexaMusic.utils.thumbnails import gen_thumb
 from config import BANNED_USERS
 from strings import get_command
@@ -117,7 +116,7 @@ async def skip(cli, message: Message, _, chat_id):
             await Alexa.skip_stream(chat_id, link, video=status)
         except Exception:
             return await message.reply_text(_["call_9"])
-        
+
         button = telegram_markup(_, chat_id)
         img = await gen_thumb(videoid, user_id)
         run = await message.reply_photo(
@@ -145,7 +144,7 @@ async def skip(cli, message: Message, _, chat_id):
             await Alexa.skip_stream(chat_id, file_path, video=status)
         except Exception:
             return await mystic.edit_text(_["call_9"])
-        
+
         button = stream_markup(_, videoid, chat_id)
         img = await gen_thumb(videoid, user_id)
         run = await message.reply_photo(
@@ -202,7 +201,6 @@ async def skip(cli, message: Message, _, chat_id):
             db[chat_id][0]["mystic"] = run
             db[chat_id][0]["markup"] = "tg"
         else:
-            
             button = stream_markup(_, videoid, chat_id)
             img = await gen_thumb(videoid, user_id)
             run = await message.reply_photo(
