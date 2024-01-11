@@ -12,7 +12,7 @@ pillow==9.5.0
 psutil
 py-tgcalls==1.1.2
 pykeyboard
-git+https://github.com/PyrogramMod/PyrogramMod@main
+pyrofork
 python-dotenv
 PyYAML
 requests
