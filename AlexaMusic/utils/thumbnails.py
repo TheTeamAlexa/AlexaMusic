@@ -36,12 +36,12 @@ def add_corners(im):
     bigsize = (im.size[0] * 3, im.size[1] * 3)
     mask = Image.new("L", bigsize, 0)
     ImageDraw.Draw(mask).ellipse((0, 0) + bigsize, fill=255)
-    mask = mask.resize(im.size, Image.ANTIALIAS)
+    mask = mask.resize(im.size, Image.LANCZOS)
     mask = ImageChops.darker(mask, im.split()[-1])
     im.putalpha(mask)
 
 
-async def gen_thumb(videoid, user_id, theme):
+async def gen_thumb(videoid, user_id):
     if os.path.isfile(f"cache/{videoid}_{user_id}.png"):
         return f"cache/{videoid}_{user_id}.png"
     url = f"https://www.youtube.com/watch?v={videoid}"
@@ -76,14 +76,14 @@ async def gen_thumb(videoid, user_id, theme):
                     await f.close()
 
         try:
-            wxyz = await app.get_profile_photos(user_id)
             wxy = await app.download_media(
-                wxyz[0]["file_id"], file_name=f"{user_id}.jpg"
+                (await app.get_users(user_id)).photo.big_file_id,
+                file_name=f"{user_id}.jpg",
             )
         except:
-            hehe = await app.get_profile_photos(app.id)
             wxy = await app.download_media(
-                hehe[0]["file_id"], file_name=f"{app.id}.jpg"
+                (await app.get_users(app.id)).photo.big_file_id,
+                file_name=f"{app.id}.jpg",
             )
         xy = Image.open(wxy)
         a = Image.new("L", [640, 640], 0)
@@ -93,13 +93,13 @@ async def gen_thumb(videoid, user_id, theme):
         d = np.array(a)
         e = np.dstack((c, d))
         f = Image.fromarray(e)
-        x = f.resize((107, 107))
+        x = f.resize((145, 145))
 
         youtube = Image.open(f"cache/thumb{videoid}.png")
-        bg = Image.open(f"assets/{theme}.PNG")
+        bg = Image.open(f"assets/circle.png")
         image1 = changeImageSize(1280, 720, youtube)
         image2 = image1.convert("RGBA")
-        background = image2.filter(filter=ImageFilter.BoxBlur(30))
+        background = image2.filter(filter=ImageFilter.BoxBlur(20))
         enhancer = ImageEnhance.Brightness(background)
         background = enhancer.enhance(0.6)
 
@@ -114,7 +114,7 @@ async def gen_thumb(videoid, user_id, theme):
         x2 = Xcenter + 250
         y2 = Ycenter + 250
         logo = youtube.crop((x1, y1, x2, y2))
-        logo.thumbnail((520, 520), Image.ANTIALIAS)
+        logo.thumbnail((520, 520), Image.LANCZOS)
         logo.save(f"cache/chop{videoid}.png")
         if not os.path.isfile(f"cache/cropped{videoid}.png"):
             im = Image.open(f"cache/chop{videoid}.png").convert("RGBA")
@@ -123,70 +123,58 @@ async def gen_thumb(videoid, user_id, theme):
 
         crop_img = Image.open(f"cache/cropped{videoid}.png")
         logo = crop_img.convert("RGBA")
-        logo.thumbnail((365, 365), Image.ANTIALIAS)
+        logo.thumbnail((365, 365), Image.LANCZOS)
         width = int((1280 - 365) / 2)
         background = Image.open(f"cache/temp{videoid}.png")
         background.paste(logo, (width + 2, 138), mask=logo)
-        background.paste(x, (710, 427), mask=x)
         background.paste(image3, (0, 0), mask=image3)
+        background.paste(x, (65, 32), mask=x)
+        background.paste(x, (1065, 32), mask=x)
+        background.paste(x, (1060, 530), mask=x)
+        background.paste(x, (65, 530), mask=x)
 
         draw = ImageDraw.Draw(background)
-        font = ImageFont.truetype("assets/font2.ttf", 40)
-        ImageFont.truetype("assets/font2.ttf", 60)
-        arial = ImageFont.truetype("assets/font2.ttf", 25)
-        ImageFont.truetype("assets/font.ttf", 25)
+        font = ImageFont.truetype("assets/font2.ttf", 45)
+        ImageFont.truetype("assets/font2.ttf", 70)
+        arial = ImageFont.truetype("assets/font2.ttf", 30)
+        ImageFont.truetype("assets/font.ttf", 30)
         para = textwrap.wrap(title, width=32)
         try:
-            text_w, text_h = draw.textsize(f"ALEXA MUSIC IS PLAYING OP", font=font)
             draw.text(
-                ((1280 - text_w) / 2, 30),
-                f"ALEXA MUSIC IS PLAYING OP",
-                fill="red",
+                (450, 25),
+                f"STARTED PLAYING",
+                fill="white",
+                stroke_width=3,
+                stroke_fill="white",
                 font=font,
-            )
-            text_w, text_h = draw.textsize(
-                f"Alexa Music One Of The Most Advanced Telegram Music Bot", font=arial
-            )
-            draw.text(
-                ((1280 - text_w) / 2, 80),
-                f"Alexa Music One Of The Most Advanced Telegram Music Bot",
-                fill="green",
-                font=arial,
             )
             if para[0]:
                 text_w, text_h = draw.textsize(f"{para[0]}", font=font)
                 draw.text(
-                    ((1280 - text_w) / 2, 550),
+                    ((1280 - text_w) / 2, 530),
                     f"{para[0]}",
-                    fill="yellow",
+                    fill="white",
                     stroke_width=1,
-                    stroke_fill="black",
+                    stroke_fill="white",
                     font=font,
                 )
             if para[1]:
                 text_w, text_h = draw.textsize(f"{para[1]}", font=font)
                 draw.text(
-                    ((1280 - text_w) / 2, 600),
+                    ((1280 - text_w) / 2, 580),
                     f"{para[1]}",
                     fill="white",
                     stroke_width=1,
-                    stroke_fill="black",
+                    stroke_fill="white",
                     font=font,
                 )
         except:
             pass
-        text_w, text_h = draw.textsize(f"YouTube: Jankari Ki Duniya", font=arial)
-        draw.text(
-            ((1280 - text_w) / 2, 620),
-            f"YouTube: Jankari Ki Duniya",
-            fill="white",
-            font=arial,
-        )
         text_w, text_h = draw.textsize(f"Duration: {duration} Mins", font=arial)
         draw.text(
             ((1280 - text_w) / 2, 660),
             f"Duration: {duration} Mins",
-            fill="black",
+            fill="white",
             font=arial,
         )
         try:
@@ -200,7 +188,7 @@ async def gen_thumb(videoid, user_id, theme):
         return YOUTUBE_IMG_URL
 
 
-async def gen_qthumb(videoid, user_id, theme):
+async def gen_qthumb(videoid, user_id):
     if os.path.isfile(f"cache/que{videoid}_{user_id}.png"):
         return f"cache/que{videoid}_{user_id}.png"
     url = f"https://www.youtube.com/watch?v={videoid}"
@@ -235,14 +223,14 @@ async def gen_qthumb(videoid, user_id, theme):
                     await f.close()
 
         try:
-            wxyz = await app.get_profile_photos(user_id)
             wxy = await app.download_media(
-                wxyz[0]["file_id"], file_name=f"{user_id}.jpg"
+                (await app.get_users(user_id)).photo.big_file_id,
+                file_name=f"{user_id}.jpg",
             )
         except:
-            hehe = await app.get_profile_photos(app.id)
             wxy = await app.download_media(
-                hehe[0]["file_id"], file_name=f"{app.id}.jpg"
+                (await app.get_users(app.id)).photo.big_file_id,
+                file_name=f"{app.id}.jpg",
             )
         xy = Image.open(wxy)
         a = Image.new("L", [640, 640], 0)
@@ -252,13 +240,13 @@ async def gen_qthumb(videoid, user_id, theme):
         d = np.array(a)
         e = np.dstack((c, d))
         f = Image.fromarray(e)
-        x = f.resize((107, 107))
+        x = f.resize((145, 145))
 
         youtube = Image.open(f"cache/thumb{videoid}.png")
-        bg = Image.open(f"assets/{theme}.PNG")
+        bg = Image.open(f"assets/circle.png")
         image1 = changeImageSize(1280, 720, youtube)
         image2 = image1.convert("RGBA")
-        background = image2.filter(filter=ImageFilter.BoxBlur(30))
+        background = image2.filter(filter=ImageFilter.BoxBlur(20))
         enhancer = ImageEnhance.Brightness(background)
         background = enhancer.enhance(0.6)
 
@@ -273,7 +261,7 @@ async def gen_qthumb(videoid, user_id, theme):
         x2 = Xcenter + 250
         y2 = Ycenter + 250
         logo = youtube.crop((x1, y1, x2, y2))
-        logo.thumbnail((520, 520), Image.ANTIALIAS)
+        logo.thumbnail((520, 520), Image.LANCZOS)
         logo.save(f"cache/chop{videoid}.png")
         if not os.path.isfile(f"cache/cropped{videoid}.png"):
             im = Image.open(f"cache/chop{videoid}.png").convert("RGBA")
@@ -282,78 +270,64 @@ async def gen_qthumb(videoid, user_id, theme):
 
         crop_img = Image.open(f"cache/cropped{videoid}.png")
         logo = crop_img.convert("RGBA")
-        logo.thumbnail((365, 365), Image.ANTIALIAS)
+        logo.thumbnail((365, 365), Image.LANCZOS)
         width = int((1280 - 365) / 2)
         background = Image.open(f"cache/temp{videoid}.png")
         background.paste(logo, (width + 2, 138), mask=logo)
-        background.paste(x, (710, 427), mask=x)
         background.paste(image3, (0, 0), mask=image3)
+        background.paste(x, (65, 32), mask=x)
+        background.paste(x, (1065, 32), mask=x)
+        background.paste(x, (1060, 530), mask=x)
+        background.paste(x, (65, 530), mask=x)
 
         draw = ImageDraw.Draw(background)
-        font = ImageFont.truetype("assets/font2.ttf", 40)
-        ImageFont.truetype("assets/font2.ttf", 60)
-        arial = ImageFont.truetype("assets/font2.ttf", 25)
-        ImageFont.truetype("assets/font.ttf", 25)
+        font = ImageFont.truetype("assets/font2.ttf", 45)
+        ImageFont.truetype("assets/font2.ttf", 70)
+        arial = ImageFont.truetype("assets/font2.ttf", 30)
+        ImageFont.truetype("assets/font.ttf", 30)
         para = textwrap.wrap(title, width=32)
         try:
-            text_w, text_h = draw.textsize(f"ALEXA ADDED THIS SONG TO QUEUE", font=font)
             draw.text(
-                ((1280 - text_w) / 2, 30),
-                f"ALEXA ADDED THIS SONG TO QUEUE",
-                fill="red",
+                (450, 25),
+                f"STARTED PLAYING",
+                fill="white",
+                stroke_width=3,
+                stroke_fill="white",
                 font=font,
-            )
-            text_w, text_h = draw.textsize(
-                f"Alexa Music One Of The Most Advanced Telegram Music Bot", font=arial
-            )
-            draw.text(
-                ((1280 - text_w) / 2, 80),
-                f"Alexa Music One Of The Most Advanced Telegram Music Bot",
-                fill="green",
-                font=arial,
             )
             if para[0]:
                 text_w, text_h = draw.textsize(f"{para[0]}", font=font)
                 draw.text(
-                    ((1280 - text_w) / 2, 550),
+                    ((1280 - text_w) / 2, 530),
                     f"{para[0]}",
-                    fill="yellow",
+                    fill="white",
                     stroke_width=1,
-                    stroke_fill="black",
+                    stroke_fill="white",
                     font=font,
                 )
             if para[1]:
                 text_w, text_h = draw.textsize(f"{para[1]}", font=font)
                 draw.text(
-                    ((1280 - text_w) / 2, 600),
+                    ((1280 - text_w) / 2, 580),
                     f"{para[1]}",
                     fill="white",
                     stroke_width=1,
-                    stroke_fill="black",
+                    stroke_fill="white",
                     font=font,
                 )
         except:
             pass
-        text_w, text_h = draw.textsize(f"YouTube: Jankari Ki Duniya", font=arial)
-        draw.text(
-            ((1280 - text_w) / 2, 620),
-            f"YouTube: Jankari Ki Duniya",
-            fill="white",
-            font=arial,
-        )
         text_w, text_h = draw.textsize(f"Duration: {duration} Mins", font=arial)
         draw.text(
             ((1280 - text_w) / 2, 660),
             f"Duration: {duration} Mins",
-            fill="black",
+            fill="white",
             font=arial,
         )
-
         try:
             os.remove(f"cache/thumb{videoid}.png")
         except:
             pass
-        file = f"cache/que{videoid}_{user_id}.png"
         background.save(f"cache/que{videoid}_{user_id}.png")
         return f"cache/que{videoid}_{user_id}.png"
     except Exception as e:
