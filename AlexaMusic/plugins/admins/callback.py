@@ -214,7 +214,7 @@ async def del_back_playlist(client, CallbackQuery, _):
         videoid = check[0]["vidid"]
         duration_min = check[0]["dur"]
         user_id = CallbackQuery.message.from_user.id
-        theme = await check_theme(chat_id)
+        
         status = True if str(streamtype) == "video" else None
         db[chat_id][0]["played"] = 0
         if "live_" in queued:
@@ -227,9 +227,9 @@ async def del_back_playlist(client, CallbackQuery, _):
                 await Alexa.skip_stream(chat_id, link, video=status)
             except Exception:
                 return await CallbackQuery.message.reply_text(_["call_9"])
-            theme = await check_theme(chat_id)
+            
             button = telegram_markup(_, chat_id)
-            img = await gen_thumb(videoid, user_id, theme)
+            img = await gen_thumb(videoid, user_id)
             run = await CallbackQuery.message.reply_photo(
                 photo=img,
                 caption=_["stream_1"].format(
@@ -258,9 +258,9 @@ async def del_back_playlist(client, CallbackQuery, _):
                 await Alexa.skip_stream(chat_id, file_path, video=status)
             except Exception:
                 return await mystic.edit_text(_["call_9"])
-            theme = await check_theme(chat_id)
+            
             button = stream_markup(_, videoid, chat_id)
-            img = await gen_thumb(videoid, user_id, theme)
+            img = await gen_thumb(videoid, user_id)
             run = await CallbackQuery.message.reply_photo(
                 photo=img,
                 caption=_["stream_1"].format(
@@ -317,9 +317,8 @@ async def del_back_playlist(client, CallbackQuery, _):
                 db[chat_id][0]["mystic"] = run
                 db[chat_id][0]["markup"] = "tg"
             else:
-                theme = await check_theme(chat_id)
                 button = stream_markup(_, videoid, chat_id)
-                img = await gen_thumb(videoid, user_id, theme)
+                img = await gen_thumb(videoid, user_id)
                 run = await CallbackQuery.message.reply_photo(
                     photo=img,
                     caption=_["stream_1"].format(

@@ -115,8 +115,7 @@ async def stream(
                     "video" if video else "audio",
                     forceplay=forceplay,
                 )
-                theme = await check_theme(chat_id)
-                img = await gen_thumb(vidid, user_id, theme)
+                img = await gen_thumb(vidid, user_id)
                 button = stream_markup(_, vidid, chat_id)
                 run = await app.send_photo(
                     original_chat_id,
@@ -173,9 +172,9 @@ async def stream(
                 user_id,
                 "video" if video else "audio",
             )
-            theme = await check_theme(chat_id)
+            
             position = len(db.get(chat_id)) - 1
-            qimg = await gen_qthumb(vidid, user_id, theme)
+            qimg = await gen_qthumb(vidid, user_id)
             button = queue_markup(_, vidid, chat_id)
             run = await app.send_photo(
                 original_chat_id,
@@ -203,8 +202,8 @@ async def stream(
                 "video" if video else "audio",
                 forceplay=forceplay,
             )
-            theme = await check_theme(chat_id)
-            img = await gen_thumb(vidid, user_id, theme)
+            
+            img = await gen_thumb(vidid, user_id)
             button = stream_markup(_, vidid, chat_id)
             try:
                 run = await app.send_photo(
@@ -367,8 +366,8 @@ async def stream(
                 "video" if video else "audio",
                 forceplay=forceplay,
             )
-            theme = await check_theme(chat_id)
-            img = await gen_thumb(vidid, user_id, theme)
+            
+            img = await gen_thumb(vidid, user_id)
             button = telegram_markup(_, chat_id)
             run = await app.send_photo(
                 original_chat_id,
