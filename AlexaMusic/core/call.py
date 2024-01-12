@@ -120,7 +120,6 @@ class Call(PyTgCalls):
             self.userbot5,
             cache_duration=100,
         )
-
     async def pause_stream(self, chat_id: int):
         assistant = await group_assistant(self, chat_id)
         await assistant.pause_stream(chat_id)
@@ -500,8 +499,8 @@ class Call(PyTgCalls):
                     db[chat_id][0]["mystic"] = run
                     db[chat_id][0]["markup"] = "tg"
                 else:
-                theme = await check_theme(chat_id)
-                img = await gen_thumb(videoid, userid, theme)
+                    theme = await check_theme(chat_id)
+                    img = await gen_thumb(videoid, userid, theme)
                     button = stream_markup(_, videoid, chat_id)
                     run = await app.send_photo(
                         original_chat_id,
