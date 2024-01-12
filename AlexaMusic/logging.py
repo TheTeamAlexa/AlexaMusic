@@ -9,7 +9,6 @@ This program is free software: you can redistribute it and can modify
 as you want or you can collabe if you have new ideas.
 """
 
-
 import logging
 from logging.handlers import RotatingFileHandler
 
@@ -27,8 +26,6 @@ logging.basicConfig(
 
 logging.getLogger("pyrogram").setLevel(logging.ERROR)
 logging.getLogger("pytgcalls").setLevel(logging.ERROR)
-logging.getLogger("ntgcalls").setLevel(logging.ERROR)
-logging.getLogger("httpx").setLevel(logging.ERROR)
 
 
 def LOGGER(name: str) -> logging.Logger:
