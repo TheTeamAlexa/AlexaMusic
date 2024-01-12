@@ -72,7 +72,7 @@ class Call(PyTgCalls):
         self.userbot1 = Client(
             api_id=config.API_ID,
             api_hash=config.API_HASH,
-            session_name=str(config.STRING1),
+            session_string=str(config.STRING1),
         )
         self.one = PyTgCalls(
             self.userbot1,
