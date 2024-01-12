@@ -9,6 +9,7 @@ This program is free software: you can redistribute it and can modify
 as you want or you can collabe if you have new ideas.
 """
 
+
 import os
 import re
 import textwrap
@@ -43,8 +44,8 @@ def add_corners(im):
 
 
 async def gen_thumb(videoid, userid, theme):
-    if os.path.isfile(f"cache/{videoid}_{user_id}.png"):
-        return f"cache/{videoid}_{user_id}.png"
+    if os.path.isfile(f"cache/{videoid}_{userid}.png"):
+        return f"cache/{videoid}_{userid}.png"
     url = f"https://www.youtube.com/watch?v={videoid}"
     try:
         results = VideosSearch(url, limit=1)
@@ -78,8 +79,8 @@ async def gen_thumb(videoid, userid, theme):
 
         try:
             wxy = await app.download_media(
-                (await app.get_users(user_id)).photo.big_file_id,
-                file_name=f"{user_id}.jpg",
+                (await app.get_users(userid)).photo.big_file_id,
+                file_name=f"{userid}.jpg",
             )
         except:
             wxy = await app.download_media(
@@ -194,16 +195,16 @@ async def gen_thumb(videoid, userid, theme):
             os.remove(f"cache/thumb{videoid}.png")
         except:
             pass
-        background.save(f"cache/{videoid}_{user_id}.png")
-        return f"cache/{videoid}_{user_id}.png"
+        background.save(f"cache/{videoid}_{userid}.png")
+        return f"cache/{videoid}_{userid}.png"
     except Exception as e:
         print(e)
         return YOUTUBE_IMG_URL
 
 
 async def gen_qthumb(videoid, userid, theme):
-    if os.path.isfile(f"cache/que{videoid}_{user_id}.png"):
-        return f"cache/que{videoid}_{user_id}.png"
+    if os.path.isfile(f"cache/que{videoid}_{userid}.png"):
+        return f"cache/que{videoid}_{userid}.png"
     url = f"https://www.youtube.com/watch?v={videoid}"
     try:
         results = VideosSearch(url, limit=1)
@@ -237,8 +238,8 @@ async def gen_qthumb(videoid, userid, theme):
 
         try:
             wxy = await app.download_media(
-                (await app.get_users(user_id)).photo.big_file_id,
-                file_name=f"{user_id}.jpg",
+                (await app.get_users(userid)).photo.big_file_id,
+                file_name=f"{userid}.jpg",
             )
         except:
             wxy = await app.download_media(
@@ -354,9 +355,9 @@ async def gen_qthumb(videoid, userid, theme):
             os.remove(f"cache/thumb{videoid}.png")
         except:
             pass
-        file = f"cache/que{videoid}_{user_id}.png"
-        background.save(f"cache/que{videoid}_{user_id}.png")
-        return f"cache/que{videoid}_{user_id}.png"
+        file = f"cache/que{videoid}_{userid}.png"
+        background.save(f"cache/que{videoid}_{userid}.png")
+        return f"cache/que{videoid}_{userid}.png"
     except Exception as e:
         print(e)
         return YOUTUBE_IMG_URL
