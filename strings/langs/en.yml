@@ -313,6 +313,12 @@ ST_B_24 : "🌺 ᴄʜᴀɴɴᴇʟ"
 ST_B_25 : "🫂 ᴘʟᴀʏ ᴛʏᴘᴇ"
 ST_B_26 : "🥀 ᴄᴏᴍᴍᴀɴᴅ ᴄʟᴇᴀɴ"
 ST_B_27 : "🌈 sᴜɢɢᴇsᴛɪᴏɴ ᴍᴏᴅᴇ"
+ST_B_28 : "{0} STUDIO AudioQuality"
+ST_B_29 : "{0} SD-360p VideoQuality"
+ST_B_30 : "{0} SD-480p VideoQuality"
+ST_B_31 : "{0} HD-720p VideoQuality"
+ST_B_32 : "{0} FHD-1080p VideoQuality"
+ST_B_33 : "{0} QHD-2k VideoQuality"
 
 #Song
 SG_B_1 : "๏ ᴄʟɪᴄᴋ ʜᴇʀᴇ ๏"
