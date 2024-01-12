@@ -366,7 +366,7 @@ class Call(PyTgCalls):
             audio_stream_quality = await get_audio_bitrate(chat_id)
             video_stream_quality = await get_video_bitrate(chat_id)
             videoid = check[0]["vidid"]
-            userid= check[0].get("user_id")
+            userid = check[0].get("user_id")
             check[0]["played"] = 0
             video = True if str(streamtype) == "video" else False
             if "live_" in queued:
