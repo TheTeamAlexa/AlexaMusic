@@ -27,12 +27,15 @@ from pytgcalls.exceptions import (
     NoActiveGroupCall,
     TelegramServerError,
 )
-from pytgcalls.types import JoinedGroupCallParticipant, LeftGroupCallParticipant, Update
-from pytgcalls.types import MediaStream
+from pytgcalls.types import (
+    JoinedGroupCallParticipant,
+    LeftGroupCallParticipant,
+    MediaStream,
+    Update,
+)
 from pytgcalls.types.stream import StreamAudioEnded
 
 import config
-from strings import get_string
 from AlexaMusic import LOGGER, YouTube, app
 from AlexaMusic.misc import db
 from AlexaMusic.utils.database import (
@@ -46,7 +49,6 @@ from AlexaMusic.utils.database import (
     group_assistant,
     is_autoend,
     music_on,
-    mute_off,
     remove_active_chat,
     remove_active_video_chat,
     set_loop,
@@ -55,8 +57,8 @@ from AlexaMusic.utils.exceptions import AssistantErr
 from AlexaMusic.utils.inline.play import stream_markup, telegram_markup
 from AlexaMusic.utils.stream.autoclear import auto_clean
 from AlexaMusic.utils.thumbnails import gen_thumb
+from strings import get_string
 from AlexaMusic.utils.theme import check_theme
-
 
 autoend = {}
 counter = {}
