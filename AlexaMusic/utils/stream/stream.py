@@ -21,12 +21,14 @@ from AlexaMusic import Carbon, YouTube, app
 from AlexaMusic.core.call import Alexa
 from AlexaMusic.misc import db
 from AlexaMusic.utils.database import (
+    add_active_chat,
     add_active_video_chat,
     is_active_chat,
     is_video_allowed,
+    music_on,
 )
 from AlexaMusic.utils.exceptions import AssistantErr
-from AlexaMusic.utils.inline.play import queue_markup, stream_markup, telegram_markup
+from AlexaMusic.utils.inline.play import stream_markup, queue_markup, telegram_markup
 from AlexaMusic.utils.inline.playlist import close_markup
 from AlexaMusic.utils.pastebin import Alexabin
 from AlexaMusic.utils.stream.queue import put_queue, put_queue_index
@@ -151,7 +153,6 @@ async def stream(
     elif streamtype == "youtube":
         link = result["link"]
         vidid = result["vidid"]
-        userid = check[0].get("user_id")
         title = (result["title"]).title()
         duration_min = result["duration_min"]
         thumbnail = result["thumb"]
@@ -176,7 +177,7 @@ async def stream(
             )
             theme = await check_theme(chat_id)
             position = len(db.get(chat_id)) - 1
-            qimg = await gen_qthumb(vidid, userid, theme)
+            qimg = await gen_qthumb(vidid, user_id, theme)
             button = queue_markup(_, vidid, chat_id)
             run = await app.send_photo(
                 original_chat_id,
@@ -205,7 +206,7 @@ async def stream(
                 forceplay=forceplay,
             )
             theme = await check_theme(chat_id)
-            img = await gen_thumb(vidid, userid, theme)
+            img = await gen_thumb(vidid, user_id, theme)
             button = stream_markup(_, vidid, chat_id)
             try:
                 run = await app.send_photo(
@@ -322,7 +323,6 @@ async def stream(
     elif streamtype == "live":
         link = result["link"]
         vidid = result["vidid"]
-        userid = check[0].get("user_id")
         title = (result["title"]).title()
         thumbnail = result["thumb"]
         duration_min = "00:00"
@@ -370,7 +370,7 @@ async def stream(
                 forceplay=forceplay,
             )
             theme = await check_theme(chat_id)
-            img = await gen_thumb(vidid, userid, theme)
+            img = await gen_thumb(vidid, user_id, theme)
             button = telegram_markup(_, chat_id)
             run = await app.send_photo(
                 original_chat_id,
