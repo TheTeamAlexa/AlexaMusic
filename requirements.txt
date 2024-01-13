@@ -10,7 +10,8 @@ lyricsgenius
 motor==3.0.0
 pillow==9.5.0 
 psutil
-py-tgcalls==1.1.2
+py-tgcalls
+ntgcalls
 pykeyboard
 pyrofork
 python-dotenv
