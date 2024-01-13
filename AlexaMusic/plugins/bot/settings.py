@@ -141,6 +141,7 @@ async def gen_buttons_vid(_, aud):
         buttons = video_quality_markup(_, SD_360p=True)
     return buttons
 
+
 # without admin rights
 
 
@@ -263,7 +264,9 @@ async def without_Admin_rights(client, CallbackQuery, _):
 
 
 @app.on_callback_query(
-    filters.regex(pattern=r"^(LOW|MEDIUM|HIGH|STUDIO|SD_360p|SD_480p|HD_720p|FHD_1080p|QHD_2K)$")
+    filters.regex(
+        pattern=r"^(LOW|MEDIUM|HIGH|STUDIO|SD_360p|SD_480p|HD_720p|FHD_1080p|QHD_2K)$"
+    )
     & ~BANNED_USERS
 )
 @ActualAdminCB
@@ -277,42 +280,28 @@ async def aud_vid_cb(client, CallbackQuery, _):
         await save_audio_bitrate(CallbackQuery.message.chat.id, "LOW")
         buttons = audio_quality_markup(_, LOW=True)
     if command == "MEDIUM":
-        await save_audio_bitrate(
-            CallbackQuery.message.chat.id, "MEDIUM"
-        )
+        await save_audio_bitrate(CallbackQuery.message.chat.id, "MEDIUM")
         buttons = audio_quality_markup(_, MEDIUM=True)
     if command == "HIGH":
-        await save_audio_bitrate(
-            CallbackQuery.message.chat.id, "HIGH"
-        )
+        await save_audio_bitrate(CallbackQuery.message.chat.id, "HIGH")
         buttons = audio_quality_markup(_, HIGH=True)
     if command == "STUDIO":
-        await save_audio_bitrate(
-            CallbackQuery.message.chat.id, "STUDIO"
-        )
+        await save_audio_bitrate(CallbackQuery.message.chat.id, "STUDIO")
         buttons = audio_quality_markup(_, STUDIO=True)
     if command == "SD_360p":
         await save_video_bitrate(CallbackQuery.message.chat.id, "SD_360p")
         buttons = video_quality_markup(_, SD_360p=True)
     if command == "SD_480p":
-        await save_video_bitrate(
-            CallbackQuery.message.chat.id, "SD_480p"
-        )
+        await save_video_bitrate(CallbackQuery.message.chat.id, "SD_480p")
         buttons = video_quality_markup(_, SD_480p=True)
     if command == "HD_720p":
-        await save_video_bitrate(
-            CallbackQuery.message.chat.id, "HD_720p"
-        )
+        await save_video_bitrate(CallbackQuery.message.chat.id, "HD_720p")
         buttons = video_quality_markup(_, HD_720p=True)
     if command == "FHD_1080p":
-        await save_video_bitrate(
-            CallbackQuery.message.chat.id, "FHD_1080p"
-        )
+        await save_video_bitrate(CallbackQuery.message.chat.id, "FHD_1080p")
         buttons = video_quality_markup(_, FHD_1080p=True)
     if command == "QHD_2K":
-        await save_video_bitrate(
-            CallbackQuery.message.chat.id, "QHD_2K"
-        )
+        await save_video_bitrate(CallbackQuery.message.chat.id, "QHD_2K")
         buttons = video_quality_markup(_, QHD_2K=True)
     try:
         return await CallbackQuery.edit_message_reply_markup(

@@ -1,13 +1,12 @@
 aiofiles
 aiohttp
-asyncio
 dnspython==2.3.0
 ffmpeg-python
 gitpython
 hachoir
 heroku3
 lyricsgenius
-motor==3.0.0
+motor
 ntgcalls==1.0.4
 pillow==9.5.0 
 psutil
