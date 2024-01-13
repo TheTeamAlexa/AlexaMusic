@@ -28,6 +28,7 @@ from AlexaMusic.utils.database import (
     get_cmode,
     get_lang,
     get_playmode,
+    get_assistant,
     get_playtype,
     is_active_chat,
     is_commanddelete_on,
