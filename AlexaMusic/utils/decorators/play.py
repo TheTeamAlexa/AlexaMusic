@@ -11,7 +11,12 @@ as you want or you can collabe if you have new ideas.
 import asyncio
 
 from pyrogram.enums import ChatMemberStatus
-from pyrogram.errors import ChatAdminRequired, InviteRequestSent, UserAlreadyParticipant, UserNotParticipant
+from pyrogram.errors import (
+    ChatAdminRequired,
+    InviteRequestSent,
+    UserAlreadyParticipant,
+    UserNotParticipant,
+)
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup
 
 from config import PLAYLIST_IMG_URL, PRIVATE_BOT_MODE, adminlist
@@ -32,6 +37,7 @@ from AlexaMusic.utils.database.memorydatabase import is_maintenance
 from AlexaMusic.utils.inline.playlist import botplaylist_markup
 
 links = {}
+
 
 def PlayWrapper(command):
     async def wrapper(client, message):
@@ -54,27 +60,17 @@ def PlayWrapper(command):
         language = await get_lang(message.chat.id)
         _ = get_string(language)
         audio_telegram = (
-            (
-                message.reply_to_message.audio
-                or message.reply_to_message.voice
-            )
+            (message.reply_to_message.audio or message.reply_to_message.voice)
             if message.reply_to_message
             else None
         )
         video_telegram = (
-            (
-                message.reply_to_message.video
-                or message.reply_to_message.document
-            )
+            (message.reply_to_message.video or message.reply_to_message.document)
             if message.reply_to_message
             else None
         )
         url = await YouTube.url(message)
-        if (
-            audio_telegram is None
-            and video_telegram is None
-            and url is None
-        ):
+        if audio_telegram is None and video_telegram is None and url is None:
             if len(message.command) < 2:
                 if "stream" in message.command:
                     return await message.reply_text(_["str_1"])
@@ -95,9 +91,7 @@ def PlayWrapper(command):
                     ]
                 ]
             )
-            return await message.reply_text(
-                _["general_4"], reply_markup=upl
-            )
+            return await message.reply_text(_["general_4"], reply_markup=upl)
         if message.command[0][0] == "c":
             chat_id = await get_cmode(message.chat.id)
             if chat_id is None:
