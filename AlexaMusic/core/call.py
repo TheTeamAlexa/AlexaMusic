@@ -10,6 +10,18 @@ as you want or you can collabe if you have new ideas.
 """
 
 
+# Copyright (C) 2024 by Alexa_Help @ Github, < https://github.com/TheTeamAlexa >
+# Subscribe On YT < Jankari Ki Duniya >. All rights reserved. © Alexa © Yukki.
+
+""""
+TheTeamAlexa is a project of Telegram bots with variety of purposes.
+Copyright (c) 2024 -present Team=Alexa <https://github.com/TheTeamAlexa>
+
+This program is free software: you can redistribute it and can modify
+as you want or you can collabe if you have new ideas.
+"""
+
+
 import asyncio
 from datetime import datetime, timedelta
 from typing import Union
@@ -601,7 +613,7 @@ class Call(PyTgCalls):
         return str(round(sum(pings) / len(pings), 3))
 
     async def start(self):
-        LOGGER(__name__).info("Starting Assistants...\n")
+        LOGGER(__name__).info("Starting PyTgCalls Client\n")
         if config.STRING1:
             await self.one.start()
         if config.STRING2:
@@ -637,7 +649,7 @@ class Call(PyTgCalls):
         @self.three.on_stream_end()
         @self.four.on_stream_end()
         @self.five.on_stream_end()
-        async def stream_end_handler1(client, update: Update):
+        async def stream_end_handler(client, update: Update):
             if not isinstance(update, StreamAudioEnded):
                 return
             await self.change_stream(client, update.chat_id)
@@ -648,9 +660,9 @@ class Call(PyTgCalls):
         @self.four.on_participants_change()
         @self.five.on_participants_change()
         async def participants_change_handler(client, update: Update):
-            if not isinstance(update, JoinedGroupCallParticipant) and not isinstance(
-                update, LeftGroupCallParticipant
-            ):
+            if not isinstance(
+                update, JoinedGroupCallParticipant
+            ) and not isinstance(update, LeftGroupCallParticipant):
                 return
             chat_id = update.chat_id
             users = counter.get(chat_id)
@@ -661,7 +673,9 @@ class Call(PyTgCalls):
                     return
                 counter[chat_id] = got
                 if got == 1:
-                    autoend[chat_id] = datetime.now() + timedelta(minutes=AUTO_END_TIME)
+                    autoend[chat_id] = datetime.now() + timedelta(
+                        minutes=AUTO_END_TIME
+                    )
                     return
                 autoend[chat_id] = {}
             else:
@@ -672,7 +686,9 @@ class Call(PyTgCalls):
                 )
                 counter[chat_id] = final
                 if final == 1:
-                    autoend[chat_id] = datetime.now() + timedelta(minutes=AUTO_END_TIME)
+                    autoend[chat_id] = datetime.now() + timedelta(
+                        minutes=AUTO_END_TIME
+                    )
                     return
                 autoend[chat_id] = {}
 
