@@ -50,9 +50,7 @@ def audio_quality_markup(
     return [
         [
             InlineKeyboardButton(
-                text=_["ST_B_8"].format("✅")
-                if LOW == True
-                else _["ST_B_8"].format(""),
+                text=_["ST_B_8"].format("✅") if LOW == True else _["ST_B_8"].format(""),
                 callback_data="LOW",
             ),
             InlineKeyboardButton(
@@ -81,9 +79,7 @@ def audio_quality_markup(
                 text=_["BACK_BUTTON"],
                 callback_data="settingsback_helper",
             ),
-            InlineKeyboardButton(
-                text=_["CLOSE_BUTTON"], callback_data="close"
-            ),
+            InlineKeyboardButton(text=_["CLOSE_BUTTON"], callback_data="close"),
         ],
     ]
 
@@ -138,11 +134,10 @@ def video_quality_markup(
                 text=_["BACK_BUTTON"],
                 callback_data="settingsback_helper",
             ),
-            InlineKeyboardButton(
-                text=_["CLOSE_BUTTON"], callback_data="close"
-            ),
+            InlineKeyboardButton(text=_["CLOSE_BUTTON"], callback_data="close"),
         ],
     ]
+
 
 def cleanmode_settings_markup(
     _,
