@@ -117,8 +117,9 @@ async def stream(
                     "video" if video else "audio",
                     forceplay=forceplay,
                 )
+                userid = check[0].get("user_id")
                 theme = await check_theme(chat_id)
-                img = await gen_thumb(vidid, user_id, theme)
+                img = await gen_thumb(vidid, userid, theme)
                 button = stream_markup(_, vidid, chat_id)
                 run = await app.send_photo(
                     original_chat_id,
@@ -153,6 +154,7 @@ async def stream(
     elif streamtype == "youtube":
         link = result["link"]
         vidid = result["vidid"]
+        userid = check[0].get("user_id")
         title = (result["title"]).title()
         duration_min = result["duration_min"]
         thumbnail = result["thumb"]
@@ -177,7 +179,7 @@ async def stream(
             )
             theme = await check_theme(chat_id)
             position = len(db.get(chat_id)) - 1
-            qimg = await gen_qthumb(vidid, user_id, theme)
+            qimg = await gen_qthumb(vidid, userid, theme)
             button = queue_markup(_, vidid, chat_id)
             run = await app.send_photo(
                 original_chat_id,
@@ -206,7 +208,7 @@ async def stream(
                 forceplay=forceplay,
             )
             theme = await check_theme(chat_id)
-            img = await gen_thumb(vidid, user_id, theme)
+            img = await gen_thumb(vidid, userid, theme)
             button = stream_markup(_, vidid, chat_id)
             try:
                 run = await app.send_photo(
@@ -323,6 +325,7 @@ async def stream(
     elif streamtype == "live":
         link = result["link"]
         vidid = result["vidid"]
+        userid = check[0].get("user_id")
         title = (result["title"]).title()
         thumbnail = result["thumb"]
         duration_min = "00:00"
@@ -370,7 +373,7 @@ async def stream(
                 forceplay=forceplay,
             )
             theme = await check_theme(chat_id)
-            img = await gen_thumb(vidid, user_id, theme)
+            img = await gen_thumb(vidid, userid, theme)
             button = telegram_markup(_, chat_id)
             run = await app.send_photo(
                 original_chat_id,
