@@ -9,11 +9,10 @@ This program is free software: you can redistribute it and can modify
 as you want or you can collabe if you have new ideas.
 """
 
-
 import asyncio
 
 from pyrogram import filters
-from pyrogram.enums import ChatMembersFilter
+from pyrogram.enums import ChatMembersFilter, ChatMemberStatus
 from pyrogram.types import CallbackQuery, Message
 
 from config import BANNED_USERS, MUSIC_BOT_NAME, adminlist, lyrical
@@ -30,20 +29,22 @@ RELOAD_COMMAND = get_command("RELOAD_COMMAND")
 RESTART_COMMAND = get_command("RESTART_COMMAND")
 
 
-@app.on_message(filters.command(RELOAD_COMMAND) & filters.group & ~BANNED_USERS)
+@app.on_message(
+    filters.command(RELOAD_COMMAND)
+    & filters.group
+    & ~BANNED_USERS
+)
 @language
 async def reload_admin_cache(client, message: Message, _):
     try:
         chat_id = message.chat.id
-        admins = []
-        async for m in app.get_chat_members(
+        admins = app.get_chat_members(
             chat_id, filter=ChatMembersFilter.ADMINISTRATORS
-        ):
-            admins.append(m)
+        )
         authusers = await get_authuser_names(chat_id)
         adminlist[chat_id] = []
-        for user in admins:
-            if user.can_manage_voice_chats:
+        async for user in admins:
+            if user.status == ChatMemberStatus.ADMINISTRATOR:
                 adminlist[chat_id].append(user.user.id)
         for user in authusers:
             user_id = await alpha_to_int(user)
@@ -55,7 +56,11 @@ async def reload_admin_cache(client, message: Message, _):
         )
 
 
-@app.on_message(filters.command(RESTART_COMMAND) & filters.group & ~BANNED_USERS)
+@app.on_message(
+    filters.command(RESTART_COMMAND)
+    & filters.group
+    & ~BANNED_USERS
+)
 @AdminActual
 async def restartbot(client, message: Message, _):
     mystic = await message.reply_text(
@@ -64,7 +69,7 @@ async def restartbot(client, message: Message, _):
     await asyncio.sleep(1)
     try:
         db[message.chat.id] = []
-        await Alexa.stop_stream(message.chat.id)
+        await Yukki.stop_stream(message.chat.id)
     except:
         pass
     chat_id = await get_cmode(message.chat.id)
@@ -75,7 +80,7 @@ async def restartbot(client, message: Message, _):
             pass
         try:
             db[chat_id] = []
-            await Alexa.stop_stream(chat_id)
+            await Yukki.stop_stream(chat_id)
         except:
             pass
     return await mystic.edit_text(
@@ -101,7 +106,9 @@ async def close_menu(_, CallbackQuery):
         return
 
 
-@app.on_callback_query(filters.regex("stop_downloading") & ~BANNED_USERS)
+@app.on_callback_query(
+    filters.regex("stop_downloading") & ~BANNED_USERS
+)
 @ActualAdminCB
 async def stop_download(client, CallbackQuery: CallbackQuery, _):
     message_id = CallbackQuery.message.id
@@ -122,7 +129,9 @@ async def stop_download(client, CallbackQuery: CallbackQuery, _):
                 lyrical.pop(message_id)
             except:
                 pass
-            await CallbackQuery.answer("ᴅᴏᴡɴʟᴏᴀᴅɪɢ ᴄᴀɴᴄᴇʟʟᴇᴅ.", show_alert=True)
+            await CallbackQuery.answer(
+                "ᴅᴏᴡɴʟᴏᴀᴅɪɢ ᴄᴀɴᴄᴇʟʟᴇᴅ.", show_alert=True
+            )
             return await CallbackQuery.edit_message_text(
                 f"ᴅᴏᴡɴʟᴏᴀᴅɪɴɢ ᴩʀᴏᴄᴇss ᴄᴀɴᴄᴇʟʟᴇᴅ ʙʏ {CallbackQuery.from_user.mention}"
             )
@@ -130,4 +139,6 @@ async def stop_download(client, CallbackQuery: CallbackQuery, _):
             return await CallbackQuery.answer(
                 "ғᴀɪʟᴇᴅ ᴛᴏ ᴄᴀɴᴄᴇʟ ᴅᴏᴡɴʟᴏᴀᴅɪɴɢ...", show_alert=True
             )
-    await CallbackQuery.answer("ғᴀɪʟᴇᴅ ᴛᴏ ʀᴇᴄᴏɢɴɪᴢᴇ ᴛʜᴇ ᴏɴɢᴏɪɴɢ ᴛᴀsᴋ.", show_alert=True)
+    await CallbackQuery.answer(
+        "ғᴀɪʟᴇᴅ ᴛᴏ ʀᴇᴄᴏɢɴɪᴢᴇ ᴛʜᴇ ᴏɴɢᴏɪɴɢ ᴛᴀsᴋ.", show_alert=True
+    )
