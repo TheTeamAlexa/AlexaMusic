@@ -37,6 +37,7 @@ async def stream_command(
     channel,
     playmode,
     url,
+    fplay,
 ):
     if url:
         mystic = await message.reply_text(
