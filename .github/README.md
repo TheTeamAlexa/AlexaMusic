@@ -15,6 +15,12 @@
 
 > ⭐️ Thanks to everyone for using Alexa,  🤭 That is the greatest pleasure we have !
 
+<p align="center">
+  <a href="https://www.buymeacoffee.com/theteamalexa">
+    <img src="https://img.shields.io/badge/Buy%20Me%20a%20Coffee-%23FF813F.svg?style=for-the-badge&logo=buy-me-a-coffee&logoColor=white" alt="Buy Me a Coffee">
+  </a>
+</p>
+
 ### Asad– History
 
 <a href="https://www.youtube.com/JankariKiDuniya"><img src="https://img.shields.io/badge/Join-Subscribe%20Support-blue.svg?style=for-the-badge&logo=YouTube"></a>
