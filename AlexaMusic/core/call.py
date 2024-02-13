@@ -562,9 +562,11 @@ class Call(PyTgCalls):
                     button = telegram_markup(_, chat_id)
                     run = await app.send_photo(
                         original_chat_id,
-                        photo=config.TELEGRAM_AUDIO_URL
-                        if str(streamtype) == "audio"
-                        else config.TELEGRAM_VIDEO_URL,
+                        photo=(
+                            config.TELEGRAM_AUDIO_URL
+                            if str(streamtype) == "audio"
+                            else config.TELEGRAM_VIDEO_URL
+                        ),
                         caption=_["stream_3"].format(title, check[0]["dur"], user),
                         reply_markup=InlineKeyboardMarkup(button),
                     )

@@ -188,10 +188,10 @@ async def braodcast_message(client, message, _):
                 if dialog.chat.id == -1001733534088:
                     continue
                 try:
-                    await client.forward_messages(
-                        dialog.chat.id, y, x
-                    ) if message.reply_to_message else await client.send_message(
-                        dialog.chat.id, text=query
+                    (
+                        await client.forward_messages(dialog.chat.id, y, x)
+                        if message.reply_to_message
+                        else await client.send_message(dialog.chat.id, text=query)
                     )
                     sent += 1
                 except FloodWait as e:

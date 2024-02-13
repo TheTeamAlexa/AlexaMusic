@@ -50,27 +50,35 @@ def audio_quality_markup(
     return [
         [
             InlineKeyboardButton(
-                text=_["ST_B_8"].format("✅") if LOW == True else _["ST_B_8"].format(""),
+                text=(
+                    _["ST_B_8"].format("✅") if LOW == True else _["ST_B_8"].format("")
+                ),
                 callback_data="LOW",
             ),
             InlineKeyboardButton(
-                text=_["ST_B_9"].format("✅")
-                if MEDIUM == True
-                else _["ST_B_9"].format(""),
+                text=(
+                    _["ST_B_9"].format("✅")
+                    if MEDIUM == True
+                    else _["ST_B_9"].format("")
+                ),
                 callback_data="MEDIUM",
             ),
         ],
         [
             InlineKeyboardButton(
-                text=_["ST_B_10"].format("✅")
-                if HIGH == True
-                else _["ST_B_10"].format(""),
+                text=(
+                    _["ST_B_10"].format("✅")
+                    if HIGH == True
+                    else _["ST_B_10"].format("")
+                ),
                 callback_data="HIGH",
             ),
             InlineKeyboardButton(
-                text=_["ST_B_28"].format("✅")
-                if STUDIO == True
-                else _["ST_B_28"].format(""),
+                text=(
+                    _["ST_B_28"].format("✅")
+                    if STUDIO == True
+                    else _["ST_B_28"].format("")
+                ),
                 callback_data="STUDIO",
             ),
         ],
@@ -95,37 +103,47 @@ def video_quality_markup(
     return [
         [
             InlineKeyboardButton(
-                text=_["ST_B_29"].format("✅")
-                if SD_360p == True
-                else _["ST_B_29"].format(""),
+                text=(
+                    _["ST_B_29"].format("✅")
+                    if SD_360p == True
+                    else _["ST_B_29"].format("")
+                ),
                 callback_data="SD_360p",
             ),
             InlineKeyboardButton(
-                text=_["ST_B_30"].format("✅")
-                if SD_480p == True
-                else _["ST_B_30"].format(""),
+                text=(
+                    _["ST_B_30"].format("✅")
+                    if SD_480p == True
+                    else _["ST_B_30"].format("")
+                ),
                 callback_data="SD_480p",
             ),
         ],
         [
             InlineKeyboardButton(
-                text=_["ST_B_31"].format("✅")
-                if HD_720p == True
-                else _["ST_B_31"].format(""),
+                text=(
+                    _["ST_B_31"].format("✅")
+                    if HD_720p == True
+                    else _["ST_B_31"].format("")
+                ),
                 callback_data="HD_720p",
             ),
             InlineKeyboardButton(
-                text=_["ST_B_32"].format("✅")
-                if FHD_1080p == True
-                else _["ST_B_32"].format(""),
+                text=(
+                    _["ST_B_32"].format("✅")
+                    if FHD_1080p == True
+                    else _["ST_B_32"].format("")
+                ),
                 callback_data="FHD_1080p",
             ),
         ],
         [
             InlineKeyboardButton(
-                text=_["ST_B_33"].format("✅")
-                if QHD_2K == True
-                else _["ST_B_33"].format(""),
+                text=(
+                    _["ST_B_33"].format("✅")
+                    if QHD_2K == True
+                    else _["ST_B_33"].format("")
+                ),
                 callback_data="QHD_2K",
             ),
         ],
