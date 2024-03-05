@@ -1,22 +1,11 @@
 FROM python:3.11-bookworm
 
-ENV VIRTUAL_ENV=/opt/venv
-RUN python3 -m venv $VIRTUAL_ENV
-ENV PATH="$VIRTUAL_ENV/bin:$PATH"
-
-WORKDIR /app
-ENV PIP_NO_CACHE_DIR=1 PYTHONUNBUFFERED=1
-
-RUN apt update && \
-    apt upgrade -y && \
-    apt install -y ffmpeg apt-utils build-essential python3-dev && \
-    pip3 install -U pip wheel setuptools && \
-    apt-get clean
-    
-COPY . .  
-
-RUN pip3 install --no-cache-dir -U -r requirements.txt && \
-    apt update && apt autoremove -y && \
-    apt clean && rm -rf /var/lib/apt/lists/* ~/.thumbs/* ~/.cache
-
+RUN apt-get update -y && apt-get upgrade -y \
+    && apt-get install -y --no-install-recommends ffmpeg \
+    && apt-get clean \
+    && rm -rf /var/lib/apt/lists/*
+COPY . /app/
+WORKDIR /app/
+RUN pip3 install --no-cache-dir --upgrade pip
+RUN pip3 install --no-cache-dir --upgrade --requirement requirements.txt
 CMD python3 -m AlexaMusic
