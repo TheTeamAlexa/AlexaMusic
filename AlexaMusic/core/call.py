@@ -34,10 +34,10 @@ from pyrogram.errors import (
 )
 from pyrogram.types import InlineKeyboardMarkup
 from pytgcalls import PyTgCalls
+from ntgcalls import TelegramServerError
 from pytgcalls.exceptions import (
     AlreadyJoinedError,
-    NoActiveGroupCall,
-    TelegramServerError,
+    NoActiveGroupCall
 )
 from pytgcalls.types import (
     JoinedGroupCallParticipant,
