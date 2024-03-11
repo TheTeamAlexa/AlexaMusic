@@ -115,7 +115,7 @@ async def braodcast_message(client, message, _):
         for chat in schats:
             chats.append(int(chat["chat_id"]))
         for i in chats:
-            if i == -1001733534088:
+            if i == config.LOG_GROUP_ID:
                 continue
             try:
                 m = (
@@ -185,7 +185,7 @@ async def braodcast_message(client, message, _):
             sent = 0
             client = await get_client(num)
             async for dialog in client.get_dialogs():
-                if dialog.chat.id == -1001733534088:
+                if dialog.chat.id == config.LOG_GROUP_ID:
                     continue
                 try:
                     (
