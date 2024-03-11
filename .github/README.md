@@ -5,15 +5,14 @@
 <p align="center"><a href="https://t.me/Jankari_Ki_Duniya"><img src="https://telegra.ph/file/f6064bc90cc76e59015b2.jpg" width="400"></a></p>
 
 <p align="center">
-    <a href="https://app.codacy.com/manual/TheTeamAlexa/AlexaMusic/dashboard"> <img src="https://img.shields.io/codacy/grade/4d58f2a402b54aed8a7d95f7add45a81?color=brightgreen&logo=codacy&logoColor=green&style=for-the-badge" alt="Codacy" /></a>
     <a href="https://github.com/TheTeamAlexa/AlexaMusic"> <img src="https://img.shields.io/github/repo-size/TheTeamAlexa/AlexaMusic?color=orange&logo=github&logoColor=green&style=for-the-badge" /></a>
-    <a href="https://github.com/TheTeamAlexa/AlexaMusic/commits/prince"> <img src="https://img.shields.io/github/last-commit/TheTeamAlexa/AlexaMusic?color=brown&logo=github&logoColor=green&style=for-the-badge" /></a>
+    <a href="https://github.com/TheTeamAlexa/AlexaMusic/commits"> <img src="https://img.shields.io/github/last-commit/TheTeamAlexa/AlexaMusic?color=red&logo=github&logoColor=green&style=for-the-badge" /></a>
     <a href="https://github.com/TheTeamAlexa/AlexaMusic/issues"> <img src="https://img.shields.io/github/issues/TheTeamAlexa/AlexaMusic?color=blueviolet&logo=github&logoColor=green&style=for-the-badge" /></a>
     <a href="https://github.com/TheTeamAlexa/AlexaMusic/network/members"> <img src="https://img.shields.io/github/forks/TheTeamAlexa/AlexaMusic?color=red&logo=github&logoColor=green&style=for-the-badge" /></a>  
     <a href="https://pypi.org/project/Pyrogram"> <img src="https://img.shields.io/pypi/v/Pyrogram?color=yellow&label=Pyrogram&logo=python&logoColor=green&style=for-the-badge" /></a>
 </p>
 
-> ⭐️ Thanks to everyone for using Alexa,  🤭 That is the greatest pleasure we have !
+> ⭐️ Thanks to everyone for using Alexa, 🤭 That is the greatest pleasure we have !
 
 <p align="center">
   <a href="https://www.buymeacoffee.com/theteamalexa">
@@ -99,7 +98,7 @@ Through this repository, we hope to share our passion for music and innovation w
 <summary><b>ʀᴇǫᴜɪʀᴇᴍᴇɴᴛs</b></summary>
 <br>
     
-- [ᴘʏᴛʜᴏɴ𝟹.11](https://www.python.org/downloads/release/python-3110/)
+- [ᴘʏᴛʜᴏɴ 𝟹.11](https://www.python.org/downloads/release/python-3110/)
 - [ᴛᴇʟᴇɢʀᴀᴍ ᴀᴘɪ ᴋᴇʏ](https://docs.pyrogram.org/intro/setup#api-keys)
 - [ᴛᴇʟᴇɢʀᴀᴍ ʙᴏᴛ ᴛᴏᴋᴇɴ](https://t.me/botfather)
 - [ᴍᴏɴɢᴏᴅʙ URI](https://telegra.ph/How-To-get-Mongodb-URI-04-06)
