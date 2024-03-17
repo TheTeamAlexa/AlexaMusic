@@ -1,4 +1,4 @@
-FROM python:3.11-bookworm
+FROM python:3.10-bookworm
 
 RUN apt-get update -y && apt-get upgrade -y \
     && apt-get install -y --no-install-recommends ffmpeg \
