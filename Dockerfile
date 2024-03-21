@@ -1,4 +1,4 @@
-FROM python:3.10-bullseye
+FROM python:3.10.14
 
 RUN apt-get update -y && apt-get upgrade -y \
     && apt-get install -y --no-install-recommends ffmpeg \
