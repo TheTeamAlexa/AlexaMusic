@@ -1,11 +1,14 @@
-FROM python:3.10-bookworm
+FROM python:3.10-bullseye
 
 RUN apt-get update -y && apt-get upgrade -y \
     && apt-get install -y --no-install-recommends ffmpeg \
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/*
+
 COPY . /app/
 WORKDIR /app/
+
 RUN pip3 install --no-cache-dir --upgrade pip
 RUN pip3 install --no-cache-dir --upgrade --requirement requirements.txt
+
 CMD python3 -m AlexaMusic
