@@ -12,6 +12,7 @@ pillow==9.5.0
 psutil
 py-tgcalls==1.2.2
 pykeyboard
+pymongo==4.6.2
 pyrofork
 python-dotenv
 PyYAML
