@@ -1,6 +1,6 @@
 aiofiles
 aiohttp
-dnspython==2.3.0
+dnspython==2.2.1
 ffmpeg-python
 gitpython
 hachoir
@@ -8,12 +8,12 @@ heroku3
 lyricsgenius
 motor
 ntgcalls==1.1.0
-pillow==9.5.0 
+pillow==9.3.0 
 psutil
 py-tgcalls==1.2.2
 pykeyboard
 pymongo==4.6.2
-pyrofork
+pyroblack
 python-dotenv
 PyYAML
 requests
