@@ -1,6 +1,6 @@
 aiofiles
 aiohttp
-dnspython==2.2.1
+dnspython
 ffmpeg-python
 gitpython
 hachoir
@@ -20,7 +20,7 @@ requests
 speedtest-cli
 spotipy
 tgcrypto
-yt-dlp==2023.10.13
+yt-dlp
 git+https://github.com/alexmercerind/youtube-search-python@main
 git+https://github.com/joetats/youtube_search@master
 numpy
