@@ -7,13 +7,13 @@ hachoir
 heroku3
 lyricsgenius
 motor
-ntgcalls==1.1.3
-pillow==9.3.0 
+ntgcalls==1.1.2
+pillow 
 psutil
 py-tgcalls==1.2.2
 pykeyboard
-pymongo==4.6.2
-git+https://github.com/PyrogramMod/PyrogramMod@main
+pymongo
+git+https://github.com/KurimuzonAkuma/pyrogram@dev
 python-dotenv
 PyYAML
 requests
