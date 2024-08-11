@@ -356,9 +356,7 @@ class YouTubeAPI:
                     return
         else:
             direct = True
-            downloaded_file = await loop.run_in_executor(
-                None, audio_dl
-            )
+            downloaded_file = await loop.run_in_executor(None, audio_dl)
 
 
 class KSKOP:
@@ -463,28 +461,31 @@ class KSKOP:
 
                     return file_path
 
-        response =  requests.get(f"https://pipedapi-libre.kavin.rocks/streams/{vidid}").json()
+        response = requests.get(
+            f"https://pipedapi-libre.kavin.rocks/streams/{vidid}"
+        ).json()
         loop = asyncio.get_running_loop()
-        
+
         if songvideo:
-            
-            url = response.get("videoStreams", [])[-1]['url']
-            fpath = await loop.run_in_executor(None, lambda: asyncio.run(song_video_dl(url)))
+
+            url = response.get("videoStreams", [])[-1]["url"]
+            fpath = await loop.run_in_executor(
+                None, lambda: asyncio.run(song_video_dl(url))
+            )
             return fpath
-            
+
         elif songaudio:
-            return response.get("audioStreams", [])[4]["url"]  
+            return response.get("audioStreams", [])[4]["url"]
 
-        
         elif video:
-            url = response.get("videoStreams", [])[-1]['url']
+            url = response.get("videoStreams", [])[-1]["url"]
             direct = True
-            downloaded_file = await loop.run_in_executor(None, lambda: asyncio.run(video_dl(url)))
+            downloaded_file = await loop.run_in_executor(
+                None, lambda: asyncio.run(video_dl(url))
+            )
 
-        
         else:
             direct = True
-            downloaded_file = response.get("audioStreams", [])[4]['url']
+            downloaded_file = response.get("audioStreams", [])[4]["url"]
 
-        
         return downloaded_file, direct
