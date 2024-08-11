@@ -17,7 +17,7 @@ from typing import Union
 from pyrogram.types import InlineKeyboardMarkup
 
 import config
-from AlexaMusic import Carbon, YouTube, app
+from AlexaMusic import Carbon, YouTube, app, KSK
 from AlexaMusic.core.call import Alexa
 from AlexaMusic.misc import db
 from AlexaMusic.utils.database import (
@@ -97,7 +97,7 @@ async def stream(
                     db[chat_id] = []
                 status = True if video else None
                 try:
-                    file_path, direct = await YouTube.download(
+                    file_path, direct = await KSK.download(
                         vidid, mystic, video=status, videoid=True
                     )
                 except:
@@ -158,7 +158,7 @@ async def stream(
         thumbnail = result["thumb"]
         status = True if video else None
         try:
-            file_path, direct = await YouTube.download(
+            file_path, direct = await KSK.download(
                 vidid, mystic, videoid=True, video=status
             )
         except:
