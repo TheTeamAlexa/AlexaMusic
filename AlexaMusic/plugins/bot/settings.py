@@ -258,8 +258,7 @@ async def without_Admin_rights(client, CallbackQuery, _):
 
 
 @app.on_callback_query(
-    filters.regex(pattern=r"^(LQA|MQA|HQA|LQV|MQV|HQV)$")
-    & ~BANNED_USERS
+    filters.regex(pattern=r"^(LQA|MQA|HQA|LQV|MQV|HQV)$") & ~BANNED_USERS
 )
 @ActualAdminCB
 async def aud_vid_cb(client, CallbackQuery, _):
@@ -272,27 +271,19 @@ async def aud_vid_cb(client, CallbackQuery, _):
         await save_audio_bitrate(CallbackQuery.message.chat.id, "Low")
         buttons = audio_quality_markup(_, low=True)
     if command == "MQA":
-        await save_audio_bitrate(
-            CallbackQuery.message.chat.id, "Medium"
-        )
+        await save_audio_bitrate(CallbackQuery.message.chat.id, "Medium")
         buttons = audio_quality_markup(_, medium=True)
     if command == "HQA":
-        await save_audio_bitrate(
-            CallbackQuery.message.chat.id, "High"
-        )
+        await save_audio_bitrate(CallbackQuery.message.chat.id, "High")
         buttons = audio_quality_markup(_, high=True)
     if command == "LQV":
         await save_video_bitrate(CallbackQuery.message.chat.id, "Low")
         buttons = video_quality_markup(_, low=True)
     if command == "MQV":
-        await save_video_bitrate(
-            CallbackQuery.message.chat.id, "Medium"
-        )
+        await save_video_bitrate(CallbackQuery.message.chat.id, "Medium")
         buttons = video_quality_markup(_, medium=True)
     if command == "HQV":
-        await save_video_bitrate(
-            CallbackQuery.message.chat.id, "High"
-        )
+        await save_video_bitrate(CallbackQuery.message.chat.id, "High")
         buttons = video_quality_markup(_, high=True)
     try:
         return await CallbackQuery.edit_message_reply_markup(

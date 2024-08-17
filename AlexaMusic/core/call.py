@@ -40,8 +40,7 @@ from pytgcalls.exceptions import (
     NoActiveGroupCall,
     TelegramServerError,
 )
-from pytgcalls.types import (JoinedGroupCallParticipant,
-                             LeftGroupCallParticipant, Update)
+from pytgcalls.types import JoinedGroupCallParticipant, LeftGroupCallParticipant, Update
 from pytgcalls.types.input_stream import AudioPiped, AudioVideoPiped
 from pytgcalls.types.stream import StreamAudioEnded
 
@@ -189,10 +188,7 @@ class Call(PyTgCalls):
                     video_parameters=video_stream_quality,
                 )
             else:
-                stream = AudioPiped(
-                    link,
-                    audio_parameters=HighQualityAudio()
-                )
+                stream = AudioPiped(link, audio_parameters=HighQualityAudio())
         await assistant.change_stream(
             chat_id,
             stream,
