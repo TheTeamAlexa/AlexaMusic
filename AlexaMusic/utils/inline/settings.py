@@ -49,25 +49,29 @@ def audio_quality_markup(
     buttons = [
         [
             InlineKeyboardButton(
-                text=_["ST_B_8"].format("✅")
-                if low == True
-                else _["ST_B_8"].format(""),
+                text=(
+                    _["ST_B_8"].format("✅") if low == True else _["ST_B_8"].format("")
+                ),
                 callback_data="LQA",
             )
         ],
         [
             InlineKeyboardButton(
-                text=_["ST_B_9"].format("✅")
-                if medium == True
-                else _["ST_B_9"].format(""),
+                text=(
+                    _["ST_B_9"].format("✅")
+                    if medium == True
+                    else _["ST_B_9"].format("")
+                ),
                 callback_data="MQA",
             )
         ],
         [
             InlineKeyboardButton(
-                text=_["ST_B_10"].format("✅")
-                if high == True
-                else _["ST_B_10"].format(""),
+                text=(
+                    _["ST_B_10"].format("✅")
+                    if high == True
+                    else _["ST_B_10"].format("")
+                ),
                 callback_data="HQA",
             )
         ],
@@ -76,9 +80,7 @@ def audio_quality_markup(
                 text=_["BACK_BUTTON"],
                 callback_data="settingsback_helper",
             ),
-            InlineKeyboardButton(
-                text=_["CLOSE_BUTTON"], callback_data="close"
-            ),
+            InlineKeyboardButton(text=_["CLOSE_BUTTON"], callback_data="close"),
         ],
     ]
     return buttons
@@ -93,25 +95,31 @@ def video_quality_markup(
     buttons = [
         [
             InlineKeyboardButton(
-                text=_["ST_B_11"].format("✅")
-                if low == True
-                else _["ST_B_11"].format(""),
+                text=(
+                    _["ST_B_11"].format("✅")
+                    if low == True
+                    else _["ST_B_11"].format("")
+                ),
                 callback_data="LQV",
             )
         ],
         [
             InlineKeyboardButton(
-                text=_["ST_B_12"].format("✅")
-                if medium == True
-                else _["ST_B_12"].format(""),
+                text=(
+                    _["ST_B_12"].format("✅")
+                    if medium == True
+                    else _["ST_B_12"].format("")
+                ),
                 callback_data="MQV",
             )
         ],
         [
             InlineKeyboardButton(
-                text=_["ST_B_13"].format("✅")
-                if high == True
-                else _["ST_B_13"].format(""),
+                text=(
+                    _["ST_B_13"].format("✅")
+                    if high == True
+                    else _["ST_B_13"].format("")
+                ),
                 callback_data="HQV",
             )
         ],
@@ -120,12 +128,11 @@ def video_quality_markup(
                 text=_["BACK_BUTTON"],
                 callback_data="settingsback_helper",
             ),
-            InlineKeyboardButton(
-                text=_["CLOSE_BUTTON"], callback_data="close"
-            ),
+            InlineKeyboardButton(text=_["CLOSE_BUTTON"], callback_data="close"),
         ],
     ]
     return buttons
+
 
 def cleanmode_settings_markup(
     _,
