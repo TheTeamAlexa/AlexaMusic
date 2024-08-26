@@ -16,6 +16,7 @@
 <h1 align="center"><b>Fix for YouTube Blocking IPs and Sign in Error</b></h1>
 
 Due to YouTube blocking Ips, we found a fix. Given below:
+
 • **Join Support Group**: Type `cookies` in our [sᴜᴘᴘᴏʀᴛ Gʀᴏᴜᴘ](https://t.me/Alexa_Help) to get the necessary script.
 
 • **Run the Script**: Run the downloaded script on your Windows Desktop Through VS Code or any other Software to generate cookies.
