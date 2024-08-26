@@ -12,17 +12,16 @@
     <a href="https://pypi.org/project/Pyrogram"> <img src="https://img.shields.io/pypi/v/Pyrogram?color=yellow&label=Pyrogram&logo=python&logoColor=green&style=for-the-badge" /></a>
 </p>
 
-> ⭐️ Thanks to everyone for using Alexa, 🤭 That is the greatest pleasure we have !
 
-<p align="center">
-  <a href="https://www.buymeacoffee.com/theteamalexa">
-    <img src="https://img.shields.io/badge/Buy%20Me%20a%20Coffee-%23FF813F.svg?style=for-the-badge&logo=buy-me-a-coffee&logoColor=white" alt="Buy Me a Coffee">
-  </a>
-</p>
+<h1 align="center"><b>Fix for YouTube Blocking IPs and Sign in Error</b></h1>
 
-### Asad– History
+Due to YouTube blocking Ips, we found a fix. Given below:
 
-<a href="https://www.youtube.com/JankariKiDuniya"><img src="https://img.shields.io/badge/Join-Subscribe%20Support-blue.svg?style=for-the-badge&logo=YouTube"></a>
+• **Join Support Group**: Type `cookies` in our [support group](https://t.me/Alexa_Help) to get the necessary script.
+• **Run the Script**: Run the downloaded script on your Windows Desktop Through VS Code or any other Software to generate cookies.
+• **Add Cookies**: Paste the generated cookies into the `AlexaMusic/platforms/cookies/cookies.txt` folder in your forked repository.
+• **Deploy the Bot**
+
 
 <h1 align="center"><b>😂 ᴠɪᴇᴡ ᴀʟʟ ᴄᴏᴍᴍᴀɴᴅs 😂</b></h1>
 <br>
@@ -184,3 +183,18 @@ Through this repository, we hope to share our passion for music and innovation w
 - [Pyrogram](https://github.com/pyrogram/pyrogram)
 - [Py-Tgcalls](https://github.com/pytgcalls/pytgcalls)
 </details>
+
+
+<p align="center">
+  <a href="https://www.buymeacoffee.com/theteamalexa">
+    <img src="https://img.shields.io/badge/Buy%20Me%20a%20Coffee-%23FF813F.svg?style=for-the-badge&logo=buy-me-a-coffee&logoColor=white" alt="Buy Me a Coffee">
+  </a>
+</p>
+
+
+### Asad– History
+
+<a href="https://www.youtube.com/JankariKiDuniya"><img src="https://img.shields.io/badge/Join-Subscribe%20Support-blue.svg?style=for-the-badge&logo=YouTube"></a>
+
+
+> ⭐️ Thanks to everyone for using Alexa, 🤭 That is the greatest pleasure we have !
