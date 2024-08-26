@@ -12,7 +12,7 @@ psutil
 py-tgcalls==0.9.7
 pykeyboard
 pymongo
-git+https://github.com/KurimuzonAkuma/pyrogram@dev
+https://github.com/KurimuzonAkuma/pyrogram/archive/v2.1.24.zip
 python-dotenv
 PyYAML
 requests
