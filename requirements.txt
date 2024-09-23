@@ -1,5 +1,5 @@
 aiofiles
-aiohttp~=3.9.4
+aiohttp==3.9.4
 dnspython==2.1.0
 ffmpeg-python
 gitpython
@@ -7,12 +7,12 @@ hachoir
 heroku3
 lyricsgenius
 motor
-pillow 
+pillow
 psutil
 py-tgcalls==0.9.7
 pykeyboard
 pymongo
-https://github.com/KurimuzonAkuma/pyrogram/archive/v2.1.24.zip
+git+https://github.com/KurimuzonAkuma/pyrogram@1fea868427a9addd7ad27c9f1f15c71f0b7f32c8
 python-dotenv
 PyYAML
 requests
