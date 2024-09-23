@@ -183,7 +183,7 @@ Through this repository, we hope to share our passion for music and innovation w
 
 ᴛʜᴀɴᴋs ᴛᴏ ᴀʟʟ ᴏғ ʏᴏᴜ ғᴏʀ ᴜsɪɴɢ ᴀɴᴅ ᴍᴀᴋɪɴɢ ᴀʟᴇxᴀ:
 
-- [Pyrogram](https://github.com/pyrogram/pyrogram)
+- [Pyrogram](https://github.com/pyrogram)
 - [Py-Tgcalls](https://github.com/pytgcalls/pytgcalls)
 </details>
 
