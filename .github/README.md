@@ -21,7 +21,7 @@ Due to YouTube blocking Ips, we found a fix. Given below:
 
 • **Run the Script**: Run the downloaded script on your Windows Desktop Through VS Code or any other Software to generate cookies.
 
-• **Add Cookies**: Paste the generated cookies into the `AlexaMusic/platforms/cookies/cookies.txt` folder in your forked repository.
+• **Add Cookies**: Paste the generated cookies into the `cookies/cookies.txt` folder in your forked repository.
 
 • **Deploy the Bot**
 

@@ -1,6 +1,6 @@
 aiofiles
 aiohttp==3.9.4
-dnspython==2.1.0
+dnspython
 ffmpeg-python
 gitpython
 hachoir
