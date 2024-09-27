@@ -13,17 +13,20 @@
 </p>
 
 
-<h1 align="center"><b>Fix for YouTube Blocking IPs and Sign in Error</b></h1>
+<p align="center">
+    <img src="https://user-images.githubusercontent.com/57800056/245666143-0d8d5230-d40d-4692-9dee-1a05cbf58828.png"/>
+</p>
+<h2 align="center"><b>Fix for YouTube Blocking IPs and Sign in Error</b></h2>
 
 Due to YouTube blocking Ips, we found a fix. Given below:
 
 • **Join Support Group**: Type `cookies` in our [sᴜᴘᴘᴏʀᴛ Gʀᴏᴜᴘ](https://t.me/Alexa_Help) to get the necessary script.
 
-• **Run the Script**: Run the downloaded script on your Windows Desktop Through VS Code or any other Software to generate cookies.
+• **Run the Extension**: Download Firefox and login your youtube account(Fake Account Recommended) then run the downloaded extension on your Firefox or any other Software to generate cookies.
 
 • **Add Cookies**: Paste the generated cookies into the `cookies/cookies.txt` folder in your forked repository.
 
-• **Deploy the Bot**
+• **Deploy the Bot ✨** 
 
 
 <h1 align="center"><b>😂 ᴠɪᴇᴡ ᴀʟʟ ᴄᴏᴍᴍᴀɴᴅs 😂</b></h1>
