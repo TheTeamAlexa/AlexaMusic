@@ -27,7 +27,7 @@ class AlexaBot(Client):
             bot_token=config.BOT_TOKEN,
             in_memory=False,
             max_concurrent_transmissions=6,
-            workers=64
+            workers=64,
         )
         LOGGER(__name__).info(f"Starting Bot...")
 
