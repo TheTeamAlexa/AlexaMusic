@@ -14,7 +14,7 @@ from AlexaMusic.core.bot import AlexaBot
 from AlexaMusic.core.dir import dirr
 from AlexaMusic.core.git import git
 from AlexaMusic.core.userbot import Userbot
-from AlexaMusic.misc import dbb, heroku, sudo
+from AlexaMusic.misc import dbb, heroku
 
 from .logging import LOGGER
 
@@ -29,9 +29,6 @@ dbb()
 
 # Heroku APP
 heroku()
-
-# Load Sudo Users from DB
-sudo()
 
 # Bot Client
 app = AlexaBot()
