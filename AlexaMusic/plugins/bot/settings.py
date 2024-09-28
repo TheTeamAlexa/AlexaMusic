@@ -117,21 +117,21 @@ async def settings_back_markup(client, CallbackQuery: CallbackQuery, _):
 
 ## Audio and Video Quality
 async def gen_buttons_aud(_, aud):
-    if aud == "High":
+    if aud == "HIGH":
         buttons = audio_quality_markup(_, high=True)
-    elif aud == "Medium":
+    elif aud == "MEDIUM":
         buttons = audio_quality_markup(_, medium=True)
-    elif aud == "Low":
+    elif aud == "LOW":
         buttons = audio_quality_markup(_, low=True)
     return buttons
 
 
 async def gen_buttons_vid(_, aud):
-    if aud == "High":
+    if aud == "HIGH":
         buttons = video_quality_markup(_, high=True)
-    elif aud == "Medium":
+    elif aud == "MEDIUM":
         buttons = video_quality_markup(_, medium=True)
-    elif aud == "Low":
+    elif aud == "LOW":
         buttons = video_quality_markup(_, low=True)
     return buttons
 
