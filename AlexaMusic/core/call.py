@@ -163,7 +163,11 @@ class Call(PyTgCalls):
                     video_parameters=video_stream_quality,
                 )
             else:
-                stream = MediaStream(link, audio_parameters=audio_stream_quality, video_flags=MediaStream.Flags.IGNORE)
+                stream = MediaStream(
+                    link,
+                    audio_parameters=audio_stream_quality,
+                    video_flags=MediaStream.Flags.IGNORE,
+                )
         await assistant.play(
             chat_id,
             stream,
