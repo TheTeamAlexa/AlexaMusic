@@ -473,24 +473,24 @@ async def save_video_bitrate(chat_id: int, bitrate: str):
 async def get_aud_bit_name(chat_id: int) -> str:
     mode = audio.get(chat_id)
     if not mode:
-        return "HIGH"
+        return "High"
     return mode
 
 
 async def get_vid_bit_name(chat_id: int) -> str:
     mode = video.get(chat_id)
-    return "LOW" if not mode else mode
+    return "Low" if not mode else mode
 
 
 async def get_audio_bitrate(chat_id: int) -> str:
     mode = audio.get(chat_id)
     if not mode:
         return AudioQuality.HIGH
-    if str(mode) == "HIGH":
+    if str(mode) == "High":
         return AudioQuality.STUDIO
-    elif str(mode) == "MEDIUM":
+    elif str(mode) == "Medium":
         return AudioQuality.HIGH
-    elif str(mode) == "LOW":
+    elif str(mode) == "Low":
         return AudioQuality.LOW()
 
 
@@ -500,10 +500,10 @@ async def get_video_bitrate(chat_id: int) -> str:
         if PRIVATE_BOT_MODE == str(True):
             return VideoQuality.FHD_1080p
         else:
-            return VideoQuality.SD_480p
-    if str(mode) == "HIGH":
+            return VideoQuality.HD_720p
+    if str(mode) == "High":
         return VideoQuality.QHD_2K
-    elif str(mode) == "MEDIUM":
+    elif str(mode) == "Medium":
         return VideoQuality.FHD_1080p
-    elif str(mode) == "LOW":
-        return VideoQuality.SD_480p
+    elif str(mode) == "Low":
+        return VideoQuality.HD_720p
