@@ -32,40 +32,43 @@ def cookiefile():
     cookie_file = os.path.join(cookie_dir, cookies_files[0])
     return cookie_file
 
+
 async def check_file_size(link):
     async def get_format_info(link):
         proc = await asyncio.create_subprocess_exec(
             "yt-dlp",
-            "--cookies", cookiefile(),
+            "--cookies",
+            cookiefile(),
             "-J",
             link,
             stdout=asyncio.subprocess.PIPE,
-            stderr=asyncio.subprocess.PIPE
+            stderr=asyncio.subprocess.PIPE,
         )
         stdout, stderr = await proc.communicate()
         if proc.returncode != 0:
-            print(f'Error:\n{stderr.decode()}')
+            print(f"Error:\n{stderr.decode()}")
             return None
         return json.loads(stdout.decode())
 
     def parse_size(formats):
         total_size = 0
         for format in formats:
-            if 'filesize' in format:
-                total_size += format['filesize']
+            if "filesize" in format:
+                total_size += format["filesize"]
         return total_size
 
     info = await get_format_info(link)
     if info is None:
         return None
-    
-    formats = info.get('formats', [])
+
+    formats = info.get("formats", [])
     if not formats:
         print("No formats found.")
         return None
-    
+
     total_size = parse_size(formats)
     return total_size
+
 
 async def shell_cmd(cmd):
     proc = await asyncio.create_subprocess_shell(
@@ -176,7 +179,8 @@ class YouTubeAPI:
             link = link.split("&")[0]
         proc = await asyncio.create_subprocess_exec(
             "yt-dlp",
-            "--cookies", cookiefile(),
+            "--cookies",
+            cookiefile(),
             "-g",
             "-f",
             "best[height<=?720][width<=?1280]",
@@ -387,7 +391,8 @@ class YouTubeAPI:
             else:
                 proc = await asyncio.create_subprocess_exec(
                     "yt-dlp",
-                    "--cookies", cookiefile(),
+                    "--cookies",
+                    cookiefile(),
                     "-g",
                     "-f",
                     "best[height<=?720][width<=?1280]",
