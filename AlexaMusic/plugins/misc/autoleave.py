@@ -14,7 +14,12 @@ from pyrogram.enums import ChatType
 import config
 from AlexaMusic import app
 from AlexaMusic.core.call import Alexa
-from AlexaMusic.utils.database import get_client, is_active_chat, is_autoend, get_assistant
+from AlexaMusic.utils.database import (
+    get_client,
+    is_active_chat,
+    is_autoend,
+    get_assistant,
+)
 
 
 async def auto_leave():
