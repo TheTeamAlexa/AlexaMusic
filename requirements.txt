@@ -1,5 +1,5 @@
 aiofiles
-aiohttp==3.9.4
+aiohttp
 dnspython
 ffmpeg-python
 gitpython
