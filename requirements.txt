@@ -7,7 +7,7 @@ hachoir
 heroku3
 lyricsgenius
 motor
-ntgcalls
+ntgcalls==1.2.3
 pillow
 psutil
 py-tgcalls==2.0.3
@@ -24,3 +24,5 @@ yt-dlp
 git+https://github.com/KSKOP69/youtube-search-python@main
 git+https://github.com/joetats/youtube_search@master
 numpy
+flask
+gunicorn
