@@ -24,7 +24,7 @@ Due to YouTube blocking Ips, we found a fix. Given below:
 
 • **Run the Extension**: Download Firefox and login your youtube account(Fake Account Recommended) then run the downloaded extension on your Firefox or any other Software to generate cookies.
 
-• **Add Cookies**: Paste the generated cookies into the `cookies/cookies.txt` folder in your forked repository.
+• **Add Cookies**: Paste the generated cookies into the `AlexaMusic\platforms` folder in your forked repository.
 
 • **Deploy the Bot ✨** 
 
