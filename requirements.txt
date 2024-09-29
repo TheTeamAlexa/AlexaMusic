@@ -21,8 +21,8 @@ speedtest-cli
 spotipy
 tgcrypto
 yt-dlp
-git+https://github.com/alexmercerind/youtube-search-python@main
-git+https://github.com/joetats/youtube_search@master
+youtube-search
+youtube-search-python
 numpy
 flask
 gunicorn
