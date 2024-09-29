@@ -17,10 +17,11 @@ from typing import Union
 from pyrogram import Client
 from pyrogram.errors import FloodWait
 from pyrogram.types import InlineKeyboardMarkup
+
 from pytgcalls import PyTgCalls
 from pytgcalls import filters as fl
 from ntgcalls import TelegramServerError
-from pytgcalls.exceptions import AlreadyJoinedError, NoActiveGroupCall
+from pytgcalls.exceptions import AlreadyJoinedError, NoActiveGroupCall, GroupCallNotFound
 from pytgcalls.types import ChatUpdate, MediaStream, Update
 from pytgcalls.types.stream import StreamAudioEnded
 
@@ -247,7 +248,7 @@ class Call(PyTgCalls):
                 chat_id,
                 stream,
             )
-        except NoActiveGroupCall:
+        except (NoActiveGroupCall, GroupCallNotFound):
             try:
                 await self.join_assistant(original_chat_id, chat_id)
             except Exception as e:
