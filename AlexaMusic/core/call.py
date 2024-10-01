@@ -25,6 +25,7 @@ from pytgcalls.exceptions import (
     AlreadyJoinedError,
     NoActiveGroupCall,
     GroupCallNotFound,
+    NotInCallError,
 )
 from pytgcalls.types import ChatUpdate, MediaStream, Update
 from pytgcalls.types.stream import StreamAudioEnded
@@ -58,6 +59,7 @@ async def _clear_(chat_id):
     db[chat_id] = []
     await remove_active_video_chat(chat_id)
     await remove_active_chat(chat_id)
+    await set_loop(chat_id, 0)
 
 
 class Call(PyTgCalls):
@@ -252,7 +254,7 @@ class Call(PyTgCalls):
                 chat_id,
                 stream,
             )
-        except (NoActiveGroupCall, GroupCallNotFound):
+        except (NoActiveGroupCall, GroupCallNotFound, NotInCallError):
             try:
                 await self.join_assistant(original_chat_id, chat_id)
             except Exception as e:

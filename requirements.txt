@@ -20,6 +20,7 @@ requests
 speedtest-cli
 spotipy
 tgcrypto
+unidecode
 yt-dlp
 youtube-search
 youtube-search-python
