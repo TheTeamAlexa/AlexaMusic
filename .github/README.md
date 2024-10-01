@@ -1,4 +1,4 @@
-<h1 align="center"><b>❤️ ALEXA MUSIC 3.0 ❤️</b></h1>
+<h1 align="center"><b>❤️ 𝘼𝙡𝙚𝙭𝙖 𝙈𝙪𝙨𝙞𝙘 ❤️</b></h1>
 
 <h4 align="center">"Introducing Alexa Music – your smart, powerful, and simple bot for seamless audio and video playback on Telegram. Written in Python with the latest Pyrogram, Alexa Music delivers a superior entertainment experience. Upgrade now for optimal performance and a new level of Telegram enjoyment."<br> ... Working With Pyrogram Latest Version...</h4>
 
@@ -18,13 +18,13 @@
 </p>
 <h2 align="center"><b>Fix for YouTube Blocking IPs and Sign in Error</b></h2>
 
-Due to YouTube blocking Ips, we found a fix. Given below:
+Due to YouTube blocking ips, we found a fix. Given below:
 
-• **Join Support Group**: Type `cookies` in our [sᴜᴘᴘᴏʀᴛ Gʀᴏᴜᴘ](https://t.me/Alexa_Help) to get the necessary script.
+• <u>**Join Support Group**:</u> Type `cookies` in our [sᴜᴘᴘᴏʀᴛ Gʀᴏᴜᴘ](https://t.me/Alexa_Help) to get the necessary script.
 
-• **Run the Extension**: Download Firefox and login your youtube account(Fake Account Recommended) then run the downloaded extension on your Firefox or any other Software to generate cookies.
+• <u>**Run the Extension**:</u> Download Firefox and login your youtube account(Fake Account Recommended) then run the downloaded extension on your Firefox or any other Software to generate cookies.
 
-• **Add Cookies**: Paste the generated cookies into the `AlexaMusic\platforms` folder in your forked repository.
+• <u>**Add Cookies**:</u> Paste the generated cookies into the `AlexaMusic\platforms\cookies.txt` folder in your forked repository.
 
 • **Deploy the Bot ✨** 
 
@@ -103,7 +103,7 @@ Through this repository, we hope to share our passion for music and innovation w
 <summary><b>ʀᴇǫᴜɪʀᴇᴍᴇɴᴛs</b></summary>
 <br>
     
-- [ᴘʏᴛʜᴏɴ 𝟹.11](https://www.python.org/downloads/release/python-3110/)
+- [ᴘʏᴛʜᴏɴ 𝟹](https://www.python.org/)
 - [ᴛᴇʟᴇɢʀᴀᴍ ᴀᴘɪ ᴋᴇʏ](https://docs.pyrogram.org/intro/setup#api-keys)
 - [ᴛᴇʟᴇɢʀᴀᴍ ʙᴏᴛ ᴛᴏᴋᴇɴ](https://t.me/botfather)
 - [ᴍᴏɴɢᴏᴅʙ URI](https://telegra.ph/How-To-get-Mongodb-URI-04-06)
@@ -187,7 +187,9 @@ Through this repository, we hope to share our passion for music and innovation w
 ᴛʜᴀɴᴋs ᴛᴏ ᴀʟʟ ᴏғ ʏᴏᴜ ғᴏʀ ᴜsɪɴɢ ᴀɴᴅ ᴍᴀᴋɪɴɢ ᴀʟᴇxᴀ:
 
 - [Pyrogram](https://github.com/pyrogram)
-- [Py-Tgcalls](https://github.com/pytgcalls/pytgcalls)
+- [Py-Tgcalls](https://pypi.org/project/py-tgcalls)
+- [Ntgcalls](https://pypi.org/project/ntgcalls/)
+- [Yt-dlp](https://pypi.org/project/yt-dlp)
 </details>
 
 
