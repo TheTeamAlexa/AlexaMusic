@@ -20,11 +20,11 @@
 
 Due to YouTube blocking ips, we found a fix. Given below:
 
-• <u>**Join Support Group**:</u> Type `cookies` in our [sᴜᴘᴘᴏʀᴛ Gʀᴏᴜᴘ](https://t.me/Alexa_Help) to get the necessary script.
+• **Join Support Group**: Type `cookies` in our [sᴜᴘᴘᴏʀᴛ Gʀᴏᴜᴘ](https://t.me/Alexa_Help) to get the necessary script.
 
-• <u>**Run the Extension**:</u> Download Firefox and login your youtube account(Fake Account Recommended) then run the downloaded extension on your Firefox or any other Software to generate cookies.
+• **Run the Extension**: Download Firefox and login your youtube account(Fake Account Recommended) then run the downloaded extension on your Firefox or any other Software to generate cookies.
 
-• <u>**Add Cookies**:</u> Paste the generated cookies into the `AlexaMusic\platforms\cookies.txt` folder in your forked repository.
+• **Add Cookies**: Paste the generated cookies into the `AlexaMusic\platforms\cookies.txt` folder in your forked repository.
 
 • **Deploy the Bot ✨** 
 
