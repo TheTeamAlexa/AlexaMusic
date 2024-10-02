@@ -12,15 +12,15 @@ as you want or you can collabe if you have new ideas.
 
 import asyncio
 import importlib
-import sys
 
 from pyrogram import idle
-from pytgcalls.exceptions import NoActiveGroupCall
+from pytgcalls.exceptions import NoActiveGroupCall, GroupCallNotFound
 
 import config
 from config import BANNED_USERS
 from AlexaMusic import LOGGER, app, userbot
 from AlexaMusic.core.call import Alexa
+from AlexaMusic.misc import sudo
 from AlexaMusic.plugins import ALL_MODULES
 from AlexaMusic.utils.database import get_banned_users, get_gbanned
 
@@ -36,6 +36,8 @@ async def init():
         and not config.STRING5
     ):
         LOGGER("AlexaMusic").error("Add Pyrogram string session and then try...")
+        exit()
+    await sudo()
     try:
         users = await get_gbanned()
         for user_id in users:
@@ -53,16 +55,19 @@ async def init():
     await Alexa.start()
     try:
         await Alexa.stream_call("https://telegra.ph/file/b60b80ccb06f7a48f68b5.mp4")
-    except NoActiveGroupCall:
+    except (NoActiveGroupCall, GroupCallNotFound):
         LOGGER("AlexaMusic").error(
             "[ERROR] - \n\nTurn on group voice chat and don't put it off otherwise I'll stop working thanks."
         )
-        sys.exit()
+        exit()
     except:
         pass
     await Alexa.decorators()
     LOGGER("AlexaMusic").info("Music Bot Started Successfully")
     await idle()
+    await app.stop()
+    await userbot.stop()
+    LOGGER("AlexaMusic").info("Stopping Alexa Music Bot...")
 
 
 if __name__ == "__main__":
