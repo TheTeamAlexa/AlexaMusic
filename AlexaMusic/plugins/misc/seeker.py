@@ -49,6 +49,8 @@ async def timer():
                 continue
             db[chat_id][0]["played"] += 1
 
+asyncio.create_task(timer())
+
 
 async def markup_timer():
     while not await asyncio.sleep(4):
@@ -79,20 +81,17 @@ async def markup_timer():
                     _ = get_string(language)
                 except:
                     _ = get_string("en")
-
                 userbot = await get_assistant(chat_id)
                 if chat_id not in autoend:
                     try:
                         members = []
-
                         async for member in userbot.get_call_members(chat_id):
                             if member is None:
                                 continue
                             members.append(member)
-
-                        if len(members) == 0 or len(members) == 1:
-                            autoend[chat_id] = datetime.now() + timedelta(seconds=30)
-                    except Exception as e:
+                        if len(members) <= 1:
+                            autoend[chat_id] = datetime.now() + timedelta(seconds=60)
+                    except Exception:
                         pass  # Passing this for don't affect the below button edition function
                 try:
                     buttons = (
@@ -120,5 +119,4 @@ async def markup_timer():
                 continue
 
 
-asyncio.create_task(timer())
 asyncio.create_task(markup_timer())
