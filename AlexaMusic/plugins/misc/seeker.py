@@ -13,14 +13,21 @@ as you want or you can collabe if you have new ideas.
 import asyncio
 
 from pyrogram.types import InlineKeyboardMarkup
+from datetime import datetime, timedelta
 
 from strings import get_string
 from AlexaMusic.misc import db
-from AlexaMusic.utils.database import get_active_chats, get_lang, is_music_playing
+from AlexaMusic.utils.database import (
+    get_active_chats,
+    get_lang,
+    is_music_playing,
+    get_assistant,
+)
 from AlexaMusic.utils.formatters import seconds_to_min
 from AlexaMusic.utils.inline import stream_markup_timer, telegram_markup_timer
 
 from ..admins.callback import wrong
+from .autoleave import autoend
 
 checker = {}
 
@@ -75,6 +82,18 @@ async def markup_timer():
                     _ = get_string(language)
                 except:
                     _ = get_string("en")
+                userbot = await get_assistant(chat_id)
+                if chat_id not in autoend:
+                    try:
+                        members = []
+                        async for member in userbot.get_call_members(chat_id):
+                            if member is None:
+                                continue
+                            members.append(member)
+                        if len(members) <= 1:
+                            autoend[chat_id] = datetime.now() + timedelta(seconds=60)
+                    except Exception:
+                        pass  # Passing this for don't affect the below button edition function
                 try:
                     buttons = (
                         stream_markup_timer(
