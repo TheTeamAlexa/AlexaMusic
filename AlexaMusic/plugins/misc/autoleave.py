@@ -25,7 +25,6 @@ from AlexaMusic.utils.database import (
 
 autoend = {}
 
-
 async def auto_leave():
     if config.AUTO_LEAVING_ASSISTANT == str(True):
         while not await asyncio.sleep(config.AUTO_LEAVE_ASSISTANT_TIME):
@@ -53,6 +52,7 @@ async def auto_leave():
                                         continue
                 except:
                     pass
+
 
 asyncio.create_task(auto_leave())
 

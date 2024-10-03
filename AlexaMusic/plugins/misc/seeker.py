@@ -49,6 +49,7 @@ async def timer():
                 continue
             db[chat_id][0]["played"] += 1
 
+
 asyncio.create_task(timer())
 
 
