@@ -1,12 +1,16 @@
-FROM nikolaik/python-nodejs:python3.10-nodejs19
+FROM python:3.9-slim-bullseye
 
-RUN apt-get update \
-    && apt-get install -y --no-install-recommends ffmpeg \
-    && apt-get clean \
-    && rm -rf /var/lib/apt/lists/*
+WORKDIR /AlexaMusic
+RUN chmod 777 /AlexaMusic
 
-COPY . /app/
-WORKDIR /app/
+RUN apt-get -qq update && apt-get -qq -y upgrade
+RUN apt-get install -y --no-install-recommends ffmpeg
+RUN DEBIAN_FRONTEND=noninteractive apt-get install -y git gcc build-essential
+
+RUN pip3 install -U pip
+COPY requirements.txt .
 RUN pip3 install --no-cache-dir -U -r requirements.txt
 
-CMD bash start
+COPY . .
+
+CMD ["python3", "-m", "AlexaMusic"]
