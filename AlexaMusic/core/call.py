@@ -172,8 +172,8 @@ class Call(PyTgCalls):
         else:
             if image and config.PRIVATE_BOT_MODE == str(True):
                 stream = MediaStream(
-                    link,
                     image,
+                    audio_path=link,
                     audio_parameters=audio_stream_quality,
                     video_parameters=video_stream_quality,
                 )
@@ -238,8 +238,8 @@ class Call(PyTgCalls):
         else:
             if image and config.PRIVATE_BOT_MODE == str(True):
                 stream = MediaStream(
-                    link,
                     image,
+                    audio_path=link,
                     audio_parameters=audio_stream_quality,
                     video_parameters=video_stream_quality,
                 )
@@ -345,8 +345,8 @@ class Call(PyTgCalls):
                         image = None
                     if image and config.PRIVATE_BOT_MODE == str(True):
                         stream = MediaStream(
-                            link,
                             image,
+                            audio_path=link,
                             audio_parameters=audio_stream_quality,
                             video_parameters=video_stream_quality,
                         )
@@ -405,8 +405,8 @@ class Call(PyTgCalls):
                         image = None
                     if image and config.PRIVATE_BOT_MODE == str(True):
                         stream = MediaStream(
-                            file_path,
                             image,
+                            audio_path=file_path,
                             audio_parameters=audio_stream_quality,
                             video_parameters=video_stream_quality,
                         )
@@ -489,8 +489,8 @@ class Call(PyTgCalls):
                 else:
                     if image and config.PRIVATE_BOT_MODE == str(True):
                         stream = MediaStream(
-                            queued,
                             image,
+                            audio_path=queued,
                             audio_parameters=audio_stream_quality,
                             video_parameters=video_stream_quality,
                         )
