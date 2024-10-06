@@ -14,7 +14,7 @@ from typing import Union
 
 from pyrogram.types import InlineKeyboardButton
 
-from config import GITHUB_REPO, SUPPORT_CHANNEL, SUPPORT_GROUP
+from config import GITHUB_REPO, SUPPORT_CHANNEL, SUPPORT_GROUP, OWNER_ID
 from AlexaMusic import app
 
 
@@ -75,10 +75,10 @@ def private_panel(_, BOT_USERNAME, OWNER: Union[bool, int] = None):
             )
         ]
     )
-    if GITHUB_REPO and OWNER:
+    if GITHUB_REPO and OWNER_ID:
         buttons.append(
             [
-                InlineKeyboardButton(text=_["S_B_7"], user_id=OWNER),
+                InlineKeyboardButton(text=_["S_B_7"], user_id=OWNER_ID),
                 InlineKeyboardButton(text=_["S_B_6"], url=f"{GITHUB_REPO}"),
             ]
         )
@@ -92,7 +92,7 @@ def private_panel(_, BOT_USERNAME, OWNER: Union[bool, int] = None):
         if OWNER:
             buttons.append(
                 [
-                    InlineKeyboardButton(text=_["S_B_7"], user_id=OWNER),
+                    InlineKeyboardButton(text=_["S_B_7"], user_id=OWNER_ID),
                 ]
             )
     buttons.append([InlineKeyboardButton(text=_["ST_B_6"], callback_data="LG")])
