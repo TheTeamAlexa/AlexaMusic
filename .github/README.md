@@ -108,7 +108,59 @@ Through this repository, we hope to share our passion for music and innovation w
 - [ᴛᴇʟᴇɢʀᴀᴍ ʙᴏᴛ ᴛᴏᴋᴇɴ](https://t.me/botfather)
 - [ᴍᴏɴɢᴏᴅʙ URI](https://telegra.ph/How-To-get-Mongodb-URI-04-06)
 - [sᴛʀɪɴɢ sᴇssɪᴏɴ](https://t.me/StringGeneratorRobot)
-    
+
+<summary><b>Lᴏᴄᴀʟ Hᴏsᴛɪɴɢ ᴏʀ VPS</b></summary>
+<br>
+
+1.  Upgrade and Update:
+```console
+sudo apt-get update && sudo apt-get upgrade -y
+```
+
+2. Installing Required Packages:
+```console
+sudo apt-get install python3-pip ffmpeg -y
+```
+
+3. Setting up PIP
+```console
+sudo pip3 install -U pip
+```
+
+4. Clone the Repository
+```console
+git clone https://github.com/TheTeamAlexa/AlexaMusic && cd AlexaMusic
+```
+
+5. Install Requirements
+```console
+pip3 install -U -r requirements.txt
+```
+
+6. Create .env  with sample.env
+```console
+cp sample.env .env
+```
+Edit .env with your vars 
+
+7. Editing Vars:
+```console
+vi .env
+```
+Edit .env with your values or you can simple copy a config from here and paste it to your notepad, then edit and paste there.
+Press I button on keyboard to start editing.
+Press Ctrl + C  once you are done with editing vars and type :wq to save .env or :qa to exit editing.
+
+8. Install Tmux : 
+```console
+sudo apt install tmux && tmux
+```
+
+9. Finally Run Yukki Music Bot
+```console
+bash start
+```
+
 <summary><b>sᴄᴀʟɪɴɢᴏ</b></summary>
 <br>
 ɴᴏᴡ ʏᴏᴜ ᴄᴀɴ ᴅᴇᴘʟᴏʏ ᴀʟᴇxᴀ ᴍᴜsɪᴄ ᴏɴ sᴄᴀʟɪɴɢᴏ ɪɴᴛʀᴏᴅᴜᴄᴇᴅ ʙʏ @ITZ-ZAID
@@ -161,7 +213,7 @@ Through this repository, we hope to share our passion for music and innovation w
 <br>
 
 - [ᴀʙʜɪᴍᴀɴᴜ](https://t.me/btwAbhimanyu)
-- [ᴋsᴋ](https://t.me/EVERYONExKSKOP)
+- [ᴋsᴋ](https://t.me/EVERYONExKSK)
 
 </details>
 
