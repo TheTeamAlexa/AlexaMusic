@@ -141,7 +141,7 @@ pip3 install -U -r requirements.txt
 ```console
 cp sample.env .env
 ```
-Edit .env with your vars 
+> Edit .env with your vars. 
 
 7. Editing Vars:
 ```console

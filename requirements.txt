@@ -7,10 +7,10 @@ hachoir
 heroku3
 lyricsgenius
 motor
-ntgcalls
+ntgcalls>=1.2.3
 pillow==9.5.0
 psutil
-py-tgcalls
+py-tgcalls>=2.0.4
 pykeyboard
 pymongo
 git+https://github.com/KurimuzonAkuma/pyrogram@dev
@@ -24,6 +24,6 @@ unidecode
 yt-dlp
 youtube-search
 youtube-search-python
-numpy
+numpy==1.24.3
 flask
 gunicorn
