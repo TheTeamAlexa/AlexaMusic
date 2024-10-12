@@ -24,6 +24,6 @@ unidecode
 yt-dlp
 youtube-search
 youtube-search-python
-numpy==1.24.3
+numpy==1.26.0
 flask
 gunicorn
