@@ -479,7 +479,7 @@ async def get_aud_bit_name(chat_id: int) -> str:
 
 async def get_vid_bit_name(chat_id: int) -> str:
     mode = video.get(chat_id)
-    return "Low" if not mode else mode
+    return "Medium" if not mode else mode
 
 
 async def get_audio_bitrate(chat_id: int) -> str:

@@ -1,6 +1,6 @@
 aiofiles
 aiohttp
-dnspython
+dnspython==2.1.0
 ffmpeg-python
 gitpython
 hachoir
@@ -10,9 +10,8 @@ motor
 ntgcalls>=1.2.3
 pillow
 psutil
-py-tgcalls>=2.0.4
+py-tgcalls==2.0.3
 pykeyboard
-pymongo
 git+https://github.com/KurimuzonAkuma/pyrogram@dev
 python-dotenv
 PyYAML
@@ -21,7 +20,7 @@ speedtest-cli
 spotipy
 tgcrypto
 unidecode
-yt-dlp
+yt-dlp==2023.10.13
 youtube-search
 youtube-search-python
 flask
