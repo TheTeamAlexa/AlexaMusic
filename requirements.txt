@@ -1,6 +1,6 @@
 aiofiles
 aiohttp
-dnspython==2.1.0
+dnspython
 ffmpeg-python
 gitpython
 hachoir
@@ -20,7 +20,7 @@ speedtest-cli
 spotipy
 tgcrypto
 unidecode
-yt-dlp==2023.10.13
+yt-dlp
 youtube-search
 youtube-search-python
 flask
