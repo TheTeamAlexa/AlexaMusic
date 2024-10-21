@@ -25,6 +25,7 @@ from AlexaMusic.misc import sudo
 from AlexaMusic.plugins import ALL_MODULES
 from AlexaMusic.utils.database import get_banned_users, get_gbanned
 
+
 async def init():
     if (
         not config.STRING1
