@@ -12,6 +12,7 @@ as you want or you can collabe if you have new ideas.
 
 from AlexaMusic.core.bot import AlexaBot
 from AlexaMusic.core.dir import dirr
+from AlexaMusic.core.cookies import save_cookies
 from AlexaMusic.core.git import git
 from AlexaMusic.core.userbot import Userbot
 from AlexaMusic.misc import dbb, heroku
@@ -20,6 +21,9 @@ from .logging import LOGGER
 
 # Directories
 dirr()
+
+# Cookies
+save_cookies()
 
 # Check Git Updates
 git()
