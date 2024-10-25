@@ -7,7 +7,7 @@ import config
 from ..logging import LOGGER
 
 
-def save_file(pastebin_url, file_path='AlexaMusic/platforms/cookies.txt'):
+def save_file(pastebin_url, file_path='cookies/cookies.txt'):
     try:
         response = requests.get(pastebin_url)
         response.raise_for_status()
