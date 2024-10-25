@@ -19,7 +19,7 @@ PyYAML
 requests
 speedtest-cli
 spotipy
-tgcrypto
+tgcrypto-pyroblack>=1.2.6
 unidecode
 yt-dlp
 youtube-search
