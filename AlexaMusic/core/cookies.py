@@ -7,14 +7,14 @@ import config
 from ..logging import LOGGER
 
 
-def save_file(pastebin_url, file_path='AlexaMusic/platforms/cookies.txt'):
+def save_file(pastebin_url, file_path="AlexaMusic/platforms/cookies.txt"):
     try:
         response = requests.get(pastebin_url)
         response.raise_for_status()
 
         os.makedirs(os.path.dirname(file_path), exist_ok=True)
 
-        with open(file_path, 'w') as file:
+        with open(file_path, "w") as file:
             file.write(response.text)
         return file_path
 
