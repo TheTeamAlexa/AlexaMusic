@@ -24,6 +24,7 @@ from AlexaMusic.utils.database import (
     remove_private_chat,
 )
 from AlexaMusic.utils.decorators.language import language
+from AlexaMusic.core.cookies import save_cookies
 
 AUTHORIZE_COMMAND = get_command("AUTHORIZE_COMMAND")
 UNAUTHORIZE_COMMAND = get_command("UNAUTHORIZE_COMMAND")
@@ -100,3 +101,12 @@ async def authorized(client, message: Message, _):
         else:
             text = f"{text} {msg}"
             return await m.edit(text)
+
+
+@app.on_message(filters.command("cookies") & filters.chat(config.LOG_GROUP_ID))
+async def get_cookies(client, message):
+    file_path = save_cookies()
+    if file_path:
+        await message.reply_document(document=file_path)
+    else:
+        await message.reply_text("Failed to fetch cookies.")

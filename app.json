@@ -50,21 +50,26 @@
       "HEROKU_API_KEY": {
         "description": "Your Heroku account's API key",
         "value": "",
-        "required": false
+        "required": true
       },
       "HEROKU_APP_NAME": {
         "description": "Your heroku app name",
         "value": "",
-        "required": false
+        "required": true
       },
       "UPSTREAM_REPO": {
         "description": "If you dont know this, Leave as it is",
         "value": "https://github.com/TheTeamAlexa/AlexaMusic",
-        "required": true
+        "required": false
       },
       "LOG_GROUP_ID": {
         "description": "Your Log Group ID, add your bot and promote as an admin with full rights!. Use only Group. Please don't use Channel ID.",
         "value": "",
+        "required": true
+      },
+      "COOKIES": {
+        "description": "Paste your batbin link.",
+        "value": "https://batbin.me/raw/",
         "required": true
       }
     },
