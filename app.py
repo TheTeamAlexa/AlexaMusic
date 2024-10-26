@@ -5,9 +5,11 @@ from flask_restful import Resource, Api
 app = Flask(__name__)
 api = Api(app)
 
-class Greeting (Resource):
+
+class Greeting(Resource):
     def get(self):
         return "Alexa Music is Alive!"
 
-api.add_resource(Greeting, '/')
+
+api.add_resource(Greeting, "/")
 app.run(host="0.0.0.0", port=os.environ.get("PORT", 8080))
