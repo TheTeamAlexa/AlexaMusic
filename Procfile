@@ -1,1 +1,1 @@
-worker: python3 -m AlexaMusic
+worker: bash start
