@@ -1,1 +1,1 @@
-python3 app.py & python3 -m AlexaMusic
+python3 -m AlexaMusic
