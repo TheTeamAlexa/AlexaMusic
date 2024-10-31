@@ -13,13 +13,13 @@ pillow
 psutil
 py-tgcalls==2.0.2
 pykeyboard
-pyrotgfork>=2.1.33.12
+Telethon>=1.37.0
 python-dotenv
 pyyaml==5.3.1
 requests
 speedtest-cli
 spotipy
-PyTgCrypto
+cryptg>=0.5.0.post0
 unidecode
 yt-dlp
 youtube-search
