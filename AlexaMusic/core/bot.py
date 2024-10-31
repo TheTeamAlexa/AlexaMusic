@@ -20,11 +20,7 @@ from ..logging import LOGGER
 
 class AlexaBot(TelegramClient):
     def __init__(self):
-        super().__init__(
-            "MusicBot",
-            api_id=config.API_ID,
-            api_hash=config.API_HASH
-        )
+        super().__init__("MusicBot", api_id=config.API_ID, api_hash=config.API_HASH)
         self.bot_token = config.BOT_TOKEN
         self.username = None
         self.id = None
@@ -42,8 +38,8 @@ class AlexaBot(TelegramClient):
             self.name = get_me.first_name
         try:
             await self.send_message(
-                PeerChannel(config.LOG_GROUP_ID), 
-                "» ᴍᴜsɪᴄ ʙᴏᴛ sᴛᴀʀᴛᴇᴅ, ᴡᴀɪᴛɪɴɢ ғᴏʀ ᴀssɪsᴛᴀɴᴛ..."
+                PeerChannel(config.LOG_GROUP_ID),
+                "» ᴍᴜsɪᴄ ʙᴏᴛ sᴛᴀʀᴛᴇᴅ, ᴡᴀɪᴛɪɴɢ ғᴏʀ ᴀssɪsᴛᴀɴᴛ...",
             )
         except ChatAdminRequiredError:
             LOGGER(__name__).error(
