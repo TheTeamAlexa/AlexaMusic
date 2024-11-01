@@ -41,7 +41,7 @@ class AlexaBot(TelegramClient):
             await self.send_message(
                 config.LOG_GROUP_ID,
                 text=f"<u><b>{self.mention} Bot Started :</b><u>\n\nId : <code>{self.id}</code>\nName : {self.name}\nUsername : @{self.username}",
-                parse_mode='html',
+                parse_mode="html",
             )
         except ChatAdminRequiredError:
             LOGGER(__name__).error(
@@ -58,5 +58,5 @@ class AlexaBot(TelegramClient):
             sys.exit()
         except Exception:
             pass
-        
+
         LOGGER(__name__).info(f"MusicBot started as {self.name}")
