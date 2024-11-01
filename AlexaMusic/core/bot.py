@@ -11,43 +11,52 @@ as you want or you can collabe if you have new ideas.
 
 
 import sys
-from telethon import TelegramClient, events
-from telethon.tl.types import PeerChannel
+
+from telethon import TelegramClient
 from telethon.errors import ChatAdminRequiredError
+
 import config
+
 from ..logging import LOGGER
 
 
 class AlexaBot(TelegramClient):
     def __init__(self):
-        super().__init__("MusicBot", api_id=config.API_ID, api_hash=config.API_HASH)
-        self.bot_token = config.BOT_TOKEN
-        self.username = None
-        self.id = None
-        self.name = None
-        LOGGER(__name__).info(f"Starting Bot...")
+        super().__init__(
+            "AlexaMusic",
+            api_id=config.API_ID,
+            api_hash=config.API_HASH,
+            flood_sleep_threshold=180,
+        )
+        LOGGER(__name__).info(f"Starting Bot")
 
     async def start(self):
-        await super().start(bot_token=self.bot_token)
+        await super().start(bot_token=config.BOT_TOKEN)
         get_me = await self.get_me()
         self.username = get_me.username
         self.id = get_me.id
-        if get_me.last_name:
-            self.name = get_me.first_name + " " + get_me.last_name
-        else:
-            self.name = get_me.first_name
+        self.name = self.me.first_name + " " + (self.me.last_name or "")
+        self.mention = f"[{self.name}](tg://user?id={self.id})"
         try:
             await self.send_message(
-                PeerChannel(config.LOG_GROUP_ID),
-                "» ᴍᴜsɪᴄ ʙᴏᴛ sᴛᴀʀᴛᴇᴅ, ᴡᴀɪᴛɪɴɢ ғᴏʀ ᴀssɪsᴛᴀɴᴛ...",
+                config.LOG_GROUP_ID,
+                text=f"<u><b>{self.mention} Bot Started :</b><u>\n\nId : <code>{self.id}</code>\nName : {self.name}\nUsername : @{self.username}",
+                parse_mode='html',
             )
         except ChatAdminRequiredError:
             LOGGER(__name__).error(
                 "Bot has failed to access the log Group. Make sure that you have added your bot to your log channel and promoted it as admin!"
             )
             sys.exit()
-        participant = await self.get_participant(config.LOG_GROUP_ID, self.id)
-        if not participant.is_admin:
-            LOGGER(__name__).error("Please promote Bot as Admin in Logger Group")
+        try:
+            a = await self.get_permissions(config.LOG_GROUP_ID, self.id)
+            if not a.is_admin:
+                LOGGER(__name__).error("Please promote bot as admin in logger group")
+                sys.exit()
+        except ValueError:
+            LOGGER(__name__).error("Please promote bot as admin in logger group")
             sys.exit()
-        LOGGER(__name__).info(f"MusicBot Started as {self.name}")
+        except Exception:
+            pass
+        
+        LOGGER(__name__).info(f"MusicBot started as {self.name}")
