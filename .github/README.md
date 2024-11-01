@@ -20,7 +20,7 @@
 
 Due to YouTube blocking ips, we found a fix. Given below:
 
-• **Join Support Group**: Type `cookies` in our [sᴜᴘᴘᴏʀᴛ Gʀᴏᴜᴘ](https://t.me/Alexa_Help) to get the necessary script.
+• **Join Support Group**: Type `#cookies` in our [sᴜᴘᴘᴏʀᴛ Gʀᴏᴜᴘ](https://t.me/Alexa_Help) to get the necessary extension link.
 
 • **Run the Extension**: Download Firefox and login your youtube account(Fake Account Recommended) then run the downloaded extension on your Firefox or any other Software to generate cookies.
 
@@ -109,6 +109,7 @@ Through this repository, we hope to share our passion for music and innovation w
 - [ᴍᴏɴɢᴏᴅʙ URI](https://telegra.ph/How-To-get-Mongodb-URI-04-06)
 - [sᴛʀɪɴɢ sᴇssɪᴏɴ](https://t.me/StringGeneratorRobot)
 
+<details>
 <summary><b>Lᴏᴄᴀʟ Hᴏsᴛɪɴɢ ᴏʀ VPS</b></summary>
 <br>
 
@@ -160,6 +161,7 @@ sudo apt install tmux && tmux
 ```console
 bash start
 ```
+</details>
 
 <summary><b>sᴄᴀʟɪɴɢᴏ</b></summary>
 <br>
@@ -240,7 +242,7 @@ bash start
 
 - [Pyrogram](https://github.com/pyrogram)
 - [Py-Tgcalls](https://pypi.org/project/py-tgcalls)
-- [Ntgcalls](https://pypi.org/project/ntgcalls/)
+- [Ntgcalls](https://pypi.org/project/ntgcalls)
 - [Yt-dlp](https://pypi.org/project/yt-dlp)
 </details>
 
