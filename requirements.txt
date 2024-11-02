@@ -15,12 +15,11 @@ py-tgcalls==2.0.2
 pykeyboard
 pyrotgfork>=2.1.33.12
 python-dotenv
-pyyaml==5.3.1
+pyyaml
 requests
 speedtest-cli
 spotipy
 PyTgCrypto
 unidecode
 yt-dlp
-youtube-search
 youtube-search-python
