@@ -10,6 +10,7 @@ as you want or you can collabe if you have new ideas.
 """
 
 
+import uvloop
 import importlib
 import sys
 
@@ -69,5 +70,6 @@ async def init():
 
 
 if __name__ == "__main__":
+    uvloop.install()
     app.run(init())
     LOGGER("AlexaMusic").info("Stopping Music Bot")

@@ -11,12 +11,15 @@ as you want or you can collabe if you have new ideas.
 
 
 import sys
+import uvloop
 
 from pyrogram import Client
 
 import config
 
 from ..logging import LOGGER
+
+uvloop.install()
 
 assistants = []
 assistantids = []
