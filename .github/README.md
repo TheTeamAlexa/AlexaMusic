@@ -22,9 +22,9 @@ Due to YouTube blocking ips, we found a fix. Given below:
 
 • **Join Support Group**: Type `#cookies` in our [sᴜᴘᴘᴏʀᴛ Gʀᴏᴜᴘ](https://t.me/Alexa_Help) to get the necessary extension link.
 
-• **Run the Extension**: Download Firefox and login your youtube account(Fake Account Recommended) then run the downloaded extension on your Firefox or any other Software to generate cookies.
+• **Run the Extension**: Download [Firefox](https://www.mozilla.org) and login your youtube account<b>(Fake Account Recommended)</b> then run the downloaded extension on your Firefox or any other Software to generate cookies.
 
-• **Add Cookies**: Paste the generated cookies in batbin.me. Then you'll get a link, copy that link and paste the Batbin link in config.
+• **Add Cookies**: Paste the generated cookies in [BatBin](https://batbin.me). Then you'll get a link, copy that link and paste the Batbin link in config.
 
 • **Deploy the Bot ✨** 
 
