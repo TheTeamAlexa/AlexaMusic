@@ -13,9 +13,6 @@
 </p>
 
 
-<p align="center">
-    <img src="https://user-images.githubusercontent.com/57800056/245666143-0d8d5230-d40d-4692-9dee-1a05cbf58828.png"/>
-</p>
 <h2 align="center"><b>Fix for YouTube Blocking IPs and Sign in Error</b></h2>
 
 Due to YouTube blocking ips, we found a fix. Given below:
@@ -141,7 +138,7 @@ Through this repository, we hope to share our passion for music and innovation w
 <p><a href="https://github.com/TheTeamAlexa/AlexaMusic-Bypass"><img src="https://img.shields.io/badge/Alexa-Music%20Bypass-blue.svg?style=for-the-badge&logo=GitHub"></a></p>
 
 <details>
-<summary><b>Lᴏᴄᴀʟ Hᴏsᴛɪɴɢ ᴏʀ VPS</b></summary>
+<summary><b>💻 Lᴏᴄᴀʟ Hᴏsᴛɪɴɢ ᴏʀ VPS 🗄️</b></summary>
 <br>
 
 1.  Upgrade and Update:
