@@ -229,6 +229,7 @@ class YouTubeAPI:
             "vidid": vidid,
             "duration_min": duration_min,
             "thumb": thumbnail,
+            "cookiefile": cookiefile(),
         }
         return track_details, vidid
 
@@ -264,6 +265,7 @@ class YouTubeAPI:
                             "ext": format["ext"],
                             "format_note": format["format_note"],
                             "yturl": link,
+                            "cookiefile": cookiefile()
                         }
                     )
         return formats_available, link
@@ -322,7 +324,7 @@ class YouTubeAPI:
         def video_dl():
             ydl_optssx = {
                 "cookiefile": cookiefile(),
-                "format": "(bestvideo[height<=?720][width<=?1280][ext=mp4])+(bestaudio[ext=m4a])",
+                "format": "(best[height<=?720][width<=?1280])",
                 "outtmpl": "downloads/%(id)s.%(ext)s",
                 "geo_bypass": True,
                 "nocheckcertificate": True,
