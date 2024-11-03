@@ -265,7 +265,7 @@ class YouTubeAPI:
                             "ext": format["ext"],
                             "format_note": format["format_note"],
                             "yturl": link,
-                            "cookiefile": cookiefile()
+                            "cookiefile": cookiefile(),
                         }
                     )
         return formats_available, link
