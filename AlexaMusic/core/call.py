@@ -14,7 +14,7 @@ import asyncio
 from typing import Union
 
 from pyrogram import Client
-from pyrogram.errors import FloodWait
+from pyrogram.errors import FloodWait, ChatAdminRequired
 from pyrogram.types import InlineKeyboardMarkup
 
 from pytgcalls import PyTgCalls
@@ -50,6 +50,9 @@ from AlexaMusic.utils.stream.autoclear import auto_clean
 from AlexaMusic.utils.thumbnails import gen_thumb
 from AlexaMusic.utils.theme import check_theme
 from strings import get_string
+
+autoend = {}
+counter = {}
 
 
 async def _clear_(chat_id):
