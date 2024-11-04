@@ -11,7 +11,6 @@ as you want or you can collabe if you have new ideas.
 
 
 import asyncio
-from datetime import datetime, timedelta
 from typing import Union
 
 from pyrogram import Client
@@ -24,11 +23,9 @@ from ntgcalls import TelegramServerError
 from pytgcalls.exceptions import (
     AlreadyJoinedError,
     NoActiveGroupCall,
-    GroupCallNotFound,
-    NotInCallError,
 )
 from pytgcalls.types import ChatUpdate, MediaStream, Update
-from pytgcalls.types.stream import StreamAudioEnded
+from pytgcalls.types import StreamAudioEnded
 
 import config
 from AlexaMusic import LOGGER, YouTube, app
@@ -262,7 +259,7 @@ class Call(PyTgCalls):
                 chat_id,
                 stream,
             )
-        except (NoActiveGroupCall, GroupCallNotFound, NotInCallError):
+        except NoActiveGroupCall:
             try:
                 await self.join_assistant(original_chat_id, chat_id)
             except Exception as e:
@@ -276,6 +273,10 @@ class Call(PyTgCalls):
                 raise AssistantErr(
                     "**ɴᴏ ᴀᴄᴛɪᴠᴇ ᴠɪᴅᴇᴏ ᴄʜᴀᴛ ғᴏᴜɴᴅ**\n\nᴩʟᴇᴀsᴇ ᴍᴀᴋᴇ sᴜʀᴇ ʏᴏᴜ sᴛᴀʀᴛᴇᴅ ᴛʜᴇ ᴠɪᴅᴇᴏᴄʜᴀᴛ."
                 )
+        except ChatAdminRequired:
+            raise AssistantErr(
+                "**ɴᴏ ᴀᴄᴛɪᴠᴇ ᴠɪᴅᴇᴏ ᴄʜᴀᴛ ғᴏᴜɴᴅ**\n\nᴩʟᴇᴀsᴇ ᴍᴀᴋᴇ sᴜʀᴇ ʏᴏᴜ sᴛᴀʀᴛᴇᴅ ᴛʜᴇ ᴠɪᴅᴇᴏᴄʜᴀᴛ."
+            )
         except AlreadyJoinedError:
             raise AssistantErr(
                 "**ᴀssɪsᴛᴀɴᴛ ᴀʟʀᴇᴀᴅʏ ɪɴ ᴠɪᴅᴇᴏᴄʜᴀᴛ**\n\nᴍᴜsɪᴄ ʙᴏᴛ sʏsᴛᴇᴍs ᴅᴇᴛᴇᴄᴛᴇᴅ ᴛʜᴀᴛ ᴀssɪᴛᴀɴᴛ ɪs ᴀʟʀᴇᴀᴅʏ ɪɴ ᴛʜᴇ ᴠɪᴅᴇᴏᴄʜᴀᴛ, ɪғ ᴛʜɪs ᴩʀᴏʙʟᴇᴍ ᴄᴏɴᴛɪɴᴜᴇs ʀᴇsᴛᴀʀᴛ ᴛʜᴇ ᴠɪᴅᴇᴏᴄʜᴀᴛ ᴀɴᴅ ᴛʀʏ ᴀɢᴀɪɴ."
@@ -595,8 +596,9 @@ class Call(PyTgCalls):
         @self.four.on_update(fl.stream_end)
         @self.five.on_update(fl.stream_end)
         async def stream_end_handler1(client, update: Update):
-            if isinstance(update, StreamAudioEnded):
-                await self.change_stream(client, update.chat_id)
+            if not isinstance(update, StreamAudioEnded):
+                return
+            await self.change_stream(client, update.chat_id)
 
 
 Alexa = Call()
