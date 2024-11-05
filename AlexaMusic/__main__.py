@@ -20,6 +20,7 @@ import config
 from config import BANNED_USERS
 from AlexaMusic import LOGGER, app, userbot
 from AlexaMusic.core.call import Alexa
+from AlexaMusic.misc import sudo
 from AlexaMusic.plugins import ALL_MODULES
 from AlexaMusic.utils.database import get_banned_users, get_gbanned
 
@@ -34,6 +35,7 @@ async def init():
     ):
         LOGGER("AlexaMusic").error("Add Pyrogram string session and then try...")
         sys.exit()
+    await sudo()
     try:
         users = await get_gbanned()
         for user_id in users:

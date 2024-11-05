@@ -25,7 +25,7 @@ from config import BANNED_USERS, MUSIC_BOT_NAME
 from strings import get_command
 from AlexaMusic import YouTube, app
 from AlexaMusic.core.userbot import assistants
-from AlexaMusic.misc import SUDOERS, pymongodb
+from AlexaMusic.misc import SUDOERS, mongodb
 from AlexaMusic.plugins import ALL_MODULES
 from AlexaMusic.utils.database import (
     get_global_tops,
@@ -326,7 +326,7 @@ async def overall_stats(client, CallbackQuery, _):
     free = hdd.free / (1024.0**3)
     free = str(free)
     mod = len(ALL_MODULES)
-    call = await pymongodb.command("dbstats")
+    call = await mongodb.command("dbstats")
     datasize = call["dataSize"] / 1024
     datasize = str(datasize)
     storage = call["storageSize"] / 1024
