@@ -180,10 +180,10 @@ async def braodcast_message(client, message, _):
                 if dialog.chat.id == config.LOG_GROUP_ID:
                     continue
                 try:
-                    await client.forward_messages(
-                        dialog.chat.id, y, x
-                    ) if message.reply_to_message else await client.send_message(
-                        dialog.chat.id, text=query
+                    (
+                        await client.forward_messages(dialog.chat.id, y, x)
+                        if message.reply_to_message
+                        else await client.send_message(dialog.chat.id, text=query)
                     )
                     sent += 1
                 except FloodWait as e:
@@ -217,9 +217,7 @@ async def auto_clean():
                     else:
                         next_spot = 1
                     new_spot = {"spot": next_spot, "title": title}
-                    await update_particular_top(
-                        chat_id, vidid, new_spot
-                    )
+                    await update_particular_top(chat_id, vidid, new_spot)
             for user_id in userstats:
                 for dic in userstats[user_id]:
                     vidid = dic["vidid"]
@@ -232,9 +230,7 @@ async def auto_clean():
                     else:
                         next_spot = 1
                     new_spot = {"spot": next_spot, "title": title}
-                    await update_user_top(
-                        user_id, vidid, new_spot
-                    )
+                    await update_user_top(user_id, vidid, new_spot)
         except:
             continue
         try:
@@ -245,9 +241,7 @@ async def auto_clean():
                     if datetime.now() <= x["timer_after"]:
                         continue
                     try:
-                        await app.delete_messages(
-                            chat_id, x["msg_id"]
-                        )
+                        await app.delete_messages(chat_id, x["msg_id"])
                     except FloodWait as e:
                         await asyncio.sleep(e.value)
                     except:
@@ -259,11 +253,8 @@ async def auto_clean():
             for chat_id in served_chats:
                 if chat_id not in adminlist:
                     adminlist[chat_id] = []
-                    admins = (
-                        app.get_chat_members(
-                            chat_id, 
-                            filter=ChatMembersFilter.ADMINISTRATORS
-                        )
+                    admins = app.get_chat_members(
+                        chat_id, filter=ChatMembersFilter.ADMINISTRATORS
                     )
                     async for user in admins:
                         if user.privileges.can_manage_video_chats:
