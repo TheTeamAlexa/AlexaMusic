@@ -23,3 +23,7 @@ try:
 except:
     LOGGER(__name__).error("Failed to connect to your Mongo Database.")
     exit()
+
+## Database For Broadcast Subscription By Team Alexa
+MONGODB_CLI = AsyncIOMotorClient(MONGO_DB_URI)
+db = MONGODB_CLI["subscriptions"]
