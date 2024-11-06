@@ -60,19 +60,19 @@ def stream_markup_timer(_, videoid, chat_id, played, dur):
                 text=_["PL_B_3"],
                 callback_data=f"PanelMarkup {videoid}|{chat_id}",
             ),
-            InlineKeyboardButton(text="ᴀʟᴇxᴀ ᴄʜᴀᴛ 💌", url=f"https://t.me/Alexa_Help"),
+            InlineKeyboardButton(text="ᴀʟᴇxᴀ ᴄʜᴀᴛ 💌", url=SUPPORT_GROUP),
         ],
         [
             InlineKeyboardButton(
-                text=f"☀ ᴀʟᴇxᴀ ᴍᴀɴᴀɢᴇᴍᴇɴᴛ ☀",
-                url=f"https://t.me/Alexa_ManagementBot",
+                text=f"☀ ᴍᴀɴᴀɢᴇᴍᴇɴᴛ ☀",
+                url=SUPPORT_CHANNEL,
             )
         ],
     ]
     return buttons
 
 
-def telegram_markup_timer(_, chat_id, played, dur):
+def telegram_markup_timer(_, videoid, chat_id, played, dur):
     bar = random.choice(selections)
     buttons = [
         [
@@ -95,7 +95,7 @@ def telegram_markup_timer(_, chat_id, played, dur):
                 text=_["PL_B_3"],
                 callback_data=f"PanelMarkup None|{chat_id}",
             ),
-            InlineKeyboardButton(text="ᴀʟᴇxᴀ ᴄʜᴀᴛ 💌", url=f"https://t.me/Alexa_Help"),
+            InlineKeyboardButton(text="ᴀʟᴇxᴀ ᴄʜᴀᴛ 💌", url=SUPPORT_GROUP),
         ],
     ]
     return buttons
@@ -120,7 +120,7 @@ def stream_markup(_, videoid, chat_id):
                 text=_["PL_B_3"],
                 callback_data=f"PanelMarkup None|{chat_id}",
             ),
-            InlineKeyboardButton(text="ᴀʟᴇxᴀ ᴄʜᴀᴛ 💌", url=f"https://t.me/Alexa_Help"),
+            InlineKeyboardButton(text="ᴀʟᴇxᴀ ᴄʜᴀᴛ 💌", url=SUPPORT_GROUP),
         ],
     ]
     return buttons
