@@ -1,7 +1,7 @@
 aiofiles
-aiohttp>=3.9.5
+aiohttp
 beautifulsoup4
-dnspython==2.2.1
+dnspython
 ffmpeg-python
 gitpython
 hachoir
@@ -11,9 +11,9 @@ motor
 ntgcalls==1.2.3
 pillow
 psutil
-py-tgcalls==2.0.2
+py-tgcalls==2.0.5
 pykeyboard
-pyrotgfork>=2.1.33.13
+https://github.com/KurimuzonAkuma/pyrogram/archive/dev.zip
 python-dotenv
 pyyaml
 requests
@@ -21,5 +21,5 @@ speedtest-cli
 spotipy
 PyTgCrypto
 unidecode
-yt-dlp==2023.10.13
+yt-dlp
 youtube-search-python
