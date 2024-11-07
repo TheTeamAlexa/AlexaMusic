@@ -18,7 +18,12 @@ from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup, Voice
 
 import config
 from AlexaMusic import app
-from AlexaMusic.utils.formatters import check_duration, convert_bytes, get_readable_time, seconds_to_min
+from AlexaMusic.utils.formatters import (
+    check_duration,
+    convert_bytes,
+    get_readable_time,
+    seconds_to_min,
+)
 
 
 class TeleAPI:
