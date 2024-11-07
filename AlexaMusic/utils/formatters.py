@@ -10,11 +10,15 @@ as you want or you can collabe if you have new ideas.
 """
 
 
+import json
+import subprocess
+
+
 def get_readable_time(seconds: int) -> str:
     count = 0
     ping_time = ""
     time_list = []
-    time_suffix_list = ["s", "m", "h", "days"]
+    time_suffix_list = ["s", "ᴍ", "ʜ", "ᴅᴀʏs"]
     while count < 4:
         count += 1
         if count < 3:
@@ -89,6 +93,34 @@ def seconds_to_min(seconds):
         elif s > 0:
             return "00:{:02d}".format(s)
     return "-"
+
+
+def check_duration(file_path):
+    command = [
+        "ffprobe",
+        "-loglevel",
+        "quiet",
+        "-print_format",
+        "json",
+        "-show_format",
+        "-show_streams",
+        file_path,
+    ]
+
+    pipe = subprocess.Popen(command, stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
+    out, err = pipe.communicate()
+    _json = json.loads(out)
+
+    if "format" in _json:
+        if "duration" in _json["format"]:
+            return float(_json["format"]["duration"])
+
+    if "streams" in _json:
+        for s in _json["streams"]:
+            if "duration" in s:
+                return float(s["duration"])
+
+    return "Unknown"
 
 
 formats = [

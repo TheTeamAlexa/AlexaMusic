@@ -11,8 +11,10 @@ as you want or you can collabe if you have new ideas.
 
 
 from strings import get_string
+from AlexaMusic import app
 from AlexaMusic.misc import SUDOERS
-from AlexaMusic.utils.database import get_lang, is_commanddelete_on, is_maintenance
+from config import SUPPORT_GROUP
+from AlexaMusic.utils.database import get_lang, is_maintenance
 
 
 def language(mystic):
@@ -20,13 +22,14 @@ def language(mystic):
         if await is_maintenance() is False:
             if message.from_user.id not in SUDOERS:
                 return await message.reply_text(
-                    "» ʙᴏᴛ ɪs ᴜɴᴅᴇʀ ᴍᴀɪɴᴛᴇɴᴀɴᴄᴇ ғᴏʀ sᴏᴍᴇ ᴛɪᴍᴇ, ᴩʟᴇᴀsᴇ ᴠɪsɪᴛ sᴜᴩᴩᴏʀᴛ ᴄʜᴀᴛ ᴛᴏ ᴋɴᴏᴡ ᴛʜᴇ ʀᴇᴀsᴏɴ."
+                    text=f"{app.mention} ɪs ᴜɴᴅᴇʀ ᴍᴀɪɴᴛᴇɴᴀɴᴄᴇ, ᴠɪsɪᴛ <a href={SUPPORT_GROUP}>sᴜᴘᴘᴏʀᴛ ᴄʜᴀᴛ</a> ғᴏʀ ᴋɴᴏᴡɪɴɢ ᴛʜᴇ ʀᴇᴀsᴏɴ.",
+                    disable_web_page_preview=True,
                 )
-        if await is_commanddelete_on(message.chat.id):
-            try:
-                await message.delete()
-            except:
-                pass
+        try:
+            await message.delete()
+        except:
+            pass
+
         try:
             language = await get_lang(message.chat.id)
             language = get_string(language)
@@ -42,7 +45,7 @@ def languageCB(mystic):
         if await is_maintenance() is False:
             if CallbackQuery.from_user.id not in SUDOERS:
                 return await CallbackQuery.answer(
-                    "» ʙᴏᴛ ɪs ᴜɴᴅᴇʀ ᴍᴀɪɴᴛᴇɴᴀɴᴄᴇ ғᴏʀ sᴏᴍᴇ ᴛɪᴍᴇ, ᴩʟᴇᴀsᴇ ᴠɪsɪᴛ sᴜᴩᴩᴏʀᴛ ᴄʜᴀᴛ ᴛᴏ ᴋɴᴏᴡ ᴛʜᴇ ʀᴇᴀsᴏɴ.",
+                    f"{app.mention} ɪs ᴜɴᴅᴇʀ ᴍᴀɪɴᴛᴇɴᴀɴᴄᴇ, ᴠɪsɪᴛ sᴜᴘᴘᴏʀᴛ ᴄʜᴀᴛ ғᴏʀ ᴋɴᴏᴡɪɴɢ ᴛʜᴇ ʀᴇᴀsᴏɴ.",
                     show_alert=True,
                 )
         try:
