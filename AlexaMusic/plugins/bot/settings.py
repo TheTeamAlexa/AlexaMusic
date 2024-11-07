@@ -92,7 +92,7 @@ async def settings_cb(client, CallbackQuery, _):
 
 @app.on_callback_query(filters.regex("settingsback_helper") & ~BANNED_USERS)
 @languageCB
-async def settings_back_markup(client, CallbackQuery: CallbackQuery, _):
+async def settings_back_markup(client, CallbackQuery: CallbackQuery, _, message: Message):
     try:
         await CallbackQuery.answer()
     except:
@@ -105,7 +105,7 @@ async def settings_back_markup(client, CallbackQuery: CallbackQuery, _):
             OWNER = None
         buttons = private_panel(_, app.username, OWNER)
         return await CallbackQuery.edit_message_text(
-            _["start_2"].format(MUSIC_BOT_NAME),
+            caption=_["start_2"].format(message.from_user.mention, app.mention),
             reply_markup=InlineKeyboardMarkup(buttons),
         )
     else:
