@@ -118,10 +118,8 @@ def AdminActual(mystic):
             return await message.reply_text(_["general_4"], reply_markup=upl)
         if message.from_user.id not in SUDOERS:
             try:
-                member = (
-                    await app.get_chat_member(
-                        message.chat.id, message.from_user.id
-                    )
+                member = await app.get_chat_member(
+                    message.chat.id, message.from_user.id
                 )
                 if member.status != ChatMemberStatus.ADMINISTRATOR:
                     if not member.privileges.can_manage_video_chats:
@@ -151,18 +149,14 @@ def ActualAdminCB(mystic):
         is_non_admin = await is_nonadmin_chat(CallbackQuery.message.chat.id)
         if not is_non_admin:
             try:
-                a = (
-                    await app.get_chat_member(
-                        CallbackQuery.message.chat.id,
-                        CallbackQuery.from_user.id,
-                    )
+                a = await app.get_chat_member(
+                    CallbackQuery.message.chat.id,
+                    CallbackQuery.from_user.id,
                 )
                 if a.status != ChatMemberStatus.ADMINISTRATOR:
                     if not a.privileges.can_manage_video_chats:
                         if CallbackQuery.from_user.id not in SUDOERS:
-                            token = await int_to_alpha(
-                                CallbackQuery.from_user.id
-                            )
+                            token = await int_to_alpha(CallbackQuery.from_user.id)
                             _check = await get_authuser_names(
                                 CallbackQuery.from_user.id
                             )
@@ -172,7 +166,9 @@ def ActualAdminCB(mystic):
                                     show_alert=True,
                                 )
                     elif a is None:
-                        return await CallbackQuery.answer("You are not a member of this chat.")
+                        return await CallbackQuery.answer(
+                            "You are not a member of this chat."
+                        )
             except Exception as e:
                 return await CallbackQuery.answer(f"Error: {str(e)}")
         return await mystic(client, CallbackQuery, _)
