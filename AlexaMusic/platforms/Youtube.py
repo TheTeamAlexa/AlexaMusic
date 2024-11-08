@@ -287,7 +287,7 @@ class YouTubeAPI:
         def video_dl():
             ydl_optssx = {
                 "cookiefile": cookiefile(),
-                "format": "(best[height<=?720][width<=?1280])",
+                "format": "(bestvideo[height<=?720][width<=?1280][ext=mp4])+(bestaudio[ext=m4a])",
                 "outtmpl": "downloads/%(id)s.%(ext)s",
                 "geo_bypass": True,
                 "nocheckcertificate": True,
