@@ -19,7 +19,8 @@ from pyrogram.errors import (
 )
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup
 
-from config import PLAYLIST_IMG_URL, SUPPORT_GROUP, adminlist
+from config import PLAYLIST_IMG_URL, PRIVATE_BOT_MODE, adminlist
+from AlexaMusic.misc import db
 from strings import get_string
 from AlexaMusic import YouTube, app
 from AlexaMusic.misc import SUDOERS
@@ -30,6 +31,8 @@ from AlexaMusic.utils.database import (
     get_assistant,
     get_playtype,
     is_active_chat,
+    is_commanddelete_on,
+    is_served_private_chat,
 )
 from AlexaMusic.utils.database.memorydatabase import is_maintenance
 from AlexaMusic.utils.inline.playlist import botplaylist_markup
@@ -39,32 +42,24 @@ links = {}
 
 def PlayWrapper(command):
     async def wrapper(client, message):
-        language = await get_lang(message.chat.id)
-        _ = get_string(language)
-        if message.sender_chat:
-            upl = InlineKeyboardMarkup(
-                [
-                    [
-                        InlineKeyboardButton(
-                            text="ʜᴏᴡ ᴛᴏ ғɪx ?",
-                            callback_data="AnonymousAdmin",
-                        ),
-                    ]
-                ]
-            )
-            return await message.reply_text(_["general_3"], reply_markup=upl)
-
         if await is_maintenance() is False:
             if message.from_user.id not in SUDOERS:
                 return await message.reply_text(
-                    text=f"{app.mention} ɪs ᴜɴᴅᴇʀ ᴍᴀɪɴᴛᴇɴᴀɴᴄᴇ, ᴠɪsɪᴛ <a href={SUPPORT_GROUP}>sᴜᴘᴘᴏʀᴛ ᴄʜᴀᴛ</a> ғᴏʀ ᴋɴᴏᴡɪɴɢ ᴛʜᴇ ʀᴇᴀsᴏɴ.",
-                    disable_web_page_preview=True,
+                    "Bot is under maintenance. Please wait for some time..."
                 )
-        try:
-            await message.delete()
-        except:
-            pass
-
+        if PRIVATE_BOT_MODE == str(True):
+            if not await is_served_private_chat(message.chat.id):
+                await message.reply_text(
+                    "**Private Music Bot**\n\nOnly for authorized chats from the owner. Ask my owner to allow your chat first."
+                )
+                return await app.leave_chat(message.chat.id)
+        if await is_commanddelete_on(message.chat.id):
+            try:
+                await message.delete()
+            except:
+                pass
+        language = await get_lang(message.chat.id)
+        _ = get_string(language)
         audio_telegram = (
             (message.reply_to_message.audio or message.reply_to_message.voice)
             if message.reply_to_message
@@ -86,6 +81,18 @@ def PlayWrapper(command):
                     caption=_["playlist_1"],
                     reply_markup=InlineKeyboardMarkup(buttons),
                 )
+        if message.sender_chat:
+            upl = InlineKeyboardMarkup(
+                [
+                    [
+                        InlineKeyboardButton(
+                            text="How to Fix this? ",
+                            callback_data="AnonymousAdmin",
+                        ),
+                    ]
+                ]
+            )
+            return await message.reply_text(_["general_4"], reply_markup=upl)
         if message.command[0][0] == "c":
             chat_id = await get_cmode(message.chat.id)
             if chat_id is None:
@@ -105,13 +112,12 @@ def PlayWrapper(command):
                 admins = adminlist.get(message.chat.id)
                 if not admins:
                     return await message.reply_text(_["admin_18"])
-                else:
-                    if message.from_user.id not in admins:
-                        return await message.reply_text(_["play_4"])
+                if message.from_user.id not in admins:
+                    return await message.reply_text(_["play_4"])
         if message.command[0][0] == "v":
             video = True
         else:
-            if "-v" in message.text:
+            if message.text and "-v" in message.text:
                 video = True
             else:
                 video = True if message.command[0][1] == "v" else None
@@ -129,10 +135,10 @@ def PlayWrapper(command):
                     get = await app.get_chat_member(chat_id, userbot.id)
                 except ChatAdminRequired:
                     return await message.reply_text(_["call_12"])
-                if (
-                    get.status == ChatMemberStatus.BANNED
-                    or get.status == ChatMemberStatus.RESTRICTED
-                ):
+                if get.status in [
+                    ChatMemberStatus.BANNED,
+                    ChatMemberStatus.RESTRICTED,
+                ]:
                     return await message.reply_text(
                         _["call_13"].format(
                             app.mention, userbot.id, userbot.name, userbot.username
