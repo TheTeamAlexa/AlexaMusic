@@ -287,7 +287,7 @@ class YouTubeAPI:
         def video_dl():
             ydl_optssx = {
                 "cookiefile": cookiefile(),
-                "format": "(bestvideo[height<=?720][width<=?1280][ext=mp4])+(bestaudio[ext=m4a])",
+                "format": "(best[height<=?720][width<=?1280])",
                 "outtmpl": "downloads/%(id)s.%(ext)s",
                 "geo_bypass": True,
                 "nocheckcertificate": True,
@@ -368,7 +368,7 @@ class YouTubeAPI:
                 stdout, stderr = await proc.communicate()
                 if stdout:
                     downloaded_file = stdout.decode().split("\n")[0]
-                    direct = None
+                    direct = False
                 else:
                     return
         else:
