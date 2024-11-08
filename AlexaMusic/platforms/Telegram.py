@@ -15,10 +15,11 @@ import time
 from datetime import datetime, timedelta
 from typing import Union
 
+import aiohttp
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup, Voice
 
 import config
-from config import MUSIC_BOT_NAME, lyrical
+from config import lyrical
 from AlexaMusic import app
 
 from ..utils.formatters import convert_bytes, get_readable_time, seconds_to_min
@@ -53,10 +54,9 @@ class TeleAPI:
         try:
             file_name = file.file_name
             if file_name is None:
-                file_name = "Telegram Audio File" if audio else "Telegram Video File"
-
+                file_name = "Telagram audio file" if audio else "Telagram video file"
         except:
-            file_name = "Telegram Audio File" if audio else "Telegram Video File"
+            file_name = "Telagram audio file" if audio else "Telagram video file"
         return file_name
 
     async def get_duration(self, file):
@@ -95,6 +95,35 @@ class TeleAPI:
             file_name = os.path.join(os.path.realpath("downloads"), file_name)
         return file_name
 
+    async def is_streamable_url(self, url: str) -> bool:
+        try:
+            async with aiohttp.ClientSession() as session:
+                async with session.get(url, timeout=5) as response:
+                    if response.status == 200:
+                        content_type = response.headers.get("Content-Type", "")
+                        if (
+                            "application/vnd.apple.mpegurl" in content_type
+                            or "application/x-mpegURL" in content_type
+                        ):
+                            return True
+                        if any(
+                            keyword in content_type
+                            for keyword in [
+                                "audio",
+                                "video",
+                                "mp4",
+                                "mpegurl",
+                                "m3u8",
+                                "mpeg",
+                            ]
+                        ):
+                            return True
+                        if url.endswith((".m3u8", ".index", ".mp4", ".mpeg", ".mpd")):
+                            return True
+        except aiohttp.ClientError:
+            pass
+        return False
+
     async def download(self, _, message, mystic, fname):
         left_time = {}
         speed_counter = {}
@@ -112,7 +141,7 @@ class TeleAPI:
                     [
                         [
                             InlineKeyboardButton(
-                                text="😐 ᴄᴀɴᴄᴇʟ",
+                                text="🚦 Cancel downloading",
                                 callback_data="stop_downloading",
                             ),
                         ]
@@ -131,14 +160,14 @@ class TeleAPI:
                     completed_size = convert_bytes(current)
                     speed = convert_bytes(speed)
                     text = f"""
-**{MUSIC_BOT_NAME} ᴍᴇᴅɪᴀ ᴅᴏᴡɴʟᴏᴀᴅᴇʀ**
+**{app.mention} Telagram Media Downloader**
 
-**sɪᴢᴇ:** {total_size}
-**ᴅᴏᴡɴʟᴏᴀᴅᴇᴅ:** {completed_size} 
-**ᴩᴇʀᴄᴇɴᴛᴀɢᴇ:** {percentage[:5]}%
+**Total file size:** {total_size}
+**Completed:** {completed_size} 
+**Percentage:** {percentage[:5]}%
 
-**sᴩᴇᴇᴅ:** {speed}/s
-**ᴇᴛᴀ:** {eta}"""
+**Speed:** {speed}/s
+**Elapsed Time:** {eta}"""
                     try:
                         await mystic.edit_text(text, reply_markup=upl)
                     except:
@@ -157,9 +186,9 @@ class TeleAPI:
                     progress=progress,
                 )
                 await mystic.edit_text(
-                    "**ғɪʟᴇ sᴜᴄᴄᴇssғᴜʟʟʏ ᴅᴏᴡɴʟᴏᴀᴅᴇᴅ, ᴩʀᴏᴄᴇssɪɴɢ...**"
+                    "Sucessfully Downloaded\n Processing File Now..."
                 )
-                downloader.pop(message.id)
+                downloader.pop(message.id, None)
             except:
                 await mystic.edit_text(_["tg_2"])
 
@@ -175,15 +204,15 @@ class TeleAPI:
             await mystic.edit_text(_["tg_1"].format(eta))
             return False
 
-        task = asyncio.create_task(down_load())
-        lyrical[mystic.message_id] = task
+        task = asyncio.create_task(down_load(), name=f"download_{message.chat.id}")
+        lyrical[mystic.id] = task
         await task
         downloaded = downloader.get(message.id)
         if downloaded:
             downloader.pop(message.id)
             return False
-        verify = lyrical.get(mystic.message_id)
+        verify = lyrical.get(mystic.id)
         if not verify:
             return False
-        lyrical.pop(mystic.message_id)
+        lyrical.pop(mystic.id)
         return True
