@@ -11,7 +11,7 @@ motor
 ntgcalls==1.2.3
 pillow
 psutil
-py-tgcalls==2.0.5
+py-tgcalls==2.0.2
 pykeyboard
 https://github.com/KurimuzonAkuma/pyrogram/archive/dev.zip
 python-dotenv
