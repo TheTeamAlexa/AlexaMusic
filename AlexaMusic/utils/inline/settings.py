@@ -9,7 +9,7 @@ This program is free software: you can redistribute it and can modify
 as you want or you can collabe if you have new ideas.
 """
 
-
+import config
 from typing import Union
 
 from pyrogram.types import InlineKeyboardButton
@@ -31,8 +31,8 @@ def setting_markup(_):
         ],
         [
             InlineKeyboardButton(
-                text="• Sᴜᴩᴩᴏʀᴛ •",
-                url="https://t.me/Shayri_Music_Lovers",
+                text="𝖲𝗎𝗉𝗉𝗈𝗋𝗍",
+                url=config.SUPPORT_GROUP,
             ),
             InlineKeyboardButton(text=_["CLOSE_BUTTON"], callback_data="close"),
         ],
