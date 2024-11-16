@@ -143,8 +143,8 @@ Through this repository, we hope to share our passion for music and innovation w
 
 <h4><b>💻 Lᴏᴄᴀʟ Hᴏsᴛɪɴɢ ᴏʀ VPS Dᴇᴘʟᴏʏᴍᴇɴᴛ Gᴜɪᴅᴇ. 🗄️</b></h4> 
 <br>
-<summary><b>ᴄʟɪᴄᴋ ʜᴇʀᴇ</b></summary>
 <details>
+<summary><b>ᴄʟɪᴄᴋ ʜᴇʀᴇ</b></summary>
 <br>
 
 1.  Upgrade and Update:
