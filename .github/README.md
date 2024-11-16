@@ -141,8 +141,9 @@ Through this repository, we hope to share our passion for music and innovation w
 <p><a href="https://github.com/TheTeamAlexa/AlexaMusic-Bypass"><img src="https://img.shields.io/badge/Alexa-Music%20Bypass-blue.svg?style=for-the-badge&logo=GitHub"></a></p>
 <br>
 
-<summary><b>💻 Lᴏᴄᴀʟ Hᴏsᴛɪɴɢ ᴏʀ VPS Dᴇᴘʟᴏʏᴍᴇɴᴛ Gᴜɪᴅᴇ 🗄️</b></summary>
+<h4><b>💻 Lᴏᴄᴀʟ Hᴏsᴛɪɴɢ ᴏʀ VPS Dᴇᴘʟᴏʏᴍᴇɴᴛ Gᴜɪᴅᴇ. 🗄️</b></h4> 
 <br>
+<summary><b>ᴄʟɪᴄᴋ ʜᴇʀᴇ</b></summary>
 <details>
 <br>
 
