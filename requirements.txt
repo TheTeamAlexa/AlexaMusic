@@ -13,7 +13,7 @@ pillow
 psutil
 py-tgcalls==2.0.6
 pykeyboard
-pyrotgfork==2.1.34
+https://github.com/KurimuzonAkuma/pyrogram/archive/v2.1.32.zip
 python-dotenv
 pyyaml
 requests
