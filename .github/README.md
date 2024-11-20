@@ -144,7 +144,7 @@ Through this repository, we hope to share our passion for music and innovation w
 <h4><b>💻 Lᴏᴄᴀʟ Hᴏsᴛɪɴɢ ᴏʀ VPS Dᴇᴘʟᴏʏᴍᴇɴᴛ Gᴜɪᴅᴇ. 🗄️</b></h4> 
 <br>
 <details>
-<summary><b>ᴄʟɪᴄᴋ ʜᴇʀᴇ</b></summary>
+<summary><b>ᴄʟɪᴄᴋ ʜᴇʀᴇ</b> (ᴜʙᴜɴᴛᴜ 𝟸𝟶,𝟸𝟸)</summary>
 <br>
 
 1.  Upgrade and Update:
@@ -170,6 +170,61 @@ git clone https://github.com/TheTeamAlexa/AlexaMusic && cd AlexaMusic
 5. Install Requirements
 ```console
 pip3 install -U -r requirements.txt
+```
+
+6. Create .env  with sample.env
+```console
+cp sample.env .env
+```
+> Edit .env with your vars. 
+
+7. Editing Vars:
+```console
+vi .env
+```
+> Edit .env with your values or you can simple copy a config from here and paste it to your notepad, then edit and paste there.
+> Press I button on keyboard to start editing.
+> Press Ctrl + C  once you are done with editing vars and type :wq to save .env or :qa to exit editing.
+
+8. Install Tmux : 
+```console
+sudo apt install tmux && tmux
+```
+
+9. Finally Run Alexa Music Bot
+```console
+bash start
+```
+</details>
+
+<br>
+<details>
+<summary><b>ᴄʟɪᴄᴋ ʜᴇʀᴇ</b> (ᴜʙᴜɴᴛᴜ 𝟸4)</summary>
+<br>
+
+1.  Upgrade and Update:
+```console
+sudo apt-get update && sudo apt-get upgrade -y
+```
+
+2. Installing Required Packages:
+```console
+sudo apt-get install python3-pip ffmpeg -y
+```
+
+3. Setting up PIP
+```console
+sudo pip3 install -U pip
+```
+
+4. Clone the Repository
+```console
+git clone https://github.com/TheTeamAlexa/AlexaMusic && cd AlexaMusic
+```
+
+5. Install Requirements
+```console
+pip install -r requirements.txt --break-system-packages
 ```
 
 6. Create .env  with sample.env
