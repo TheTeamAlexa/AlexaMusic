@@ -19,7 +19,7 @@ pyyaml
 requests
 speedtest-cli
 spotipy
-PyTgCrypto
+https://github.com/rojvv/tgcrypto/archive/main.zip
 unidecode
 yt-dlp==2024.11.18
 youtube-search-python
