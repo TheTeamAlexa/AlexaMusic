@@ -6,6 +6,7 @@ ffmpeg-python
 gitpython
 hachoir
 heroku3==5.1.4
+httpx[http2]==0.27.2
 lyricsgenius
 motor
 ntgcalls
