@@ -1,13 +1,16 @@
 <h1 align="center"><b>❤️ 𝘼𝙡𝙚𝙭𝙖 𝙈𝙪𝙨𝙞𝙘 ❤️</b></h1>
 
-<h4 align="center">"Introducing Alexa Music – your smart, powerful, and simple bot for seamless audio and video playback on Telegram. Written in Python with the latest Pyrogram, Alexa Music delivers a superior entertainment experience. Upgrade now for optimal performance and a new level of Telegram enjoyment."<br> ... Working With Pyrogram Latest Version...</h4>
-
+<h4 align="justify">
+    Introducing Alexa Music – your smart, powerful, and simple bot for seamless audio and video playback on Telegram. 
+    Written in Python with the latest Pyrogram, Alexa Music delivers a superior entertainment experience. 
+    Upgrade now for optimal performance and a new level of Telegram enjoyment.
+    <br> ... Working With Pyrogram Latest Version...
+</h4>
 <p align="center">
     <a href="https://t.me/Alexa_BotUpdates">
         <img src="cover.png">
     </a>
 </p>
-
 <p align="center">
     <a href="https://github.com/TheTeamAlexa/AlexaMusic"> <img src="https://img.shields.io/github/repo-size/TheTeamAlexa/AlexaMusic?color=orange&logo=github&logoColor=green&style=for-the-badge" /></a>
     <a href="https://github.com/TheTeamAlexa/AlexaMusic/commits"> <img src="https://img.shields.io/github/last-commit/TheTeamAlexa/AlexaMusic?color=red&logo=github&logoColor=green&style=for-the-badge" /></a>
