@@ -1,5 +1,5 @@
 aiofiles
-aiohttp==3.10.0
+aiohttp
 beautifulsoup4
 dnspython
 ffmpeg-python
@@ -22,5 +22,5 @@ speedtest-cli
 spotipy
 https://github.com/rojvv/tgcrypto/archive/main.zip
 unidecode
-yt-dlp==2024.11.18
+yt-dlp
 youtube-search-python

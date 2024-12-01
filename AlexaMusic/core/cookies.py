@@ -17,12 +17,16 @@ def save_file(pastebin_url, file_path="cookies/cookies.txt"):
 
         os.makedirs(os.path.dirname(file_path), exist_ok=True)
 
+        if os.path.exists(file_path) and os.path.getsize(file_path) > 0:
+            with open(file_path, "w") as file:
+                file.write("")
+
         with open(file_path, "w") as file:
             file.write(response.text)
         return file_path
 
     except requests.exceptions.RequestException:
-        pass
+        return None
 
 
 def save_cookies():
