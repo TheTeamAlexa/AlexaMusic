@@ -14,7 +14,7 @@ pillow
 psutil
 py-tgcalls==2.0.6
 pykeyboard
-https://github.com/KurimuzonAkuma/pyrogram/archive//9ec94e01e8a9d3653d587d39e06856da4a030fbc.zip
+https://github.com/KurimuzonAkuma/pyrogram/archive/9ec94e01e8a9d3653d587d39e06856da4a030fbc.zip
 python-dotenv
 pyyaml
 requests
