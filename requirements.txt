@@ -6,7 +6,7 @@ ffmpeg-python
 gitpython
 hachoir
 heroku3==5.1.4
-httpx[http2]==0.27.2
+httpx[http2]==0.27.0
 lyricsgenius
 motor
 ntgcalls
@@ -14,13 +14,13 @@ pillow
 psutil
 py-tgcalls==2.0.6
 pykeyboard
-https://github.com/KurimuzonAkuma/pyrogram/archive/9ec94e01e8a9d3653d587d39e06856da4a030fbc.zip
+https://github.com/KurimuzonAkuma/pyrogram/archive/v2.1.33.zip
 python-dotenv
 pyyaml
 requests
 speedtest-cli
 spotipy
-PyTgCrypto==1.2.7
+TgCrypto>=1.2.5
 unidecode
 yt-dlp
 youtube-search-python
