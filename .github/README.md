@@ -322,3 +322,7 @@ bash start
 
 
 > ⭐️ Thanks to everyone for using Alexa, 🤭 That is the greatest pleasure we have !
+
+### 📊 Repo Views Counter
+
+![Views](https://profile-counter.glitch.me/AlexaMusic/count.svg)
