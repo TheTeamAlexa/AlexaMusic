@@ -14,13 +14,13 @@ pillow
 psutil
 py-tgcalls==2.0.6
 pykeyboard
-pyrofork
+Kurigram==2.1.35
 python-dotenv
 pyyaml
 requests
 speedtest-cli
 spotipy
-TgCrypto-pyrofork>=1.2.7
+TgCrypto==1.2.5
 unidecode
-yt-dlp
+yt-dlp>=2024.12.23
 youtube-search-python

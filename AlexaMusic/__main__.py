@@ -10,6 +10,7 @@ as you want or you can collabe if you have new ideas.
 """
 
 
+import asyncio
 import importlib
 import sys
 
@@ -69,5 +70,5 @@ async def init():
 
 
 if __name__ == "__main__":
-    app.run(init())
+    asyncio.get_event_loop().run_until_complete(init())
     LOGGER("AlexaMusic").info("Stopping Music Bot")
