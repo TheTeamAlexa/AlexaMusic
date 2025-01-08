@@ -1,4 +1,4 @@
-FROM python:3.12-buster
+FROM python:3.12-bookworm
 
 RUN apt-get update -y \
     && apt-get install -y --no-install-recommends ffmpeg \
