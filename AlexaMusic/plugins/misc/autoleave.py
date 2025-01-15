@@ -60,7 +60,7 @@ asyncio.create_task(auto_leave())
 
 async def auto_end():
     while True:
-        await asyncio.sleep(5)
+        await asyncio.sleep(30)
         for chat_id in list(autoend.keys()):
             if not await is_active_chat(chat_id):
                 del autoend[chat_id]
