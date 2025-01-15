@@ -18,7 +18,8 @@ from AlexaMusic.core.call import Alexa
 from AlexaMusic.utils.database import (
     get_client,
     is_active_chat,
-    is_autoend,
+    get_active_chats,
+    is_music_playing,
     get_assistant,
 )
 
@@ -57,6 +58,19 @@ async def auto_leave():
 asyncio.create_task(auto_leave())
 
 
+async def call_mute(chat_id: int):
+    active_chats = await get_active_chats()
+    if chat_id not in active_chats:
+        return False
+    if not await is_music_playing(chat_id):
+        return False
+    userbot = await get_assistant(chat_id)
+    async for member in userbot.get_call_members(chat_id):
+        if member is not None and member.chat.id == userbot.id:
+            return bool(member.is_muted and not member.can_self_unmute)
+    return False
+
+
 async def auto_end():
     while True:
         await asyncio.sleep(60)
@@ -75,25 +89,19 @@ async def auto_end():
                     await Alexa.stop_stream(chat_id)
                     await app.send_message(
                         chat_id,
-                        "ʙᴏᴛ ᴀᴜᴛᴏᴍᴀᴛɪᴄᴀʟʟʏ ᴄʟᴇᴀʀᴇᴅ ᴛʜᴇ ǫᴜᴇᴜᴇ ᴀɴᴅ ʟᴇғᴛ ᴠɪᴅᴇᴏᴄʜᴀᴛ ʙᴇᴄᴀᴜsᴇ ɴᴏ ᴏɴᴇ ᴡᴀs ʟɪsᴛᴇɴɪɴɢ sᴏɴɢs ᴏɴ ᴠɪᴅᴇᴏᴄʜᴀᴛ.",
+                        "ʙᴏᴛ ᴀᴜᴛᴏᴍᴀᴛɪᴄᴀʟʟʏ ᴄʟᴇᴀʀᴇᴅ ᴛʜᴇ ǫᴜᴇᴜᴇ ᴀɴᴅ ʟᴇғᴛ ᴠɪᴅᴇᴏᴄʜᴀᴛ ʙᴇᴄᴀᴜsᴇ <b>ɴᴏ ᴏɴᴇ ᴡᴀs ʟɪsᴛᴇɴɪɴɢ sᴏɴɢs ᴏɴ ᴠɪᴅᴇᴏᴄʜᴀᴛ.</b>",
                     )
                 except Exception:
                     pass
-            else:
-                for member in members:
-                    if (
-                        member.chat.id == userbot.id
-                        and member.is_muted
-                        and not member.can_self_unmute
-                    ):
-                        try:
-                            await Alexa.stop_stream(chat_id)
-                            await app.send_message(
-                                chat_id,
-                                "ʙᴏᴛ ᴀᴜᴛᴏᴍᴀᴛɪᴄᴀʟʟʏ ᴄʟᴇᴀʀᴇᴅ ᴛʜᴇ ǫᴜᴇᴜᴇ ᴀɴᴅ ʟᴇғᴛ ᴠɪᴅᴇᴏᴄʜᴀᴛ ʙᴇᴄᴀᴜsᴇ ʙᴏᴛ ɪs ᴍᴜᴛᴇᴅ ᴏɴ ᴠɪᴅᴇᴏᴄʜᴀᴛ.",
-                            )
-                        except Exception:
-                            pass
+            elif await call_mute(chat_id):
+                try:
+                    await Alexa.stop_stream(chat_id)
+                    await app.send_message(
+                        chat_id,
+                        "ʙᴏᴛ ᴀᴜᴛᴏᴍᴀᴛɪᴄᴀʟʟʏ ᴄʟᴇᴀʀᴇᴅ ᴛʜᴇ ǫᴜᴇᴜᴇ ᴀɴᴅ ʟᴇғᴛ ᴠɪᴅᴇᴏᴄʜᴀᴛ ʙᴇᴄᴀᴜsᴇ <b>ʙᴏᴛ ɪs ᴍᴜᴛᴇᴅ ᴏɴ ᴠɪᴅᴇᴏᴄʜᴀᴛ.</b>",
+                    )
+                except Exception:
+                    pass
             del autoend[chat_id]
 
 
