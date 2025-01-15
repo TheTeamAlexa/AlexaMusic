@@ -1,6 +1,6 @@
 # This code is written by (C) TheTeamAlexa bot will send message to log group when someone add
 # this bot to new group make sure to star all projects
-# Copyright (C) 2021-2024 by Alexa_Help@ Github, < TheTeamAlexa >.
+# Copyright (C) 2021-2025 by Alexa_Help@ Github, < TheTeamAlexa >.
 # A Powerful Music Bot Property Of Rocks Indian Largest Chatting Group
 # All rights reserved. © Alisha © Alexa © Yukki
 
