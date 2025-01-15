@@ -94,7 +94,7 @@ async def auto_end():
                             )
                         except Exception:
                             pass
-        del autoend[chat_id]
+            del autoend[chat_id]
 
 
 asyncio.create_task(auto_end())
