@@ -79,7 +79,6 @@ async def auto_end():
                     )
                 except Exception:
                     pass
-                del autoend[chat_id]
             else:
                 for member in members:
                     if member.chat.id == userbot.id and member.is_muted and not member.can_self_unmute:
