@@ -73,7 +73,7 @@ async def call_mute(chat_id: int):
 
 async def auto_end():
     while True:
-        await asyncio.sleep(60)
+        await asyncio.sleep(5)
         for chat_id in list(autoend.keys()):
             if not await is_active_chat(chat_id):
                 del autoend[chat_id]
@@ -93,7 +93,7 @@ async def auto_end():
                     )
                 except Exception:
                     pass
-            elif await call_mute(chat_id):
+            if await call_mute(chat_id):
                 try:
                     await Alexa.stop_stream(chat_id)
                     await app.send_message(
