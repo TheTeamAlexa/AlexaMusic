@@ -81,7 +81,11 @@ async def auto_end():
                     pass
             else:
                 for member in members:
-                    if member.chat.id == userbot.id and member.is_muted and not member.can_self_unmute:
+                    if (
+                        member.chat.id == userbot.id
+                        and member.is_muted
+                        and not member.can_self_unmute
+                    ):
                         try:
                             await Alexa.stop_stream(chat_id)
                             await app.send_message(
