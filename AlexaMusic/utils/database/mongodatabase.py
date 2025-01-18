@@ -101,6 +101,10 @@ async def add_served_user(user_id: int):
     return await usersdb.insert_one({"user_id": user_id})
 
 
+async def delete_served_chat(chat_id: int):
+    await chatsdb.delete_one({"chat_id": chat_id})
+
+
 # Served Chats
 
 
