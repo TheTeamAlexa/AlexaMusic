@@ -26,7 +26,7 @@ class AlexaBot(Client):
             api_hash=config.API_HASH,
             bot_token=config.BOT_TOKEN,
             sleep_threshold=180,
-            max_concurrent_transmissions=4,
+            max_concurrent_transmissions=6,
             workers=50,
         )
         LOGGER(__name__).info(f"Starting Bot...")

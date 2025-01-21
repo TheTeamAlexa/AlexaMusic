@@ -300,10 +300,10 @@ bash start
 
 ᴛʜᴀɴᴋs ᴛᴏ ᴀʟʟ ᴏғ ʏᴏᴜ ғᴏʀ ᴜsɪɴɢ ᴀɴᴅ ᴍᴀᴋɪɴɢ ᴀʟᴇxᴀ:
 
-- [Pyrogram](https://github.com/pyrogram)
-- [Py-Tgcalls](https://pypi.org/project/py-tgcalls)
-- [Ntgcalls](https://pypi.org/project/ntgcalls)
-- [Yt-dlp](https://pypi.org/project/yt-dlp)
+- [Pʏʀᴏɢʀᴀᴍ](https://github.com/pyrogram)
+- [Pʏᴛɢᴄᴀʟʟs](https://pypi.org/project/py-tgcalls)
+- [Nᴛɢᴄᴀʟʟs](https://pypi.org/project/ntgcalls)
+- [Yᴛ-ᴅʟᴘ](https://pypi.org/project/yt-dlp)
 </details>
 
 

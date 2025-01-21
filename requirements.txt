@@ -1,5 +1,5 @@
 aiofiles
-aiohttp
+aiohttp==3.10.3
 beautifulsoup4
 dnspython
 ffmpeg-python
@@ -14,7 +14,7 @@ pillow
 psutil
 py-tgcalls==2.0.2
 pykeyboard
-kurigram==2.1.36
+kurigram==2.1.37
 python-dotenv
 pyyaml
 requests
@@ -22,5 +22,5 @@ speedtest-cli
 spotipy
 TgCrypto==1.2.5
 unidecode
-yt-dlp>=2024.12.23
+yt-dlp>=2025.1.15
 youtube-search-python
