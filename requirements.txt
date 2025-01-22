@@ -6,7 +6,7 @@ ffmpeg-python
 gitpython
 hachoir
 heroku3==5.1.4
-httpx[http2]==0.27.2
+httpx[http2]
 lyricsgenius
 motor
 ntgcalls
@@ -20,7 +20,7 @@ pyyaml
 requests
 speedtest-cli
 spotipy
-TgCrypto==1.2.5
+TgCrypto
 unidecode
 yt-dlp>=2025.1.15
-youtube-search-python
+https://github.com/KSKOP69/youtube-search-python/archive/main.zip
