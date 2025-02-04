@@ -68,9 +68,8 @@ async def auto_end():
             userbot = await get_assistant(chat_id)
             members = []
             async for member in userbot.get_call_members(chat_id):
-                if member is None:
-                    continue
-                members.append(member)
+                if member is not None:
+                    members.append(member)
             if len(members) <= 1:
                 try:
                     await Alexa.stop_stream(chat_id)
