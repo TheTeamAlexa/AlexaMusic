@@ -1,17 +1,18 @@
 FROM python:3.12-bookworm
 
-RUN apt-get update -y \
-    && apt-get install -y --no-install-recommends ffmpeg \
-    && apt-get clean \
-    && rm -rf /var/lib/apt/lists/*
+# Update, upgrade, and install system dependencies
+RUN apt-get update -y && \
+    apt-get upgrade -y && \
+    apt-get install -y --no-install-recommends ffmpeg git && \
+    apt-get clean && \
+    rm -rf /var/lib/apt/lists/*
 
-WORKDIR /app
+# Set the working directory and copy application files
+WORKDIR /app/
+COPY . /app/
 
-COPY requirements.txt .
+# Install Python dependencies without cache
+RUN pip3 install --no-cache-dir --upgrade -r requirements.txt
 
-RUN pip install --no-cache-dir -U pip \
-    && pip install --no-cache-dir -U -r requirements.txt
-
-COPY . .
-
+# Start the application via bash script
 CMD ["bash", "start"]
