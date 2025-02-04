@@ -2,7 +2,7 @@
 # Subscribe On YT < Jankari Ki Duniya >. All rights reserved. © Alexa © Yukki.
 
 """
-Alexa is a Telegram Audio and video streaming bot 
+Alexa is a Telegram Audio and video streaming bot
 Copyright (c) 2021 ~ Present Team Alexa <https://github.com/TheTeamAlexa>
 
 This program is free software: you can redistribute it and can modify
