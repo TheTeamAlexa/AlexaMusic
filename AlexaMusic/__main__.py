@@ -12,7 +12,7 @@ as you want or you can collabe if you have new ideas.
 
 import asyncio
 import importlib
-import sys
+from typing import Any
 
 from pyrogram import idle
 from pytgcalls.exceptions import NoActiveGroupCall, GroupCallNotFound
@@ -26,29 +26,22 @@ from AlexaMusic.plugins import ALL_MODULES
 from AlexaMusic.utils.database import get_banned_users, get_gbanned
 
 
-async def init():
-    if (
-        not config.STRING1
-        and not config.STRING2
-        and not config.STRING3
-        and not config.STRING4
-        and not config.STRING5
-    ):
+async def init() -> None:
+    # Check for at least one valid Pyrogram string session
+    if all(not getattr(config, f"STRING{i}") for i in range(1, 6)):
         LOGGER("AlexaMusic").error("Add Pyrogram string session and then try...")
-        sys.exit()
+        exit()
     await sudo()
     try:
-        users = await get_gbanned()
-        for user_id in users:
+        for user_id in await get_gbanned():
             BANNED_USERS.add(user_id)
-        users = await get_banned_users()
-        for user_id in users:
+        for user_id in await get_banned_users():
             BANNED_USERS.add(user_id)
     except:
         pass
     await app.start()
-    for all_module in ALL_MODULES:
-        importlib.import_module("AlexaMusic.plugins" + all_module)
+    for module in ALL_MODULES:
+        importlib.import_module("AlexaMusic.plugins" + module)
     LOGGER("AlexaMusic.plugins").info("Necessary Modules Imported Successfully.")
     await userbot.start()
     await Alexa.start()
@@ -58,7 +51,7 @@ async def init():
         LOGGER("AlexaMusic").error(
             "[ERROR] - \n\nTurn on group voice chat and don't put it off otherwise I'll stop working thanks."
         )
-        sys.exit()
+        exit()
     except:
         pass
     await Alexa.decorators()
