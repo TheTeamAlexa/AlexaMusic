@@ -1,7 +1,7 @@
 # Copyright (C) 2021-2022 by Alexa_Help @ Github, < https://github.com/TheTeamAlexa >
 # Subscribe On YT < Jankari Ki Duniya >. All rights reserved. © Alexa © Yukki.
 
-""""
+"""
 Alexa is a Telegram Audio and video streaming bot 
 Copyright (c) 2021 ~ Present Team Alexa <https://github.com/TheTeamAlexa>
 
