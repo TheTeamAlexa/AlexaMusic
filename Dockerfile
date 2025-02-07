@@ -15,4 +15,4 @@ COPY . .
 RUN pip3 install --no-cache-dir --upgrade -r requirements.txt
 
 # Start the application using gunicorn and the Python script concurrently.
-CMD gunicorn app:app & python3 main.py
+CMD gunicorn app:app & bash start
