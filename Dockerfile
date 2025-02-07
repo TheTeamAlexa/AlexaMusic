@@ -1,6 +1,6 @@
 FROM python:3.12-bookworm
 
-# Update, upgrade, and install system dependencies
+# Update, upgrade, install dependencies, and clean up in one layer
 RUN apt-get update -y && \
     apt-get upgrade -y && \
     apt-get install -y --no-install-recommends ffmpeg git && \
@@ -8,11 +8,11 @@ RUN apt-get update -y && \
     rm -rf /var/lib/apt/lists/*
 
 # Set the working directory and copy application files
-WORKDIR /app/
-COPY . /app/
+WORKDIR /app
+COPY . .
 
 # Install Python dependencies without cache
 RUN pip3 install --no-cache-dir --upgrade -r requirements.txt
 
-# Start the application via bash script
-CMD ["bash", "start"]
+# Start the application using gunicorn and the Python script concurrently.
+CMD gunicorn app:app & python3 main.py

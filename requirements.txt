@@ -3,7 +3,9 @@ aiohttp==3.10.3
 beautifulsoup4
 dnspython
 ffmpeg-python
+Flask==1.1.2
 gitpython
+gunicorn==20.1.0
 hachoir
 heroku3==5.1.4
 httpx[http2]
@@ -22,5 +24,6 @@ speedtest-cli
 spotipy
 TgCrypto
 unidecode
+werkzeug==2.0.2
 yt-dlp>=2025.1.15
 https://github.com/KSKOP69/youtube-search-python/archive/ksk.zip
