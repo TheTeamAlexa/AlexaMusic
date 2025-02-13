@@ -1,11 +1,11 @@
 aiofiles
-aiohttp==3.10.3
+aiohttp==3.11.11
 beautifulsoup4
 dnspython
 ffmpeg-python
-Flask==1.1.2
+Flask
 gitpython
-gunicorn==20.1.0
+gunicorn
 hachoir
 heroku3==5.1.4
 httpx[http2]
@@ -16,7 +16,7 @@ pillow
 psutil
 py-tgcalls==2.0.2
 pykeyboard
-kurigram==2.1.37
+kurigram==2.1.36
 python-dotenv
 pyyaml
 requests
@@ -24,6 +24,6 @@ speedtest-cli
 spotipy
 TgCrypto
 unidecode
-werkzeug==2.0.2
+werkzeug
 yt-dlp>=2025.1.15
 https://github.com/KSKOP69/youtube-search-python/archive/ksk.zip
