@@ -16,7 +16,7 @@ pillow
 psutil
 py-tgcalls==2.0.2
 pykeyboard
-kurigram==2.1.36
+Kurigram==2.1.39
 python-dotenv
 pyyaml
 requests
@@ -25,5 +25,5 @@ spotipy
 TgCrypto
 unidecode
 werkzeug==2.0.2
-yt-dlp==2025.1.26
+yt-dlp>=2025.1.26
 https://github.com/KSKOP69/youtube-search-python/archive/ksk.zip
