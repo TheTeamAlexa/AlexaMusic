@@ -1,4 +1,5 @@
 aiofiles
+asyncio
 aiohttp==3.11.11
 beautifulsoup4
 dnspython
@@ -14,16 +15,16 @@ motor
 ntgcalls
 pillow
 psutil
-py-tgcalls==2.0.2
+py-tgcalls
 pykeyboard
-Kurigram==2.1.39
+Kurigram==2.1.36
 python-dotenv
-pyyaml
 requests
 speedtest-cli
 spotipy
 TgCrypto
 unidecode
 werkzeug==2.0.2
-yt-dlp>=2025.1.26
-https://github.com/KSKOP69/youtube-search-python/archive/ksk.zip
+yt-dlp
+py-yt-search>=0.2
+pyyaml

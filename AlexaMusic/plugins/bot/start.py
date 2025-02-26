@@ -15,7 +15,7 @@ import asyncio
 from pyrogram import filters
 from pyrogram import enums, filters
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup, Message
-from youtubesearchpython.__future__ import VideosSearch
+from py_yt import VideosSearch
 
 import config
 from config import BANNED_USERS
