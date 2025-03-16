@@ -15,7 +15,7 @@ import importlib
 from typing import Any
 
 from pyrogram import idle
-from pytgcalls.exceptions import NoActiveGroupCall, GroupCallNotFound
+from pytgcalls.exceptions import NoActiveGroupCall
 
 import config
 from config import BANNED_USERS
@@ -47,7 +47,7 @@ async def init() -> None:
     await Alexa.start()
     try:
         await Alexa.stream_call("https://telegra.ph/file/b60b80ccb06f7a48f68b5.mp4")
-    except (NoActiveGroupCall, GroupCallNotFound):
+    except NoActiveGroupCall:
         LOGGER("AlexaMusic").error(
             "[ERROR] - \n\nTurn on group voice chat and don't put it off otherwise I'll stop working thanks."
         )

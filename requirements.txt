@@ -1,6 +1,6 @@
 aiofiles
 asyncio
-aiohttp==3.11.11
+aiohttp
 beautifulsoup4
 dnspython
 ffmpeg-python
@@ -15,9 +15,9 @@ motor
 ntgcalls
 pillow
 psutil
-py-tgcalls
+py-tgcalls==2.1.0
 pykeyboard
-Kurigram==2.1.36
+Kurigram==2.1.37
 python-dotenv
 requests
 speedtest-cli
@@ -26,5 +26,5 @@ TgCrypto
 unidecode
 werkzeug==2.0.2
 yt-dlp
-py-yt-search>=0.2
+py-yt-search
 pyyaml
