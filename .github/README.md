@@ -13,7 +13,7 @@
     <a href="https://github.com/TheTeamAlexa/AlexaMusic/commits"> <img src="https://img.shields.io/github/last-commit/TheTeamAlexa/AlexaMusic?color=red&logo=github&logoColor=green&style=for-the-badge" /></a>
     <a href="https://github.com/TheTeamAlexa/AlexaMusic/issues"> <img src="https://img.shields.io/github/issues/TheTeamAlexa/AlexaMusic?color=blueviolet&logo=github&logoColor=green&style=for-the-badge" /></a>
     <a href="https://github.com/TheTeamAlexa/AlexaMusic/network/members"> <img src="https://img.shields.io/github/forks/TheTeamAlexa/AlexaMusic?color=red&logo=github&logoColor=green&style=for-the-badge" /></a>  
-    <a href="https://pypi.org/project/Pyrogram"> <img src="https://img.shields.io/pypi/v/Pyrogram?color=yellow&label=Pyrogram&logo=python&logoColor=green&style=for-the-badge" /></a>
+    <a href="https://pypi.org/project/Pyrogram"> <img src="https://img.shields.io/pypi/v/Kurigram?color=yellow&label=Pyrogram&logo=python&logoColor=green&style=for-the-badge" /></a>
 </p>
 
 

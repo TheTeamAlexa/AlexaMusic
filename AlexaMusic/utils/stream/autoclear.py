@@ -11,28 +11,27 @@ as you want or you can collabe if you have new ideas.
 
 import os
 
+import asyncio
 from config import autoclean
 
 
 async def auto_clean(popped):
     async def _auto_clean(popped_item):
         try:
-            rem = popped_item["file"]
-            autoclean.remove(rem)
-            count = autoclean.count(rem)
-            if count == 0:
-                if "vid_" not in rem and "live_" not in rem and "index_" not in rem:
+            rem = popped_item.get("file")
+            if rem:
+                autoclean.discard(rem)
+                if not any(keyword in rem for keyword in ("vid_", "live_", "index_")):
                     try:
                         os.remove(rem)
-                    except:
+                    except FileNotFoundError:
                         pass
-        except:
+        except Exception:
             pass
 
     if isinstance(popped, dict):
         await _auto_clean(popped)
     elif isinstance(popped, list):
-        for pop in popped:
-            await _auto_clean(pop)
+        await asyncio.gather(*(_auto_clean(pop) for pop in popped))
     else:
         raise ValueError("Expected popped to be a dict or list.")
