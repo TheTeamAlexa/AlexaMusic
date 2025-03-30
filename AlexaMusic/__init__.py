@@ -12,7 +12,6 @@ as you want or you can collabe if you have new ideas.
 
 from AlexaMusic.core.bot import AlexaBot
 from AlexaMusic.core.dir import dirr
-from AlexaMusic.core.cookies import save_cookies
 from AlexaMusic.core.git import git
 from AlexaMusic.core.userbot import Userbot
 from AlexaMusic.misc import dbb, heroku
@@ -30,9 +29,6 @@ dbb()
 
 # Heroku APP
 heroku()
-
-# Cookies
-save_cookies()
 
 # Bot Client
 app = AlexaBot()
