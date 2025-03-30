@@ -22,7 +22,14 @@ from pytgcalls import PyTgCalls
 from pytgcalls import filters as fl
 from ntgcalls import TelegramServerError
 from pytgcalls.exceptions import NoActiveGroupCall
-from pytgcalls.types import ChatUpdate, MediaStream, StreamEnded, GroupCallConfig, GroupCallParticipant, Update
+from pytgcalls.types import (
+    ChatUpdate,
+    MediaStream,
+    StreamEnded,
+    GroupCallConfig,
+    GroupCallParticipant,
+    Update,
+)
 
 import config
 from AlexaMusic import LOGGER, YouTube, app
@@ -51,6 +58,7 @@ from strings import get_string
 autoend = {}
 counter = {}
 AUTO_END_TIME = 1
+
 
 async def _clear_(chat_id):
     popped = db.pop(chat_id, None)
@@ -617,7 +625,7 @@ class Call(PyTgCalls):
             participant = update.participant
             if participant.action not in (
                 GroupCallParticipant.Action.JOINED,
-                GroupCallParticipant.Action.LEFT
+                GroupCallParticipant.Action.LEFT,
             ):
                 return
             chat_id = update.chat_id
@@ -633,7 +641,11 @@ class Call(PyTgCalls):
                     return
                 autoend[chat_id] = {}
             else:
-                final = users + 1 if participant.action == GroupCallParticipant.Action.JOINED else users - 1
+                final = (
+                    users + 1
+                    if participant.action == GroupCallParticipant.Action.JOINED
+                    else users - 1
+                )
                 counter[chat_id] = final
                 if final == 1:
                     autoend[chat_id] = datetime.now() + timedelta(minutes=AUTO_END_TIME)
