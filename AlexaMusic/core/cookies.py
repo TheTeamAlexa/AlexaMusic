@@ -5,44 +5,50 @@
 
 
 import os
-import requests
-from concurrent.futures import ThreadPoolExecutor
+import aiohttp
+import aiofiles
+import asyncio
 
 import config
 from ..logging import LOGGER
 
 
-def fetch_content(url: str):
+async def fetch_content(session: aiohttp.ClientSession, url: str):
     try:
-        response = requests.get(url)
-        response.raise_for_status()
-        return response.text
-    except requests.exceptions.RequestException as e:
+        async with session.get(url) as response:
+            response.raise_for_status()
+            return await response.text()
+    except aiohttp.ClientError as e:
         LOGGER(__name__).error(f"Error fetching from {url}: {e}")
         return ""
 
 
-def save_file(content: str, file_path: str):
-    os.makedirs(os.path.dirname(file_path), exist_ok=True)
-    with open(file_path, "w") as file:
-        file.write(content)
-    return file_path
+async def save_file(content: str, file_path: str):
+    try:
+        os.makedirs(os.path.dirname(file_path), exist_ok=True)
+        async with aiofiles.open(file_path, "w") as file:
+            await file.write(content)
+        return file_path
+    except Exception as e:
+        LOGGER(__name__).error(f"Error saving file {file_path}: {e}")
+        return ""
 
 
-def save_cookies():
+async def save_cookies():
     full_url: str = str(config.COOKIES)
     paste_id: str = full_url.split("/")[-1]
     pastebin_url: str = f"https://batbin.me/raw/{paste_id}"
 
-    with ThreadPoolExecutor() as executor:
-        future = executor.submit(fetch_content, pastebin_url)
-        content = future.result()
+    async with aiohttp.ClientSession() as session:
+        content = await fetch_content(session, pastebin_url)
 
-    if content:
-        file_path = save_file(content, "cookies/cookies.txt")
-        if os.path.getsize(file_path) > 0:
-            LOGGER(__name__).info(f"Cookies saved successfully to {file_path}.")
+        if content:
+            file_path = "cookies/cookies.txt"
+            saved_path = await save_file(content, file_path)
+
+            if saved_path and os.path.getsize(saved_path) > 0:
+                LOGGER(__name__).info(f"Cookies saved successfully to {saved_path}.")
+            else:
+                LOGGER(__name__).error("Failed to save cookies or the file is empty.")
         else:
-            LOGGER(__name__).error("Failed to save cookies or the file is empty.")
-    else:
-        LOGGER(__name__).error("Failed to fetch cookies.")
+            LOGGER(__name__).error("Failed to fetch cookies.")
