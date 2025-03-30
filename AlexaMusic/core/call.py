@@ -11,6 +11,7 @@ as you want or you can collabe if you have new ideas.
 
 
 import asyncio
+from datetime import datetime, timedelta
 from typing import Union
 
 from pyrogram import Client
@@ -21,7 +22,7 @@ from pytgcalls import PyTgCalls
 from pytgcalls import filters as fl
 from ntgcalls import TelegramServerError
 from pytgcalls.exceptions import NoActiveGroupCall
-from pytgcalls.types import ChatUpdate, MediaStream, StreamEnded, GroupCallConfig
+from pytgcalls.types import ChatUpdate, MediaStream, StreamEnded, GroupCallConfig, GroupCallParticipant, Update
 
 import config
 from AlexaMusic import LOGGER, YouTube, app
@@ -35,6 +36,7 @@ from AlexaMusic.utils.database import (
     get_loop,
     get_video_bitrate,
     group_assistant,
+    is_autoend,
     music_on,
     remove_active_chat,
     remove_active_video_chat,
@@ -48,7 +50,7 @@ from strings import get_string
 
 autoend = {}
 counter = {}
-
+AUTO_END_TIME = 1
 
 async def _clear_(chat_id):
     popped = db.pop(chat_id, None)
@@ -290,6 +292,11 @@ class Call(PyTgCalls):
         await music_on(chat_id)
         if video:
             await add_active_video_chat(chat_id)
+        if await is_autoend():
+            counter[chat_id] = {}
+            users = len(await assistant.get_participants(chat_id))
+            if users == 1:
+                autoend[chat_id] = datetime.now() + timedelta(minutes=AUTO_END_TIME)
 
     async def change_stream(self, client, chat_id):
         check = db.get(chat_id)
@@ -600,6 +607,38 @@ class Call(PyTgCalls):
             if not update.stream_type == StreamEnded.Type.AUDIO:
                 return
             await self.change_stream(client, update.chat_id)
+
+        @self.one.on_update(fl.call_participant(GroupCallParticipant.Action.UPDATED))
+        @self.two.on_update(fl.call_participant(GroupCallParticipant.Action.UPDATED))
+        @self.three.on_update(fl.call_participant(GroupCallParticipant.Action.UPDATED))
+        @self.four.on_update(fl.call_participant(GroupCallParticipant.Action.UPDATED))
+        @self.five.on_update(fl.call_participant(GroupCallParticipant.Action.UPDATED))
+        async def participants_change_handler(client, update: Update):
+            participant = update.participant
+            if participant.action not in (
+                GroupCallParticipant.Action.JOINED,
+                GroupCallParticipant.Action.LEFT
+            ):
+                return
+            chat_id = update.chat_id
+            users = counter.get(chat_id)
+            if users is None:
+                try:
+                    got = len(await client.get_participants(chat_id))
+                except Exception:
+                    return
+                counter[chat_id] = got
+                if got == 1:
+                    autoend[chat_id] = datetime.now() + timedelta(minutes=AUTO_END_TIME)
+                    return
+                autoend[chat_id] = {}
+            else:
+                final = users + 1 if participant.action == GroupCallParticipant.Action.JOINED else users - 1
+                counter[chat_id] = final
+                if final == 1:
+                    autoend[chat_id] = datetime.now() + timedelta(minutes=AUTO_END_TIME)
+                    return
+                autoend[chat_id] = {}
 
 
 Alexa = Call()

@@ -10,17 +10,16 @@ as you want or you can collabe if you have new ideas.
 """
 
 import asyncio
+from datetime import datetime
 from pyrogram.enums import ChatType
 
 import config
 from AlexaMusic import app
-from AlexaMusic.core.call import Alexa
+from AlexaMusic.core.call import Alexa, autoend
 from AlexaMusic.utils.database import (
     get_client,
     is_active_chat,
-    get_active_chats,
-    is_music_playing,
-    get_assistant,
+    is_autoend,
 )
 
 autoend = {}
@@ -59,27 +58,28 @@ asyncio.create_task(auto_leave())
 
 
 async def auto_end():
-    while True:
-        await asyncio.sleep(30)
-        for chat_id in list(autoend.keys()):
-            if not await is_active_chat(chat_id):
-                del autoend[chat_id]
+    while not await asyncio.sleep(30):
+        if not await is_autoend():
+            continue
+        for chat_id in autoend:
+            timer = autoend.get(chat_id)
+            if not timer:
                 continue
-            userbot = await get_assistant(chat_id)
-            members = []
-            async for member in userbot.get_call_members(chat_id):
-                if member is not None:
-                    members.append(member)
-            if len(members) <= 1:
+            if datetime.now() > timer:
+                if not await is_active_chat(chat_id):
+                    autoend[chat_id] = {}
+                    continue
+                autoend[chat_id] = {}
                 try:
                     await Alexa.stop_stream(chat_id)
+                except:
+                    continue
+                try:
                     await app.send_message(
                         chat_id,
-                        "ʙᴏᴛ ᴀᴜᴛᴏᴍᴀᴛɪᴄᴀʟʟʏ ᴄʟᴇᴀʀᴇᴅ ᴛʜᴇ ǫᴜᴇᴜᴇ ᴀɴᴅ ʟᴇғᴛ ᴠɪᴅᴇᴏᴄʜᴀᴛ ʙᴇᴄᴀᴜsᴇ <b>ɴᴏ ᴏɴᴇ ᴡᴀs ʟɪsᴛᴇɴɪɴɢ sᴏɴɢs ᴏɴ ᴠɪᴅᴇᴏᴄʜᴀᴛ.</b>",
+                        "» ʙᴏᴛ ᴀᴜᴛᴏᴍᴀᴛɪᴄᴀʟʟʏ ʟᴇғᴛ ᴠɪᴅᴇᴏᴄʜᴀᴛ ʙᴇᴄᴀᴜsᴇ ɴᴏ ᴏɴᴇ ᴡᴀs ʟɪsᴛᴇɴɪɴɢ ᴏɴ ᴠɪᴅᴇᴏᴄʜᴀᴛ.",
                     )
-                except Exception:
-                    pass
-            del autoend[chat_id]
-
+                except:
+                    continue
 
 asyncio.create_task(auto_end())
