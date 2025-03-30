@@ -6,7 +6,7 @@ dnspython
 ffmpeg-python
 Flask==1.1.2
 gitpython
-gunicorn==20.1.0
+gunicorn==23.0.0
 hachoir
 heroku3
 httpx[http2]
