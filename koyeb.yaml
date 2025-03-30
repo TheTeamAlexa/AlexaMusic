@@ -1,0 +1,7 @@
+name: AlexaMusic
+type: app
+docker:
+  file: Dockerfile
+  build_command: pip3 install --no-cache-dir --upgrade --requirement requirements.txt
+  run_command: bash start
+env: []
