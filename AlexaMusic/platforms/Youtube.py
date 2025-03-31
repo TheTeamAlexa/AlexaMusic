@@ -18,7 +18,7 @@ from typing import Union
 from yt_dlp import YoutubeDL
 from pyrogram.enums import MessageEntityType
 from pyrogram.types import Message
-from py_yt import VideosSearch
+from youtubesearchpython.__future__ import VideosSearch
 
 import config
 from AlexaMusic.utils.database import is_on_off

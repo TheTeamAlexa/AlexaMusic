@@ -12,12 +12,12 @@ heroku3
 httpx[http2]
 lyricsgenius
 motor
-ntgcalls~=1.3.2
+ntgcalls
 pillow
 psutil
 py-tgcalls~=2.1.1
 pykeyboard
-Kurigram==2.1.37
+Kurigram
 python-dotenv
 requests
 speedtest-cli
@@ -26,5 +26,5 @@ TgCrypto
 unidecode
 werkzeug==2.0.2
 yt-dlp
-py-yt-search
+https://github.com/KSKOP69/youtube-search-python/archive/ksk.zip
 pyyaml
