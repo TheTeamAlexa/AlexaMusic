@@ -18,9 +18,9 @@
 
 
 > [!CAUTION]
-> ## 🚀 Fix for YouTube IP Blocking & Sign-In Errors
+>## 🚀 Fix for YouTube IP Blocking & Sign-In Errors
 >
->If you're facing issues with YouTube blocking IPs or Signing in, Follow this Simple fix:
+>### If you're facing issues with YouTube blocking IPs or Signing in, Follow this Simple fix:
 >
 >• **Join the Support Group**: Type `#cookies` in our [sᴜᴘᴘᴏʀᴛ Gʀᴏᴜᴘ](https://t.me/Alexa_Help) to receive the necessary extension link.
 >
@@ -30,7 +30,7 @@
 >
 >• **Deploy the Bot ✨**: Once Configured, Deploy your bot and enjoy unrestricted access !!!
 >
-> ### 🔹 Need Help? Join our support group for assistance !!!
+>### 🔹Need Help? Join our support group for assistance !!!
 
 
 <h1 align="center"><b>😂 ᴠɪᴇᴡ ᴀʟʟ ᴄᴏᴍᴍᴀɴᴅs 😂</b></h1>
