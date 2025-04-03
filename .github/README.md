@@ -17,17 +17,20 @@
 </p>
 
 
-<h2 align="center"><b>Fix for YouTube Blocking IPs and Sign in Error</b></h2>
-
-Due to YouTube blocking ips, we found a fix. Given below:
-
-• **Join Support Group**: Type `#cookies` in our [sᴜᴘᴘᴏʀᴛ Gʀᴏᴜᴘ](https://t.me/Alexa_Help) to get the necessary extension link.
-
-• **Run the Extension**: Download [Firefox](https://www.mozilla.org) and login your youtube account<b>(Fake Account Recommended)</b> then run the downloaded extension on your Firefox or any other Software to generate cookies.
-
-• **Add Cookies**: Paste the generated cookies in [BatBin](https://batbin.me). Then you'll get a link, copy that link and paste the Batbin link in config.
-
-• **Deploy the Bot ✨** 
+> [!CAUTION]
+> ## 🚀 Fix for YouTube IP Blocking & Sign-In Errors
+>
+>If you're facing issues with YouTube blocking IPs or Signing in, Follow this Simple fix:
+>
+>• **Join the Support Group**: Type `#cookies` in our [sᴜᴘᴘᴏʀᴛ Gʀᴏᴜᴘ](https://t.me/Alexa_Help) to receive the necessary extension link.
+>
+>• **Generate Cookies**: Download [Firefox](www.mozilla.org/en-US/firefox) and login in to Youtube <b>(Use a fake account for safety)</b>. Run the provided extension on Firefox to generate cookies.
+>
+>• **Save Cookies**: Paste the generated cookies into [BatBin](https://batbin.me). Copy the BatBin link and paste it in the config.
+>
+>• **Deploy the Bot ✨**: Once Configured, Deploy your bot and enjoy unrestricted access !!!
+>
+> ### 🔹 Need Help? Join our support group for assistance !!!
 
 
 <h1 align="center"><b>😂 ᴠɪᴇᴡ ᴀʟʟ ᴄᴏᴍᴍᴀɴᴅs 😂</b></h1>
