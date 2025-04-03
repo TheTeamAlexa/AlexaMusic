@@ -237,6 +237,14 @@ bash start
 ```
 </details>
 
+
+<summary><b>sᴄᴀʟɪɴɢᴏ</b></summary>
+<br>
+ɴᴏᴡ ʏᴏᴜ ᴄᴀɴ ᴅᴇᴘʟᴏʏ ᴀʟᴇxᴀ ᴍᴜsɪᴄ ᴏɴ sᴄᴀʟɪɴɢᴏ ɪɴᴛʀᴏᴅᴜᴄᴇᴅ ʙʏ @ITZ-ZAID
+
+<p><a href="https://my.scalingo.com/deploy?template=https://github.com/TheTeamAlexa/AlexaMusic"> <img src="https://cdn.scalingo.com/deploy/button.svg" width="220" height="38.45"/></a></p>
+
+
 <summary><b>ᴅᴇᴘʟᴏʏ ᴛᴏ ʜᴇʀᴏᴋᴜ</b></summary>
 <br>
 
@@ -251,11 +259,6 @@ bash start
 <p><a href="https://github.com/TheTeamAlexa/AlexaMusic-Bypass"><img src="https://img.shields.io/badge/Alexa-Music%20Bypass-blue.svg?style=for-the-badge&logo=GitHub"></a></p>
 <br>
 
-<summary><b>sᴄᴀʟɪɴɢᴏ</b></summary>
-<br>
-ɴᴏᴡ ʏᴏᴜ ᴄᴀɴ ᴅᴇᴘʟᴏʏ ᴀʟᴇxᴀ ᴍᴜsɪᴄ ᴏɴ sᴄᴀʟɪɴɢᴏ ɪɴᴛʀᴏᴅᴜᴄᴇᴅ ʙʏ @ITZ-ZAID
-        
-<p><a href="https://my.scalingo.com/deploy?template=https://github.com/TheTeamAlexa/AlexaMusic"> <img src="https://cdn.scalingo.com/deploy/button.svg" width="220" height="38.45"/></a></p>
 
 <h1 align="center"><b>❤️ ᴏᴡɴᴇʀ ᴀɴᴅ ᴄʀᴇᴅɪᴛ ❤️</b></h1>
 <details>
@@ -267,7 +270,7 @@ bash start
 - [ᴀsᴀᴅ ᴀʟɪ](https://t.me/Dr_Asad_Ali)
 - [ʟᴏɢɪ ʟᴀʙ](https://github.com/LOGI-LAB)
 - [ʜᴀʀsʜɪᴛ](https://t.me/HarshitSharma361)
-- [ᴋsᴋ](https://github.com/KSKOP69) - For upgrading Alexa to Pyrogram latest version.
+- [ᴋsᴋ](https://github.com/KSKOP69)
 - [ᴀʙʜɪᴍᴀɴᴜ](https://t.me/btwAbhimanyu)
 - [ʏᴜᴋᴋɪ](https://github.com/NotReallyShikhar)
 - [ᴀɴᴏɴʏᴍᴏᴜs](https://github.com/AnonymousX1025)
@@ -303,10 +306,9 @@ bash start
 
 ᴛʜᴀɴᴋs ᴛᴏ ᴀʟʟ ᴏғ ʏᴏᴜ ғᴏʀ ᴜsɪɴɢ ᴀɴᴅ ᴍᴀᴋɪɴɢ ᴀʟᴇxᴀ:
 
-- [Pʏʀᴏɢʀᴀᴍ](https://github.com/pyrogram)
-- [Pʏᴛɢᴄᴀʟʟs](https://pypi.org/project/py-tgcalls)
-- [Nᴛɢᴄᴀʟʟs](https://pypi.org/project/ntgcalls)
-- [Yᴛ-ᴅʟᴘ](https://pypi.org/project/yt-dlp)
+- [Pyrogram](https://github.com/pyrogram)
+- [Py-TgCalls](https://pypi.org/project/py-tgcalls)
+- [Yt-dlp](https://pypi.org/project/yt-dlp)
 </details>
 
 
