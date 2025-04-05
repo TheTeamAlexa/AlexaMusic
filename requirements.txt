@@ -4,7 +4,7 @@ aiohttp
 beautifulsoup4
 dnspython
 ffmpeg-python
-Flask==1.1.2
+Flask==3.1.0
 gitpython
 gunicorn==20.1.0
 hachoir
