@@ -20,7 +20,7 @@
 > [!IMPORTANT]
 >## <h2 align="center"><b>🚀 Fix for YouTube IP Blocking & Sign-In Errors </b></h2>
 >
->### If you're facing issues with YouTube blocking IPs or Signing in, Follow this Simple fix:
+>### <h3 align="center"><b>If you're facing issues with YouTube blocking ips or signing in, follow this simple fix:</b></h3>
 >
 >• **Join the Support Group**: Type `#cookies` in our [sᴜᴘᴘᴏʀᴛ Gʀᴏᴜᴘ](https://t.me/Alexa_Help) to receive the necessary extension link.
 >
