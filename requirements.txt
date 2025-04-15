@@ -2,7 +2,7 @@ aiofiles
 asyncio
 aiohttp
 beautifulsoup4
-dnspython
+dnspython==2.3.0
 ffmpeg-python
 Flask
 gitpython
@@ -22,9 +22,9 @@ python-dotenv
 requests
 speedtest-cli
 spotipy
-TgCrypto
+PyTgCrypto
 unidecode
 werkzeug
-yt-dlp
+yt-dlp~=2025.3.31
 https://github.com/KSKOP69/youtube-search-python/archive/ksk.zip
 pyyaml
