@@ -1,12 +1,12 @@
-# Copyright (C) 2025 by Alexa_Help @ Github, < https://github.com/TheTeamAlexa >
-# Subscribe On YT < Jankari Ki Duniya >. All rights reserved. © Alexa © Yukki.
+# Copyright (C) 2025 bởi Alexa_Help @ Github, < https://github.com/TheTeamAlexa >
+# Đăng ký kênh YouTube < Jankari Ki Duniya >. Bảo lưu tất cả quyền. © Alexa © Yukki.
 
 """
-TheTeamAlexa is a project of Telegram bots with variety of purposes.
-Copyright (c) 2021 ~ Present Team Alexa <https://github.com/TheTeamAlexa>
+TheTeamAlexa là một dự án của các bot Telegram với nhiều mục đích khác nhau.
+Bản quyền (c) 2021 ~ Hiện tại Team Alexa <https://github.com/TheTeamAlexa>
 
-This program is free software: you can redistribute it and can modify
-as you want or you can collabe if you have new ideas.
+Chương trình này là phần mềm miễn phí: bạn có thể phân phối lại và sửa đổi
+theo ý muốn hoặc có thể cộng tác nếu bạn có ý tưởng mới.
 """
 
 from pyrogram import filters
@@ -22,7 +22,7 @@ from AlexaMusic.utils.decorators.play import PlayWrapper
 from AlexaMusic.utils.logger import play_logs
 from AlexaMusic.utils.stream.stream import stream
 
-# Command
+# Lệnh
 STREAM_COMMAND = get_command("STREAM_COMMAND")
 
 
@@ -47,11 +47,11 @@ async def stream_command(
             await Alexa.stream_call(url)
         except NoActiveGroupCall:
             await mystic.edit_text(
-                "ᴛʜᴇʀᴇ's ᴀɴ ɪssᴜᴇ ᴡɪᴛʜ ᴛʜᴇ ʙᴏᴛ. ᴘʟᴇᴀsᴇ ʀᴇᴘᴏʀᴛ ɪᴛ ᴛᴏ ᴍʏ ᴏᴡɴᴇʀ ᴀɴᴅ ᴀsᴋ ᴛʜᴇᴍ ᴛᴏ ᴄʜᴇᴄᴋ ʟᴏɢɢᴇʀ ɢʀᴏᴜᴘ."
+                "Có vấn đề với bot. Vui lòng báo cáo cho chủ sở hữu của tôi và yêu cầu họ kiểm tra nhóm ghi log."
             )
             return await app.send_message(
                 config.LOG_GROUP_ID,
-                "ᴘʟᴇᴀsᴇ ᴛᴜʀɴ ᴏɴ ᴠᴏɪᴄᴇ ᴄʜᴀᴛ.. ʙᴏᴛ ɪs ɴᴏᴛ ᴀʙʟᴇ ᴛᴏ sᴛʀᴇᴀᴍ ᴜʀʟs..",
+                "Vui lòng bật cuộc gọi thoại.. Bot không thể phát URL.",
             )
         except Exception as e:
             return await mystic.edit_text(_["general_3"].format(type(e).__name__))
@@ -72,6 +72,6 @@ async def stream_command(
             ex_type = type(e).__name__
             err = e if ex_type == "AssistantErr" else _["general_3"].format(ex_type)
             return await mystic.edit_text(err)
-        return await play_logs(message, streamtype="M3u8 or Index Link")
+        return await play_logs(message, streamtype="M3u8 hoặc Liên kết Index")
     else:
         await message.reply_text(_["str_1"])

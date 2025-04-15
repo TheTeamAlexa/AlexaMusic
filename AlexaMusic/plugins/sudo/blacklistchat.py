@@ -39,7 +39,7 @@ async def blacklist_chat_func(client, message: Message, _):
     if blacklisted:
         await message.reply_text(_["black_3"])
     else:
-        await message.reply_text("sᴏᴍᴇᴛʜɪɴɢ ᴡᴇɴᴛ ᴡʀᴏɴɢ.")
+        await message.reply_text("Có một số vấn đề xảy ra.")
     try:
         await app.leave_chat(chat_id)
     except:
@@ -57,7 +57,7 @@ async def white_funciton(client, message: Message, _):
     whitelisted = await whitelist_chat(chat_id)
     if whitelisted:
         return await message.reply_text(_["black_6"])
-    await message.reply_text("sᴏᴍᴇᴛʜɪɴɢ ᴡᴇɴᴛ ᴡʀᴏɴɢ.")
+    await message.reply_text("Có một số vấn đề xảy ra.")
 
 
 @app.on_message(filters.command(BLACKLISTEDCHAT_COMMAND) & ~BANNED_USERS)

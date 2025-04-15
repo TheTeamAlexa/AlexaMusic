@@ -41,15 +41,11 @@ BOT_ID = getenv("BOT_ID")
 
 HEROKU_APP_NAME = getenv("HEROKU_APP_NAME")
 
-UPSTREAM_REPO = getenv("UPSTREAM_REPO", "https://github.com/TheTeamAlexa/AlexaMusic")
-
-UPSTREAM_BRANCH = getenv("UPSTREAM_BRANCH", "master")
-
 GIT_TOKEN = getenv("GIT_TOKEN", None)
 
-SUPPORT_CHANNEL = getenv("SUPPORT_CHANNEL", "https://t.me/Alexa_BotUpdates")
+SUPPORT_CHANNEL = getenv("SUPPORT_CHANNEL", "https://t.me/minionchannelDEAL")
 
-SUPPORT_GROUP = getenv("SUPPORT_GROUP", "https://t.me/Alexa_Help")
+SUPPORT_GROUP = getenv("SUPPORT_GROUP", "https://t.me/MinionGroup1")
 
 AUTO_LEAVING_ASSISTANT = getenv("AUTO_LEAVING_ASSISTANT", "False")
 
@@ -63,11 +59,9 @@ AUTO_SUGGESTION_MODE = getenv("AUTO_SUGGESTION_MODE", "False")
 
 PRIVATE_BOT_MODE = getenv("PRIVATE_BOT_MODE", None)
 
-YOUTUBE_DOWNLOAD_EDIT_SLEEP = int(getenv("YOUTUBE_EDIT_SLEEP", "3"))
+YOUTUBE_DOWNLOAD_EDIT_SLEEP = int(getenv("YOUTUBE_EDIT_SLEEP", "1"))
 
-TELEGRAM_DOWNLOAD_EDIT_SLEEP = int(getenv("TELEGRAM_EDIT_SLEEP", "5"))
-
-GITHUB_REPO = getenv("GITHUB_REPO", "https://github.com/TheTeamAlexa/AlexaMusic")
+TELEGRAM_DOWNLOAD_EDIT_SLEEP = int(getenv("TELEGRAM_EDIT_SLEEP", "2"))
 
 SPOTIFY_CLIENT_ID = getenv("SPOTIFY_CLIENT_ID", None)
 
@@ -108,7 +102,7 @@ clean = {}
 autoclean = []
 
 START_IMG_URL = getenv(
-    "START_IMG_URL", "https://telegra.ph/file/d593c6064ff7657d0c714.jpg"
+    "START_IMG_URL", "https://i.ibb.co/CKyHh35V/Chat-GPT-Image-09-50-48-11-thg-4-2025.png"
 )
 
 PING_IMG_URL = getenv(
@@ -194,18 +188,6 @@ if SUPPORT_GROUP:
         )
         sys.exit()
 
-if UPSTREAM_REPO:
-    if not re.match("(?:http|https)://", UPSTREAM_REPO):
-        print(
-            "[ERROR] - Your UPSTREAM_REPO url is wrong. Please ensure that it starts with https://"
-        )
-        sys.exit()
-
-if GITHUB_REPO:
-    if not re.match("(?:http|https)://", GITHUB_REPO):
-        print(
-            "[ERROR] - Your GITHUB_REPO url is wrong. Please ensure that it starts with https://"
-        )
 
 
 if PING_IMG_URL:

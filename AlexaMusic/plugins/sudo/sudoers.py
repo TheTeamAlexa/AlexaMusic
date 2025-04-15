@@ -31,7 +31,7 @@ SUDOUSERS_COMMAND = get_command("SUDOUSERS_COMMAND")
 async def useradd(client, message: Message, _):
     if MONGO_DB_URI is None:
         return await message.reply_text(
-            "**ᴅᴜᴇ ᴛᴏ {MUSIC_BOT_NAME}'s ᴩʀɪᴠᴀᴄʏ ɪssᴜᴇs, ʏᴏᴜ ᴄᴀɴ'ᴛ ᴍᴀɴᴀɢᴇ sᴜᴅᴏ ᴜsᴇʀs ᴏɴ {MUSIC_BOT_NAME} ᴅᴀᴛᴀʙᴀsᴇ.\n\n ᴩʟᴇᴀsᴇ ᴀᴅᴅ ʏᴏᴜʀ ᴍᴏɴɢᴏ ᴅᴀᴛᴀʙᴀsᴇ ɪɴ ᴠᴀʀs ᴛᴏ ᴜsᴇ ᴛʜɪs ғᴇᴀᴛᴜʀᴇ.**"
+            "**Do vấn đề bảo mật của {MUSIC_BOT_NAME}, bạn không thể quản lý người dùng sudo trên cơ sở dữ liệu của {MUSIC_BOT_NAME}.\n\nVui lòng thêm MongoDB của bạn vào biến môi trường để sử dụng tính năng này.**"
         )
     if not message.reply_to_message:
         if len(message.command) != 2:
@@ -69,7 +69,7 @@ async def useradd(client, message: Message, _):
 async def userdel(client, message: Message, _):
     if MONGO_DB_URI is None:
         return await message.reply_text(
-            "**ᴅᴜᴇ ᴛᴏ {MUSIC_BOT_NAME}'s ᴩʀɪᴠᴀᴄʏ ɪssᴜᴇs, ʏᴏᴜ ᴄᴀɴ'ᴛ ᴍᴀɴᴀɢᴇ sᴜᴅᴏ ᴜsᴇʀs ᴏɴ {MUSIC_BOT_NAME} ᴅᴀᴛᴀʙᴀsᴇ.\n\n ᴩʟᴇᴀsᴇ ᴀᴅᴅ ʏᴏᴜʀ ᴍᴏɴɢᴏ ᴅᴀᴛᴀʙᴀsᴇ ɪɴ ᴠᴀʀs ᴛᴏ ᴜsᴇ ᴛʜɪs ғᴇᴀᴛᴜʀᴇ.**"
+            "**Do vấn đề bảo mật của {MUSIC_BOT_NAME}, bạn không thể quản lý người dùng sudo trên cơ sở dữ liệu của {MUSIC_BOT_NAME}.\n\nVui lòng thêm MongoDB của bạn vào biến môi trường để sử dụng tính năng này.**"
         )
     if not message.reply_to_message:
         if len(message.command) != 2:
@@ -95,7 +95,7 @@ async def userdel(client, message: Message, _):
         SUDOERS.remove(user_id)
         await message.reply_text(_["sudo_4"])
         return
-    await message.reply_text(f"sᴏᴍᴇᴛʜɪɴɢ ᴡᴇɴᴛ ᴡʀᴏɴɢ.")
+    await message.reply_text(f"Có một số lỗi đã xẩy ra.")
 
 
 @app.on_message(filters.command(SUDOUSERS_COMMAND) & ~BANNED_USERS)

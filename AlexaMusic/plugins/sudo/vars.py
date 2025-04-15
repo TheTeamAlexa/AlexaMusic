@@ -26,11 +26,11 @@ VARS_COMMAND = get_command("VARS_COMMAND")
 
 @app.on_message(filters.command(VARS_COMMAND) & SUDOERS)
 async def varsFunc(client, message):
-    mystic = await message.reply_text("ᴩʟᴇᴀsᴇ ᴡᴀɪᴛ... ɢᴇᴛᴛɪɴɢ ʏᴏᴜʀ ᴄᴏɴғɪɢ ᴠᴀʀɪᴀʙʟᴇs...")
+    mystic = await message.reply_text("Vui lòng đợi... Đang lấy thông tin cấu hình của bạn...")
     v_limit = await get_video_limit()
     bot_name = config.MUSIC_BOT_NAME
-    up_r = f"[ʀᴇᴩᴏ]({config.UPSTREAM_REPO})"
-    up_b = config.UPSTREAM_BRANCH
+    up_r = "Not Configured"
+    up_b = "Not Configured"
     auto_leave = config.AUTO_LEAVE_ASSISTANT_TIME
     yt_sleep = config.YOUTUBE_DOWNLOAD_EDIT_SLEEP
     tg_sleep = config.TELEGRAM_DOWNLOAD_EDIT_SLEEP
@@ -57,10 +57,7 @@ async def varsFunc(client, message):
     else:
         down = "ɴᴏ"
 
-    if not config.GITHUB_REPO:
-        git = "ɴᴏ"
-    else:
-        git = f"[ʀᴇᴩᴏ]({config.GITHUB_REPO})"
+    git = "ɴᴏ"
     if not config.START_IMG_URL:
         start = "ɴᴏ"
     else:
@@ -85,47 +82,47 @@ async def varsFunc(client, message):
     owner_id = " ,".join(owners)
     tg_aud = convert_bytes(config.TG_AUDIO_FILESIZE_LIMIT)
     tg_vid = convert_bytes(config.TG_VIDEO_FILESIZE_LIMIT)
-    text = f"""**ᴍᴜsɪᴄ ʙᴏᴛ ᴄᴏɴғɪɢ ᴠᴀʀɪᴀʙʟᴇs:**
+    text = f"""**THÔNG TIN CẤU HÌNH BOT NHẠC::**
 
-**<u>ʙᴀsɪᴄ ᴠᴀʀɪᴀʙʟᴇs:</u>**
-**ᴍᴜsɪᴄ_ʙᴏᴛ_ɴᴀᴍᴇ** : `{bot_name}`
-**ᴅᴜʀᴀᴛɪᴏɴ_ʟɪᴍɪᴛ** : `{play_duration} ᴍɪɴᴜᴛᴇs`
-**sᴏɴɢ_ᴅᴏᴡɴʟᴏᴀᴅ_ᴅᴜʀᴀᴛɪᴏɴ_ʟɪᴍɪᴛ** :` {song} ᴍɪɴᴜᴛᴇs`
-**ᴏᴡɴᴇʀ_ɪᴅ** : `{owner_id}`
+**<u>CÁC BIẾN CƠ BẢN:</u>**
+**TÊN BOT** : `{bot_name}`
+**GIỚI HẠN THỜI LƯỢNG** : `{play_duration} phút`
+**GIỚI HẠN TẢI NHẠC** : `{song} phút`
+**ID ADMIN** : `{owner_id}`
     
-**<u>ʀᴇᴩᴏsɪᴛᴏʀʏ ᴠᴀʀɪᴀʙʟᴇs:</u>**
-**ᴜᴩsᴛʀᴇᴀᴍ_ʀᴇᴩᴏ** : `{up_r}`
-**ᴜᴩsᴛʀᴇᴀᴍ_ʙʀᴀɴᴄʜ** : `{up_b}`
-**ɢɪᴛʜᴜʙ_ʀᴇᴩᴏ** :` {git}`
-**ɢɪᴛ_ᴛᴏᴋᴇɴ**:` {token}`
+**<u>THÔNG TIN KHO MÃ NGUỒN:</u>**
+**UPSTREAM REPO** : `{up_r}`
+**UPSTREAM BRANCH** : `{up_b}`
+**GITHUB REPO** : `{git}`
+**GIT TOKEN**: `{token}`
 
 
-**<u>ʙᴏᴛ ᴠᴀʀɪᴀʙʟᴇs:</u>**
-**ᴀᴜᴛᴏ_ʟᴇᴀᴠɪɴɢ_ᴀssɪsᴛᴀɴᴛ** : `{ass}`
-**ᴀssɪsᴛᴀɴᴛ_ʟᴇᴀᴠᴇ_ᴛɪᴍᴇ** : `{auto_leave} sᴇᴄᴏɴᴅs`
-**ᴀᴜᴛᴏ_sᴜɢɢᴇsᴛɪᴏɴ_ᴍᴏᴅᴇ** :` {a_sug}`
-**ᴀᴜᴛᴏ_sᴜɢɢᴇsᴛɪᴏɴ_ᴛɪᴍᴇ** : `{auto_sug} sᴇᴄᴏɴᴅs`
-**ᴀᴜᴛᴏ_ᴅᴏᴡɴʟᴏᴀᴅs_ᴄʟᴇᴀʀ** : `{down}`
-**ᴩʀɪᴠᴀᴛᴇ_ʙᴏᴛ_ᴍᴏᴅᴇ** : `{pvt}`
-**ʏᴏᴜᴛᴜʙᴇ_ᴇᴅɪᴛ_sʟᴇᴇᴩ** : `{yt_sleep} sᴇᴄᴏɴᴅs`
-**ᴛᴇʟᴇɢʀᴀᴍ_ᴇᴅɪᴛ_sʟᴇᴇᴩ** :` {tg_sleep} sᴇᴄᴏɴᴅs`
-**ᴄʟᴇᴀɴᴍᴏᴅᴇ_ᴍɪɴs** : `{cm} ᴍɪɴᴜᴛᴇs`
-**ᴠɪᴅᴇᴏ_sᴛʀᴇᴀᴍ_ʟɪᴍɪᴛ** : `{v_limit} ᴄʜᴀᴛs`
-**sᴇʀᴠᴇʀ_ᴩʟᴀʏʟɪsᴛ_ʟɪᴍɪᴛ** :` {playlist_limit}`
-**ᴩʟᴀʏʟɪsᴛ_ғᴇᴛᴄʜ_ʟɪᴍɪᴛ** :` {fetch_playlist}`
+**<u>CẤU HÌNH BOT:</u>**
+**TỰ ĐỘNG RỜI NHÓM** : `{ass}`
+**THỜI GIAN RỜI NHÓM** : `{auto_leave} giây`
+**CHẾ ĐỘ GỢI Ý TỰ ĐỘNG** : `{a_sug}`
+**THỜI GIAN GỢI Ý** : `{auto_sug} giây`
+**TỰ XÓA TẢI XUỐNG** : `{down}`
+**CHẾ ĐỘ BOT RIÊNG TƯ** : `{pvt}`
+**THỜI GIAN CHỜ YOUTUBE** : `{yt_sleep} giây`
+**THỜI GIAN CHỜ TELEGRAM** : `{tg_sleep} giây`
+**XÓA TIN NHẮN SAU** : `{cm} phút`
+**GIỚI HẠN STREAM VIDEO** : `{v_limit} cuộc trò chuyện`
+**GIỚI HẠN PLAYLIST MÁY CHỦ** : `{playlist_limit}`
+**GIỚI HẠN LẤY PLAYLIST** : `{fetch_playlist}`
 
-**<u>sᴩᴏᴛɪғʏ ᴠᴀʀɪᴀʙʟᴇs:</u>**
-**sᴩᴏᴛɪғʏ_ᴄʟɪᴇɴᴛ_ɪᴅ** :` {sotify}`
-**sᴩᴏᴛɪғʏ_ᴄʟɪᴇɴᴛ_sᴇᴄʀᴇᴛ** : `{sotify}`
+**<u>CẤU HÌNH SPOTIFY:</u>**
+**SPOTIFY CLIENT ID** : `{sotify}`
+**SPOTIFY CLIENT SECRET** : `{sotify}`
 
-**<u>Playsize Vars:</u>**
-**ᴛɢ_ᴀᴜᴅɪᴏ_ғʟɪᴇsɪᴢᴇ_ʟɪᴍɪᴛ** :` {tg_aud}`
-**ᴛɢ_ᴠɪᴅᴇᴏ_ғɪʟᴇsɪᴢᴇ_ʟɪᴍɪᴛ** :` {tg_vid}`
+**<u>GIỚI HẠN KÍCH THƯỚC:</u>**
+**GIỚI HẠN FILE AUDIO** : `{tg_aud}`
+**GIỚI HẠN FILE VIDEO** : `{tg_vid}`
 
-**<u>ᴇxᴛʀᴀ ᴠᴀʀɪᴀʙʟᴇs:</u>**
-**sᴜᴩᴩᴏʀᴛ_ᴄʜᴀɴɴᴇʟ** : `{s_c}`
-**sᴜᴩᴩᴏʀᴛ_ɢʀᴏᴜᴩ** : ` {s_g}`
-**sᴛᴀʀᴛ_ɪᴍɢ_ᴜʀʟ** : ` {start}`
+**<u>THÔNG TIN THÊM:</u>**
+**KÊNH HỖ TRỢ** : `{s_c}`
+**NHÓM HỖ TRỢ** : `{s_g}`
+**ẢNH KHỞI ĐỘNG** : `{start}`
     """
     await asyncio.sleep(1)
     await mystic.edit_text(text)

@@ -46,7 +46,7 @@ async def reload_admin_cache(client, message: Message, _):
         await message.reply_text(_["admin_20"])
     except:
         await message.reply_text(
-            "ғᴀɪʟᴇᴅ ᴛᴏ ʀᴇғʀᴇsʜ ᴀᴅᴍɪɴs ʟɪsᴛ, ᴍᴀᴋᴇ sᴜʀᴇ ʏᴏᴜ ᴩʀᴏᴍᴏᴛᴇᴅ ᴛʜᴇ ʙᴏᴛ."
+            "Không thể làm mới danh sách quản trị viên, hãy đảm bảo bạn đã cấp quyền cho bot."
         )
 
 
@@ -54,7 +54,7 @@ async def reload_admin_cache(client, message: Message, _):
 @AdminActual
 async def restartbot(client, message: Message, _):
     mystic = await message.reply_text(
-        f"ᴩʟᴇᴀsᴇ ᴡᴀɪᴛ ʀᴇʙᴏᴏᴛɪɴɢ {MUSIC_BOT_NAME} ғᴏʀ ʏᴏᴜʀ ᴄʜᴀᴛ."
+        f"Vui lòng đợi, đang khởi động lại {MUSIC_BOT_NAME} cho cuộc trò chuyện của bạn."
     )
     await asyncio.sleep(1)
     try:
@@ -74,7 +74,7 @@ async def restartbot(client, message: Message, _):
         except:
             pass
     return await mystic.edit_text(
-        "sᴜᴄᴄᴇssғᴜʟʟʏ ʀᴇʙᴏᴏᴛᴇᴅ {MUSIC_BOT_NAME} ғᴏʀ ʏᴏᴜʀ ᴄʜᴀᴛ, ɴᴏᴡ ʏᴏᴜ ᴄᴀɴ sᴛᴀʀᴛ ᴩʟᴀʏɪɴɢ ᴀɢᴀɪɴ..."
+        "Đã khởi động lại {MUSIC_BOT_NAME} thành công cho cuộc trò chuyện của bạn, bây giờ bạn có thể bắt đầu phát nhạc lại..."
     )
 
 
@@ -103,11 +103,11 @@ async def stop_download(client, CallbackQuery: CallbackQuery, _):
     task = lyrical.get(message_id)
     if not task:
         return await CallbackQuery.answer(
-            "ᴅᴏᴡɴʟᴏᴀᴅ ᴀʟʀᴇᴀᴅʏ ᴄᴏᴍᴩʟᴇᴛᴇᴅ.", show_alert=True
+            "Đã tải xuống xong.", show_alert=True
         )
     if task.done() or task.cancelled():
         return await CallbackQuery.answer(
-            "ᴅᴏᴡɴʟᴏᴀᴅɪɴɢ ᴀʟʀᴇᴀᴅʏ ᴄᴏᴍᴩʟᴇᴛᴇᴅ ᴏʀ ᴄᴀɴᴄᴇʟʟᴇᴅ.",
+            "Đã tải xuống xong hoặc đã hủy.",
             show_alert=True,
         )
     if not task.done():
@@ -117,12 +117,12 @@ async def stop_download(client, CallbackQuery: CallbackQuery, _):
                 lyrical.pop(message_id)
             except:
                 pass
-            await CallbackQuery.answer("ᴅᴏᴡɴʟᴏᴀᴅɪɢ ᴄᴀɴᴄᴇʟʟᴇᴅ.", show_alert=True)
+            await CallbackQuery.answer("Đã hủy tải xuống.", show_alert=True)
             return await CallbackQuery.edit_message_text(
-                f"ᴅᴏᴡɴʟᴏᴀᴅɪɴɢ ᴩʀᴏᴄᴇss ᴄᴀɴᴄᴇʟʟᴇᴅ ʙʏ {CallbackQuery.from_user.mention}"
+                f"Quá trình tải xuống đã bị hủy bởi {CallbackQuery.from_user.mention}"
             )
         except:
             return await CallbackQuery.answer(
-                "ғᴀɪʟᴇᴅ ᴛᴏ ᴄᴀɴᴄᴇʟ ᴅᴏᴡɴʟᴏᴀᴅɪɴɢ...", show_alert=True
+                "Không thể hủy tải xuống...", show_alert=True
             )
-    await CallbackQuery.answer("ғᴀɪʟᴇᴅ ᴛᴏ ʀᴇᴄᴏɢɴɪᴢᴇ ᴛʜᴇ ᴏɴɢᴏɪɴɢ ᴛᴀsᴋ.", show_alert=True)
+    await CallbackQuery.answer("Không thể nhận diện tác vụ đang chạy.", show_alert=True)

@@ -54,7 +54,7 @@ async def edit_or_reply(msg: Message, **kwargs):
 )
 async def executor(client: app, message: Message):
     if len(message.command) < 2:
-        return await edit_or_reply(message, text="<b>ᴡʜᴀᴛ ʏᴏᴜ ᴡᴀɴɴᴀ ᴇxᴇᴄᴜᴛᴇ ᴍᴀɴ ?</b>")
+        return await edit_or_reply(message, text="<b>Bạn đang muốn chạy lêngj gì vậy ?</b>")
     try:
         cmd = message.text.split(" ", maxsplit=1)[1]
     except IndexError:
@@ -82,7 +82,7 @@ async def executor(client: app, message: Message):
         evaluation += stdout
     else:
         evaluation += "Success"
-    final_output = f"<b>⥤ ʀᴇsᴜʟᴛ :</b>\n<pre language='python'>{evaluation}</pre>"
+    final_output = f"<b>⥤ kết quả :</b>\n<pre language='python'>{evaluation}</pre>"
     if len(final_output) > 4096:
         filename = "output.txt"
         with open(filename, "w+", encoding="utf8") as out_file:
@@ -100,7 +100,7 @@ async def executor(client: app, message: Message):
         )
         await message.reply_document(
             document=filename,
-            caption=f"<b>⥤ ᴇᴠᴀʟ :</b>\n<code>{cmd[0:980]}</code>\n\n<b>⥤ ʀᴇsᴜʟᴛ :</b>\nAttached Document",
+            caption=f"<b>⥤ Đầu vào :</b>\n<code>{cmd[0:980]}</code>\n\n<b>⥤ Kết quả :</b>\nAttached Document",
             quote=False,
             reply_markup=keyboard,
         )
@@ -139,7 +139,7 @@ async def forceclose_command(_, CallbackQuery):
     if CallbackQuery.from_user.id != int(user_id):
         try:
             return await CallbackQuery.answer(
-                "» ɪᴛ'ʟʟ ʙᴇ ʙᴇᴛᴛᴇʀ ɪғ ʏᴏᴜ sᴛᴀʏ ɪɴ ʏᴏᴜʀ ʟɪᴍɪᴛs ʙᴀʙʏ.", show_alert=True
+                "» Sẽ tốt hơn nếu bạn ở trong giới hạn của mình.", show_alert=True
             )
         except:
             return

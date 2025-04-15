@@ -48,22 +48,22 @@ async def inline_query_handler(client, query):
                 [
                     [
                         InlineKeyboardButton(
-                            text="• ʏᴏᴜᴛᴜʙᴇ •",
+                            text="• Youtube •",
                             url=link,
                         )
                     ],
                 ]
             )
             searched_text = f"""
-📌**ᴛɪᴛʟᴇ:** [{title}]({link})
+📌**Tiêu đề:** [{title}]({link})
 
-⏳**ᴅᴜʀᴀᴛɪᴏɴ:** {duration} Mins
-👀**ᴠɪᴇᴡs:** `{views}`
-⏰**ᴩᴜʙʟɪsʜᴇᴅ ᴏɴ:** {published}
-🎥**ᴄʜᴀɴɴᴇʟ:** {channel}
-📎**ᴄʜᴀɴɴᴇʟ ʟɪɴᴋ:** [ᴠɪsɪᴛ ᴄʜᴀɴɴᴇʟ]({channellink})
+⏳**Thời Lượng:** {duration} Mins
+👀**Lượt xem:** `{views}`
+⏰**Đăng vào lúc:** {published}
+🎥**Kênh:** {channel}
+📎**Link kênh:** [ᴠɪsɪᴛ ᴄʜᴀɴɴᴇʟ]({channellink})
 
-💖 ** sᴇᴀʀᴄʜ ᴩᴏᴡᴇʀᴇᴅ ʙʏ {MUSIC_BOT_NAME} **"""
+💖 ** Tìm kiếm bởi {MUSIC_BOT_NAME} **"""
             answers.append(
                 InlineQueryResultPhoto(
                     photo_url=thumbnail,

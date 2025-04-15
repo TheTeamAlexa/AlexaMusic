@@ -6,7 +6,7 @@ general_2 : "Hata! Komutun Yanlış Kullanımı."
 general_3 : "Sorgunuz işlenirken bazı **istisnalar oluştu**.\n\nİstisna Türü:- {0}"
 general_4 : "Bu sohbet grubunda isimsiz bir yöneticisiniz!\nYönetici Haklarından Kullanıcı Hesabına geri dönün."
 general_5 : "Bu eylemi gerçekleştirmek için sesli sohbet haklarına sahip yönetici olmanız gerekir."
-general_6 : "Bot sesli sohbette yayın yapmıyor."
+general_6 : "Bot sesli sohbette yayın yapmıyor.."
 
 # Classes - Telegram.py
 tg_1 : "Bot şu anda indirilenlerle **aşırı yüklenmiş**.\n\n**Deneme Süresi:** {0} (__beklenen süre__))"

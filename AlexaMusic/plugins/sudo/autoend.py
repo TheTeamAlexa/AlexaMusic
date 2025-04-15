@@ -1,12 +1,12 @@
-# Copyright (C) 2025 by Alexa_Help @ Github, < https://github.com/TheTeamAlexa >
-# Subscribe On YT < Jankari Ki Duniya >. All rights reserved. © Alexa © Yukki.
+# Copyright (C) 2025 bởi Alexa_Help @ Github, < https://github.com/TheTeamAlexa >
+# Đăng ký kênh YouTube < Jankari Ki Duniya >. Bảo lưu tất cả quyền. © Alexa © Yukki.
 
 """
-TheTeamAlexa is a project of Telegram bots with variety of purposes.
-Copyright (c) 2021 ~ Present Team Alexa <https://github.com/TheTeamAlexa>
+TheTeamAlexa là một dự án của các bot Telegram với nhiều mục đích khác nhau.
+Bản quyền (c) 2021 ~ Hiện tại Team Alexa <https://github.com/TheTeamAlexa>
 
-This program is free software: you can redistribute it and can modify
-as you want or you can collabe if you have new ideas.
+Chương trình này là phần mềm miễn phí: bạn có thể phân phối lại và sửa đổi
+theo ý muốn hoặc có thể cộng tác nếu bạn có ý tưởng mới.
 """
 
 
@@ -19,7 +19,7 @@ from AlexaMusic.misc import SUDOERS
 from AlexaMusic.utils.database import autoend_off, autoend_on
 from AlexaMusic.utils.decorators.language import language
 
-# Commands
+# Lệnh
 AUTOEND_COMMAND = get_command("AUTOEND_COMMAND")
 
 
@@ -33,10 +33,10 @@ async def auto_end_stream(client, message):
     if state == "enable":
         await autoend_on()
         await message.reply_text(
-            "ᴀᴜᴛᴏ ᴇɴᴅ sᴛʀᴇᴀᴍ ᴇɴᴀʙʟᴇᴅ.\n\nᴀssɪsᴛᴀɴᴛ ᴡɪʟʟ ᴀᴜᴛᴏᴍᴀᴛɪᴄᴀʟʟʏ ʟᴇᴀᴠᴇ ᴛʜᴇ ᴠɪᴅᴇᴏᴄʜᴀᴛ ᴀғᴛᴇʀ ғᴇᴡ ᴍɪɴs ᴡʜᴇɴ ɴᴏ ᴏɴᴇ ɪs ʟɪsᴛᴇɴɪɴɢ ᴡɪᴛʜ ᴀ ᴡᴀʀɴɪɴɢ ᴍᴇssᴀɢᴇ."
+            "Kích hoạt tự động kết thúc stream.\n\nTrợ lý sẽ tự động rời khỏi cuộc gọi video sau vài phút nếu không có ai tham gia với lời nhắc nhở."
         )
     elif state == "disable":
         await autoend_off()
-        await message.reply_text("ᴀᴜᴛᴏ ᴇɴᴅ sᴛʀᴇᴀᴍ ᴅɪsᴀʙʟᴇᴅ.")
+        await message.reply_text("Đã vô hiệu hóa tự động kết thúc stream.")
     else:
         await message.reply_text(usage)

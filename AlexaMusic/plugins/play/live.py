@@ -67,5 +67,5 @@ async def play_live_stream(client, CallbackQuery, _):
             err = e if ex_type == "AssistantErr" else _["general_3"].format(ex_type)
             return await mystic.edit_text(err)
     else:
-        return await mystic.edit_text("ɪ ᴅᴏɴ'ᴛ ᴛʜɪɴᴋ ᴛʜᴀᴛ ɪᴛ's ᴀ ʟɪᴠᴇ sᴛʀᴇᴀᴍ.")
+        return await mystic.edit_text("Tôi không nghĩ đây là livestream thật đâu./n— Phân tích dữ liệu cho thấy không có tín hiệu phát trực tiếp.")
     await mystic.delete()

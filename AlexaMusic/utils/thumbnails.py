@@ -90,7 +90,7 @@ async def gen_thumb(videoid):
         name_font = ImageFont.truetype("assets/font.ttf", 30)
         para = textwrap.wrap(title, width=30)
         j = 0
-        draw.text((5, 5), f"Alexa MusicBot", fill="white", font=name_font)
+        draw.text((5, 5), f"Minion MusicBot", fill="white", font=name_font)
         draw.text(
             (600, 150),
             "NOW PLAYING",
@@ -134,7 +134,7 @@ async def gen_thumb(videoid):
         )
         draw.text(
             (600, 550),
-            f"Owner : Jankari Ki Duniya",
+            f"Owner : Linhcutii",
             (255, 255, 255),
             font=arial,
         )
@@ -206,10 +206,10 @@ async def gen_qthumb(videoid):
         name_font = ImageFont.truetype("assets/font.ttf", 30)
         para = textwrap.wrap(title, width=30)
         j = 0
-        draw.text((5, 5), f"Alexa MusicBot", fill="white", font=name_font)
+        draw.text((5, 5), f"Minion MusicBot", fill="white", font=name_font)
         draw.text(
             (600, 150),
-            "ADDED THIS SONG IN QUEUE",
+            "Đã Thêm Bài Hát",
             fill="white",
             stroke_width=3,
             stroke_fill="black",
@@ -250,7 +250,7 @@ async def gen_qthumb(videoid):
         )
         draw.text(
             (600, 550),
-            f"Owner : Jankari Ki Duniya",
+            f"Owner : Linhcutii",
             (255, 255, 255),
             font=arial,
         )

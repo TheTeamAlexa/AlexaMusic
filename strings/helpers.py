@@ -1,155 +1,116 @@
-HELP_1 = """🙄**<u>ᴀᴅᴍɪɴ ᴄᴏᴍᴍᴀɴᴅs:</u>**
+paHELP_1 = """🙄**<u>LỆNH QUẢN TRỊ:</u>**
 
-ᴊᴜsᴛ ᴀᴅᴅ **ᴄ** ɪɴ ᴛʜᴇ sᴛᴀʀᴛɪɴɢ ᴏғ ᴛʜᴇ ᴄᴏᴍᴍᴀɴᴅs ᴛᴏ ᴜsᴇ ᴛʜᴇᴍ ғᴏʀ ᴄʜᴀɴɴᴇʟ.
+Chỉ cần thêm **c** ở đầu danh sách lệnh để sử dụng cho kênh.
 
-/pause : ᴩᴀᴜsᴇ ᴛʜᴇ ᴄᴜʀʀᴇɴᴛ ᴩʟᴀʏɪɴɢ sᴛʀᴇᴀᴍ.
-/resume : ʀᴇsᴜᴍᴇ ᴛʜᴇ ᴩᴀᴜsᴇᴅ sᴛʀᴇᴀᴍ.
-/mute : ᴍᴜᴛᴇ ᴛʜᴇ ᴄᴜʀʀᴇɴᴛ ᴩʟᴀʏɪɴɢ sᴛʀᴇᴀᴍ.
-/unmute : ᴜɴᴍᴜᴛᴇ ᴛʜᴇ ᴍᴜᴛᴇᴅ sᴛʀᴇᴀᴍ.
-/skip : sᴋɪᴩ ᴛʜᴇ ᴄᴜʀʀᴇɴᴛ ᴩʟᴀʏɪɴɢ sᴛʀᴇᴀᴍ ᴀɴᴅ sᴛᴀʀᴛ sᴛʀᴇᴀᴍɪɴɢ ᴛʜᴇ ɴᴇxᴛ ᴛʀᴀᴄᴋ ɪɴ ǫᴜᴇᴜᴇ.
-/end ᴏʀ /stop : ᴄʟᴇᴀʀs ᴛʜᴇ ǫᴜᴇᴜᴇ ᴀɴᴅ ᴇɴᴅ ᴛʜᴇ ᴄᴜʀʀᴇɴᴛ ᴩʟᴀʏɪɴɢ sᴛʀᴇᴀᴍ.
-/shuffle : sʜᴜғғʟᴇ ᴛʜᴇ ǫᴜᴇᴜᴇᴅ ᴛʀᴀᴄᴋs.
-/seek : sᴇᴇᴋ ᴛʜᴇ sᴛʀᴇᴀᴍ ᴛᴏ ᴛʜᴇ ɢɪᴠᴇɴ ᴅᴜʀᴀᴛɪᴏɴ.
-/seekback : ʙᴀᴄᴋᴡᴀʀᴅ sᴇᴇᴋ ᴛʜᴇ sᴛʀᴇᴀᴍ ᴛᴏ ᴛʜᴇ ᴛʜᴇ ɢɪᴠᴇɴ ᴅᴜʀᴀᴛɪᴏɴ.
-/reboot : ʀᴇʙᴏᴏᴛs ᴛʜᴇ ʙᴏᴛ ғᴏʀ ʏᴏᴜʀ ᴄʜᴀᴛ.
+• /pause : Tạm dừng luồng phát hiện tại.
+• /resume : Tiếp tục phát luồng đã bị tạm dừng.
+• /mute : Tắt tiếng luồng phát hiện tại.
+• /unmute : Mở tiếng luồng đang bị tắt.
+• /skip : Bỏ qua bài đang phát và bắt đầu phát bài tiếp theo trong danh sách chờ.
+• /end hoặc /stop : Xóa danh sách chờ và dừng luồng phát hiện tại.
+• /shuffle : Xáo trộn các bài trong danh sách chờ.
+• /seek : Tua đến thời điểm đã cho của luồng phát.
+• /seekback : Tua ngược lại đến thời điểm đã cho của luồng phát.
+• /reboot : Khởi động lại bot cho nhóm của bạn.
 
-🥴<u>**ʟᴏᴏᴩ ᴩʟᴀʏ :**</u>
+🥴<u>**CHẾ ĐỘ LẶP (LOOP PLAY):**</u>
 
-/loop [ᴅɪsᴀʙʟᴇ/ᴇɴᴀʙʟᴇ] ᴏʀ [ʙᴇᴛᴡᴇᴇɴ 1:10] 
-    : ᴡʜᴇɴ ᴀᴄᴛɪᴠᴀᴛᴇᴅ ʙᴏᴛ ᴡɪʟʟ ᴩʟᴀʏ ᴛʜᴇ ᴄᴜʀʀᴇɴᴛ ᴩʟᴀʏɪɴɢ sᴛʀᴇᴀᴍ ɪɴ ʟᴏᴏᴩ ғᴏʀ 10 ᴛɪᴍᴇs ᴏʀ ᴛʜᴇ ɴᴜᴍʙᴇʀ ᴏғ ʀᴇǫᴜᴇsᴛᴇᴅ ʟᴏᴏᴩs.
+• /loop [disable/enable] hoặc [1-10]  
+    : Khi được kích hoạt, bot sẽ lặp lại bài phát hiện tại theo số vòng đã chỉ định (tối đa từ 1 đến 10).
 
-😜<u>**ᴀᴜᴛʜ ᴜsᴇʀs :**</u>
+😜<u>**NGƯỜI DÙNG ĐƯỢC XÁC THỰC (AUTH USERS):**</u>
 
-ᴀᴜᴛʜ ᴜsᴇʀs ᴄᴀɴ ᴜsᴇ ᴀᴅᴍɪɴ ʀɪɢʜᴛs ɪɴ ᴛʜᴇ ʙᴏᴛ ᴡɪᴛʜᴏᴜᴛ ᴀᴅᴍɪɴ ʀɪɢʜᴛs ɪɴ ᴛʜᴇ ᴄʜᴀᴛ.
+Người dùng xác thực có thể sử dụng các quyền quản trị trong bot mà không cần quyền quản trị ở nhóm.
 
-/auth [ᴜsᴇʀɴᴀᴍᴇ] : ᴀᴅᴅ ᴀ ᴜsᴇʀ ᴛᴏ ᴀᴜᴛʜ ʟɪsᴛ ᴏғ ᴛʜᴇ ʙᴏᴛ.
-/unauth [ᴜsᴇʀɴᴀᴍᴇ] : ʀᴇᴍᴏᴠᴇ ᴀ ᴀᴜᴛʜ ᴜsᴇʀs ғʀᴏᴍ ᴛʜᴇ ᴀᴜᴛʜ ᴜsᴇʀs ʟɪsᴛ.
-/authusers : sʜᴏᴡs ᴛʜᴇ ᴀᴜᴛʜ ᴜsᴇʀs ʟɪsᴛ ᴏғ ᴛʜᴇ ɢʀᴏᴜᴩ."""
+• /auth [username] : Thêm một người dùng vào danh sách xác thực của bot.
+• /unauth [username] : Xóa một người dùng khỏi danh sách xác thực.
+• /authusers : Hiển thị danh sách người dùng xác thực của nhóm.
+"""
 
+HELP_2 = """💞<u>**LỆNH PHÁT NHẠC:**</u>
 
-HELP_2 = """💞<u>**ᴩʟᴀʏ ᴄᴏᴍᴍᴀɴᴅs:**</u>
+Các lệnh có sẵn: play, vplay, cplay
 
-ᴀᴠᴀɪʟᴀʙʟᴇ ᴄᴏᴍᴍᴀɴᴅs = play , vplay , cplay
+Lệnh bắt buộc (force play): playforce, vplayforce, cplayforce
 
-ғᴏʀᴄᴇᴩʟᴀʏ ᴄᴏᴍᴍᴀɴᴅs = playforce , vplayforce , cplayforce
+• **c** tượng trưng cho phát kênh.
+• **v** tượng trưng cho phát video.
+• **force** tượng trưng cho lệnh phát bắt buộc.
 
-**c** sᴛᴀɴᴅs ғᴏʀ ᴄʜᴀɴɴᴇʟ ᴩʟᴀʏ.
-**v** sᴛᴀɴᴅs ғᴏʀ ᴠɪᴅᴇᴏ ᴩʟᴀʏ.
-**force** sᴛᴀɴᴅs ғᴏʀ ғᴏʀᴄᴇ ᴩʟᴀʏ.
+• /play hoặc /vplay hoặc /cplay  : Bắt đầu phát bài theo truy vấn yêu cầu trên videochat.
+• /playforce hoặc /vplayforce hoặc /cplayforce : **Phát bắt buộc (force play)** dừng luồng phát đang diễn ra và bắt đầu phát bài yêu cầu.
+• /channelplay [username hoặc ID] hoặc [disable] : Kết nối kênh với nhóm và bắt đầu phát bài thông qua lệnh được gửi trong nhóm.
 
-/play ᴏʀ /vplay ᴏʀ /cplay  : sᴛᴀʀᴛs sᴛʀᴇᴀᴍɪɴɢ ᴛʜᴇ ʀᴇǫᴜᴇsᴛᴇᴅ ᴛʀᴀᴄᴋ ᴏɴ ᴠɪᴅᴇᴏᴄʜᴀᴛ.
+🤨**<u>DANH SÁCH PHÁT TIN TRÊN MÁY CHỦ:</u>**
 
-/playforce ᴏʀ /vplayforce ᴏʀ /cplayforce :  **ғᴏʀᴄᴇ ᴩʟᴀʏ** sᴛᴏᴩs ᴛʜᴇ ᴏɴɢᴏɪɴɢ sᴛʀᴇᴀᴍ ᴀɴᴅ sᴛᴀʀᴛs sᴛʀᴇᴀᴍɪɴɢ ᴛʜᴇ ʀᴇǫᴜᴇsᴛᴇᴅ ᴛʀᴀᴄᴋ.
+• /playlist  : Kiểm tra danh sách phát đã lưu trên máy chủ.
+• /deleteplaylist : Xóa bất kỳ bài nào đã được lưu trong danh sách phát.
+• /play  : Bắt đầu phát bài từ danh sách phát đã lưu trên máy chủ.
+"""
 
-/channelplay [ᴄʜᴀᴛ ᴜsᴇʀɴᴀᴍᴇ ᴏʀ ɪᴅ] ᴏʀ [ᴅɪsᴀʙʟᴇ] : ᴄᴏɴɴᴇᴄᴛ ᴄʜᴀɴɴᴇʟ ᴛᴏ ᴀ ɢʀᴏᴜᴩ ᴀɴᴅ sᴛᴀʀᴛs sᴛʀᴇᴀᴍɪɴɢ ᴛʀᴀᴄᴋs ʙʏ ᴛʜᴇ ʜᴇʟᴩ ᴏғ ᴄᴏᴍᴍᴀɴᴅs sᴇɴᴛ ɪɴ ɢʀᴏᴜᴩ.
+HELP_3 = """😉<u>**LỆNH BOT:**</u>
 
+• /stats : Hiển thị top 10 bài phát được, top 10 người dùng, top 10 nhóm trong bot, top 10 bài đã phát trong nhóm và nhiều hơn nữa.
+• /sudolist : Hiển thị danh sách người dùng SUDO của bot.
+• /lyrics [tên bài] : Tìm kiếm lời bài hát cho bài yêu cầu.
+• /song [tên bài] hoặc [link yt] : Tải xuống bài từ YouTube dưới định dạng audio hoặc video.
+• /player : Hiển thị bảng điều khiển phát nhạc tương tác.
+• /queue : Hiển thị danh sách bài trong hàng chờ.
+"""
 
-🤨**<u>sᴇʀᴠᴇʀ ᴩʟᴀʏʟɪsᴛs:</u>**
+HELP_4 = """😴<u>**LỆNH BỔ SUNG:**</u>
 
-/playlist  : ᴄʜᴇᴄᴋ ʏᴏᴜʀ sᴀᴠᴇᴅ ᴩʟᴀʏʟɪsᴛ ᴏɴ sᴇʀᴠᴇʀs.
-/deleteplaylist : ᴅᴇʟᴇᴛᴇ ᴀɴʏ sᴀᴠᴇᴅ ᴛʀᴀᴄᴋ ɪɴ ʏᴏᴜʀ ᴩʟᴀʏʟɪsᴛ.
-/play  : sᴛᴀʀᴛs ᴩʟᴀʏɪɴɢ ғʀᴏᴍ ʏᴏᴜʀ sᴀᴠᴇᴅ ᴩʟᴀʏʟɪsᴛ ᴏɴ sᴇʀᴠᴇʀ."""
+• /start : Khởi động bot phát nhạc.
+• /help  : Hiển thị menu trợ giúp với giải thích các lệnh.
+• /ping: Hiển thị thời gian phản hồi (ping) và số liệu hệ thống của bot.
 
+🧐<u>**CÀI ĐẶT NHÓM:**</u>
+• /settings : Hiển thị cài đặt nhóm với menu tương tác dạng inline.
+"""
 
-HELP_3 = """😉<u>**ʙᴏᴛ ᴄᴏᴍᴍᴀɴᴅs:**</u>
+HELP_5 = """🥺**<u>THÊM & XÓA NGƯỜI DÙNG SUDO:</u>**
+• /addsudo [username hoặc trả lời tin] : Thêm người dùng vào danh sách SUDO.
+• /delsudo [username hoặc trả lời tin] : Xóa người dùng khỏi danh sách SUDO.
 
-/stats : ɢᴇᴛ ᴛᴏᴩ 10 ᴛʀᴀᴄᴋ ɢʟᴏʙᴀʟ sᴛᴀᴛs, ᴛᴏᴩ 10 ᴜsᴇʀs ᴏғ ᴛʜᴇ ʙᴏᴛ, ᴛᴏᴩ 10 ᴄʜᴀᴛs ᴏɴ ᴛʜᴇ ʙᴏᴛ, ᴛᴏᴩ 10 ᴩʟᴀʏᴇᴅ ɪɴ ᴛʜᴇ ᴄʜᴀᴛ ᴀɴᴅ ᴍᴀɴʏ ᴍᴏʀᴇ...
-/sudolist : sʜᴏᴡs ᴛʜᴇ sᴜᴅᴏ ᴜsᴇʀs ᴏғ ᴍᴜsɪᴄ ʙᴏᴛ.
-/lyrics [sᴏɴɢ ɴᴀᴍᴇ] : sᴇᴀʀᴄʜ ʟʏʀɪᴄs ғᴏʀ ᴛʜᴇ ʀᴇǫᴜᴇsᴛᴇᴅ sᴏɴɢ.
-/song [sᴏɴɢ ɴᴀᴍᴇ] or [ʏᴛ ʟɪɴᴋ] : ᴅᴏᴡɴʟᴏᴀᴅ ᴀɴʏ ʏᴏᴜᴛᴜʙᴇ ᴛʀᴀᴄᴋ ɪɴ ᴀᴜᴅɪᴏ ᴏʀ ᴠɪᴅᴇᴏ ғᴏʀᴍᴀᴛ.
-/player :  ɢᴇᴛ ᴀ ɪɴᴛᴇʀᴀᴄᴛɪᴠᴇ ᴩʟᴀʏᴇʀ ᴩᴀɴᴇʟ.
-/queue : sʜᴏᴡs ᴛʜᴇ ǫᴜᴇᴜᴇᴅ ᴛʀᴀᴄᴋs ʟɪsᴛ."""
+🥶**<u>HEROKU:</u>**
+• /usage : Hiển thị mức sử dụng Dyno của ứng dụng Heroku.
 
-HELP_4 = """😴<u>**ᴇxᴛʀᴀ ᴄᴏᴍᴍᴀɴᴅs:**</u>
+🤯**<u>CÁC THAM SỐ CẤU HÌNH:</u>**
+• /get_var : Lấy một biến cấu hình từ file .env.
+• /del_var : Xóa một biến cấu hình trên file .env.
+• /set_var [tên biến] [giá trị] : Thiết lập hoặc cập nhật một biến cấu hình trên file .env.
 
-/start : sᴛᴀʀᴛs ᴛʜᴇ ᴍᴜsɪᴄ ʙᴏᴛ.
-/help  : ɢᴇᴛ ʜᴇʟᴩ ᴍᴇɴᴜ ᴡɪᴛʜ ᴇxᴩʟᴀɴᴀᴛɪᴏɴ ᴏғ ᴄᴏᴍᴍᴀɴᴅs.
-/ping: sʜᴏᴡ ᴛʜᴇ ᴩɪɴɢ ᴀɴᴅ sʏsᴛᴇᴍ sᴛᴀᴛs ᴏғ ᴛʜᴇ ʙᴏᴛ.
+🤖**<u>LỆNH BOT:</u>**
+• /restart : Khởi động lại bot.
+• /update : Cập nhật bot từ kho chứa (upstream repo).
+• /speedtest : Kiểm tra tốc độ của máy chủ bot.
+• /maintenance [enable/disable] : Chế độ bảo trì
+• /logger [enable/disable] : Bot sẽ bắt đầu ghi log các hoạt động của bot.
+• /get_log [số dòng] : Lấy log của bot [mặc định 100 dòng].
+• /autoend [enable|disable] : Bật/Tắt tự động kết thúc stream nếu không có ai nghe.
+"""
 
-🧐<u>**ɢʀᴏᴜᴩ sᴇᴛᴛɪɴɢs:**</u>
-/settings : sʜᴏᴡs ᴛʜᴇ ɢʀᴏᴜᴩ sᴇᴛᴛɪɴɢs ᴡɪᴛʜ ᴀɴ ɪɴᴛᴇʀᴀᴄᴛɪᴠᴇ ɪɴʟɪɴᴇ ᴍᴇɴᴜ."""
+HELP_7 = """💌**<u>Ở ĐÂY BẠN CÓ THỂ TÌM ĐƯỢC CÁC TÍNH NĂNG MỚI:</u>**
 
-HELP_5 = """🥺**<u>ᴀᴅᴅ & ʀᴇᴍᴏᴠᴇ sᴜᴅᴏᴇʀs:</u>**
-/addsudo [ᴜsᴇʀɴᴀᴍᴇ ᴏʀ ʀᴇᴩʟʏ ᴛᴏ ᴀ ᴜsᴇʀ]
-/delsudo [ᴜsᴇʀɴᴀᴍᴇ ᴏʀ ʀᴇᴩʟʏ ᴛᴏ ᴀ ᴄʜᴜᴛɪʏᴀ.]
+• /alive : Kiểm tra xem bot Minion Music còn hoạt động hay không.
+• /id : Xem ID của người dùng và nhóm.
+• /gcast -user -assistant -pin ᴛᴇsᴛɪɴɢ ʙʀᴏᴀᴅᴄᴀsᴛ : Gửi tin broadcast thử.
+• /verify : Xác minh bạn trong cơ sở dữ liệu của Minion.
+"""
 
-🥶**<u>ʜᴇʀᴏᴋᴜ:</u>**
-/usage : sʜᴏᴡs ᴛʜᴇ ᴅʏɴᴏ ᴜsᴀɢᴇ ᴏғ ᴛʜᴇ ᴍᴏɴᴛʜ.
+HELP_8 = """💰**<u>TÍNH NĂNG ĐĂNG KÝ PHÁT TIN:</u>**
 
-🤯**<u>ᴄᴏɴғɪɢ ᴠᴀʀɪᴀʙʟᴇs:</u>**
-/get_var : ɢᴇᴛ ᴀ ᴄᴏɴғɪɢ ᴠᴀʀ ғʀᴏᴍ ʜᴇʀᴏᴋᴜ ᴏʀ .ᴇɴᴠ.
-/del_var : ᴅᴇʟᴇᴛᴇ ᴀ ᴄᴏɴғɪɢ ᴠᴀʀ ᴏɴ ʜᴇʀᴏᴋᴜ ᴏʀ .ᴇɴᴠ.
-/set_var [ᴠᴀʀ ɴᴀᴍᴇ] [ᴠᴀʟᴜᴇ] : sᴇᴛ ᴏʀ ᴜᴩᴅᴀᴛᴇ ᴀ ᴄᴏɴғɪɢ ᴠᴀʀ ᴏɴ ʜᴇʀᴏᴋᴜ ᴏʀ .ᴇɴᴠ.
+Bây giờ bạn có thể mua đăng ký phát tin theo tháng và theo tuần từ chúng tôi. Chúng tôi sẽ cung cấp cho bạn 3 lần phát tin mỗi tuần và 14 lần phát tin mỗi tháng, với giới hạn gửi tin sau hai ngày.
 
-🤖**<u>ʙᴏᴛ ᴄᴏᴍᴍᴀɴᴅs:</u>**
-/restart : ʀᴇsᴛᴀʀᴛs ʏᴏᴜʀ ʙᴏᴛ.
-/update : ᴜᴩᴅᴀᴛᴇs ᴛʜᴇ ʙᴏᴛ ғʀᴏᴍ ᴛʜᴇ ᴜᴩsᴛʀᴇᴀᴍ ʀᴇᴩᴏ.
-/speedtest : ᴄʜᴇᴄᴋ ʙᴏᴛ's sᴇʀᴠᴇʀ sᴩᴇᴇᴅ.
-/maintenance [ᴇɴᴀʙʟᴇ/ᴅɪsᴀʙʟᴇ] 
-/logger [ᴇɴᴀʙʟᴇ/ᴅɪsᴀʙʟᴇ] : ʙᴏᴛ ᴡɪʟʟ sᴛᴀʀᴛ ʟᴏɢɢɪɴɢ ᴛʜᴇ ᴀᴄᴛɪᴠɪᴛɪᴇs ʜᴀᴩᴩᴇɴ ᴏɴ ʙᴏᴛ.
-/get_log [ɴᴜᴍʙᴇʀ ᴏғ ʟɪɴᴇs] : ɢᴇᴛ ʟᴏɢs ᴏғ ʏᴏᴜʀ ʙᴏᴛ [ᴅᴇғᴀᴜʟᴛ ᴠᴀʟᴜᴇ ɪs 100 ʟɪɴᴇs]
-/autoend [ᴇɴᴀʙʟᴇ|ᴅɪsᴀʙʟᴇ] : ᴇɴᴀʙʟᴇ sᴛʀᴇᴀᴍ ᴀᴜᴛᴏ ᴇɴᴅ ɪғ ɴᴏ ᴏɴᴇ ɪs ʟɪsᴛᴇɴɪɴɢ.
+**CHỈ DÀNH CHO CHỦ BOT**
+• /addweekly [ID người dùng] : Thêm người dùng vào đăng ký phát tin hàng tuần.
+• /addmonthly [ID người dùng] : Thêm người dùng vào đăng ký phát tin hàng tháng.
+• /removesub [ID người dùng] : Xóa người dùng khỏi đăng ký phát tin.
+• /checksubscription [ID người dùng] : Kiểm tra số ngày còn lại và số lần phát tin của người dùng.
+• /substats : Xem tổng số đăng ký kèm theo ID và loại đăng ký.
+• /subscription_alert : Gửi thông báo cho người dùng đăng ký với số ngày còn lại và số lần phát tin.
 
-🤑**<u>sᴛᴀᴛs ᴄᴏᴍᴍᴀɴᴅs:</u>**
-/activevoice : sʜᴏᴡs ᴛʜᴇ ʟɪsᴛ ᴏғ ᴀᴄᴛɪᴠᴇ ᴠᴏɪᴄᴇᴄʜᴀᴛs ᴏɴ ᴛʜᴇ ʙᴏᴛ.
-/activevideo : sʜᴏᴡs ᴛʜᴇ ʟɪsᴛ ᴏғ ᴀᴄᴛɪᴠᴇ ᴠɪᴅᴇᴏᴄʜᴀᴛs ᴏɴ ʙᴏᴛ.
-/stats : sʜᴏᴡs ᴛʜᴇ ᴄᴜʀʀᴇɴᴛ sᴛᴀᴛs ᴏғ ᴛʜᴇ ʙᴏᴛ.
-
-😒**<u>ʙʟᴀᴄᴋʟɪsᴛ ᴄʜᴀᴛ:</u>**
-/blacklistchat [ᴄʜᴀᴛ ɪᴅ] : ʙʟᴀᴄᴋʟɪsᴛ ᴀ ᴄʜᴀᴛ ғʀᴏᴍ ᴜsɪɴɢ ᴛʜᴇ ʙᴏᴛ.
-/whitelistchat [ᴄʜᴀᴛ ɪᴅ] : ᴡʜɪᴛᴇʟɪsᴛ ᴛʜᴇ ʙʟᴀᴄᴋʟɪsᴛᴇᴅ ᴄʜᴀᴛ.
-/blacklistedchat : sʜᴏᴡs ᴛʜᴇ ʟɪsᴛ ᴏғ ʙʟᴀᴄᴋʟɪsᴛᴇᴅ ᴄʜᴀᴛs.
-
-😤**<u>ʙʟᴏᴄᴋ ᴜsᴇʀs:</u>**
-/block [ᴜsᴇʀɴᴀᴍᴇ ᴏʀ ʀᴇᴩʟʏ ᴛᴏ ᴀ ᴄʜᴜᴛɪʏᴀ] : sᴛᴀʀᴛs ɪɢɴᴏʀɪɴɢ ᴛʜᴇ ᴄʜᴜᴛɪʏᴀ, sᴏ ᴛʜᴀᴛ ʜᴇ ᴄᴀɴ'ᴛ ᴜsᴇ ʙᴏᴛ ᴄᴏᴍᴍᴀɴᴅs.
-/unblock [ᴜsᴇʀɴᴀᴍᴇ ᴏʀ ʀᴇᴩʟʏ ᴛᴏ ᴀ ᴜsᴇʀ] : ᴜɴʙʟᴏᴄᴋs ᴛʜᴇ ʙʟᴏᴄᴋᴇᴅ ᴜsᴇʀ.
-/blockedusers : sʜᴏᴡs ᴛʜᴇ ʟɪsᴛ ᴏғ ʙʟᴏᴄᴋᴇᴅ ᴜsᴇʀs.
-
-🤬**<u>ɢʙᴀɴ ғᴇᴀᴛᴜʀᴇ:</u>**
-/gban [ᴜsᴇʀɴᴀᴍᴇ ᴏʀ ʀᴇᴩʟʏ ᴛᴏ ᴀ ᴄʜᴜᴛɪʏᴀ] : ɢʟᴏʙᴀʟʟʏ ʙᴀɴs ᴛʜᴇ ᴄʜᴜᴛɪʏᴀ ғʀᴏᴍ ᴀʟʟ ᴛʜᴇ sᴇʀᴠᴇᴅ ᴄʜᴀᴛs ᴀɴᴅ ʙʟᴀᴄᴋʟɪsᴛ ʜɪᴍ ғʀᴏᴍ ᴜsɪɴɢ ᴛʜᴇ ʙᴏᴛ.
-/ungban [ᴜsᴇʀɴᴀᴍᴇ ᴏʀ ʀᴇᴩʟʏ ᴛᴏ ᴀ ᴜsᴇʀ] : ɢʟᴏʙᴀʟʟʏ ᴜɴʙᴀɴs ᴛʜᴇ ɢʟᴏʙᴀʟʟʏ ʙᴀɴɴᴇᴅ ᴜsᴇʀ.
-/gbannedusers : sʜᴏᴡs ᴛʜᴇ ʟɪsᴛ ᴏғ ɢʟᴏʙᴀʟʟʏ ʙᴀɴɴᴇʀ ᴜsᴇʀs.
-
-🎥**<u>ᴠɪᴅᴇᴏᴄʜᴀᴛ ᴍᴏᴅᴇ:</u>**
-/set_video_limit [ɴᴜᴍʙᴇʀ ᴏғ ᴄʜᴀᴛs] : sᴇᴛ ᴛʜᴇ ᴍᴀxɪᴍᴜᴍ ɴᴜᴍʙᴇʀ ᴏғ ᴠɪᴅᴇᴏᴄʜᴀᴛs ᴀʟʟᴏᴡᴇᴅ ᴏɴ ʙᴏᴛ. [ᴅᴇᴀғᴜʟᴛ - 3]
-/videomode [ᴅᴏᴡɴʟᴏᴀᴅ|ᴍ3ᴜ8] : ɪғ ᴅᴏᴡɴʟᴏᴀᴅ ᴍᴏᴅᴇ ɪs ᴇɴᴀʙʟᴇᴅ ʙᴏᴛ ᴡɪʟʟ ᴅᴏᴡɴʟᴏᴀᴅ ᴛʜᴇ ᴛʀᴀᴄᴋs ɪɴsᴛᴇᴀᴅ ᴏғ ᴩʟᴀʏɪɴɢ ᴛʜᴇᴍ ɪɴ ᴍ3ᴜ8.
-
-💔**<u>ᴩʀɪᴠᴀᴛᴇ ʙᴏᴛ:</u>**
-/authorize [ᴄʜᴀᴛ ɪᴅ] : ᴀʟʟᴏᴡs ᴀ ᴄʜᴀᴛ ғᴏʀ ᴜsɪɴɢ ᴛʜᴇ ʙᴏᴛ.
-/unauthorize [ᴄʜᴀᴛ ɪᴅ] : ᴅɪsᴀʟʟᴏᴡs ᴛʜᴇ ᴀʟʟᴏᴡᴇᴅ ᴄʜᴀᴛ.
-/authorized : sʜᴏᴡs ᴛʜᴇ ʟɪsᴛ ᴏғ ᴀʟʟᴏᴡᴇᴅ ᴄʜᴀᴛs.
-
-🍒**<u>ʙʀᴏᴀᴅᴄᴀsᴛ ғᴇᴀᴛᴜʀᴇ:</u>**
-/broadcast [ᴍᴇssᴀɢᴇ ᴏʀ ʀᴇᴩʟʏ ᴛᴏ ᴀ ᴍᴇssᴀɢᴇ] : ʙʀᴏᴀᴅᴄᴀsᴛ ᴀ ᴍᴇssᴀɢᴇ ᴛᴏ sᴇʀᴠᴇᴅ ᴄʜᴀᴛs ᴏғ ᴛʜᴇ ʙᴏᴛ.
-
-<u>ʙʀᴏᴀᴅᴄᴀsᴛɪɴɢ ᴍᴏᴅᴇs:</u>
-**-pin** : ᴩɪɴs ʏᴏᴜʀ ʙʀᴏᴀᴅᴄᴀsᴛᴇᴅ ᴍᴇssᴀɢᴇs ɪɴ sᴇʀᴠᴇᴅ ᴄʜᴀᴛs.
-**-pinloud** : ᴩɪɴs ʏᴏᴜʀ ʙʀᴏᴀᴅᴄᴀsᴛᴇᴅ ᴍᴇssᴀɢᴇ ɪɴ sᴇʀᴠᴇᴅ ᴄʜᴀᴛs ᴀɴᴅ sᴇɴᴅ ɴᴏᴛɪғɪᴄᴀᴛɪᴏɴ ᴛᴏ ᴛʜᴇ ᴍᴇᴍʙᴇʀs.
-**-user** : ʙʀᴏᴀᴅᴄᴀsᴛs ᴛʜᴇ ᴍᴇssᴀɢᴇ ᴛᴏ ᴛʜᴇ ᴜsᴇʀs ᴡʜᴏ ʜᴀᴠᴇ sᴛᴀʀᴛᴇᴅ ʏᴏᴜʀ ʙᴏᴛ.
-**-assistant** : ʙʀᴏᴀᴅᴄᴀsᴛ ʏᴏᴜʀ ᴍᴇssᴀɢᴇ ғʀᴏᴍ ᴛʜᴇ ᴀssɪᴛᴀɴᴛ ᴀᴄᴄᴏᴜɴᴛ ᴏғ ᴛʜᴇ ʙᴏᴛ.
-**-nobot** : ғᴏʀᴄᴇs ᴛʜᴇ ʙᴏᴛ ᴛᴏ ɴᴏᴛ ʙʀᴏᴀᴅᴄᴀsᴛ ᴛʜᴇ ᴍᴇssᴀɢᴇ..
-
-**ᴇxᴀᴍᴩʟᴇ:** `/broadcast -user -assistant -pin ᴛᴇsᴛɪɴɢ ʙʀᴏᴀᴅᴄᴀsᴛ`"""
-
-HELP_7 = """💌**<u>ʜᴇʀᴇ ʏᴏᴜ ᴄᴀɴ ғɪɴᴅ ɴᴇᴡ ғᴇᴀᴛᴜʀᴇs:</u>**
-
-/alive : ɴᴏᴡ ʏᴏᴜ ᴄᴀɴ ᴄʜᴇᴄᴋ ᴀʟᴇxᴀ ᴍᴜsɪᴄ ʙᴏᴛ ɪs ᴀʟɪᴠᴇ ᴏʀ ɴᴏᴛ
-/id : ᴛᴏ ᴄʜᴇᴋ ᴜsᴇʀ ᴀɴᴅ ᴄʜᴀᴛ ɪᴅ
-/gcast -user -assistant -pin ᴛᴇsᴛɪɴɢ ʙʀᴏᴀᴅᴄᴀsᴛ`
-/verify : ᴠᴇʀɪꜰʏ ʏᴏᴜʀsᴇʟꜰ ᴀᴛ ᴀʟᴇxᴀ ᴅᴀᴛᴀʙᴀsᴇ"""
-
-HELP_8 = """💰**<u>ꜰᴇᴀᴛᴜʀᴇ ꜰᴏʀ ʙʀᴏᴀᴅᴄᴀsᴛ sᴜʙsᴄʀɪᴘᴛɪᴏɴ:</u>**
-
-ɴᴏᴡ ʏᴏᴜ ᴄᴀɴ ʙᴜʏ ᴍᴏɴᴛʜʟʏ ᴀɴᴅ ᴡᴇᴇᴋʟʏ ʙʀᴏᴀᴅᴄᴀsᴛ sᴜʙsᴄʀɪᴘᴛɪᴏɴ ꜰʀᴏᴍ ᴜs. ᴡᴇ ᴡɪʟʟ ɢɪᴠᴇ ʏᴏᴜ 3 ʙʀᴏᴀᴅᴄᴀsᴛ ꜰᴏʀ ᴡᴇᴇᴋʟʏ ᴀɴᴅ 14 ʙʀᴏᴀᴅᴄᴀsᴛ ꜰᴏʀ ᴍᴏɴᴛʜʟʏ sᴜʙsᴄʀɪᴘᴛɪᴏɴ ᴡɪᴛʜ ᴛʜᴇ ʟɪᴍɪᴛ ᴏꜰ sᴇɴᴅɪɴɢ ʙʀᴏᴀᴅᴄᴀsᴛ ᴀꜰᴛᴇʀ ᴛᴡᴏ ᴅᴀʏs.
-
-**ᴏɴʟʏ ᴏᴡɴᴇʀ**
-/addweekly [ᴜsᴇʀ ɪᴅ] : ᴀᴅᴅ ᴜsᴇʀ ᴛᴏ ᴡᴇᴇᴋʟʏ ʙʀᴏᴀᴅᴄᴀsᴛ sᴜʙsᴄʀɪᴘᴛɪᴏɴ.
-/addmonthly [ᴜsᴇʀ ɪᴅ] : ᴀᴅᴅ ᴜsᴇʀ ᴛᴏ ᴍᴏɴᴛʜʟʏ ʙʀᴏᴀᴅᴄᴀsᴛ sᴜʙsᴄʀɪᴘᴛɪᴏɴ.  
-/removesub [ᴜsᴇʀ ɪᴅ] : ʀᴇᴍᴏᴠᴇ ᴜsᴇʀ ꜰʀᴏᴍ ʙʀᴏᴀᴅᴄᴀsᴛ sᴜʙsᴄʀɪᴘᴛɪᴏɴ.
-/checksubscription [ᴜsᴇʀ ɪᴅ] : ᴄʜᴇᴋ ᴜsᴇʀ sᴜʙsᴄʀɪᴘᴛɪᴏɴ ʀᴇᴍᴀɪɴɪɴɢ ᴅᴀʏs ᴀɴᴅ ʙʀᴏᴀᴅᴄᴀsᴛ.
-/substats : ᴄʜᴇᴄᴋ ᴛᴏᴛᴀʟ ɴᴜᴍʙᴇʀ sᴜʙsᴄʀɪᴘᴛɪᴏɴ ᴡɪᴛʜ ᴛʜᴇɪʀ ɪᴅs ᴀɴᴅ sᴜʙsᴄʀɪᴘᴛɪᴏɴ ᴛʏᴘᴇ ᴀʟᴏɴɢ ᴡɪᴛʜ ʙʀᴏᴀᴅᴄᴀsᴛ ᴄᴏᴜᴛ.
-/subscription_alert : ᴛᴏ sᴇɴᴅ ᴀʟᴇʀᴛ ᴍᴇssᴀɢᴇ ᴛᴏ sᴜʙsᴄʀɪʙᴇʀ ᴡɪᴛʜ ʀᴇᴍᴀɪɴɪɴɢ ᴅᴀʏs  ᴀʟᴏɴɢ ᴡɪᴛʜ ʙʀᴏᴀᴅᴄᴀsᴛ ᴄᴏᴜᴛ.
-
-**ᴀɴʏᴏɴᴇ ᴄᴀɴ ᴜsᴇ**
-/mysubscription : ʏᴏᴜ ᴄᴀɴ ᴄʜᴇᴋ ʏᴏᴜʀ sᴜʙsᴄʀɪᴘᴛɪᴏɴ ᴡɪᴛʜ ʀᴇᴍᴀɪɴɪɴɢ ᴅᴀʏs ᴀɴᴅ ʙʀᴏᴀᴅᴄᴀsᴛ ᴄᴏᴜɴᴛ.
-/paidbroadcast : sᴇɴᴅ ʙʀᴏᴀᴅᴄᴀsᴛ ᴍᴇssᴀɢᴇ ᴛᴏ ᴀʟʟ ᴜsᴇʀ ᴀɴᴅ ɢʀᴏᴜᴘs ᴀᴛ ᴀ ᴛɪᴍᴇ ɪꜰ ʏᴏᴜ ʜᴀᴠᴇ ᴀ ᴀᴄᴛɪᴠᴇ sᴜʙsᴄʀɪᴘᴛɪᴏɴ."""
+**BẤT KỲ AI CŨNG CÓ THỂ SỬ DỤNG**
+• /mysubscription : Kiểm tra đăng ký của bạn với số ngày còn lại và số lần phát tin.
+• /paidbroadcast : Gửi tin phát tin trả phí đến tất cả người dùng và nhóm khi bạn có đăng ký phát tin đang hoạt động.
+"""

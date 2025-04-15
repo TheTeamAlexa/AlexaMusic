@@ -246,16 +246,16 @@ async def queue_back(client, CallbackQuery: CallbackQuery, _):
         else:
             IMAGE = get_image(videoid)
     send = (
-        "**⌛️ᴅᴜʀᴀᴛɪᴏɴ:** ᴜɴᴋɴᴏᴡɴ ᴅᴜʀᴀᴛɪᴏɴ sᴛʀᴇᴀᴍ\n\nᴄʟɪᴄᴋ ᴏɴ ʙᴜᴛᴛᴏɴ ʙᴇʟᴏᴡ ᴛᴏ ɢᴇᴛ ᴡʜᴏʟᴇ ǫᴜᴇᴜᴇᴅ ʟɪsᴛ."
+        "**⌛️Thời lượng:** Không xác định\n\nNhấn nút bên dưới để xem toàn bộ danh sách chờ."
         if DUR == "Unknown"
-        else "\nᴄʟɪᴄᴋ ᴏɴ ʙᴜᴛᴛᴏɴ ʙᴇʟᴏᴡ ᴛᴏ ɢᴇᴛ ᴡʜᴏʟᴇ ǫᴜᴇᴜᴇᴅ ʟɪsᴛ."
+        else "\nNhấn nút bên dưới để xem toàn bộ danh sách chờ."
     )
-    cap = f"""**{config.MUSIC_BOT_NAME} ᴩʟᴀʏᴇʀ**
+    cap = f"""**{config.MUSIC_BOT_NAME} Trình Phát Nhạc**
 
-📌 **ᴛɪᴛʟᴇ:** {title}
+📌 **Tiêu Đề:** {title}
 
-🍒 **ᴛʏᴩᴇ:** {typo}
-💖 **ʀᴇǫᴜᴇsᴛᴇᴅ ʙʏ:** {user}
+🍒 **Loại:** {typo}
+💖 **Yêu cầu bởi:** {user}
 {send}"""
     upl = (
         queue_markup(_, DUR, cplay, videoid)

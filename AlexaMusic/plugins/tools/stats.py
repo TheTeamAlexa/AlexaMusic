@@ -112,7 +112,7 @@ async def gstats_global(client, message: Message, _):
         vidid,
     ) = await YouTube.details(videoid, True)
     title = title.title()
-    final = f"Top Most Played Track on {MUSIC_BOT_NAME}\n\n**Title:** {title}\n\nPlayed** {co} **times"
+    final = f"Top Bài hát được phát nhiều nhất trên {MUSIC_BOT_NAME}\n\n**Tiêu đề:** {title}\n\nĐã phát** {co} **lần"
     upl = get_stats_markup(_, True if message.from_user.id in SUDOERS else False)
     await app.send_photo(
         message.chat.id,
@@ -178,9 +178,9 @@ async def top_users_ten(client, CallbackQuery: CallbackQuery, _):
                 details = stats.get(items)
                 title = (details["title"][:35]).title()
                 if items == "telegram":
-                    msg += f"🌹 [ᴛᴇʟᴇɢʀᴀᴍ ᴍᴇᴅɪᴀ](https://t.me/Shayri_Music_Lovers) ** ᴩʟᴀʏᴇᴅ {count} ᴛɪᴍᴇs**\n\n"
+                    msg += f"🌹 [Telegram Media](https://t.me/MinionGroup1) ** Đã phát {count} lần**\n\n"
                 else:
-                    msg += f"🌹 [{title}](https://www.youtube.com/watch?v={items}) ** ᴩʟᴀʏᴇᴅ {count} ᴛɪᴍᴇs**\n\n"
+                    msg += f"🌹 [{title}](https://www.youtube.com/watch?v={items}) ** Đã phát {count} lần**\n\n"
 
             temp = (
                 _["gstats_4"].format(
@@ -218,7 +218,7 @@ async def top_users_ten(client, CallbackQuery: CallbackQuery, _):
             except:
                 continue
             limit += 1
-            msg += f"💖 `{extract}` ᴩʟᴀʏᴇᴅ {count} ᴛɪᴍᴇs ᴏɴ ʙᴏᴛ.\n\n"
+            msg += f"💖 `{extract}` được phát {count} lần trên bot.\n\n"
         temp = (
             _["gstats_5"].format(limit, MUSIC_BOT_NAME)
             if what == "Chats"
@@ -264,23 +264,23 @@ async def overall_stats(client, CallbackQuery, _):
     else:
         ass = "No"
     cm = config.CLEANMODE_DELETE_MINS
-    text = f"""🌹 **ʙᴏᴛ's sᴛᴀᴛs ᴀɴᴅ ɪɴғᴏ:**
+    text = f"""🌹 **Thống kê và thông tin Bot:**
 
-🌹 **ᴍᴏᴅᴜʟᴇs:** {mod}
-🌹 **ᴄʜᴀᴛs:** {served_chats} 
-🌹 **ᴜsᴇʀs:** {served_users} 
-🌹 **ʙʟᴏᴄᴋᴇᴅ:** {blocked} 
-🌹 **sᴜᴅᴏᴇʀs:** {sudoers} 
+🌹 **Modules:** {mod}
+🌹 **Nhóm chat:** {served_chats} 
+🌹 **Người dùng:** {served_users} 
+🌹 **Đã chặn:** {blocked} 
+🌹 **Quản trị viên:** {sudoers} 
     
-🌹 **ǫᴜᴇʀɪᴇs:** {total_queries} 
-🌹 **ᴀssɪsᴛᴀɴᴛs:** {assistant}
-🌹 **ᴀss ᴀᴜᴛᴏ ʟᴇᴀᴠᴇ:** {ass}
-🌹 **ᴄʟᴇᴀɴᴍᴏᴅᴇ:** {cm} ᴍɪɴᴜᴛᴇs
+🌹 **Lệnh đã xử lý:** {total_queries} 
+🌹 **Trợ lý:** {assistant}
+🌹 **Tự động rời:** {ass}
+🌹 **Chế độ dọn dẹp:** {cm} phút
 
-🌹 **ᴅᴜʀᴀᴛɪᴏɴ ʟɪᴍɪᴛ:** {play_duration} ᴍɪɴᴜᴛᴇs
-🌹 **ᴅᴏᴡɴʟᴏᴀᴅ ʟɪᴍɪᴛ:** {song} ᴍɪɴᴜᴛᴇs
-🌹 **ᴩʟᴀʏʟɪsᴛ ʟɪᴍɪᴛ:** {playlist_limit}
-🌹 **ᴩʟᴀʏʟɪsᴛ ᴩʟᴀʏ ʟɪᴍɪᴛ:** {fetch_playlist}"""
+🌹 **Giới hạn thời lượng:** {play_duration} phút
+🌹 **Giới hạn tải xuống:** {song} phút
+🌹 **Giới hạn danh sách phát:** {playlist_limit}
+🌹 **Giới hạn phát danh sách:** {fetch_playlist}"""
     med = InputMediaPhoto(media=config.STATS_IMG_URL, caption=text)
     try:
         await CallbackQuery.edit_message_media(media=med, reply_markup=upl)
@@ -294,7 +294,7 @@ async def overall_stats(client, CallbackQuery, _):
 @languageCB
 async def overall_stats(client, CallbackQuery, _):
     if CallbackQuery.from_user.id not in SUDOERS:
-        return await CallbackQuery.answer("ᴏɴʟʏ ғᴏʀ sᴜᴅᴏ ᴜsᴇʀs.", show_alert=True)
+        return await CallbackQuery.answer("Chỉ dành cho người cùng quản trị (sudo).", show_alert=True)
     callback_data = CallbackQuery.data.strip()
     what = callback_data.split(None, 1)[1]
     if what != "s":
@@ -337,38 +337,38 @@ async def overall_stats(client, CallbackQuery, _):
     total_queries = await get_queries()
     blocked = len(BANNED_USERS)
     sudoers = len(await get_sudoers())
-    text = f"""🌹 **ʙᴏᴛ's sᴛᴀᴛs ᴀɴᴅ ɪɴғᴏ:**
+    text = f"""🌹 **Thống kê và thông tin Bot:**
 
-       <b><u>🌹 ʜᴀʀᴅᴡᴀʀᴇ</b><u/>
-🌹 **ᴍᴏᴅᴜʟᴇs:** {mod}
-🌹 **ᴩʟᴀᴛғᴏʀᴍ:** {sc}
-🌹 **ʀᴀᴍ:** {ram}
-🌹 **ᴩʜʏsɪᴄᴀʟ ᴄᴏʀᴇs:** {p_core}
-🌹 **ᴛᴏᴛᴀʟ ᴄᴏʀᴇs:** {t_core}
-🌹 **ᴄᴩᴜ ғʀᴇǫᴜᴇɴᴄʏ:** {cpu_freq}
+       <b><u>🌹 Phần cứng</b><u/>
+🌹 **Modules:** {mod}
+🌹 **Nền tảng:** {sc}
+🌹 **RAM:** {ram}
+🌹 **CPU vật lý:** {p_core}
+🌹 **Tổng CPU:** {t_core}
+🌹 **Tần số CPU:** {cpu_freq}
 
-       <b><u>🌹 sᴏғᴛᴡᴀʀᴇ</b><u/>
-🌹 **ᴩʏᴛʜᴏɴ :** {pyver.split()[0]}
-🌹 **ᴩʏʀᴏɢʀᴀᴍ :** {pyrover}
-🌹 **ᴩʏ-ᴛɢᴄᴀʟʟs :** {pytgver}
+       <b><u>🌹 Phần mềm</b><u/>
+🌹 **Python:** {pyver.split()[0]}
+🌹 **Pyrogram:** {pyrover}
+🌹 **Py-TgCalls:** {pytgver}
 
-        <b><u>🌹 sᴛᴏʀᴀɢᴇ</b><u/>
-🌹 **ᴀᴠᴀɪʟᴀʙʟᴇ:** {total[:4]} GiB
-🌹 **ᴜsᴇᴅ:** {used[:4]} GiB
-🌹 **ғʀᴇᴇ:** {free[:4]} GiB
+        <b><u>🌹 Bộ nhớ</b><u/>
+🌹 **Khả dụng:** {total[:4]} GiB
+🌹 **Đã dùng:** {used[:4]} GiB
+🌹 **Còn trống:** {free[:4]} GiB
 
-      <b><u>🌹 ᴄᴜʀʀᴇɴᴛ sᴛᴀᴛs</b><u/>
-🌹 **ᴄʜᴀᴛs:** {served_chats} 
-🌹 **ᴜsᴇʀs:** {served_users} 
-🌹 **ʙʟᴏᴄᴋᴇᴅ:** {blocked} 
-🌹 **sᴜᴅᴏᴇʀs:** {sudoers} 
+      <b><u>🌹 Thống kê hiện tại</b><u/>
+🌹 **Nhóm chat:** {served_chats} 
+🌹 **Người dùng:** {served_users} 
+🌹 **Đã chặn:** {blocked} 
+🌹 **Quản trị viên:** {sudoers} 
 
-      <b><u>🌹 ᴍᴏɴɢᴏ ᴅᴀᴛᴀʙᴀsᴇ</b><u/>
-🌹 **sɪᴢᴇ:** {datasize[:6]} ᴍʙ
-🌹 **sᴛᴏʀᴀɢᴇ:** {storage} ᴍʙ
-🌹 **ᴄᴏʟʟᴇᴄᴛɪᴏɴs:** {collections}
-🌹 **ᴋᴇʏs:** {objects}
-🌹 **ʙᴏᴛ ǫᴜᴇʀɪᴇs:** `{total_queries}`
+      <b><u>🌹 Cơ sở dữ liệu MongoDB</b><u/>
+🌹 **Kích thước:** {datasize[:6]} MB
+🌹 **Bộ nhớ:** {storage} MB
+🌹 **Bộ sưu tập:** {collections}
+🌹 **Keys:** {objects}
+🌹 **Lệnh Bot:** `{total_queries}`
     """
     med = InputMediaPhoto(media=config.STATS_IMG_URL, caption=text)
     try:

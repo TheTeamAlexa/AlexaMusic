@@ -24,11 +24,11 @@ async def bot_added(_, message):
                     message.chat.username if message.chat.username else "Private Chat"
                 )
                 msg = (
-                    f"<b>Bot added in</b> {message.chat.title}\n\n"
-                    f"<b>Name:</b> {message.chat.title}\n"
-                    f"<b>Id:</b> {message.chat.id}\n"
+                    f"<b>Bot vừa được thêm vào nhóm mới!</b> {message.chat.title}\n\n"
+                    f"<b>Tên nhóm:</b> {message.chat.title}\n"
+                    f"<b>Id Nhóm:</b> {message.chat.id}\n"
                     f"<b>Username:</b> @{username}\n"
-                    f"<b>Added By:</b> {message.from_user.mention}"
+                    f"<b>Thêm bởi:</b> {message.from_user.mention}"
                 )
                 await app.send_message(
                     LOG_GROUP_ID,
@@ -37,7 +37,7 @@ async def bot_added(_, message):
                         [
                             [
                                 InlineKeyboardButton(
-                                    text=f"Added by: {message.from_user.first_name}",
+                                    text=f"Thêm bởi: {message.from_user.first_name}",
                                     user_id=message.from_user.id,
                                 )
                             ]
@@ -67,11 +67,11 @@ async def bot_kicked(_, message: Message):
             )
             chat_id = message.chat.id
             left = (
-                f"Bot was Removed in {title}\n"
-                f"<b>Name</b>: {title}\n"
-                f"<b>Id</b>: {chat_id}\n"
+                f"Bot đã bị xóa khỏi nhóm!{title}\n"
+                f"<b>Tên nhóm</b>: {title}\n"
+                f"<b>Id Nhóm</b>: {chat_id}\n"
                 f"<b>Username</b>: {username}\n"
-                f"<b>Removed By</b>: {remove_by}"
+                f"<b>Xoá bởi</b>: {remove_by}"
             )
 
             await app.send_message(
@@ -81,7 +81,7 @@ async def bot_kicked(_, message: Message):
                     [
                         [
                             InlineKeyboardButton(
-                                text=f"Removed By: {message.from_user.first_name}",
+                                text=f"Xoá bởi: {message.from_user.first_name}",
                                 user_id=message.from_user.id,
                             )
                         ]

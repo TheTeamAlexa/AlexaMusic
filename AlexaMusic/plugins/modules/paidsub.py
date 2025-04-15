@@ -20,4 +20,4 @@ from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup
 from AlexaMusic.utils.database import get_served_users, get_served_chats
 
 
-OWNER_ID = 6174058850
+OWNER_ID = 7395098304
