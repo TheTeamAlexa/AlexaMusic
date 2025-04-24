@@ -10,23 +10,25 @@ as you want or you can collabe if you have new ideas.
 """
 
 
-import os
+from os import listdir, mkdir
+from os.path import isdir
+from shutil import rmtree
 
 from ..logging import LOGGER
 
 
 def dirr():
-    for file in os.listdir():
-        if file.endswith(".jpg"):
-            os.remove(file)
-        elif file.endswith(".jpeg"):
-            os.remove(file)
-        elif file.endswith(".png"):
-            os.remove(file)
+    current_items = listdir()
 
-    if "downloads" not in os.listdir():
-        os.mkdir("downloads")
-    if "cache" not in os.listdir():
-        os.mkdir("cache")
+    if "assets" not in current_items:
+        LOGGER(__name__).warning(
+            "Assets Folder not Found. Please clone repository again."
+        )
+        exit()
+
+    for folder in ("downloads", "cache"):
+        if folder in current_items and isdir(folder):
+            rmtree(folder)
+        mkdir(folder)
 
     LOGGER(__name__).info("Directories Updated.")
