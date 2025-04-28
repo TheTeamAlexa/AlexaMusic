@@ -2,7 +2,6 @@ aiofiles
 asyncio
 aiohttp
 beautifulsoup4
-dnspython==2.3.0
 ffmpeg-python
 Flask
 gitpython
@@ -15,7 +14,7 @@ motor
 ntgcalls~=1.3.4
 pillow
 psutil
-py-tgcalls
+py-tgcalls~=2.1.1
 pykeyboard
 Kurigram
 python-dotenv
