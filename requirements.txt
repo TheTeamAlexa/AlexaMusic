@@ -24,6 +24,6 @@ spotipy
 PyTgCrypto
 unidecode
 werkzeug
-yt-dlp~=2025.3.31
+yt-dlp~=2025.4.30
 https://github.com/KSKOP69/youtube-search-python/archive/ksk.zip
 pyyaml
