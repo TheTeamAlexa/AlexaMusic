@@ -333,13 +333,21 @@ bash start
 </p>
 <br>
 
+<div align="center">
+
 # Asad– History
-
-<a href="https://www.youtube.com/JankariKiDuniya"><img src="https://img.shields.io/badge/Join-Subscribe%20Support-blue.svg?style=for-the-badge&logo=YouTube"></a>
-
+<br>
+<a href="https://www.youtube.com/JankariKiDuniya">
+  <img src="https://img.shields.io/badge/Join-Subscribe%20Support-blue.svg?style=for-the-badge&logo=YouTube">
+</a>
+<br>
 
 > ⭐️ Thanks to everyone for using Alexa, 🤭 That is the greatest pleasure we have !
+
+<br>
 
 ### 📊 Repo Views Counter
 
 ![Views](https://profile-counter.glitch.me/AlexaMusic/count.svg)
+
+</div>
