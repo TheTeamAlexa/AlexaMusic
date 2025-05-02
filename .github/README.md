@@ -248,6 +248,7 @@ bash start
 ɴᴏᴡ ʏᴏᴜ ᴄᴀɴ ᴅᴇᴘʟᴏʏ ᴀʟᴇxᴀ ᴍᴜsɪᴄ ᴏɴ sᴄᴀʟɪɴɢᴏ ɪɴᴛʀᴏᴅᴜᴄᴇᴅ ʙʏ @ITZ-ZAID
 
 <br>
+
 <p><a href="https://my.scalingo.com/deploy?template=https://github.com/TheTeamAlexa/AlexaMusic"> <img src="https://cdn.scalingo.com/deploy/button.svg" width="220" height="38.45"/></a></p>
 
 
@@ -263,17 +264,14 @@ bash start
 <br>
 
 <summary><b>⚡ ʀᴇɴᴅᴇʀ</b></summary>
-<br>
-ɴᴏᴡ ʏᴏᴜ ᴄᴀɴ ᴅᴇᴘʟᴏʏ ᴀʟᴇxᴀ ᴍᴜsɪᴄ ᴏɴ ʀᴇɴᴅᴇʀ.
 
 <br>
+
 <p><a href="https://render.com/deploy?repo=github.com/TheTeamAlexa/AlexaMusic"> <img src="https://img.shields.io/badge/Deploy%20to-Render-blue?style=for-the-badge&logo=render" width="220" height="33"/></a></p>
 
 <br>
 
 <summary><b>☁️ ᴋᴏʏᴇʙ</b></summary>
-<br>
-ɴᴏᴡ ʏᴏᴜ ᴄᴀɴ ᴅᴇᴘʟᴏʏ ᴀʟᴇxᴀ ᴍᴜsɪᴄ ᴏɴ ᴋᴏʏᴇʙ.
 
 <br>
 
