@@ -3,11 +3,13 @@
 <h4 align="center">
     Introducing Alexa Music – your smart, powerful, and simple bot for seamless audio and video playback on Telegram. Written in Python with the latest Pyrogram, Alexa Music delivers a superior entertainment experience. Upgrade now for optimal performance and a new level of Telegram enjoyment.<br> Working With Pyrogram Latest Version...
 </h4>
+<br>
 <p align="center">
     <a href="https://t.me/Alexa_BotUpdates">
         <img src="cover.png">
     </a>
 </p>
+<br>
 <p align="center">
     <a href="https://github.com/TheTeamAlexa/AlexaMusic"> <img src="https://img.shields.io/github/repo-size/TheTeamAlexa/AlexaMusic?color=orange&logo=github&logoColor=green&style=for-the-badge" /></a>
     <a href="https://github.com/TheTeamAlexa/AlexaMusic/commits"> <img src="https://img.shields.io/github/last-commit/TheTeamAlexa/AlexaMusic?color=red&logo=github&logoColor=green&style=for-the-badge" /></a>
@@ -16,6 +18,7 @@
     <a href="https://pypi.org/project/Pyrogram"> <img src="https://img.shields.io/pypi/v/Kurigram?color=yellow&label=Pyrogram&logo=python&logoColor=green&style=for-the-badge" /></a>
 </p>
 
+<br>
 
 > [!IMPORTANT]
 >## <h2 align="center"><b>🚀 Fix for YouTube IP Blocking & Sign-In Errors </b></h2>
