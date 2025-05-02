@@ -25,11 +25,9 @@ class AlexaBot(Client):
             api_id=config.API_ID,
             api_hash=config.API_HASH,
             bot_token=config.BOT_TOKEN,
-            sleep_threshold=30,
-            max_concurrent_transmissions=8,
-            workers=50,
+            max_concurrent_transmissions=5,
         )
-        LOGGER(__name__).info(f"Starting Bot...")
+        LOGGER(__name__).info("Starting Bot...")
 
     async def start(self):
         await super().start()
@@ -41,7 +39,7 @@ class AlexaBot(Client):
             await self.send_message(
                 config.LOG_GROUP_ID, "» ᴍᴜsɪᴄ ʙᴏᴛ sᴛᴀʀᴛᴇᴅ, ᴡᴀɪᴛɪɴɢ ғᴏʀ ᴀssɪsᴛᴀɴᴛ..."
             )
-        except:
+        except Exception:
             LOGGER(__name__).error(
                 "Bot has failed to access the log Group. Make sure that you have added your bot to your log channel and promoted as admin!"
             )
@@ -51,7 +49,7 @@ class AlexaBot(Client):
             LOGGER(__name__).error("Please promote Bot as Admin in Logger Group")
             sys.exit()
         if get_me.last_name:
-            self.name = get_me.first_name + " " + get_me.last_name
+            self.name = f"{get_me.first_name} {get_me.last_name}"
         else:
             self.name = get_me.first_name
         LOGGER(__name__).info(f"MusicBot Started as {self.name}")
