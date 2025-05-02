@@ -126,118 +126,120 @@ Through this repository, we hope to share our passion for music and innovation w
 <p><a href="https://github.com/TheTeamAlexa/AlexaMusic/blob/master/genstring.py"><img src="https://img.shields.io/badge/TG%20String%20Gen%20Bot-blueviolet?style=for-the-badge&logo=appveyor" width="200"/></a></p>
 <br>
 
-<h4><b>💻 Lᴏᴄᴀʟ Hᴏsᴛɪɴɢ ᴏʀ VPS Dᴇᴘʟᴏʏᴍᴇɴᴛ Gᴜɪᴅᴇ. 🗄️</b></h4> 
+### 💻 AlexaMusic Bot Deployment Guide on Local Server or VPS 🗄️
 <br>
 <details>
-<summary><b>ᴄʟɪᴄᴋ ʜᴇʀᴇ</b> (ᴜʙᴜɴᴛᴜ 𝟸𝟶,𝟸𝟸)</summary>
-<br>
+<summary><strong>Ubuntu 20.04 / 22.04 Setup</strong></summary>
 
-1.  Upgrade and Update:
-```console
+#### 🧩 Step-by-Step Installation
+
+**1. Update & Upgrade the System**
+```bash
 sudo apt-get update && sudo apt-get upgrade -y
 ```
 
-2. Installing Required Packages:
-```console
+**2. Install Required Packages**
+```bash
 sudo apt-get install python3-pip ffmpeg -y
 ```
 
-3. Setting up PIP
-```console
+**3. Upgrade pip**
+```bash
 sudo pip3 install -U pip
 ```
 
-4. Clone the Repository
-```console
+**4. Clone the Repository**
+```bash
 git clone https://github.com/TheTeamAlexa/AlexaMusic && cd AlexaMusic
 ```
 
-5. Install Requirements
-```console
+**5. Install Python Requirements**
+```bash
 pip3 install -U -r requirements.txt
 ```
 
-6. Create .env  with sample.env
-```console
+**6. Create `.env` File**
+```bash
 cp sample.env .env
 ```
-> Edit .env with your vars. 
+> Now edit `.env` with your configuration variables.
 
-7. Editing Vars:
-```console
+**7. Edit Environment Variables**
+```bash
 vi .env
 ```
-> Edit .env with your values or you can simple copy a config from here and paste it to your notepad, then edit and paste there.
-> Press I button on keyboard to start editing.
-> Press Ctrl + C  once you are done with editing vars and type :wq to save .env or :qa to exit editing.
+> - Press `I` to start editing.  
+> - Press `Ctrl + C`, then type `:wq` to save and exit.  
+> - Use `:qa` to quit without saving.
 
-8. Install Tmux : 
-```console
+**8. Install and Start Tmux**
+```bash
 sudo apt install tmux && tmux
 ```
 
-9. Finally Run Alexa Music Bot
-```console
+**9. Start the Bot**
+```bash
 bash start
 ```
 </details>
 
 <br>
 <details>
-<summary><b>ᴄʟɪᴄᴋ ʜᴇʀᴇ</b> (ᴜʙᴜɴᴛᴜ 𝟸4)</summary>
-<br>
+<summary><strong>Ubuntu 24.04 Setup</strong></summary>
 
-1.  Upgrade and Update:
-```console
+#### 🧩 Step-by-Step Installation
+
+**1. Update & Upgrade the System**
+```bash
 sudo apt-get update && sudo apt-get upgrade -y
 ```
 
-2. Installing Required Packages:
-```console
+**2. Install Required Packages**
+```bash
 sudo apt-get install python3-pip ffmpeg -y
 ```
 
-3. Setting up PIP
-```console
+**3. Upgrade pip**
+```bash
 sudo pip3 install -U pip
 ```
 
-4. Clone the Repository
-```console
+**4. Clone the Repository**
+```bash
 git clone https://github.com/TheTeamAlexa/AlexaMusic && cd AlexaMusic
 ```
 
-5. Install Requirements
-```console
+**5. Install Python Requirements (Ubuntu 24 specific)**
+```bash
 pip install -r requirements.txt --break-system-packages
 ```
 
-6. Create .env  with sample.env
-```console
+**6. Create `.env` File**
+```bash
 cp sample.env .env
 ```
-> Edit .env with your vars. 
+> Edit `.env` with your bot configuration.
 
-7. Editing Vars:
-```console
+**7. Edit Environment Variables**
+```bash
 vi .env
 ```
-> Edit .env with your values or you can simple copy a config from here and paste it to your notepad, then edit and paste there.
-> Press I button on keyboard to start editing.
-> Press Ctrl + C  once you are done with editing vars and type :wq to save .env or :qa to exit editing.
+> - Press `I` to edit.  
+> - Press `Ctrl + C`, then type `:wq` to save.  
+> - Use `:qa` to quit without saving.
 
-8. Install Tmux : 
-```console
+**8. Install and Start Tmux**
+```bash
 sudo apt install tmux && tmux
 ```
 
-9. Finally Run Alexa Music Bot
-```console
+**9. Start the Bot**
+```bash
 bash start
 ```
 </details>
 
-
+<br>
 <summary><b>sᴄᴀʟɪɴɢᴏ</b></summary>
 <br>
 ɴᴏᴡ ʏᴏᴜ ᴄᴀɴ ᴅᴇᴘʟᴏʏ ᴀʟᴇxᴀ ᴍᴜsɪᴄ ᴏɴ sᴄᴀʟɪɴɢᴏ ɪɴᴛʀᴏᴅᴜᴄᴇᴅ ʙʏ @ITZ-ZAID
