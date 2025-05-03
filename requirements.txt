@@ -11,7 +11,7 @@ heroku3
 httpx[http2]
 lyricsgenius
 motor
-ntgcalls~=1.3.5b3
+ntgcalls~=1.3.5b4
 pillow
 psutil
 py-tgcalls~=2.1.2b2
