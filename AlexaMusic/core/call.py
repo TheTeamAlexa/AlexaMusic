@@ -612,7 +612,7 @@ class Call(PyTgCalls):
         @self.four.on_update(fl.stream_end())
         @self.five.on_update(fl.stream_end())
         async def stream_end_handler1(client, update: StreamEnded):
-            if not update.stream_type == StreamEnded.Type.AUDIO:
+            if update.stream_type != StreamEnded.Type.AUDIO:
                 return
             await self.change_stream(client, update.chat_id)
 
