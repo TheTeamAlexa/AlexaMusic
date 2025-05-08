@@ -8,9 +8,9 @@ Use a browser extension to export cookies in the **Netscape HTTP Cookie File** f
 - **Firefox:** [Get cookies.txt (Firefox Add-on)](https://addons.mozilla.org/en-US/firefox/addon/cookies-txt/)
 - **Chrome:** [Get cookies.txt (Chrome Extension)](https://chromewebstore.google.com/detail/get-cookiestxt-clean/ahmnmhfbokciafffnknlekllgcnafnie)
 
-#### **2. Upload Cookies to BatBin Service**  
+#### **2. Upload Cookies to BatBin**
 1. Go to **[BatBin](https://batbin.me)**.
-2. Paste your `cookies`.
+2. Paste your `cookies.txt`.
 3. Copy the generated URL.
 
 #### **3. Configure the Environment Variable**
