@@ -1,4 +1,16 @@
-rules:
-  - path: "**/*.py"
-    enabled: true
+ignore:
+-   assests
+-   cookies
 
+rule_settings:
+    enable:
+    -   default
+    disable: []
+    rule_types:
+      - refactoring
+      - suggestion
+      - comment
+    python_version: '3.12'
+
+metrics:
+    quality_threshold: 25.0
