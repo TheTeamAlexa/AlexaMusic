@@ -1,0 +1,4 @@
+rules:
+  - path: "**/*.py"
+    enabled: true
+
