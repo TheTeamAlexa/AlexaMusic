@@ -44,25 +44,23 @@ class TeleAPI:
 
     async def get_link(self, message):
         if message.chat.username:
-            link = f"https://t.me/{message.chat.username}/{message.reply_to_message.id}"
-        else:
-            xf = str((message.chat.id))[4:]
-            link = f"https://t.me/c/{xf}/{message.reply_to_message.id}"
-        return link
+            return f"https://t.me/{message.chat.username}/{message.reply_to_message.id}"
+        xf = str((message.chat.id))[4:]
+        return f"https://t.me/c/{xf}/{message.reply_to_message.id}"
 
     async def get_filename(self, file, audio: Union[bool, str] = None):
         try:
             file_name = file.file_name
             if file_name is None:
                 file_name = "Telagram audio file" if audio else "Telagram video file"
-        except:
+        except Exception:
             file_name = "Telagram audio file" if audio else "Telagram video file"
         return file_name
 
     async def get_duration(self, file):
         try:
             dur = seconds_to_min(file.duration)
-        except:
+        except Exception:
             dur = "Unknown"
         return dur
 
@@ -82,16 +80,14 @@ class TeleAPI:
                         else "ogg"
                     )
                 )
-            except:
-                file_name = audio.file_unique_id + "." + ".ogg"
+            except Exception:
+                file_name = f"{audio.file_unique_id}..ogg"
             file_name = os.path.join(os.path.realpath("downloads"), file_name)
         if video:
             try:
-                file_name = (
-                    video.file_unique_id + "." + (video.file_name.split(".")[-1])
-                )
-            except:
-                file_name = video.file_unique_id + "." + "mp4"
+                file_name = f"{video.file_unique_id}." + video.file_name.split(".")[-1]
+            except Exception:
+                file_name = f"{video.file_unique_id}.mp4"
             file_name = os.path.join(os.path.realpath("downloads"), file_name)
         return file_name
 
@@ -153,9 +149,7 @@ class TeleAPI:
                     speed = current / check_time
                     eta = int((total - current) / speed)
                     downloader[message.id] = eta
-                    eta = get_readable_time(eta)
-                    if not eta:
-                        eta = "0 sec"
+                    eta = get_readable_time(eta) or "0 sec"
                     total_size = convert_bytes(total)
                     completed_size = convert_bytes(current)
                     speed = convert_bytes(speed)
@@ -170,7 +164,7 @@ class TeleAPI:
 **Elapsed Time:** {eta}"""
                     try:
                         await mystic.edit_text(text, reply_markup=upl)
-                    except:
+                    except Exception:
                         pass
                     left_time[message.id] = datetime.now() + timedelta(
                         seconds=self.sleep
@@ -189,7 +183,7 @@ class TeleAPI:
                     "Sucessfully Downloaded\n Processing File Now..."
                 )
                 downloader.pop(message.id, None)
-            except:
+            except Exception:
                 await mystic.edit_text(_["tg_2"])
 
         if len(downloader) > 10:
@@ -199,7 +193,7 @@ class TeleAPI:
             try:
                 low = min(timers)
                 eta = get_readable_time(low)
-            except:
+            except Exception:
                 eta = "Unknown"
             await mystic.edit_text(_["tg_1"].format(eta))
             return False

@@ -9,6 +9,7 @@ This program is free software: you can redistribute it and can modify
 as you want or you can collabe if you have new ideas.
 """
 
+
 from motor.motor_asyncio import AsyncIOMotorClient
 
 from config import MONGO_DB_URI
@@ -20,7 +21,7 @@ try:
     _mongo_async_ = AsyncIOMotorClient(MONGO_DB_URI)
     mongodb = _mongo_async_.Alexa
     LOGGER(__name__).info("Connected to your Mongo Database.")
-except:
+except Exception:
     LOGGER(__name__).error("Failed to connect to your Mongo Database.")
     exit()
 

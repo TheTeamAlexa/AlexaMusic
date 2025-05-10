@@ -122,7 +122,7 @@ async def play_commnd(
                     return await mystic.edit_text(
                         _["play_8"].format(f"{' | '.join(formats)}")
                     )
-            except:
+            except Exception:
                 return await mystic.edit_text(
                     _["play_8"].format(f"{' | '.join(formats)}")
                 )
@@ -172,10 +172,11 @@ async def play_commnd(
                     return await mystic.edit_text(_["play_3"])
                 streamtype = "playlist"
                 plist_type = "yt"
-                if "&" in url:
-                    plist_id = (url.split("=")[1]).split("&")[0]
-                else:
-                    plist_id = url.split("=")[1]
+                plist_id = (
+                    (url.split("=")[1]).split("&")[0]
+                    if "&" in url
+                    else url.split("=")[1]
+                )
                 img = config.PLAYLIST_IMG_URL
                 cap = _["play_10"]
             else:
@@ -452,17 +453,17 @@ async def play_music(client, CallbackQuery, _):
     if CallbackQuery.from_user.id != int(user_id):
         try:
             return await CallbackQuery.answer(_["playcb_1"], show_alert=True)
-        except:
+        except Exception:
             return
     try:
         chat_id, channel = await get_channeplayCB(_, cplay, CallbackQuery)
-    except:
+    except Exception:
         return
     user_name = CallbackQuery.from_user.first_name
     try:
         await CallbackQuery.message.delete()
         await CallbackQuery.answer()
-    except:
+    except Exception:
         pass
     mystic = await CallbackQuery.message.reply_text(
         _["play_2"].format(channel) if channel else _["play_1"]
@@ -519,7 +520,7 @@ async def anonymous_check(client, CallbackQuery):
             "ʏᴏᴜ'ʀᴇ ᴀɴ ᴀɴᴏɴʏᴍᴏᴜs ᴀᴅᴍɪɴ\n\nʀᴇᴠᴇʀᴛ ʙᴀᴄᴋ ᴛᴏ ᴜsᴇʀ ᴀᴄᴄᴏᴜɴᴛ ғᴏʀ ᴜsɪɴɢ ᴍᴇ.",
             show_alert=True,
         )
-    except:
+    except Exception:
         return
 
 
@@ -539,17 +540,17 @@ async def play_playlists_command(client, CallbackQuery, _):
     if CallbackQuery.from_user.id != int(user_id):
         try:
             return await CallbackQuery.answer(_["playcb_1"], show_alert=True)
-        except:
+        except Exception:
             return
     try:
         chat_id, channel = await get_channeplayCB(_, cplay, CallbackQuery)
-    except:
+    except Exception:
         return
     user_name = CallbackQuery.from_user.first_name
     await CallbackQuery.message.delete()
     try:
         await CallbackQuery.answer()
-    except:
+    except Exception:
         pass
     mystic = await CallbackQuery.message.reply_text(
         _["play_2"].format(channel) if channel else _["play_1"]
@@ -626,18 +627,15 @@ async def slider_queries(client, CallbackQuery, _):
     if CallbackQuery.from_user.id != int(user_id):
         try:
             return await CallbackQuery.answer(_["playcb_1"], show_alert=True)
-        except:
+        except Exception:
             return
     what = str(what)
     rtype = int(rtype)
     if what == "F":
-        if rtype == 9:
-            query_type = 0
-        else:
-            query_type = int(rtype + 1)
+        query_type = 0 if rtype == 9 else int(rtype + 1)
         try:
             await CallbackQuery.answer(_["playcb_2"])
-        except:
+        except Exception:
             pass
         title, duration_min, thumbnail, vidid = await YouTube.slider(query, query_type)
         buttons = slider_markup(_, vidid, user_id, query, query_type, cplay, fplay)
@@ -652,10 +650,7 @@ async def slider_queries(client, CallbackQuery, _):
             media=med, reply_markup=InlineKeyboardMarkup(buttons)
         )
     if what == "B":
-        if rtype == 0:
-            query_type = 9
-        else:
-            query_type = int(rtype - 1)
+        query_type = 9 if rtype == 0 else int(rtype - 1)
         try:
             await CallbackQuery.answer(_["playcb_2"])
         except:

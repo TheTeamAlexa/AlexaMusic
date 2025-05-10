@@ -95,7 +95,7 @@ async def song_commad_private(client, message: Message, _):
             thumbnail,
             vidid,
         ) = await YouTube.details(query)
-    except:
+    except Exception:
         return await mystic.edit_text(_["play_3"])
     if str(duration_min) == "None":
         return await mystic.edit_text(_["song_3"])
@@ -132,12 +132,12 @@ async def song_helper_cb(client, CallbackQuery, _):
     stype, vidid = callback_request.split("|")
     try:
         await CallbackQuery.answer(_["song_6"], show_alert=True)
-    except:
+    except Exception:
         pass
     if stype == "audio":
         try:
             formats_available, link = await YouTube.formats(vidid, True)
-        except:
+        except Exception:
             return await CallbackQuery.edit_message_text(_["song_7"])
         keyboard = InlineKeyboard()
         done = []
@@ -159,14 +159,6 @@ async def song_helper_cb(client, CallbackQuery, _):
                         callback_data=f"song_download {stype}|{fom}|{vidid}",
                     ),
                 )
-        keyboard.row(
-            InlineKeyboardButton(
-                text=_["BACK_BUTTON"],
-                callback_data=f"song_back {stype}|{vidid}",
-            ),
-            InlineKeyboardButton(text=_["CLOSE_BUTTON"], callback_data=f"close"),
-        )
-        return await CallbackQuery.edit_message_reply_markup(reply_markup=keyboard)
     else:
         try:
             formats_available, link = await YouTube.formats(vidid, True)
@@ -191,14 +183,15 @@ async def song_helper_cb(client, CallbackQuery, _):
                     callback_data=f"song_download {stype}|{x['format_id']}|{vidid}",
                 )
             )
-        keyboard.row(
-            InlineKeyboardButton(
-                text=_["BACK_BUTTON"],
-                callback_data=f"song_back {stype}|{vidid}",
-            ),
-            InlineKeyboardButton(text=_["CLOSE_BUTTON"], callback_data=f"close"),
-        )
-        return await CallbackQuery.edit_message_reply_markup(reply_markup=keyboard)
+
+    keyboard.row(
+        InlineKeyboardButton(
+            text=_["BACK_BUTTON"],
+            callback_data=f"song_back {stype}|{vidid}",
+        ),
+        InlineKeyboardButton(text=_["CLOSE_BUTTON"], callback_data="close"),
+    )
+    return await CallbackQuery.edit_message_reply_markup(reply_markup=keyboard)
 
 
 # Downloading Songs Here
@@ -209,7 +202,7 @@ async def song_helper_cb(client, CallbackQuery, _):
 async def song_download_cb(client, CallbackQuery, _):
     try:
         await CallbackQuery.answer("ᴅᴏᴡɴʟᴏᴀᴅɪɴɢ...")
-    except:
+    except Exception:
         pass
     callback_data = CallbackQuery.data.strip()
     callback_request = callback_data.split(None, 1)[1]
@@ -221,7 +214,6 @@ async def song_download_cb(client, CallbackQuery, _):
     title = (x["title"]).title()
     title = re.sub("\W+", " ", title)
     thumb_image_path = await CallbackQuery.message.download()
-    duration = x["duration"]
     if stype == "video":
         thumb_image_path = await CallbackQuery.message.download()
         width = CallbackQuery.message.photo.width
@@ -236,6 +228,7 @@ async def song_download_cb(client, CallbackQuery, _):
             )
         except Exception as e:
             return await mystic.edit_text(_["song_9"].format(e))
+        duration = x["duration"]
         med = InputMediaVideo(
             media=file_path,
             duration=duration,

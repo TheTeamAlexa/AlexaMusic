@@ -38,12 +38,12 @@ async def init() -> None:
             BANNED_USERS.add(user_id)
         for user_id in await get_banned_users():
             BANNED_USERS.add(user_id)
-    except:
+    except Exception:
         pass
     await app.start()
     await save_cookies()
     for module in ALL_MODULES:
-        importlib.import_module("AlexaMusic.plugins" + module)
+        importlib.import_module(f"AlexaMusic.plugins{module}")
     LOGGER("AlexaMusic.plugins").info("Necessary Modules Imported Successfully.")
     await userbot.start()
     await Alexa.start()
@@ -54,7 +54,7 @@ async def init() -> None:
             "[ERROR] - \n\nTurn on group voice chat and don't put it off otherwise I'll stop working thanks."
         )
         exit()
-    except:
+    except Exception:
         pass
     await Alexa.decorators()
     LOGGER("AlexaMusic").info("Alexa Music Bot Started Successfully")

@@ -27,28 +27,19 @@ def lanuages_keyboard(_):
     keyboard = InlineKeyboard(row_width=2)
     keyboard.row(
         InlineKeyboardButton(
-            text="🇦🇺 ᴇɴɢʟɪsʜ 🇦🇺",
-            callback_data=f"languages:en",
+            text="🇦🇺 ᴇɴɢʟɪsʜ 🇦🇺", callback_data="languages:en"
         ),
+        InlineKeyboardButton(text="🇮🇳 हिन्दी 🇮🇳", callback_data="languages:hi"),
+    )
+    keyboard.row(
+        InlineKeyboardButton(text="🇱🇰 සිංහල 🇱🇰", callback_data="languages:si"),
         InlineKeyboardButton(
-            text="🇮🇳 हिन्दी 🇮🇳",
-            callback_data=f"languages:hi",
+            text="🇦🇿 Azərbaycan 🇦🇿", callback_data="languages:az"
         ),
     )
     keyboard.row(
         InlineKeyboardButton(
-            text="🇱🇰 සිංහල 🇱🇰",
-            callback_data=f"languages:si",
-        ),
-        InlineKeyboardButton(
-            text="🇦🇿 Azərbaycan 🇦🇿",
-            callback_data=f"languages:az",
-        ),
-    )
-    keyboard.row(
-        InlineKeyboardButton(
-            text="🇮🇳 ગુજરાતી 🇮🇳",
-            callback_data=f"languages:gu",
+            text="🇮🇳 ગુજરાતી 🇮🇳", callback_data="languages:gu"
         ),
         InlineKeyboardButton(
             text="🇹🇷 Türkiye Türkçesi 🇹🇷",
@@ -89,7 +80,7 @@ async def langs_command(client, message: Message, _):
 async def lanuagecb(client, CallbackQuery, _):
     try:
         await CallbackQuery.answer()
-    except:
+    except Exception:
         pass
     keyboard = lanuages_keyboard(_)
     return await CallbackQuery.edit_message_reply_markup(reply_markup=keyboard)
@@ -109,7 +100,7 @@ async def language_markup(client, CallbackQuery, _):
         await CallbackQuery.answer(
             "sᴜᴄᴄᴇssғᴜʟʟʏ ᴄʜᴀɴɢᴇᴅ ʏᴏᴜʀ ʟᴀɴɢᴜᴀɢᴇ.", show_alert=True
         )
-    except:
+    except Exception:
         return await CallbackQuery.answer(
             "ғᴀɪʟᴇᴅ ᴛᴏ ᴄʜᴀɴɢᴇ ʟᴀɴɢᴜᴀɢᴇ ᴏʀ ᴛʜᴇ ʟᴀɴɢᴜᴀɢᴇ ɪs ᴜɴᴅᴇʀ ᴍᴀɪɴᴛᴇɴᴀɴᴄᴇ.",
             show_alert=True,

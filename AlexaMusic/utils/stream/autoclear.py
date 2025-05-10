@@ -21,7 +21,10 @@ async def auto_clean(popped):
             rem = popped_item.get("file")
             if rem:
                 autoclean.discard(rem)
-                if not any(keyword in rem for keyword in ("vid_", "live_", "index_")):
+                if all(
+                    keyword not in rem
+                    for keyword in ("vid_", "live_", "index_")
+                ):
                     try:
                         os.remove(rem)
                     except FileNotFoundError:

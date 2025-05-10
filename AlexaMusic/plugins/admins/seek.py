@@ -50,11 +50,11 @@ async def seek_comm(cli, message: Message, _, chat_id):
                 _["admin_31"].format(seconds_to_min(duration_played), duration)
             )
         to_seek = duration_played - duration_to_skip + 1
+    elif (duration_seconds - (duration_played + duration_to_skip)) <= 10:
+        return await message.reply_text(
+            _["admin_31"].format(seconds_to_min(duration_played), duration)
+        )
     else:
-        if (duration_seconds - (duration_played + duration_to_skip)) <= 10:
-            return await message.reply_text(
-                _["admin_31"].format(seconds_to_min(duration_played), duration)
-            )
         to_seek = duration_played + duration_to_skip + 1
     mystic = await message.reply_text(_["admin_32"])
     if "vid_" in file_path:
@@ -69,7 +69,7 @@ async def seek_comm(cli, message: Message, _, chat_id):
             duration,
             playing[0]["streamtype"],
         )
-    except:
+    except Exception:
         return await mystic.edit_text(_["admin_34"])
     if message.command[0][-2] == "c":
         db[chat_id][0]["played"] -= duration_to_skip

@@ -17,10 +17,7 @@ def get_readable_time(seconds: int) -> str:
     time_suffix_list = ["s", "m", "h", "days"]
     while count < 4:
         count += 1
-        if count < 3:
-            remainder, result = divmod(seconds, 60)
-        else:
-            remainder, result = divmod(seconds, 24)
+        remainder, result = divmod(seconds, 60) if count < 3 else divmod(seconds, 24)
         if seconds == 0 and remainder == 0:
             break
         time_list.append(int(result))
@@ -28,7 +25,7 @@ def get_readable_time(seconds: int) -> str:
     for i in range(len(time_list)):
         time_list[i] = str(time_list[i]) + time_suffix_list[i]
     if len(time_list) == 4:
-        ping_time += time_list.pop() + ", "
+        ping_time += f"{time_list.pop()}, "
     time_list.reverse()
     ping_time += ":".join(time_list)
     return ping_time
@@ -62,8 +59,7 @@ async def alpha_to_int(user_id_alphabet: str) -> int:
     for i in user_id_alphabet:
         index = alphabet.index(i)
         user_id += str(index)
-    user_id = int(user_id)
-    return user_id
+    return int(user_id)
 
 
 def time_to_seconds(time):

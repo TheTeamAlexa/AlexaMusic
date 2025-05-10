@@ -25,9 +25,7 @@ async def get_gbans_count() -> int:
 
 async def is_gbanned_user(user_id: int) -> bool:
     user = await gbansdb.find_one({"user_id": user_id})
-    if not user:
-        return False
-    return True
+    return bool(user)
 
 
 async def add_gban_user(user_id: int):

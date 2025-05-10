@@ -19,9 +19,7 @@ pmpermitdb = mongodb.permit
 
 async def is_pmpermit_approved(user_id: int) -> bool:
     user = await pmpermitdb.find_one({"user_id": user_id})
-    if not user:
-        return False
-    return True
+    return bool(user)
 
 
 async def approve_pmpermit(user_id: int):

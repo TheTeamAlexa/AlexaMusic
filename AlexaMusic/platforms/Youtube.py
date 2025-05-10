@@ -161,7 +161,7 @@ class YouTubeAPI:
         playlist = await shell_cmd(cmd)
         try:
             result = [key for key in playlist.split("\n") if key]
-        except:
+        except Exception:
             result = []
         return result
 

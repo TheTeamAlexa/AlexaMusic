@@ -37,7 +37,7 @@ async def helper_private(
     if is_callback:
         try:
             await update.answer()
-        except:
+        except Exception:
             pass
         chat_id = update.message.chat.id
         language = await get_lang(chat_id)
@@ -53,7 +53,7 @@ async def helper_private(
         if await is_commanddelete_on(update.chat.id):
             try:
                 await update.delete()
-            except:
+            except Exception:
                 pass
         language = await get_lang(chat_id)
         _ = get_string(language)
@@ -79,12 +79,11 @@ async def helper_cb(client, CallbackQuery, _):
             return await CallbackQuery.answer(
                 "ᴏɴʟʏ ғᴏʀ ᴏᴡɴᴇʀ ᴀɴᴅ sᴜᴅᴏᴇʀs", show_alert=True
             )
-        else:
-            await CallbackQuery.edit_message_text(helpers.HELP_5, reply_markup=keyboard)
-            return await CallbackQuery.answer()
+        await CallbackQuery.edit_message_text(helpers.HELP_5, reply_markup=keyboard)
+        return await CallbackQuery.answer()
     try:
         await CallbackQuery.answer()
-    except:
+    except Exception:
         pass
     if cb == "hb1":
         await CallbackQuery.edit_message_text(helpers.HELP_1, reply_markup=keyboard)

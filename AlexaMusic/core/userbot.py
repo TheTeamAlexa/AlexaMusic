@@ -68,7 +68,7 @@ class Userbot(Client):
                 await self.one.join_chat("Alexa_Help")
                 await self.one.join_chat("TheTeamAlexa")
                 await self.one.join_chat("Alexa_BotUpdates")
-            except:
+            except Exception:
                 pass
             assistants.append(1)
             try:
@@ -76,7 +76,7 @@ class Userbot(Client):
                     config.LOG_GROUP_ID,
                     "ᴀssɪsᴛᴀɴᴛ sᴛᴀʀᴛᴇᴅ, ɴᴏᴡ ɪᴛ's ᴛɪᴍᴇ ᴛᴏ ᴇɴᴊᴏʏ ᴍᴜsɪᴄ ᴏɴ ᴛᴇʟᴇɢʀᴀᴍ ᴠɪᴅᴇᴏᴄʜᴀᴛs.",
                 )
-            except:
+            except Exception:
                 LOGGER(__name__).error(
                     f"Assistant Account 1 has failed to access the log Group. Make sure that you have added your assistant to your log group and promoted as admin ! "
                 )
@@ -96,7 +96,7 @@ class Userbot(Client):
                 await self.two.join_chat("Alexa_Help")
                 await self.two.join_chat("TheTeamAlexa")
                 await self.two.join_chat("Alexa_BotUpdates")
-            except:
+            except Exception:
                 pass
             assistants.append(2)
             try:
@@ -104,7 +104,7 @@ class Userbot(Client):
                     config.LOG_GROUP_ID,
                     "ᴀssɪsᴛᴀɴᴛ sᴛᴀʀᴛᴇᴅ, ɴᴏᴡ ɪᴛ's ᴛɪᴍᴇ ᴛᴏ ᴇɴᴊᴏʏ ᴍᴜsɪᴄ ᴏɴ ᴛᴇʟᴇɢʀᴀᴍ ᴠɪᴅᴇᴏᴄʜᴀᴛs.",
                 )
-            except:
+            except Exception:
                 LOGGER(__name__).error(
                     f"Assistant Account 2 has failed to access the log Group. Make sure that you have added your assistant to your log group and promoted as admin ! "
                 )
@@ -124,7 +124,7 @@ class Userbot(Client):
                 await self.three.join_chat("Alexa_Help")
                 await self.three.join_chat("TheTeamAlexa")
                 await self.three.join_chat("Alexa_BotUpdates")
-            except:
+            except Exception:
                 pass
             assistants.append(3)
             try:
@@ -132,7 +132,7 @@ class Userbot(Client):
                     config.LOG_GROUP_ID,
                     "ᴀssɪsᴛᴀɴᴛ sᴛᴀʀᴛᴇᴅ, ɴᴏᴡ ɪᴛ's ᴛɪᴍᴇ ᴛᴏ ᴇɴᴊᴏʏ ᴍᴜsɪᴄ ᴏɴ ᴛᴇʟᴇɢʀᴀᴍ ᴠɪᴅᴇᴏᴄʜᴀᴛs.",
                 )
-            except:
+            except Exception:
                 LOGGER(__name__).error(
                     f"Assistant Account 3 has failed to access the log Group. Make sure that you have added your assistant to your log group and promoted as admin ! "
                 )
@@ -152,7 +152,7 @@ class Userbot(Client):
                 await self.four.join_chat("Alexa_Help")
                 await self.four.join_chat("TheTeamAlexa")
                 await self.four.join_chat("Alexa_BotUpdates")
-            except:
+            except Exception:
                 pass
             assistants.append(4)
             try:
@@ -160,7 +160,7 @@ class Userbot(Client):
                     config.LOG_GROUP_ID,
                     "ᴀssɪsᴛᴀɴᴛ sᴛᴀʀᴛᴇᴅ, ɴᴏᴡ ɪᴛ's ᴛɪᴍᴇ ᴛᴏ ᴇɴᴊᴏʏ ᴍᴜsɪᴄ ᴏɴ ᴛᴇʟᴇɢʀᴀᴍ ᴠɪᴅᴇᴏᴄʜᴀᴛs.",
                 )
-            except:
+            except Exception:
                 LOGGER(__name__).error(
                     f"Assistant Account 4 has failed to access the log Group. Make sure that you have added your assistant to your log group and promoted as admin ! "
                 )
@@ -180,7 +180,7 @@ class Userbot(Client):
                 await self.five.join_chat("Alexa_Help")
                 await self.five.join_chat("TheTeamAlexa")
                 await self.five.join_chat("Alexa_BotUpdates")
-            except:
+            except Exception:
                 pass
             assistants.append(5)
             try:
@@ -188,7 +188,7 @@ class Userbot(Client):
                     config.LOG_GROUP_ID,
                     "ᴀssɪsᴛᴀɴᴛ sᴛᴀʀᴛᴇᴅ, ɴᴏᴡ ɪᴛ's ᴛɪᴍᴇ ᴛᴏ ᴇɴᴊᴏʏ ᴍᴜsɪᴄ ᴏɴ ᴛᴇʟᴇɢʀᴀᴍ ᴠɪᴅᴇᴏᴄʜᴀᴛs.",
                 )
-            except:
+            except Exception:
                 LOGGER(__name__).error(
                     f"Assistant Account 5 has failed to access the log Group. Make sure that you have added your assistant to your log group and promoted as admin ! "
                 )

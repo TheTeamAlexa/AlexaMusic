@@ -36,8 +36,7 @@ async def admins(cli, message: Message, _, chat_id):
             got = await get_loop(chat_id)
             if got != 0:
                 state = got + state
-            if int(state) > 10:
-                state = 10
+            state = min(state, 10)
             await set_loop(chat_id, state)
             return await message.reply_text(
                 _["admin_25"].format(message.from_user.first_name, state)

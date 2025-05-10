@@ -60,7 +60,7 @@ async def markup_panel(client, CallbackQuery: CallbackQuery, _):
         await CallbackQuery.edit_message_reply_markup(
             reply_markup=InlineKeyboardMarkup(buttons)
         )
-    except:
+    except Exception:
         return
     if chat_id not in wrong:
         wrong[chat_id] = {}
@@ -83,7 +83,7 @@ async def del_back_playlist(client, CallbackQuery, _):
         await CallbackQuery.edit_message_reply_markup(
             reply_markup=InlineKeyboardMarkup(buttons)
         )
-    except:
+    except Exception:
         return
     if chat_id not in wrong:
         wrong[chat_id] = {}
@@ -105,14 +105,13 @@ async def del_back_playlist(client, CallbackQuery, _):
         return await CallbackQuery.answer(_["general_6"], show_alert=True)
     mention = CallbackQuery.from_user.mention
     is_non_admin = await is_nonadmin_chat(CallbackQuery.message.chat.id)
-    if not is_non_admin:
-        if CallbackQuery.from_user.id not in SUDOERS:
-            admins = adminlist.get(CallbackQuery.message.chat.id)
-            if not admins:
-                return await CallbackQuery.answer(_["admin_18"], show_alert=True)
-            else:
-                if CallbackQuery.from_user.id not in admins:
-                    return await CallbackQuery.answer(_["admin_19"], show_alert=True)
+    if not is_non_admin and CallbackQuery.from_user.id not in SUDOERS:
+        admins = adminlist.get(CallbackQuery.message.chat.id)
+        if not admins:
+            return await CallbackQuery.answer(_["admin_18"], show_alert=True)
+        else:
+            if CallbackQuery.from_user.id not in admins:
+                return await CallbackQuery.answer(_["admin_19"], show_alert=True)
     if command == "Pause":
         if not await is_music_playing(chat_id):
             return await CallbackQuery.answer(_["admin_1"], show_alert=True)
@@ -166,7 +165,7 @@ async def del_back_playlist(client, CallbackQuery, _):
             return await CallbackQuery.answer(_["admin_21"], show_alert=True)
         try:
             popped = check.pop(0)
-        except:
+        except Exception:
             return await CallbackQuery.answer(_["admin_22"], show_alert=True)
         check = db.get(chat_id)
         if not check:
@@ -183,8 +182,7 @@ async def del_back_playlist(client, CallbackQuery, _):
         txt = f"» ᴛʀᴀᴄᴋ sᴋɪᴩᴩᴇᴅ ʙʏ {mention} !"
         popped = None
         try:
-            popped = check.pop(0)
-            if popped:
+            if popped := check.pop(0):
                 if AUTO_DOWNLOADS_CLEAR == str(True):
                     await auto_clean(popped)
             if not check:
@@ -194,16 +192,16 @@ async def del_back_playlist(client, CallbackQuery, _):
                 )
                 try:
                     return await Alexa.stop_stream(chat_id)
-                except:
+                except Exception:
                     return
-        except:
+        except Exception:
             try:
                 await CallbackQuery.edit_message_text(f"» ᴛʀᴀᴄᴋ sᴋɪᴩᴩᴇᴅ ʙʏ {mention} !")
                 await CallbackQuery.message.reply_text(
                     _["admin_10"].format(mention), disable_web_page_preview=True
                 )
                 return await Alexa.stop_stream(chat_id)
-            except:
+            except Exception:
                 return
         await CallbackQuery.answer()
         queued = check[0]["file"]
@@ -251,7 +249,7 @@ async def del_back_playlist(client, CallbackQuery, _):
                     videoid=True,
                     video=status,
                 )
-            except:
+            except Exception:
                 return await mystic.edit_text(_["call_9"])
             try:
                 await Alexa.skip_stream(chat_id, file_path, video=status)
@@ -382,7 +380,7 @@ async def del_back_playlist(client, CallbackQuery, _):
                 duration,
                 playing[0]["streamtype"],
             )
-        except:
+        except Exception:
             return await mystic.edit_text(_["admin_34"])
         if int(command) in [1, 3]:
             db[chat_id][0]["played"] -= duration_to_skip

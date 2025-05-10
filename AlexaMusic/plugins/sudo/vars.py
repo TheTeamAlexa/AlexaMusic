@@ -40,27 +40,11 @@ async def varsFunc(client, message):
     play_duration = config.DURATION_LIMIT_MIN
     cm = config.CLEANMODE_DELETE_MINS
     auto_sug = config.AUTO_SUGGESTION_TIME
-    if config.AUTO_LEAVING_ASSISTANT == str(True):
-        ass = "ʏᴇs"
-    else:
-        ass = "ɴᴏ"
-    if config.PRIVATE_BOT_MODE == str(True):
-        pvt = "ʏᴇs"
-    else:
-        pvt = "ɴᴏ"
-    if config.AUTO_SUGGESTION_MODE == str(True):
-        a_sug = "ʏᴇs"
-    else:
-        a_sug = "ɴᴏ"
-    if config.AUTO_DOWNLOADS_CLEAR == str(True):
-        down = "ʏᴇs"
-    else:
-        down = "ɴᴏ"
-
-    if not config.GITHUB_REPO:
-        git = "ɴᴏ"
-    else:
-        git = f"[ʀᴇᴩᴏ]({config.GITHUB_REPO})"
+    ass = "ʏᴇs" if config.AUTO_LEAVING_ASSISTANT == str(True) else "ɴᴏ"
+    pvt = "ʏᴇs" if config.PRIVATE_BOT_MODE == str(True) else "ɴᴏ"
+    a_sug = "ʏᴇs" if config.AUTO_SUGGESTION_MODE == str(True) else "ɴᴏ"
+    down = "ʏᴇs" if config.AUTO_DOWNLOADS_CLEAR == str(True) else "ɴᴏ"
+    git = f"[ʀᴇᴩᴏ]({config.GITHUB_REPO})" if config.GITHUB_REPO else "ɴᴏ"
     if not config.START_IMG_URL:
         start = "ɴᴏ"
     else:

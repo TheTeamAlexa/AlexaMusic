@@ -51,12 +51,12 @@ async def start_comm(client, message: Message, _):
     await add_served_user(message.from_user.id)
     if len(message.text.split()) > 1:
         name = message.text.split(None, 1)[1]
-        if name[0:4] == "help":
+        if name[:4] == "help":
             keyboard = help_pannel(_)
             return await message.reply_text(_["help_1"], reply_markup=keyboard)
-        if name[0:4] == "song":
+        if name[:4] == "song":
             return await message.reply_text(_["song_2"])
-        if name[0:3] == "sta":
+        if name[:3] == "sta":
             m = await message.reply_text(
                 "🥱 ɢᴇᴛᴛɪɴɢ ʏᴏᴜʀ ᴩᴇʀsᴏɴᴀʟ sᴛᴀᴛs ғʀᴏᴍ {config.MUSIC_BOT_NAME} sᴇʀᴠᴇʀ."
             )
@@ -109,7 +109,7 @@ async def start_comm(client, message: Message, _):
             await m.delete()
             await message.reply_photo(photo=thumbnail, caption=msg)
             return
-        if name[0:3] == "sud":
+        if name[:3] == "sud":
             await sudoers_list(client=client, message=message, _=_)
             if await is_on_off(config.LOG):
                 sender_id = message.from_user.id
@@ -119,7 +119,7 @@ async def start_comm(client, message: Message, _):
                     f"{message.from_user.mention} ᴊᴜsᴛ sᴛᴀʀᴛᴇᴅ ᴛʜᴇ ʙᴏᴛ ᴛᴏ ᴄʜᴇᴄᴋ <code>sᴜᴅᴏʟɪsᴛ</code>\n\n**ᴜsᴇʀ ɪᴅ:** {sender_id}\n**ᴜsᴇʀɴᴀᴍᴇ:** {sender_name}",
                 )
             return
-        if name[0:3] == "lyr":
+        if name[:3] == "lyr":
             query = (str(name)).replace("lyrics_", "", 1)
             lyrical = config.lyrical
             lyrics = lyrical.get(query)
@@ -183,7 +183,7 @@ async def start_comm(client, message: Message, _):
         try:
             await app.resolve_peer(OWNER_ID[0])
             OWNER = OWNER_ID[0]
-        except:
+        except Exception:
             OWNER = None
         out = private_panel(_, app.username, OWNER)
         if config.START_IMG_URL:
@@ -193,7 +193,7 @@ async def start_comm(client, message: Message, _):
                     caption=_["start_2"].format(message.from_user.mention, app.mention),
                     reply_markup=InlineKeyboardMarkup(out),
                 )
-            except:
+            except Exception:
                 await message.reply_text(
                     caption=_["start_2"].format(message.from_user.mention, app.mention),
                     reply_markup=InlineKeyboardMarkup(out),
@@ -280,10 +280,16 @@ async def welcome(client, message: Message):
 @app.on_message(commandpro(["/alive", "Alexa"]))
 async def alive(client, message: Message):
     await message.reply_photo(
-        photo=f"https://telegra.ph/file/125f531d44a9999290cac.jpg",
+        photo="https://telegra.ph/file/125f531d44a9999290cac.jpg",
         caption=f"""━━━━━━━━━━━━━━━━━━━━━━━━\n\n✪ ʜᴇʟʟᴏ, ᴀʟᴇxᴀ ɪs ᴡᴏʀᴋɪɴɢ ᴀɴᴅ ғᴜɴᴄᴛɪᴏɴɪɴɢ ᴘʀᴏᴘᴇʀʟʏ\n✪ ᴛʜᴀɴᴋs ᴛᴏ ʏᴜᴋᴋɪ ᴛᴇᴀᴍ 🌼 ..\n\n┏━━━━━━━━━━━━━━━━━┓\n┣★ ᴏᴡɴᴇʀ    : [ᴀsᴀᴅ ᴀʟɪ](https://t.me/Dr_Asad_Ali)\n┣★ ᴜᴘᴅᴀᴛᴇs › : [ᴀʟᴇxᴀ ʜᴇʟᴘ](https://t.me/Alexa_BotUpdates)┓\n┣★ ʀᴇᴘᴏ › : [ᴀʟᴇxᴀ ʀᴇᴘᴏ](https://github.com/jankarikiduniya/AlexaMusic)\n┗━━━━━━━━━━━━━━━━━┛\n\n💞 ɪғ ʏᴏᴜ ʜᴀᴠᴇ ᴀɴʏ ǫᴜᴇsᴛɪᴏɴs ᴛʜᴇɴ\nᴅᴍ ᴛᴏ ᴍʏ [ᴏᴡɴᴇʀ](https://t.me/Jankari_Ki_Duniya) ᴍᴀᴋᴇ sᴜʀᴇ ᴛᴏ sᴛᴀʀ ᴏᴜʀ ᴘʀᴏᴊᴇᴄᴛ ...\n\n━━━━━━━━━━━━━━━━━━━━━━━━""",
         reply_markup=InlineKeyboardMarkup(
-            [[InlineKeyboardButton("🌼 ᴀʟᴇxᴀ ᴄʜᴀᴛ 💮", url=config.SUPPORT_GROUP)]]
+            [
+                [
+                    InlineKeyboardButton(
+                        "🌼 ᴀʟᴇxᴀ ᴄʜᴀᴛ 💮", url=config.SUPPORT_GROUP
+                    )
+                ]
+            ]
         ),
     )
 
@@ -297,9 +303,15 @@ async def verify(client, message: Message):
         return
     await add_served_user(message.from_user.id)
     await message.reply_photo(
-        photo=f"https://telegra.ph/file/7f08acd78577f99f60ff5.png",
+        photo="https://telegra.ph/file/7f08acd78577f99f60ff5.png",
         caption=f"""━━━━━━━━━━━━━━━━━━━━━━━━\n\n✪ **ᴄᴏɴɢʀᴀᴛᴜʟᴀᴛɪᴏɴ** 🎉\n✪ ɴᴏᴡ ʏᴏᴜ ᴀʀᴇ ᴀʟᴇxᴀ ᴠᴇʀɪғɪᴇᴅ ᴍᴇᴍʙᴇʀ ɢᴏ ʙᴀᴄᴋ ᴀɴᴅ ᴇɴᴊᴏʏ ᴏᴜʀ sᴇʀᴠɪᴄᴇ ᴀɴᴅ ᴘʟᴀʏ ᴍᴜsɪᴄ 🌼 ..\n\n━━━━━━━━━━━━━━━━━━━━━━━━""",
         reply_markup=InlineKeyboardMarkup(
-            [[InlineKeyboardButton("🌼 ᴀʟᴇxᴀ ᴄʜᴀᴛ 💮", url=config.SUPPORT_GROUP)]]
+            [
+                [
+                    InlineKeyboardButton(
+                        "🌼 ᴀʟᴇxᴀ ᴄʜᴀᴛ 💮", url=config.SUPPORT_GROUP
+                    )
+                ]
+            ]
         ),
     )

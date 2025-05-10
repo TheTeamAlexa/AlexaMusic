@@ -44,7 +44,7 @@ async def reload_admin_cache(client, message: Message, _):
             user_id = await alpha_to_int(user)
             adminlist[chat_id].append(user_id)
         await message.reply_text(_["admin_20"])
-    except:
+    except Exception:
         await message.reply_text(
             "ғᴀɪʟᴇᴅ ᴛᴏ ʀᴇғʀᴇsʜ ᴀᴅᴍɪɴs ʟɪsᴛ, ᴍᴀᴋᴇ sᴜʀᴇ ʏᴏᴜ ᴩʀᴏᴍᴏᴛᴇᴅ ᴛʜᴇ ʙᴏᴛ."
         )
@@ -60,18 +60,18 @@ async def restartbot(client, message: Message, _):
     try:
         db[message.chat.id] = []
         await Alexa.stop_stream(message.chat.id)
-    except:
+    except Exception:
         pass
     chat_id = await get_cmode(message.chat.id)
     if chat_id:
         try:
             await app.get_chat(chat_id)
-        except:
+        except Exception:
             pass
         try:
             db[chat_id] = []
             await Alexa.stop_stream(chat_id)
-        except:
+        except Exception:
             pass
     return await mystic.edit_text(
         "sᴜᴄᴄᴇssғᴜʟʟʏ ʀᴇʙᴏᴏᴛᴇᴅ {MUSIC_BOT_NAME} ғᴏʀ ʏᴏᴜʀ ᴄʜᴀᴛ, ɴᴏᴡ ʏᴏᴜ ᴄᴀɴ sᴛᴀʀᴛ ᴩʟᴀʏɪɴɢ ᴀɢᴀɪɴ..."
@@ -83,7 +83,7 @@ async def close_menu(_, CallbackQuery):
     try:
         await CallbackQuery.message.delete()
         await CallbackQuery.answer()
-    except:
+    except Exception:
         return
 
 
@@ -92,7 +92,7 @@ async def close_menu(_, CallbackQuery):
     try:
         await CallbackQuery.message.delete()
         await CallbackQuery.answer()
-    except:
+    except Exception:
         return
 
 
@@ -115,13 +115,13 @@ async def stop_download(client, CallbackQuery: CallbackQuery, _):
             task.cancel()
             try:
                 lyrical.pop(message_id)
-            except:
+            except Exception:
                 pass
             await CallbackQuery.answer("ᴅᴏᴡɴʟᴏᴀᴅɪɢ ᴄᴀɴᴄᴇʟʟᴇᴅ.", show_alert=True)
             return await CallbackQuery.edit_message_text(
                 f"ᴅᴏᴡɴʟᴏᴀᴅɪɴɢ ᴩʀᴏᴄᴇss ᴄᴀɴᴄᴇʟʟᴇᴅ ʙʏ {CallbackQuery.from_user.mention}"
             )
-        except:
+        except Exception:
             return await CallbackQuery.answer(
                 "ғᴀɪʟᴇᴅ ᴛᴏ ᴄᴀɴᴄᴇʟ ᴅᴏᴡɴʟᴏᴀᴅɪɴɢ...", show_alert=True
             )

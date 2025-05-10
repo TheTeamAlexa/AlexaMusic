@@ -18,9 +18,7 @@ sudoersdb = db.sudoers
 
 async def get_sudoers() -> list:
     sudoers = await sudoersdb.find_one({"sudo": "sudo"})
-    if not sudoers:
-        return []
-    return sudoers["sudoers"]
+    return sudoers["sudoers"] if sudoers else []
 
 
 async def add_sudo(user_id: int) -> bool:

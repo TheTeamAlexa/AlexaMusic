@@ -46,10 +46,7 @@ def get_duration(playing):
     if "index_" in file_path or "live_" in file_path:
         return "Unknown"
     duration_seconds = int(playing[0]["seconds"])
-    if duration_seconds == 0:
-        return "Unknown"
-    else:
-        return "Inline"
+    return "Unknown" if duration_seconds == 0 else "Inline"
 
 
 @app.on_message(filters.command(QUEUE_COMMAND) & filters.group & ~BANNED_USERS)
@@ -61,7 +58,7 @@ async def ping_com(client, message: Message, _):
             return await message.reply_text(_["setting_12"])
         try:
             await app.get_chat(chat_id)
-        except:
+        except Exception:
             return await message.reply_text(_["cplay_4"])
         cplay = True
     else:
@@ -125,28 +122,25 @@ async def ping_com(client, message: Message, _):
         try:
             while db[chat_id][0]["vidid"] == videoid:
                 await asyncio.sleep(5)
-                if await is_active_chat(chat_id):
-                    if basic[videoid]:
-                        if await is_music_playing(chat_id):
-                            try:
-                                buttons = queue_markup(
-                                    _,
-                                    DUR,
-                                    "c" if cplay else "g",
-                                    videoid,
-                                    seconds_to_min(db[chat_id][0]["played"]),
-                                    db[chat_id][0]["dur"],
-                                )
-                                await mystic.edit_reply_markup(reply_markup=buttons)
-                            except FloodWait:
-                                pass
-                        else:
+                if not await is_active_chat(chat_id):
+                    break
+                if basic[videoid]:
+                    if await is_music_playing(chat_id):
+                        try:
+                            buttons = queue_markup(
+                                _,
+                                DUR,
+                                "c" if cplay else "g",
+                                videoid,
+                                seconds_to_min(db[chat_id][0]["played"]),
+                                db[chat_id][0]["dur"],
+                            )
+                            await mystic.edit_reply_markup(reply_markup=buttons)
+                        except FloodWait:
                             pass
-                    else:
-                        break
                 else:
                     break
-        except:
+        except Exception:
             return
 
 
@@ -154,7 +148,7 @@ async def ping_com(client, message: Message, _):
 async def quite_timer(client, CallbackQuery: CallbackQuery):
     try:
         await CallbackQuery.answer()
-    except:
+    except Exception:
         pass
 
 
@@ -166,7 +160,7 @@ async def queued_tracks(client, CallbackQuery: CallbackQuery, _):
     what, videoid = callback_request.split("|")
     try:
         chat_id, channel = await get_channeplayCB(_, what, CallbackQuery)
-    except:
+    except Exception:
         return
     if not await is_active_chat(chat_id):
         return await CallbackQuery.answer(_["general_6"], show_alert=True)
@@ -183,10 +177,8 @@ async def queued_tracks(client, CallbackQuery: CallbackQuery, _):
         caption=_["queue_1"],
     )
     await CallbackQuery.edit_message_media(media=med)
-    j = 0
     msg = ""
-    for x in got:
-        j += 1
+    for j, x in enumerate(got, start=1):
         if j == 1:
             msg += f'ᴄᴜʀʀᴇɴᴛʟʏ ᴩʟᴀʏɪɴɢ:\n\n📌ᴛɪᴛʟᴇ: {x["title"]}\nᴅᴜʀᴀᴛɪᴏɴ: {x["dur"]}\nʙʏ: {x["by"]}\n\n'
         elif j == 2:
@@ -214,7 +206,7 @@ async def queue_back(client, CallbackQuery: CallbackQuery, _):
     cplay = callback_data.split(None, 1)[1]
     try:
         chat_id, channel = await get_channeplayCB(_, cplay, CallbackQuery)
-    except:
+    except Exception:
         return
     if not await is_active_chat(chat_id):
         return await CallbackQuery.answer(_["general_6"], show_alert=True)
@@ -277,26 +269,23 @@ async def queue_back(client, CallbackQuery: CallbackQuery, _):
         try:
             while db[chat_id][0]["vidid"] == videoid:
                 await asyncio.sleep(5)
-                if await is_active_chat(chat_id):
-                    if basic[videoid]:
-                        if await is_music_playing(chat_id):
-                            try:
-                                buttons = queue_markup(
-                                    _,
-                                    DUR,
-                                    cplay,
-                                    videoid,
-                                    seconds_to_min(db[chat_id][0]["played"]),
-                                    db[chat_id][0]["dur"],
-                                )
-                                await mystic.edit_reply_markup(reply_markup=buttons)
-                            except FloodWait:
-                                pass
-                        else:
+                if not await is_active_chat(chat_id):
+                    break
+                if basic[videoid]:
+                    if await is_music_playing(chat_id):
+                        try:
+                            buttons = queue_markup(
+                                _,
+                                DUR,
+                                cplay,
+                                videoid,
+                                seconds_to_min(db[chat_id][0]["played"]),
+                                db[chat_id][0]["dur"],
+                            )
+                            await mystic.edit_reply_markup(reply_markup=buttons)
+                        except FloodWait:
                             pass
-                    else:
-                        break
                 else:
                     break
-        except:
+        except Exception:
             return
