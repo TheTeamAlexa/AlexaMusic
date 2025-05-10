@@ -46,7 +46,9 @@ def PlayWrapper(command):
             return await message.reply_text(
                 "Bot is under maintenance. Please wait for some time..."
             )
-        if PRIVATE_BOT_MODE == str(True) and not await is_served_private_chat(message.chat.id):
+        if PRIVATE_BOT_MODE == str(True) and not await is_served_private_chat(
+            message.chat.id
+        ):
             await message.reply_text(
                 "**Private Music Bot**\n\nOnly for authorized chats from the owner. Ask my owner to allow your chat first."
             )
@@ -69,7 +71,12 @@ def PlayWrapper(command):
             else None
         )
         url = await YouTube.url(message)
-        if audio_telegram is None and video_telegram is None and url is None and len(message.command) < 2:
+        if (
+            audio_telegram is None
+            and video_telegram is None
+            and url is None
+            and len(message.command) < 2
+        ):
             if "stream" in message.command:
                 return await message.reply_text(_["str_1"])
             buttons = botplaylist_markup(_)

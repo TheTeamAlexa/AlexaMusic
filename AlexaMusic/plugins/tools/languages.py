@@ -26,21 +26,15 @@ from AlexaMusic.utils.decorators import ActualAdminCB, language, languageCB
 def lanuages_keyboard(_):
     keyboard = InlineKeyboard(row_width=2)
     keyboard.row(
-        InlineKeyboardButton(
-            text="🇦🇺 ᴇɴɢʟɪsʜ 🇦🇺", callback_data="languages:en"
-        ),
+        InlineKeyboardButton(text="🇦🇺 ᴇɴɢʟɪsʜ 🇦🇺", callback_data="languages:en"),
         InlineKeyboardButton(text="🇮🇳 हिन्दी 🇮🇳", callback_data="languages:hi"),
     )
     keyboard.row(
         InlineKeyboardButton(text="🇱🇰 සිංහල 🇱🇰", callback_data="languages:si"),
-        InlineKeyboardButton(
-            text="🇦🇿 Azərbaycan 🇦🇿", callback_data="languages:az"
-        ),
+        InlineKeyboardButton(text="🇦🇿 Azərbaycan 🇦🇿", callback_data="languages:az"),
     )
     keyboard.row(
-        InlineKeyboardButton(
-            text="🇮🇳 ગુજરાતી 🇮🇳", callback_data="languages:gu"
-        ),
+        InlineKeyboardButton(text="🇮🇳 ગુજરાતી 🇮🇳", callback_data="languages:gu"),
         InlineKeyboardButton(
             text="🇹🇷 Türkiye Türkçesi 🇹🇷",
             callback_data=f"languages:tr",
