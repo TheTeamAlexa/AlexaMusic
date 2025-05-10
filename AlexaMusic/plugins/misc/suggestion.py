@@ -10,7 +10,6 @@ as you want or you can collabe if you have new ideas.
 """
 
 
-
 import asyncio
 import random
 from datetime import datetime, timedelta
@@ -31,9 +30,7 @@ LEAVE_TIME = config.AUTO_SUGGESTION_TIME
 
 suggestor = {}
 
-strings = [
-    item for item in get_string("en") if item[:3] == "sug" and item != "sug_0"
-]
+strings = [item for item in get_string("en") if item[:3] == "sug" and item != "sug_0"]
 
 
 async def dont_do_this():

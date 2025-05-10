@@ -10,7 +10,6 @@ as you want or you can collabe if you have new ideas.
 """
 
 
-
 from pyrogram.types import InlineQueryResultArticle, InputTextMessageContent
 
 answer = [

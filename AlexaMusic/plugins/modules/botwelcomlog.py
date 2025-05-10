@@ -20,9 +20,7 @@ async def bot_added(_, message):
         for members in message.new_chat_members:
             if members.id == app.id:
                 count = await app.get_chat_members_count(chat.id)
-                username = (
-                    message.chat.username or "Private Chat"
-                )
+                username = message.chat.username or "Private Chat"
                 msg = (
                     f"<b>Bot added in</b> {message.chat.title}\n\n"
                     f"<b>Name:</b> {message.chat.title}\n"

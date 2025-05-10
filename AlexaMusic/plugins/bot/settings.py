@@ -388,9 +388,7 @@ async def authusers_mar(client, CallbackQuery, _):
             upl = InlineKeyboardMarkup(
                 [
                     [
-                        InlineKeyboardButton(
-                            text=_["BACK_BUTTON"], callback_data="AU"
-                        ),
+                        InlineKeyboardButton(text=_["BACK_BUTTON"], callback_data="AU"),
                         InlineKeyboardButton(
                             text=_["CLOSE_BUTTON"], callback_data="close"
                         ),

@@ -91,8 +91,8 @@ class CarbonAPI:
 
     async def generate(self, text: str, user_id):
         async with aiohttp.ClientSession(
-                headers={"Content-Type": "application/json"},
-            ) as ses:
+            headers={"Content-Type": "application/json"},
+        ) as ses:
             params = {"code": text, "backgroundColor": random.choice(colour)}
             params["theme"] = random.choice(themes)
             params["dropShadow"] = self.drop_shadow
