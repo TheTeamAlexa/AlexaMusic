@@ -1,16 +1,16 @@
-# Credits to Akshay
+# Credits to Pranav
 
 
-from pyrogram import Client as c
+import asyncio
+from pyrogram import Client
 
-API_ID = input("\nEnter Your API_ID:\n > ")
-API_HASH = input("\nEnter Your API_HASH:\n > ")
+async def generate_and_send_string_session(api_id, api_hash):
+    async with Client("my_account", api_id=api_id, api_hash=api_hash) as app:
+        string_session = await app.export_session_string()
+        await app.send_message("me", f"<b>Your Pyrogram String Session:</b>\n\n<code>{string_session}</code>")
+        print("String session has been sent to your 'Saved Messages'.")
 
-print("\n\n Enter Phone number when asked.\n\n")
-
-i = c("Alexa", api_id=API_ID, api_hash=API_HASH, in_memory=True)
-
-with i:
-    ss = i.export_session_string()
-    print("\nHERE IS YOUR STRING SESSION, COPY IT, DON'T SHARE!!\n")
-    print(f"\n{ss}\n")
+if __name__ == "__main__":
+    api_id = int(input("Enter your API ID: "))
+    api_hash = input("Enter your API Hash: ")
+    asyncio.run(generate_and_send_string_session(api_id, api_hash))
