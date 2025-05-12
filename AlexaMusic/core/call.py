@@ -177,19 +177,20 @@ class Call(PyTgCalls):
                 audio_parameters=audio_stream_quality,
                 video_parameters=video_stream_quality,
             )
-        elif image and config.PRIVATE_BOT_MODE == str(True):
-            stream = MediaStream(
-                link,
-                image,
-                audio_parameters=audio_stream_quality,
-                video_parameters=video_stream_quality,
-            )
         else:
-            stream = MediaStream(
-                link,
-                audio_parameters=audio_stream_quality,
-                video_flags=MediaStream.Flags.IGNORE,
-            )
+            if image and config.PRIVATE_BOT_MODE == str(True):
+                stream = MediaStream(
+                    link,
+                    image,
+                    audio_parameters=audio_stream_quality,
+                    video_parameters=video_stream_quality,
+                )
+            else:
+                stream = MediaStream(
+                    link,
+                    audio_parameters=audio_stream_quality,
+                    video_flags=MediaStream.Flags.IGNORE,
+                )
         await assistant.play(
             chat_id,
             stream,
@@ -244,27 +245,28 @@ class Call(PyTgCalls):
                 audio_parameters=audio_stream_quality,
                 video_parameters=video_stream_quality,
             )
-        elif image and config.PRIVATE_BOT_MODE == str(True):
-            stream = MediaStream(
-                link,
-                image,
-                audio_parameters=audio_stream_quality,
-                video_parameters=video_stream_quality,
-            )
         else:
-            stream = (
-                MediaStream(
+            if image and config.PRIVATE_BOT_MODE == str(True):
+                stream = MediaStream(
                     link,
+                    image,
                     audio_parameters=audio_stream_quality,
                     video_parameters=video_stream_quality,
                 )
-                if video
-                else MediaStream(
-                    link,
-                    audio_parameters=audio_stream_quality,
-                    video_flags=MediaStream.Flags.IGNORE,
+            else:
+                stream = (
+                    MediaStream(
+                        link,
+                        audio_parameters=audio_stream_quality,
+                        video_parameters=video_stream_quality,
+                    )
+                    if video
+                    else MediaStream(
+                        link,
+                        audio_parameters=audio_stream_quality,
+                        video_flags=MediaStream.Flags.IGNORE,
+                    )
                 )
-            )
         try:
             await assistant.play(
                 chat_id,
@@ -597,7 +599,6 @@ class Call(PyTgCalls):
         @self.four.on_update(fl.chat_update(ChatUpdate.Status.LEFT_CALL))
         @self.five.on_update(fl.chat_update(ChatUpdate.Status.LEFT_CALL))
         async def stream_services_handler(client, update: ChatUpdate):
-            await _clear_(update.chat_id)
             await self.stop_stream(update.chat_id)
 
         @self.one.on_update(fl.stream_end())
