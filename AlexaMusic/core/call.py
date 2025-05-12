@@ -268,33 +268,17 @@ class Call(PyTgCalls):
                     )
                 )
         try:
-            await assistant.play(
-                chat_id,
-                stream,
-                config=ksk,
+            await assistant.play(chat_id, stream, config=ksk)
+        except ChatAdminRequired:
+            raise AssistantErr(
+                "<b>𝖭𝗈 𝖠𝖼𝗍𝗂𝗏𝖾 𝖵𝗂𝖽𝖾𝗈𝖢𝗁𝖺𝗍 𝖥𝗈𝗎𝗇𝖽 .</b>\n\n𝖳𝗋𝗒 𝖺𝖿𝗍𝖾𝗋 𝗀𝗂𝗏𝗂𝗇𝗀 𝖢𝗁𝖺𝗍 𝖠𝖽𝗆𝗂𝗇 𝗆𝖾."
             )
         except NoActiveGroupCall:
-            try:
-                await self.join_assistant(original_chat_id, chat_id)
-            except Exception as e:
-                raise e
-            try:
-                await assistant.play(
-                    chat_id,
-                    stream,
-                )
-            except Exception as e:
-                raise AssistantErr(
-                    "**ɴᴏ ᴀᴄᴛɪᴠᴇ ᴠɪᴅᴇᴏ ᴄʜᴀᴛ ғᴏᴜɴᴅ**\n\nᴩʟᴇᴀsᴇ ᴍᴀᴋᴇ sᴜʀᴇ ʏᴏᴜ sᴛᴀʀᴛᴇᴅ ᴛʜᴇ ᴠɪᴅᴇᴏᴄʜᴀᴛ."
-                ) from e
-        except ChatAdminRequired as e:
+            raise AssistantErr("<b>𝖲𝗍𝖺𝗋𝗍 𝖵𝗂𝖽𝖾𝗈 𝖢𝗁𝖺𝗍.<b>\n\n𝖳𝗁𝖾𝗇 𝖳𝗋𝗒 𝖯𝗅𝖺𝗒𝗂𝗇𝗀 𝖲𝗈𝗇𝗀𝗌.")
+        except TelegramServerError:
             raise AssistantErr(
-                "**ɴᴏ ᴀᴄᴛɪᴠᴇ ᴠɪᴅᴇᴏ ᴄʜᴀᴛ ғᴏᴜɴᴅ**\n\nᴩʟᴇᴀsᴇ ᴍᴀᴋᴇ sᴜʀᴇ ʏᴏᴜ sᴛᴀʀᴛᴇᴅ ᴛʜᴇ ᴠɪᴅᴇᴏᴄʜᴀᴛ."
-            ) from e
-        except TelegramServerError as e:
-            raise AssistantErr(
-                "**ᴛᴇʟᴇɢʀᴀᴍ sᴇʀᴠᴇʀ ᴇʀʀᴏʀ**\n\nᴩʟᴇᴀsᴇ ᴛᴜʀɴ ᴏғғ ᴀɴᴅ ʀᴇsᴛᴀʀᴛ ᴛʜᴇ ᴠɪᴅᴇᴏᴄʜᴀᴛ ᴀɢᴀɪɴ."
-            ) from e
+                "<b>𝖳𝖾𝗅𝖾𝗀𝗋𝖺𝗆 𝖲𝖾𝗋𝗏𝖾𝗋 𝖤𝗋𝗋𝗈𝗋</b>\n\n𝖳𝖾𝗅𝖾𝗀𝗋𝖺𝗆 𝖨𝗌 𝖧𝖺𝗏𝗂𝗇𝗀 𝖲𝗈𝗆𝖾 𝖨𝗇𝗍𝖾𝗋𝗇𝖺𝗅 𝖯𝗋𝗈𝖻𝗅𝖾𝗆𝗌 , 𝖯𝗅𝖾𝖺𝗌𝖾 𝖳𝗋𝗒 𝖯𝗅𝖺𝗒𝗂𝗇𝗀 𝖠𝗀𝖺𝗂𝗇 𝖮𝗋 𝖱𝖾𝗌𝗍𝖺𝗋𝗍 𝖳𝗁𝖾 𝖵𝗂𝖽𝖾𝗈𝖢𝗁𝖺𝗍 𝖮𝖿 𝖸𝗈𝗎𝗋 𝖦𝗋𝗈𝗎𝗉."
+            )
         await add_active_chat(chat_id)
         await music_on(chat_id)
         if video:
@@ -339,7 +323,7 @@ class Call(PyTgCalls):
             videoid = check[0]["vidid"]
             userid = check[0].get("user_id")
             check[0]["played"] = 0
-            video = True if str(streamtype) == "video" else False
+            video = str(streamtype) == "video"
             if "live_" in queued:
                 n, link = await YouTube.video(videoid, True)
                 if n == 0:
@@ -401,7 +385,7 @@ class Call(PyTgCalls):
                         videoid,
                         mystic,
                         videoid=True,
-                        video=True if str(streamtype) == "video" else False,
+                        video=str(streamtype) == "video",
                     )
                 except Exception:
                     return await mystic.edit_text(
@@ -486,7 +470,7 @@ class Call(PyTgCalls):
                 db[chat_id][0]["mystic"] = run
                 db[chat_id][0]["markup"] = "tg"
             else:
-                if videoid == "telegram" or videoid == "soundcloud":
+                if videoid in ["telegram", "soundcloud"]:
                     image = None
                 else:
                     try:
