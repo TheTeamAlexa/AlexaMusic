@@ -8,10 +8,10 @@ hachoir
 heroku3
 lyricsgenius
 motor
-ntgcalls~=1.3.4
+ntgcalls==2.0.0rc3
 pillow
 psutil
-py-tgcalls~=2.1.1
+py-tgcalls==2.2.0rc1
 pykeyboard
 Kurigram
 python-dotenv
