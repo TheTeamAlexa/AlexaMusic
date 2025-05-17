@@ -595,12 +595,34 @@ class Call(PyTgCalls):
                 return
             await self.change_stream(client, update.chat_id)
 
-        @self.one.on_update(fl.call_participant(GroupCallParticipant.Action.JOINED | GroupCallParticipant.Action.LEFT))
-        @self.two.on_update(fl.call_participant(GroupCallParticipant.Action.JOINED | GroupCallParticipant.Action.LEFT))
-        @self.three.on_update(fl.call_participant(GroupCallParticipant.Action.JOINED | GroupCallParticipant.Action.LEFT))
-        @self.four.on_update(fl.call_participant(GroupCallParticipant.Action.JOINED | GroupCallParticipant.Action.LEFT))
-        @self.five.on_update(fl.call_participant(GroupCallParticipant.Action.JOINED | GroupCallParticipant.Action.LEFT))
-        async def participants_change_handler(client, update: UpdatedGroupCallParticipant):
+        @self.one.on_update(
+            fl.call_participant(
+                GroupCallParticipant.Action.JOINED | GroupCallParticipant.Action.LEFT
+            )
+        )
+        @self.two.on_update(
+            fl.call_participant(
+                GroupCallParticipant.Action.JOINED | GroupCallParticipant.Action.LEFT
+            )
+        )
+        @self.three.on_update(
+            fl.call_participant(
+                GroupCallParticipant.Action.JOINED | GroupCallParticipant.Action.LEFT
+            )
+        )
+        @self.four.on_update(
+            fl.call_participant(
+                GroupCallParticipant.Action.JOINED | GroupCallParticipant.Action.LEFT
+            )
+        )
+        @self.five.on_update(
+            fl.call_participant(
+                GroupCallParticipant.Action.JOINED | GroupCallParticipant.Action.LEFT
+            )
+        )
+        async def participants_change_handler(
+            client, update: UpdatedGroupCallParticipant
+        ):
             participant = update
             if participant.action not in (
                 GroupCallParticipant.Action.JOINED,
