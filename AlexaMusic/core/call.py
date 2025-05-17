@@ -28,7 +28,7 @@ from pytgcalls.types import (
     StreamEnded,
     GroupCallConfig,
     GroupCallParticipant,
-    Update,
+    UpdatedGroupCallParticipant,
 )
 
 import config
@@ -595,13 +595,13 @@ class Call(PyTgCalls):
                 return
             await self.change_stream(client, update.chat_id)
 
-        @self.one.on_update(fl.call_participant(GroupCallParticipant.Action.UPDATED))
-        @self.two.on_update(fl.call_participant(GroupCallParticipant.Action.UPDATED))
-        @self.three.on_update(fl.call_participant(GroupCallParticipant.Action.UPDATED))
-        @self.four.on_update(fl.call_participant(GroupCallParticipant.Action.UPDATED))
-        @self.five.on_update(fl.call_participant(GroupCallParticipant.Action.UPDATED))
-        async def participants_change_handler(client, update: Update):
-            participant = update.participant
+        @self.one.on_update(fl.call_participant(GroupCallParticipant.Action.JOINED | GroupCallParticipant.Action.LEFT))
+        @self.two.on_update(fl.call_participant(GroupCallParticipant.Action.JOINED | GroupCallParticipant.Action.LEFT))
+        @self.three.on_update(fl.call_participant(GroupCallParticipant.Action.JOINED | GroupCallParticipant.Action.LEFT))
+        @self.four.on_update(fl.call_participant(GroupCallParticipant.Action.JOINED | GroupCallParticipant.Action.LEFT))
+        @self.five.on_update(fl.call_participant(GroupCallParticipant.Action.JOINED | GroupCallParticipant.Action.LEFT))
+        async def participants_change_handler(client, update: UpdatedGroupCallParticipant):
+            participant = update
             if participant.action not in (
                 GroupCallParticipant.Action.JOINED,
                 GroupCallParticipant.Action.LEFT,
@@ -609,7 +609,7 @@ class Call(PyTgCalls):
                 return
             chat_id = update.chat_id
             users = counter.get(chat_id)
-            if users is None:
+            if not users:
                 try:
                     got = len(await client.get_participants(chat_id))
                 except Exception:
