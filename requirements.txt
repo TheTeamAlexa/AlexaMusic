@@ -13,7 +13,7 @@ pillow
 psutil
 py-tgcalls==2.2.0rc3
 pykeyboard
-Kurigram
+Kurigram==2.2.4
 python-dotenv
 requests
 speedtest-cli
