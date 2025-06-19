@@ -6,6 +6,7 @@ gitpython
 gunicorn
 hachoir
 heroku3
+Kurigram==2.2.4
 lyricsgenius
 motor
 ntgcalls==2.0.4
@@ -13,14 +14,14 @@ pillow
 psutil
 py-tgcalls==2.2.0rc3
 pykeyboard
-Kurigram==2.2.4
+PyTgCrypto
 python-dotenv
+pyyaml~=6.0.2
 requests
 speedtest-cli
 spotipy
-PyTgCrypto
 unidecode
+uvloop
 werkzeug
 yt-dlp
 https://github.com/KSKOP69/youtube-search-python/archive/ksk.zip
-pyyaml~=6.0.2
