@@ -12,7 +12,7 @@ motor
 ntgcalls==2.0.4
 pillow
 psutil
-py-tgcalls==2.2.0rc3
+py-tgcalls==2.2.3
 pykeyboard
 PyTgCrypto
 python-dotenv
