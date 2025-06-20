@@ -24,6 +24,7 @@ from .logging import LOGGER
 if sys.platform != "win32":
     try:
         import uvloop
+
         asyncio.set_event_loop_policy(uvloop.EventLoopPolicy())
         LOGGER(__name__).info("Using Uvloop Event Loop for Enhanced Performance")
     except ImportError:
