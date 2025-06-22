@@ -204,60 +204,95 @@ if GITHUB_REPO and not re.match("(?:http|https)://", GITHUB_REPO):
     )
 
 
-if PING_IMG_URL and PING_IMG_URL != "assets/Ping.jpeg" and not re.match("(?:http|https)://", PING_IMG_URL):
+if (
+    PING_IMG_URL
+    and PING_IMG_URL != "assets/Ping.jpeg"
+    and not re.match("(?:http|https)://", PING_IMG_URL)
+):
     print(
         "[ERROR] - Your PING_IMG_URL url is wrong. Please ensure that it starts with https://"
     )
     sys.exit()
 
-if PLAYLIST_IMG_URL and PLAYLIST_IMG_URL != "assets/Playlist.jpeg" and not re.match("(?:http|https)://", PLAYLIST_IMG_URL):
+if (
+    PLAYLIST_IMG_URL
+    and PLAYLIST_IMG_URL != "assets/Playlist.jpeg"
+    and not re.match("(?:http|https)://", PLAYLIST_IMG_URL)
+):
     print(
         "[ERROR] - Your PLAYLIST_IMG_URL url is wrong. Please ensure that it starts with https://"
     )
     sys.exit()
 
-if GLOBAL_IMG_URL and GLOBAL_IMG_URL != "assets/Global.jpeg" and not re.match("(?:http|https)://", GLOBAL_IMG_URL):
+if (
+    GLOBAL_IMG_URL
+    and GLOBAL_IMG_URL != "assets/Global.jpeg"
+    and not re.match("(?:http|https)://", GLOBAL_IMG_URL)
+):
     print(
         "[ERROR] - Your GLOBAL_IMG_URL url is wrong. Please ensure that it starts with https://"
     )
     sys.exit()
 
 
-if STATS_IMG_URL and (STATS_IMG_URL != "assets/Stats.jpeg" and not re.match("(?:http|https)://", STATS_IMG_URL)):
+if STATS_IMG_URL and (
+    STATS_IMG_URL != "assets/Stats.jpeg"
+    and not re.match("(?:http|https)://", STATS_IMG_URL)
+):
     print(
         "[ERROR] - Your STATS_IMG_URL url is wrong. Please ensure that it starts with https://"
     )
     sys.exit()
 
 
-if TELEGRAM_AUDIO_URL and TELEGRAM_AUDIO_URL != "assets/Audio.jpeg" and not re.match("(?:http|https)://", TELEGRAM_AUDIO_URL):
+if (
+    TELEGRAM_AUDIO_URL
+    and TELEGRAM_AUDIO_URL != "assets/Audio.jpeg"
+    and not re.match("(?:http|https)://", TELEGRAM_AUDIO_URL)
+):
     print(
         "[ERROR] - Your TELEGRAM_AUDIO_URL url is wrong. Please ensure that it starts with https://"
     )
     sys.exit()
 
 
-if STREAM_IMG_URL and STREAM_IMG_URL != "assets/Stream.jpeg" and not re.match("(?:http|https)://", STREAM_IMG_URL):
+if (
+    STREAM_IMG_URL
+    and STREAM_IMG_URL != "assets/Stream.jpeg"
+    and not re.match("(?:http|https)://", STREAM_IMG_URL)
+):
     print(
         "[ERROR] - Your STREAM_IMG_URL url is wrong. Please ensure that it starts with https://"
     )
     sys.exit()
 
 
-if SOUNCLOUD_IMG_URL and SOUNCLOUD_IMG_URL != "assets/Soundcloud.jpeg" and not re.match("(?:http|https)://", SOUNCLOUD_IMG_URL):
+if (
+    SOUNCLOUD_IMG_URL
+    and SOUNCLOUD_IMG_URL != "assets/Soundcloud.jpeg"
+    and not re.match("(?:http|https)://", SOUNCLOUD_IMG_URL)
+):
     print(
         "[ERROR] - Your SOUNCLOUD_IMG_URL url is wrong. Please ensure that it starts with https://"
     )
     sys.exit()
 
-if YOUTUBE_IMG_URL and YOUTUBE_IMG_URL != "assets/Youtube.jpeg" and not re.match("(?:http|https)://", YOUTUBE_IMG_URL):
+if (
+    YOUTUBE_IMG_URL
+    and YOUTUBE_IMG_URL != "assets/Youtube.jpeg"
+    and not re.match("(?:http|https)://", YOUTUBE_IMG_URL)
+):
     print(
         "[ERROR] - Your YOUTUBE_IMG_URL url is wrong. Please ensure that it starts with https://"
     )
     sys.exit()
 
 
-if TELEGRAM_VIDEO_URL and TELEGRAM_VIDEO_URL != "assets/Video.jpeg" and not re.match("(?:http|https)://", TELEGRAM_VIDEO_URL):
+if (
+    TELEGRAM_VIDEO_URL
+    and TELEGRAM_VIDEO_URL != "assets/Video.jpeg"
+    and not re.match("(?:http|https)://", TELEGRAM_VIDEO_URL)
+):
     print(
         "[ERROR] - Your TELEGRAM_VIDEO_URL url is wrong. Please ensure that it starts with https://"
     )
