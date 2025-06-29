@@ -9,7 +9,7 @@ heroku3
 Kurigram==2.2.4
 lyricsgenius
 motor
-ntgcalls==2.0.4
+ntgcalls==2.0.5
 pillow
 psutil
 py-tgcalls==2.2.0rc3
