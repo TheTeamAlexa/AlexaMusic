@@ -88,16 +88,20 @@ async def get_keyboard(_, user_id):
         _note = await get_playlist(user_id, x)
         title = _note["title"]
         title = title.title()
-        buttons.append([
-            InlineKeyboardButton(
-                text=title,
-                callback_data=f"del_playlist {x}",
-            )
-        ])
-    buttons.append([
-        InlineKeyboardButton(text=_["PL_B_5"], callback_data="delete_warning"),
-        InlineKeyboardButton(text=_["CLOSE_BUTTON"], callback_data="close"),
-    ])
+        buttons.append(
+            [
+                InlineKeyboardButton(
+                    text=title,
+                    callback_data=f"del_playlist {x}",
+                )
+            ]
+        )
+    buttons.append(
+        [
+            InlineKeyboardButton(text=_["PL_B_5"], callback_data="delete_warning"),
+            InlineKeyboardButton(text=_["CLOSE_BUTTON"], callback_data="close"),
+        ]
+    )
     keyboard = InlineKeyboardMarkup(buttons)
     return keyboard, count
 
