@@ -6,14 +6,13 @@ gitpython
 gunicorn
 hachoir
 heroku3
-Kurigram==2.2.4
+Kurigram
 lyricsgenius
 motor
 ntgcalls==2.0.5
 pillow
 psutil
 py-tgcalls==2.2.0rc3
-pykeyboard
 PyTgCrypto
 python-dotenv
 pyyaml~=6.0.2
