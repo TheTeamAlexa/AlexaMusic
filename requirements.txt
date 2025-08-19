@@ -12,7 +12,7 @@ motor
 ntgcalls==2.0.5
 pillow
 psutil
-py-tgcalls==2.2.0rc3
+py-tgcalls==2.2.6
 PyTgCrypto
 python-dotenv
 pyyaml~=6.0.2
