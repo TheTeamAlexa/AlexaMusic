@@ -6,7 +6,7 @@ gitpython
 gunicorn
 hachoir
 heroku3
-Kurigram
+https://github.com/KurimuzonAkuma/pyrogram/archive/dev.zip
 lyricsgenius
 motor
 ntgcalls==2.0.5
