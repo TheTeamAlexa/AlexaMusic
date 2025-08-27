@@ -283,11 +283,11 @@ class Call(PyTgCalls):
         await music_on(chat_id)
         if video:
             await add_active_video_chat(chat_id)
-        if await is_autoend():
-            counter[chat_id] = {}
-            users = len(await assistant.get_participants(chat_id))
-            if users == 1:
-                autoend[chat_id] = datetime.now() + timedelta(minutes=AUTO_END_TIME)
+        # if await is_autoend():
+        #     counter[chat_id] = {}
+        #     users = len(await assistant.get_participants(chat_id))
+        #     if users == 1:
+        #         autoend[chat_id] = datetime.now() + timedelta(minutes=AUTO_END_TIME)
 
     async def change_stream(self, client, chat_id):
         check = db.get(chat_id)
@@ -595,63 +595,63 @@ class Call(PyTgCalls):
                 return
             await self.change_stream(client, update.chat_id)
 
-        @self.one.on_update(
-            fl.call_participant(
-                GroupCallParticipant.Action.JOINED | GroupCallParticipant.Action.LEFT
-            )
-        )
-        @self.two.on_update(
-            fl.call_participant(
-                GroupCallParticipant.Action.JOINED | GroupCallParticipant.Action.LEFT
-            )
-        )
-        @self.three.on_update(
-            fl.call_participant(
-                GroupCallParticipant.Action.JOINED | GroupCallParticipant.Action.LEFT
-            )
-        )
-        @self.four.on_update(
-            fl.call_participant(
-                GroupCallParticipant.Action.JOINED | GroupCallParticipant.Action.LEFT
-            )
-        )
-        @self.five.on_update(
-            fl.call_participant(
-                GroupCallParticipant.Action.JOINED | GroupCallParticipant.Action.LEFT
-            )
-        )
-        async def participants_change_handler(
-            client, update: UpdatedGroupCallParticipant
-        ):
-            participant = update
-            if participant.action not in (
-                GroupCallParticipant.Action.JOINED,
-                GroupCallParticipant.Action.LEFT,
-            ):
-                return
-            chat_id = update.chat_id
-            users = counter.get(chat_id)
-            if not users:
-                try:
-                    got = len(await client.get_participants(chat_id))
-                except Exception:
-                    return
-                counter[chat_id] = got
-                if got == 1:
-                    autoend[chat_id] = datetime.now() + timedelta(minutes=AUTO_END_TIME)
-                    return
-                autoend[chat_id] = {}
-            else:
-                final = (
-                    users + 1
-                    if participant.action == GroupCallParticipant.Action.JOINED
-                    else users - 1
-                )
-                counter[chat_id] = final
-                if final == 1:
-                    autoend[chat_id] = datetime.now() + timedelta(minutes=AUTO_END_TIME)
-                    return
-                autoend[chat_id] = {}
+        # @self.one.on_update(
+        #     fl.call_participant(
+        #         GroupCallParticipant.Action.JOINED | GroupCallParticipant.Action.LEFT
+        #     )
+        # )
+        # @self.two.on_update(
+        #     fl.call_participant(
+        #         GroupCallParticipant.Action.JOINED | GroupCallParticipant.Action.LEFT
+        #     )
+        # )
+        # @self.three.on_update(
+        #     fl.call_participant(
+        #         GroupCallParticipant.Action.JOINED | GroupCallParticipant.Action.LEFT
+        #     )
+        # )
+        # @self.four.on_update(
+        #     fl.call_participant(
+        #         GroupCallParticipant.Action.JOINED | GroupCallParticipant.Action.LEFT
+        #     )
+        # )
+        # @self.five.on_update(
+        #     fl.call_participant(
+        #         GroupCallParticipant.Action.JOINED | GroupCallParticipant.Action.LEFT
+        #     )
+        # )
+        # async def participants_change_handler(
+        #     client, update: UpdatedGroupCallParticipant
+        # ):
+        #     participant = update
+        #     if participant.action not in (
+        #         GroupCallParticipant.Action.JOINED,
+        #         GroupCallParticipant.Action.LEFT,
+        #     ):
+        #         return
+        #     chat_id = update.chat_id
+        #     users = counter.get(chat_id)
+        #     if not users:
+        #         try:
+        #             got = len(await client.get_participants(chat_id))
+        #         except Exception:
+        #             return
+        #         counter[chat_id] = got
+        #         if got == 1:
+        #             autoend[chat_id] = datetime.now() + timedelta(minutes=AUTO_END_TIME)
+        #             return
+        #         autoend[chat_id] = {}
+        #     else:
+        #         final = (
+        #             users + 1
+        #             if participant.action == GroupCallParticipant.Action.JOINED
+        #             else users - 1
+        #         )
+        #         counter[chat_id] = final
+        #         if final == 1:
+        #             autoend[chat_id] = datetime.now() + timedelta(minutes=AUTO_END_TIME)
+        #             return
+        #         autoend[chat_id] = {}
 
 
 Alexa = Call()
