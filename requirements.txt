@@ -9,10 +9,10 @@ heroku3
 https://github.com/KurimuzonAkuma/pyrogram/archive/dev.zip
 lyricsgenius
 motor
-ntgcalls==2.0.5
+ntgcalls==2.0.6
 pillow
 psutil
-py-tgcalls==2.2.0rc3
+py-tgcalls==2.2.6
 PyTgCrypto
 python-dotenv
 pyyaml~=6.0.2

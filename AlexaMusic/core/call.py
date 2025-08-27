@@ -11,6 +11,7 @@ as you want or you can collabe if you have new ideas.
 
 
 import asyncio
+import contextlib
 from datetime import datetime, timedelta
 from typing import Union
 
@@ -29,6 +30,8 @@ from pytgcalls.types import (
     GroupCallConfig,
     GroupCallParticipant,
     UpdatedGroupCallParticipant,
+    AudioQuality,
+    VideoQuality,
 )
 
 import config
@@ -140,25 +143,19 @@ class Call(PyTgCalls):
 
     async def stop_stream(self, chat_id: int):
         assistant = await group_assistant(self, chat_id)
-        try:
+        with contextlib.suppress(Exception):
             await _clear_(chat_id)
             await assistant.leave_call(chat_id)
-        except Exception:
-            pass
 
     async def force_stop_stream(self, chat_id: int):
         assistant = await group_assistant(self, chat_id)
-        try:
+        with contextlib.suppress(Exception):
             check = db.get(chat_id)
             check.pop(0)
-        except Exception:
-            pass
         await remove_active_video_chat(chat_id)
         await remove_active_chat(chat_id)
-        try:
+        with contextlib.suppress(Exception):
             await assistant.leave_call(chat_id)
-        except Exception:
-            pass
 
     async def skip_stream(
         self,
@@ -222,7 +219,11 @@ class Call(PyTgCalls):
         assistant = await group_assistant(self, config.LOG_GROUP_ID)
         await assistant.play(
             config.LOG_GROUP_ID,
-            MediaStream(link),
+            MediaStream(
+                link,
+                audio_parameters=AudioQuality.STUDIO,
+                video_parameters=VideoQuality.FHD_1080p,
+            ),
         )
         await asyncio.sleep(10)
         await assistant.leave_call(config.LOG_GROUP_ID)
