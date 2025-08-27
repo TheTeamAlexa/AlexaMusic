@@ -1,12 +1,11 @@
 aiofiles
-aiohttp
+aiohttp~=3.12.15
 beautifulsoup4
 Flask
 gitpython
 gunicorn
 hachoir
 heroku3
-https://github.com/KurimuzonAkuma/pyrogram/archive/dev.zip
 lyricsgenius
 motor
 ntgcalls==2.0.6
@@ -15,7 +14,6 @@ psutil
 py-tgcalls==2.2.6
 PyTgCrypto
 python-dotenv
-pyyaml~=6.0.2
 requests
 speedtest-cli
 spotipy
@@ -23,4 +21,6 @@ unidecode
 uvloop
 werkzeug
 yt-dlp
+https://github.com/KurimuzonAkuma/pyrogram/archive/dev.zip
 https://github.com/KSKOP69/youtube-search-python/archive/ksk.zip
+PyYAML~=6.0.2
