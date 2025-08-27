@@ -152,12 +152,14 @@ async def song_helper_cb(client, CallbackQuery, _):
                     continue
                 sz = convert_bytes(x["filesize"])
                 fom = x["format_id"]
-                keyboard.append([
-                    InlineKeyboardButton(
-                        text=f"{form} Quality Audio = {sz}",
-                        callback_data=f"song_download {stype}|{fom}|{vidid}",
-                    ),
-                ])
+                keyboard.append(
+                    [
+                        InlineKeyboardButton(
+                            text=f"{form} Quality Audio = {sz}",
+                            callback_data=f"song_download {stype}|{fom}|{vidid}",
+                        ),
+                    ]
+                )
     else:
         try:
             formats_available, link = await YouTube.formats(vidid, True)
@@ -176,21 +178,27 @@ async def song_helper_cb(client, CallbackQuery, _):
             sz = convert_bytes(x["filesize"])
             ap = check.split("-")[1]
             to = f"{ap} = {sz}"
-            keyboard.append([
-                InlineKeyboardButton(
-                    text=to,
-                    callback_data=f"song_download {stype}|{x['format_id']}|{vidid}",
-                )
-            ])
+            keyboard.append(
+                [
+                    InlineKeyboardButton(
+                        text=to,
+                        callback_data=f"song_download {stype}|{x['format_id']}|{vidid}",
+                    )
+                ]
+            )
 
-    keyboard.append([
-        InlineKeyboardButton(
-            text=_["BACK_BUTTON"],
-            callback_data=f"song_back {stype}|{vidid}",
-        ),
-        InlineKeyboardButton(text=_["CLOSE_BUTTON"], callback_data="close"),
-    ])
-    return await CallbackQuery.edit_message_reply_markup(reply_markup=InlineKeyboardMarkup(keyboard))
+    keyboard.append(
+        [
+            InlineKeyboardButton(
+                text=_["BACK_BUTTON"],
+                callback_data=f"song_back {stype}|{vidid}",
+            ),
+            InlineKeyboardButton(text=_["CLOSE_BUTTON"], callback_data="close"),
+        ]
+    )
+    return await CallbackQuery.edit_message_reply_markup(
+        reply_markup=InlineKeyboardMarkup(keyboard)
+    )
 
 
 # Downloading Songs Here
