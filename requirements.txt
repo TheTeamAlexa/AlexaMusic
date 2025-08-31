@@ -11,7 +11,7 @@ motor
 ntgcalls==2.0.6
 pillow
 psutil
-py-tgcalls==2.2.6
+py-tgcalls==2.2.7
 PyTgCrypto
 python-dotenv
 requests
