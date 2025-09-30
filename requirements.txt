@@ -23,4 +23,4 @@ werkzeug
 yt-dlp
 https://github.com/KurimuzonAkuma/pyrogram/archive/dev.zip
 https://github.com/KSKOP69/youtube-search-python/archive/ksk.zip
-PyYAML~=6.0.2
+PyYAML~=6.0.3
