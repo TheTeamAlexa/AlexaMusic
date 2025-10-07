@@ -1,5 +1,5 @@
 aiofiles
-aiohttp~=3.12.15
+aiohttp~=3.13.0
 beautifulsoup4
 Flask
 gitpython
