@@ -9,7 +9,6 @@ This program is free software: you can redistribute it and can modify
 as you want or you can collabe if you have new ideas.
 """
 
-
 from AlexaMusic import app
 from AlexaMusic.utils.database import get_cmode
 

@@ -13,7 +13,6 @@ from typing import Dict, List, Union
 
 from AlexaMusic.core.mongo import mongodb
 
-
 pmpermitdb = mongodb.permit
 
 

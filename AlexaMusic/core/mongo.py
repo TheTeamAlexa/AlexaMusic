@@ -9,7 +9,6 @@ This program is free software: you can redistribute it and can modify
 as you want or you can collabe if you have new ideas.
 """
 
-
 from motor.motor_asyncio import AsyncIOMotorClient
 
 from config import MONGO_DB_URI
