@@ -9,7 +9,6 @@ This program is free software: you can redistribute it and can modify
 as you want or you can collabe if you have new ideas.
 """
 
-
 from os import listdir, mkdir
 from os.path import isdir
 from shutil import rmtree

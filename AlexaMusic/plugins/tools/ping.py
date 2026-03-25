@@ -9,7 +9,6 @@ This program is free software: you can redistribute it and can modify
 as you want or you can collabe if you have new ideas.
 """
 
-
 from datetime import datetime
 
 from pyrogram import filters

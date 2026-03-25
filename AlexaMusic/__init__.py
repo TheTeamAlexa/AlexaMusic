@@ -20,7 +20,6 @@ from AlexaMusic.misc import dbb, heroku
 
 from .logging import LOGGER
 
-
 if sys.platform != "win32":
     try:
         import uvloop

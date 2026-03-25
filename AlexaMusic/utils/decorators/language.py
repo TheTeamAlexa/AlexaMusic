@@ -9,7 +9,6 @@ This program is free software: you can redistribute it and can modify
 as you want or you can collabe if you have new ideas.
 """
 
-
 from strings import get_string
 from AlexaMusic.misc import SUDOERS
 from AlexaMusic.utils.database import get_lang, is_commanddelete_on, is_maintenance
