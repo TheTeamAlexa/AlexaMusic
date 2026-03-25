@@ -26,7 +26,7 @@ deno --version
 ---
 
 > [!IMPORTANT]
-> ### Fix (If Unzip Error Cccurs)
+> ### Fix (If Unzip Error Occurs)
 >```bash
 >sudo apt install -y p7zip-full
 >```
