@@ -25,6 +25,8 @@
 >
 >## [Guide for using cookies](https://github.com/TheTeamAlexa/AlexaMusic/blob/master/cookies/README.md)
 >
+>## [Must Install Deno](https://github.com/TheTeamAlexa/AlexaMusic/blob/master/.github/deno.md)
+>
 >### 🔹 Need Help ? Join our Support Group for Assistance!!
 
 

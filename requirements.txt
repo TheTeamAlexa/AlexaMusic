@@ -11,7 +11,7 @@ motor
 ntgcalls
 pillow
 psutil
-py-tgcalls==2.2.8
+py-tgcalls==2.2.11
 PyTgCrypto
 python-dotenv
 requests
@@ -20,7 +20,7 @@ spotipy
 unidecode
 uvloop==0.21.0
 werkzeug
-https://github.com/yt-dlp/yt-dlp/archive/master.zip
+yt-dlp[default]>=2026.3.17
 https://github.com/KurimuzonAkuma/pyrogram/archive/dev.zip
 https://github.com/KSKOP69/youtube-search-python/archive/ksk.zip
 PyYAML~=6.0.3
